@@ -1,7 +1,16 @@
 # Generated output and per-machine settings (build/*.props are production inputs)
 /.vs/
+/.migration/
+node_modules/
+**/dist/
+/.pnpm-store/
 /out/
+# Fixed runtime assets stay local; public headers and content manifests are source inputs.
+/data/games/cs2/cover/**/*.cs2tl
+/data/games/cs2/cover/**/*.dll
 /mousebox-firmware/build/
+# Local firmware archives may contain compiled binaries and copied source trees.
+/mousebox-firmware/releases/
 mousebox-firmware/firmware/*/build-*/
 *.vcxproj.user
 *.local.sln
@@ -81,3 +90,6 @@ backups/
 *.patch
 *.diff
 *.bundle
+/human-model.json
+/mouse-speed-model.json
+/mouse-speed-samples.json
