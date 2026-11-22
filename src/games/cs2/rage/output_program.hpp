@@ -54,11 +54,12 @@ class OutputProgram final : public application::ports::OutputProgram
     void clear();
 
   public:
+    static constexpr auto MovementSpeed = control::SpeedPreset::Fastest;
+
     OutputProgram(std::function<ControlInput()>, std::function<std::uint32_t()>,
                   std::shared_ptr<application::ports::VisibilityProvider>,
                   std::shared_ptr<application::ports::BallisticsProvider>);
     void configure(const application::Json &);
-    void setHumanModel(std::shared_ptr<const control::HumanMotionModel>, unsigned, bool);
     void setRequested(bool value) noexcept
     {
         requested_ = value;

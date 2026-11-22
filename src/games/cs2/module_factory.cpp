@@ -224,9 +224,10 @@ class Module final : public application::ports::GameModule, public application::
         aimCoverCheck_ = aimCoverCheck;
         targetFilter_ = settings.targets;
         extensions_.configure(values);
-        output_->bind(rage_->enabled() ? std::static_pointer_cast<application::ports::OutputProgram>(rage_)
-                                      : std::static_pointer_cast<application::ports::OutputProgram>(aimWithTrigger_),
-                      settings.speed, settings.trigger);
+        const bool rageEnabled = rage_->enabled();
+        output_->bind(rageEnabled ? std::static_pointer_cast<application::ports::OutputProgram>(rage_)
+                                  : std::static_pointer_cast<application::ports::OutputProgram>(aimWithTrigger_),
+                      rageEnabled ? rage::OutputProgram::MovementSpeed : settings.speed, settings.trigger);
         {
             std::lock_guard lock(mutex_);
             scale_ = values.at("cs2MetersPerUnit").get<double>();
@@ -273,8 +274,7 @@ class Module final : public application::ports::GameModule, public application::
     }
     void setHumanModel(std::shared_ptr<const control::HumanMotionModel> model, unsigned dpi, bool variation) override
     {
-        program_->setHumanModel(model, dpi, variation);
-        rage_->setHumanModel(std::move(model), dpi, variation);
+        program_->setHumanModel(std::move(model), dpi, variation);
     }
     void setSceneNotifier(std::function<void()> fn) override
     {

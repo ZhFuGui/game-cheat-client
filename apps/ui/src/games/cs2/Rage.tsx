@@ -13,9 +13,9 @@ export function Rage() {
         <SettingToggle setting="cs2RageEnabled" label="启用 Rage"
           help={t("启用时关闭 Aimbot 和 Triggerbot。前台检查遵循 Aim 常规设置。")}/>
         <div className="rage-policy">
-          <span>{t("沿用 Aimbot 移动设置")}</span>
-          <HelpTooltip label="沿用 Aimbot 移动设置">
-            {t("移动轨迹、速度变化控制、跟随速度和后坐补偿沿用 Aimbot 的设置。后座方案、速度预测、预计执行延迟、控制采样年龄上限和鼠标计数换算在 Aim 常规设置。Rage 也使用已启用的鼠标模型。选人和瞄点按 Rage 的威胁与伤害策略，自动运行无需按住侧键。")}
+          <span>{t("直接定位")}</span>
+          <HelpTooltip label="直接定位">
+            {t("直接修正当前剩余位移，按设备允许的步长和间隔尽快到达目标。预测、时序和计数换算在 Aim 常规配置。后坐补偿沿用 Aimbot 的开关。")}
           </HelpTooltip>
         </div>
       </div>

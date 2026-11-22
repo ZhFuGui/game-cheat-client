@@ -53,7 +53,10 @@ void OutputProgram::clear()
 }
 void OutputProgram::configure(const application::Json &v)
 {
-    const auto settings = aimSettings(v);
+    auto settings = aimSettings(v);
+    settings.movement = control::movement::Algorithm::Direct;
+    settings.trajectory = {};
+    settings.speed = MovementSpeed;
     std::lock_guard lock(mutex_);
     const auto enabled = v.value("cs2RageEnabled", false);
     const auto coverCheck = v.value("cs2RageCoverCheck", true);
@@ -79,15 +82,6 @@ void OutputProgram::configure(const application::Json &v)
     clear();
     fired_.reset();
     block_ = enabled ? "waiting-source" : "disabled";
-}
-void OutputProgram::setHumanModel(std::shared_ptr<const control::HumanMotionModel> model, unsigned dpi, bool variation)
-{
-    std::lock_guard lock(mutex_);
-    aiming_.setHumanModel(std::move(model), dpi, variation);
-    active_ = false;
-    proposed_.reset();
-    shotCheck_.reset();
-    shotBlock_.clear();
 }
 void OutputProgram::reset()
 {

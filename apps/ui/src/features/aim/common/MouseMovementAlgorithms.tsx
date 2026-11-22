@@ -8,10 +8,9 @@ import {useSettingBinding} from "~/hooks/useSettingBinding";
 import {useRuntimeStore} from "~/runtime/state";
 import {MouseBezierSettings, MouseTrajectoryChoice} from "./MouseTrajectorySettings";
 
-export function MouseMovementAlgorithms({choices, defaultSelection, sharedConsumersHelp, children}: {
+export function MouseMovementAlgorithms({choices, defaultSelection, children}: {
   choices: readonly MouseMovementDefinition[];
   defaultSelection: ExecutableMouseMovementAlgorithm;
-  sharedConsumersHelp?: string;
   children?: ReactNode;
 }) {
   const {t} = useTranslation();
@@ -28,7 +27,6 @@ export function MouseMovementAlgorithms({choices, defaultSelection, sharedConsum
   };
   return <FeatureSection title="鼠标移动算法" className="mouse-movement-algorithms" help={<>
     <p>{t("移动轨迹描述几何路径，速度变化控制决定每步的推进节奏。")}</p>
-    {sharedConsumersHelp && <p>{t(sharedConsumersHelp)}</p>}
   </>}>
     <div className="aim-fields">
       <MouseTrajectoryChoice disabled={!ready || saving || calibrating}/>
