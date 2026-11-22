@@ -12,7 +12,12 @@ export function Rage() {
       <div className="aim-fields">
         <SettingToggle setting="cs2RageEnabled" label="启用 Rage"
           help={t("启用时关闭 Aimbot 和 Triggerbot。前台检查遵循 Aim 常规设置。")}/>
-        <div className="rage-policy"><span>{t("自瞄使用 Aim 常规设置")}</span><HelpTooltip label="自瞄使用 Aim 常规设置">{t("自瞄共用 Aim 常规中的后座方案、移动轨迹、速度变化控制、跟随速度、预测与后坐补偿、执行延迟、采样年龄、计数换算和已启用的鼠标模型。选人和瞄点按 Rage 的威胁与伤害策略，自动运行不需要按住侧键。")}</HelpTooltip></div>
+        <div className="rage-policy">
+          <span>{t("沿用 Aimbot 移动设置")}</span>
+          <HelpTooltip label="沿用 Aimbot 移动设置">
+            {t("移动轨迹、速度变化控制、跟随速度和后坐补偿沿用 Aimbot 的设置。后座方案、速度预测、预计执行延迟、控制采样年龄上限和鼠标计数换算在 Aim 常规设置。Rage 也使用已启用的鼠标模型。选人和瞄点按 Rage 的威胁与伤害策略，自动运行无需按住侧键。")}
+          </HelpTooltip>
+        </div>
       </div>
       <div className="rage-parameters aim-fields">
         <SettingField setting="cs2RageIntervalMs" label="连续点击最小间隔" suffix="ms"/>

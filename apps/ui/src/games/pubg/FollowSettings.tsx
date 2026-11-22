@@ -3,11 +3,12 @@ import { FeatureSection } from "~/components/shared/FeatureSection";
 import { SettingChoice, SettingField } from "~/components/shared/SettingField";
 import { useRuntimeStore } from "~/runtime/state";
 import { WeaponAimSettings } from "./WeaponAimSettings";
+import { PubgMouseMovementAlgorithms } from "./MouseMovementAlgorithms";
 
 export function FollowSettings() {
   const { t } = useTranslation();
   const calibrating = useRuntimeStore(store => store.state.calibrating);
-  return (
+  return <>
     <FeatureSection title="跟随设置">
       <div className="aim-fields">
         <SettingChoice
@@ -46,5 +47,6 @@ export function FollowSettings() {
           )}</p><p>{t("优先级自动保存，下次启动继续使用；修改后松开侧键再按。")}</p> </>}/>
       </div>
     </FeatureSection>
-  );
+    <PubgMouseMovementAlgorithms />
+  </>;
 }

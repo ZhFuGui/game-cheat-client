@@ -21,7 +21,6 @@ export const cs2UiModule: GameUiModule = {
     {id:"targets",component:lazy(()=>import("./AimGeneralSettings").then(module=>({default:module.Cs2TargetSettings})))},
     {id:"runtime",component:lazy(()=>import("./AimGeneralSettings").then(module=>({default:module.Cs2RuntimeSettings})))},
     {id:"solution",component:lazy(()=>import("./RecoilScheme").then(module=>({default:module.Cs2RecoilScheme})))},
-    {id:"movement",component:lazy(()=>import("./MouseMovementAlgorithms").then(module=>({default:module.Cs2MouseMovementAlgorithms})))},
     {id:"mapping",component:lazy(()=>import("./AimGeneralSettings").then(module=>({default:module.Cs2InputMapping})))},
     {id:"timing",component:lazy(()=>import("./AimGeneralSettings").then(module=>({default:module.Cs2TimingSettings})))},
   ],

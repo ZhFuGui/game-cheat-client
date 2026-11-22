@@ -9,7 +9,7 @@
   "Aimbot与Rage共用控制采样年龄、执行延迟及速度预测设置。": "Aimbot and Rage share control sample age, execution delay and velocity prediction settings.",
   "Aimbot与Rage共用鼠标移动方式和速度档位。": "Aimbot and Rage share the mouse movement method and speed preset.",
   "Aimbot与Rage共用版本、对照组、方向参考及后坐补偿设置。": "Aimbot and Rage share the version, comparison mode, direction reference and recoil compensation settings.",
-  "原生数据与纯求值在此查看；共享算法与输入设置位于 Aim 常规，选人和侧键设置位于 Aimbot。": "Native data and pure evaluations are shown here. Shared algorithms and input settings are under Aim General; target selection and side-button settings are under Aimbot.",
+  "原生数据与纯求值在此查看。后座方案、时序和输入换算在 Aim 常规。鼠标移动、选人和侧键设置在 Aimbot。": "Native data and evaluations appear here. Recoil scheme, timing, and input mapping are in Aim General. Mouse movement, target, and side-button settings are in Aimbot.",
   "后座方案": "Recoil scheme",
   "计算方式": "Evaluation method",
   "原生后坐求值": "Native recoil evaluation",
@@ -44,5 +44,5 @@
   "对已经求出的后坐变化优先分配速度预算，其他剩余误差保持平滑加减速。首次或时间不连续时重建差分，未获资格时使用平滑控制。": "Prioritizes evaluated recoil changes within the speed budget, then smoothly advances the remaining error. Discontinuous timing resets the differential baseline; unqualified deltas use smooth control.",
   "按当前完整剩余误差直接生成计数，保留速度、学习模型速度上限和设备预算。": "Quantizes the current remaining error directly while retaining speed caps, learned speed limits, and device budgets.",
   "保留当前PUBG的轨迹规划、目标跟踪与平滑计数规则；仅拆分移动模块，原有数值不变。": "Uses PUBG’s existing acceleration, braking, jerk, and target tracking controls. The chosen geometry is applied separately.",
-  "自瞄共用 Aim 常规中的后座方案、移动轨迹、速度变化控制、跟随速度、预测与后坐补偿、执行延迟、采样年龄、计数换算和已启用的鼠标模型。选人和瞄点按 Rage 的威胁与伤害策略，自动运行不需要按住侧键。": "Aim uses the recoil scheme, trajectory, speed control, prediction, timing, count mapping, and enabled motion model in Aim General. Rage keeps its threat/damage target and point selection and runs without holding a side button."
+  "移动轨迹、速度变化控制、跟随速度和后坐补偿沿用 Aimbot 的设置。后座方案、速度预测、预计执行延迟、控制采样年龄上限和鼠标计数换算在 Aim 常规设置。Rage 也使用已启用的鼠标模型。选人和瞄点按 Rage 的威胁与伤害策略，自动运行无需按住侧键。": "Rage uses Aimbot settings for trajectory, speed control, follow speed, and recoil compensation. Recoil scheme, velocity prediction, estimated execution delay, maximum control sample age, and mouse count mapping are configured in Aim General. Rage also uses the enabled mouse motion model. Rage selects targets and aim points by threat and damage, and runs without holding a side button."
 }

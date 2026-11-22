@@ -4,6 +4,7 @@ import { SettingChoice, SettingField, SettingToggle } from "~/components/shared/
 import { useRuntimeStore } from "~/runtime/state";
 import { WeaponAimSettings } from "./WeaponAimSettings";
 import { HitboxAimSettings } from "./HitboxAimSettings";
+import { Cs2MouseMovementAlgorithms } from "./MouseMovementAlgorithms";
 
 export function AimSettings() {
   const { t } = useTranslation();
@@ -23,6 +24,7 @@ export function AimSettings() {
     <SettingField setting="cs2AimDistanceUnits" label="最大目标距离（原生单位）" disabled={calibrating}
       help={<p>{t("0 表示不限距离，使用 Source 2 原生单位。初选限当前视野，目标队伍由 Aim 常规的包含对象设置决定。")}</p>}/>
   </div></FeatureSection>
+  <Cs2MouseMovementAlgorithms />
   <FeatureSection title="后坐补偿">
     <div className="aim-fields">
       <SettingToggle setting="cs2RecoilCompensation" label="补偿发射后坐偏移" disabled={calibrating}

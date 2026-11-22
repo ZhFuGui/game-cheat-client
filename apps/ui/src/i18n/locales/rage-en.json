@@ -74,7 +74,7 @@
   "等待完整当前后坐数据": "Waiting for complete current recoil data",
   "当前固件尚不支持Rage所需的有限点击": "The current firmware does not support the finite clicks required by Rage",
   "Rage已接管输出，Aimbot暂停": "Rage owns output; Aimbot is suspended",
-  "自瞄使用 Aim 常规设置": "Aiming uses Aim General settings",
+  "沿用 Aimbot 移动设置": "Uses Aimbot movement settings",
   "等待有效己方队伍": "Waiting for a valid local team",
   "没有符合当前自瞄条件的目标": "No target meets the current aiming conditions",
   "目标暂不可用，等待当前骨点恢复": "The target is unavailable; waiting for its current bone",

@@ -14,7 +14,7 @@ export function DataPanel(){
   ["可预测 AimPunch 基角",state.cs2PredictablePunch],["非预测 AimPunch 基角",state.cs2UnpredictablePunch],
   ["原生后坐序号",state.cs2RecoilIndex],["原生精度惩罚",state.cs2AccuracyPenalty],
  ];
- return <><AccuracyDiagnostics/><ViewpointDiagnostics/><Section title="CS2 当前数据" help={<> <p>{t("角度为 Reader 原始值，未施加补偿。FOV 覆盖值为 0 表示未覆盖；它不是最终 FOV。")}</p><p>{t("原生数据与纯求值在此查看；共享算法与输入设置位于 Aim 常规，选人和侧键设置位于 Aimbot。")}</p> </>}><dl className="details-grid">{rows.map(([label,value])=><div key={String(label)}><dt>{t(String(label))}</dt><dd>{Array.isArray(value)?value.map(n=>typeof n==="number"?n.toFixed(4):String(n)).join(" / "):display(value as string|number|null|undefined)}</dd></div>)}</dl>
+ return <><AccuracyDiagnostics/><ViewpointDiagnostics/><Section title="CS2 当前数据" help={<> <p>{t("角度为 Reader 原始值，未施加补偿。FOV 覆盖值为 0 表示未覆盖；它不是最终 FOV。")}</p><p>{t("原生数据与纯求值在此查看。后座方案、时序和输入换算在 Aim 常规。鼠标移动、选人和侧键设置在 Aimbot。")}</p> </>}><dl className="details-grid">{rows.map(([label,value])=><div key={String(label)}><dt>{t(String(label))}</dt><dd>{Array.isArray(value)?value.map(n=>typeof n==="number"?n.toFixed(4):String(n)).join(" / "):display(value as string|number|null|undefined)}</dd></div>)}</dl>
  </Section>
  <RecoilDiagnostics value={state.cs2Recoil}/></>;
 }

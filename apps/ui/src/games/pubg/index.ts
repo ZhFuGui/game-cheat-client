@@ -13,7 +13,6 @@ export const pubgUiModule: GameUiModule = {
   AimSettings: lazy(() => import("./FollowSettings").then(module => ({ default: module.FollowSettings }))),
   aimGeneral: [
     {id:"solution",component:lazy(()=>import("./RecoilScheme").then(module=>({default:module.PubgRecoilScheme})))},
-    {id:"movement",component:lazy(()=>import("./MouseMovementAlgorithms").then(module=>({default:module.PubgMouseMovementAlgorithms})))},
     {id:"ballistics",component:lazy(()=>import("./AimGeneralSettings").then(module=>({default:module.PubgBallisticSettings})))},
     {id:"timing",component:lazy(()=>import("./AimGeneralSettings").then(module=>({default:module.PubgTimingSettings})))},
   ],
