@@ -58,16 +58,18 @@ if ($sourceExists) {
 }
 Write-Host "项目目录 $targetPath"
 
+$rootModules = Join-Path $targetPath 'node_modules'
 $desktopModules = Join-Path $targetPath 'apps\desktop\node_modules'
-$shared = Join-Path $desktopModules '@mousebox\shared\package.json'
-if ((Test-Path -LiteralPath $desktopModules -PathType Container) -and !(Test-Path -LiteralPath $shared) -and
-    $PSCmdlet.ShouldProcess($targetPath, '重新建立 pnpm 依赖链接')) {
+if (((Test-Path -LiteralPath $rootModules -PathType Container) -or
+     (Test-Path -LiteralPath $desktopModules -PathType Container)) -and
+    $PSCmdlet.ShouldProcess($targetPath, '恢复 pnpm 依赖')) {
     Push-Location -LiteralPath $targetPath
     try {
-        & pnpm.cmd install --offline --frozen-lockfile --force
+        # Allow pnpm to recreate generated modules after the workspace moves.
+        & pnpm.cmd install --frozen-lockfile --prefer-offline --config.ci=true
         if ($LASTEXITCODE -ne 0) { throw "pnpm 退出码 $LASTEXITCODE" }
     } catch {
-        Write-Warning "依赖链接待修复。可在新目录运行 pnpm install --frozen-lockfile --force。$($_.Exception.Message)"
+        Write-Warning "依赖链接待修复。可在新目录运行 pnpm install --frozen-lockfile --prefer-offline。$($_.Exception.Message)"
     } finally {
         Pop-Location
     }
