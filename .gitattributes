@@ -1,0 +1,7 @@
+# Keep the original bytes of inputs covered by SHA-256 manifests.
+/protocol/sources/** -text
+/third_party/cs2-reader/** -text
+/third_party/reader-consumer/** -text
+/third_party/traceline/** -text
+/data/games/** -text
+/mousebox-firmware/third_party/** -text
