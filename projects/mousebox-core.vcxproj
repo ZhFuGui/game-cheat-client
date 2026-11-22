@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64"><Configuration>Debug</Configuration><Platform>x64</Platform></ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64"><Configuration>Release</Configuration><Platform>x64</Platform></ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals"><VCProjectVersion>17.0</VCProjectVersion><ProjectGuid>{8B679BE8-4CA1-4C3C-9E85-54FE7EF40403}</ProjectGuid><Keyword>Win32Proj</Keyword><RootNamespace>mousebox_core</RootNamespace><WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion></PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration"><ConfigurationType>StaticLibrary</ConfigurationType><PlatformToolset>v143</PlatformToolset><CharacterSet>Unicode</CharacterSet><UseDebugLibraries Condition="'$(Configuration)'=='Debug'">true</UseDebugLibraries><UseDebugLibraries Condition="'$(Configuration)'=='Release'">false</UseDebugLibraries></PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="PropertySheets"><Import Project="..\build\common.props" /></ImportGroup>
+  <ItemDefinitionGroup>
+    <ClCompile><AdditionalIncludeDirectories>$(RepoRoot)third_party\reader-consumer\src;$(RepoRoot)third_party\json\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories><ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel><MultiProcessorCompilation>true</MultiProcessorCompilation><PreprocessorDefinitions>_USE_MATH_DEFINES;%(PreprocessorDefinitions)</PreprocessorDefinitions><AdditionalOptions>/external:I"$(RepoRoot)third_party\ruckig\include" /external:I"$(RepoRoot)third_party\json\include" /external:I"$(RepoRoot)third_party\cs2-reader\include" %(AdditionalOptions)</AdditionalOptions></ClCompile>
+    <Link><AdditionalDependencies>Ws2_32.lib;d3d11.lib;dxgi.lib;d2d1.lib;dwrite.lib;ole32.lib;Shell32.lib;%(AdditionalDependencies)</AdditionalDependencies></Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="$(RepoRoot)src\**\*.cpp"><ObjectFileName>$(IntDir)src\%(RecursiveDir)%(Filename).obj</ObjectFileName></ClCompile>
+    <ClCompile Include="$(RepoRoot)third_party\ruckig\src\ruckig\*.cpp"><TreatWarningAsError>false</TreatWarningAsError><WarningLevel>Level3</WarningLevel><ObjectFileName>$(IntDir)vendor-ruckig\%(Filename).obj</ObjectFileName></ClCompile>
+    <ClInclude Include="$(RepoRoot)src\**\*.hpp" />
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\**\*.hpp" />
+    <ClInclude Include="$(RepoRoot)third_party\traceline\include\**\*.h" />
+  </ItemGroup>
+  <Import Project="..\third_party\reader-consumer\client-sources.props" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Target Name="VerifyNativeContracts" BeforeTargets="PrepareForBuild">
+    <Exec Command="powershell.exe -NoProfile -ExecutionPolicy Bypass -File &quot;$(RepoRoot)tools\check-native-contracts.ps1&quot;" />
+  </Target>
+</Project>

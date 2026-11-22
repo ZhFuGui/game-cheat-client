@@ -1,0 +1,17 @@
+src/model/primitives.cpp
+src/synchronization/codec/clock_codec.cpp
+src/synchronization/codec/consumer_codec.cpp
+src/synchronization/codec/protobuf_codec.cpp
+src/synchronization/codec/record_codec.cpp
+src/synchronization/codec/state_codec.cpp
+src/synchronization/codec/wire_codec.cpp
+src/synchronization/consumer/diff.cpp
+src/synchronization/consumer/state.cpp
+src/synchronization/container_validation.cpp
+src/synchronization/diff.cpp
+src/synchronization/instance_registry.cpp
+src/synchronization/local_validation.cpp
+src/synchronization/motion_weapon_validation.cpp
+src/synchronization/session.cpp
+src/synchronization/skeleton_validation.cpp
+src/synchronization/state.cpp

@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "primary": {
+    "id": "canger-jinkai-05-w03",
+    "file": "canger-jinkai-05-w03.ttf",
+    "name": "仓耳今楷05 W03",
+    "postscriptName": "TsangerJinKai05-W03",
+    "directWriteFamily": "TsangerJinKai05 W03",
+    "bytes": 26984844,
+    "sha256": "081e62245437a959b5ef31bd899a5d55a172aeb33f92cd5c89c3d8e155ad7c89",
+    "source": "用户提供：仓耳今楷05-W03.ttf",
+    "importedOn": "2026-10-27",
+    "transformation": "原文件逐字节复制，未转换、裁字或修改内部名称"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "theme": {"source": "G:/ulearning-dimo-internal/apps/ui/src/styles", "identity": "DIMO neutral / blue", "implementation": "apps/ui/src/styles/theme.css"},
+  "fonts": [
+    {"package": "@fontsource-variable/geist", "version": "5.2.8", "license": "OFL-1.1", "delivery": "offline Vite assets"},
+    {"package": "@fontsource-variable/geist-mono", "version": "5.2.7", "license": "OFL-1.1", "delivery": "offline Vite assets"}
+  ],
+  "licenses": "apps/ui/public/licenses"
+}

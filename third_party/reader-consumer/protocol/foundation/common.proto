@@ -1,0 +1,27 @@
+syntax = "proto3";
+package pubg.reader.foundation;
+
+// 几何值的来源、时钟域及核验语义由正式同步协议携带。
+message Vec3 {
+  float x = 1; // 向量的 X 分量；坐标系、单位及是否相对原点由使用该向量的字段说明。
+  float y = 2; // 向量的 Y 分量；坐标系、单位及是否相对原点由使用该向量的字段说明。
+  float z = 3; // 向量的 Z 分量；坐标系、单位及是否相对原点由使用该向量的字段说明。
+}
+
+message WorldOrigin {
+  sint32 x = 1; // 世界原点在 X 轴上的原始整数偏移，与关联位置使用相同距离单位。
+  sint32 y = 2; // 世界原点在 Y 轴上的原始整数偏移，与关联位置使用相同距离单位。
+  sint32 z = 3; // 世界原点在 Z 轴上的原始整数偏移，与关联位置使用相同距离单位。
+}
+
+message Quaternion {
+  float x = 1; // 四元数 X 分量，不是欧拉角。
+  float y = 2; // 四元数 Y 分量。
+  float z = 3; // 四元数 Z 分量。
+  float w = 4; // 四元数 W 分量；Reader 已核验有限性及单位长度。
+}
+message Transform {
+  Quaternion rotation = 1; // 旋转四元数；四个分量允许真实零值。
+  Vec3 translation = 2; // 平移，距离单位由关联坐标上下文定义。
+  Vec3 scale = 3; // 三轴缩放；真实零缩放和负缩放均保留。
+}

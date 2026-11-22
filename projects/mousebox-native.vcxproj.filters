@@ -1,0 +1,222 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <ItemGroup>
+    <Filter Include="apps">
+      <UniqueIdentifier>{8CC4C8F2-8A13-5B90-8E66-619C20A94864}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="apps\native-host">
+      <UniqueIdentifier>{0D4EB696-22C1-5E24-AE53-464987786DF5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="apps\native-host\bridge">
+      <UniqueIdentifier>{29DDDF7D-1361-5048-ADF3-47DAACC7BC18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="apps\native-host\cli">
+      <UniqueIdentifier>{F53665D0-3C52-56EB-B9E2-8225F8F6FA81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="apps\native-host\composition">
+      <UniqueIdentifier>{B19A1A97-961C-5B8B-B9F8-28C139064B6B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="apps\native-host\host">
+      <UniqueIdentifier>{02A9B7F1-7A45-546D-8FFC-2069AFBFA169}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="apps\native-host\input">
+      <UniqueIdentifier>{B1A58017-E641-55C0-9780-F7FD6FFAC0C3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="apps\native-host\input\addon">
+      <UniqueIdentifier>{AEE28C30-0037-5E44-80E9-CE0FE413125F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="apps\native-host\resources">
+      <UniqueIdentifier>{BFCBA110-AD8A-582A-8923-CCCEE1C4A340}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="apps\native-host\window">
+      <UniqueIdentifier>{5C9D7ECF-4EDA-592D-A5FA-B64C3129B9F5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(RepoRoot)apps\native-host\bridge\request_ledger.cpp">
+      <Filter>apps\native-host\bridge</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)apps\native-host\bridge\runtime_service.cpp">
+      <Filter>apps\native-host\bridge</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)apps\native-host\bridge\runtime_service_commands.cpp">
+      <Filter>apps\native-host\bridge</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)apps\native-host\bridge\runtime_service_connections.cpp">
+      <Filter>apps\native-host\bridge</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)apps\native-host\bridge\runtime_service_games.cpp">
+      <Filter>apps\native-host\bridge</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)apps\native-host\bridge\runtime_service_learning.cpp">
+      <Filter>apps\native-host\bridge</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)apps\native-host\bridge\runtime_service_logs.cpp">
+      <Filter>apps\native-host\bridge</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)apps\native-host\bridge\runtime_service_models.cpp">
+      <Filter>apps\native-host\bridge</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)apps\native-host\bridge\runtime_service_presentation.cpp">
+      <Filter>apps\native-host\bridge</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)apps\native-host\bridge\runtime_service_reports.cpp">
+      <Filter>apps\native-host\bridge</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)apps\native-host\bridge\runtime_service_settings.cpp">
+      <Filter>apps\native-host\bridge</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)apps\native-host\bridge\runtime_service_snapshot.cpp">
+      <Filter>apps\native-host\bridge</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)apps\native-host\bridge\runtime_service_workspaces.cpp">
+      <Filter>apps\native-host\bridge</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)apps\native-host\bridge\transport.cpp">
+      <Filter>apps\native-host\bridge</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)apps\native-host\cli\controller.cpp">
+      <Filter>apps\native-host\cli</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)apps\native-host\cli\dispatch.cpp">
+      <Filter>apps\native-host\cli</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)apps\native-host\cli\options.cpp">
+      <Filter>apps\native-host\cli</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)apps\native-host\cli\reader.cpp">
+      <Filter>apps\native-host\cli</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)apps\native-host\cli\replay.cpp">
+      <Filter>apps\native-host\cli</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)apps\native-host\composition\game_modules.cpp">
+      <Filter>apps\native-host\composition</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)apps\native-host\host\commands.cpp">
+      <Filter>apps\native-host\host</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)apps\native-host\host\desktop_host.cpp">
+      <Filter>apps\native-host\host</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)apps\native-host\host\presentation.cpp">
+      <Filter>apps\native-host\host</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)apps\native-host\input\capture_channel.cpp">
+      <Filter>apps\native-host\input</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)apps\native-host\input\capture_client.cpp">
+      <Filter>apps\native-host\input</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)apps\native-host\input\capture_payload.cpp">
+      <Filter>apps\native-host\input</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)apps\native-host\input\capture_server.cpp">
+      <Filter>apps\native-host\input</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)apps\native-host\input\raw_capture.cpp">
+      <Filter>apps\native-host\input</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)apps\native-host\input\raw_input_buffer.cpp">
+      <Filter>apps\native-host\input</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)apps\native-host\input\raw_registration.cpp">
+      <Filter>apps\native-host\input</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)apps\native-host\main.cpp">
+      <Filter>apps\native-host</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)apps\native-host\window\game_window.cpp">
+      <Filter>apps\native-host\window</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)apps\native-host\window\native_surface.cpp">
+      <Filter>apps\native-host\window</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)apps\native-host\window\overlay_surface.cpp">
+      <Filter>apps\native-host\window</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)apps\native-host\window\surface_router.cpp">
+      <Filter>apps\native-host\window</Filter>
+    </ClCompile>
+    <ClInclude Include="$(RepoRoot)apps\native-host\bridge\request_ledger.hpp">
+      <Filter>apps\native-host\bridge</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)apps\native-host\bridge\runtime_service.hpp">
+      <Filter>apps\native-host\bridge</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)apps\native-host\bridge\runtime_service_impl.hpp">
+      <Filter>apps\native-host\bridge</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)apps\native-host\bridge\runtime_service_util.hpp">
+      <Filter>apps\native-host\bridge</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)apps\native-host\bridge\transport.hpp">
+      <Filter>apps\native-host\bridge</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)apps\native-host\bridge\workspace_scope.hpp">
+      <Filter>apps\native-host\bridge</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)apps\native-host\cli\dispatch.hpp">
+      <Filter>apps\native-host\cli</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)apps\native-host\cli\options.hpp">
+      <Filter>apps\native-host\cli</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)apps\native-host\composition\game_modules.hpp">
+      <Filter>apps\native-host\composition</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)apps\native-host\host\desktop_host.hpp">
+      <Filter>apps\native-host\host</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)apps\native-host\host\host_state.hpp">
+      <Filter>apps\native-host\host</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)apps\native-host\input\addon\node_api.hpp">
+      <Filter>apps\native-host\input\addon</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)apps\native-host\input\capture_channel.hpp">
+      <Filter>apps\native-host\input</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)apps\native-host\input\capture_client.hpp">
+      <Filter>apps\native-host\input</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)apps\native-host\input\capture_payload.hpp">
+      <Filter>apps\native-host\input</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)apps\native-host\input\capture_server.hpp">
+      <Filter>apps\native-host\input</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)apps\native-host\input\raw_capture.hpp">
+      <Filter>apps\native-host\input</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)apps\native-host\input\raw_input_buffer.hpp">
+      <Filter>apps\native-host\input</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)apps\native-host\input\raw_registration.hpp">
+      <Filter>apps\native-host\input</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)apps\native-host\window\game_window.hpp">
+      <Filter>apps\native-host\window</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)apps\native-host\window\native_surface.hpp">
+      <Filter>apps\native-host\window</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)apps\native-host\window\overlay_surface.hpp">
+      <Filter>apps\native-host\window</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)apps\native-host\window\surface_router.hpp">
+      <Filter>apps\native-host\window</Filter>
+    </ClInclude>
+    <ResourceCompile Include="$(RepoRoot)apps\native-host\resources\fonts.rc">
+      <Filter>apps\native-host\resources</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(RepoRoot)apps\native-host\resources\embedded_font.hpp">
+      <Filter>apps\native-host\resources</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)apps\native-host\window\scene_completion.hpp">
+      <Filter>apps\native-host\window</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

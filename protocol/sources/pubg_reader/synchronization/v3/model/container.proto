@@ -1,0 +1,8 @@
+syntax = "proto3";
+package pubg.reader.synchronization.v3;
+
+import "synchronization/v3/model/shared.proto";
+
+message ContainerValue {
+  InstanceIdentity instance = 1; // 实体身份；当前读取链路未实现，不声明采集能力。
+}

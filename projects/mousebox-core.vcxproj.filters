@@ -1,0 +1,1814 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <ItemGroup>
+    <Filter Include="src\application\output">
+      <UniqueIdentifier>{463F31C5-D541-5D69-9B72-528E60C8D4C1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{D9EFDF2C-9A2D-5ECA-B887-A29FB8C5ED6A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\adapters">
+      <UniqueIdentifier>{11B5EE1D-9C88-55B0-B657-6F31A91F96D2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\adapters\outputs">
+      <UniqueIdentifier>{ABCE3296-5D41-5D44-B072-E2A0D2B38867}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\adapters\outputs\mousebox">
+      <UniqueIdentifier>{42AF3F94-13DB-5FE0-8178-AACF48F8F4CA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\adapters\sources">
+      <UniqueIdentifier>{170BD629-F9AE-5CCF-BEBA-899D68685269}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\adapters\sources\cs2_reader">
+      <UniqueIdentifier>{8E01BF92-93D1-54C0-864C-CD9DAD1F377D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\adapters\sources\inspection">
+      <UniqueIdentifier>{28055A2F-A4A5-5F8C-9E2D-B33C20C0228B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\adapters\sources\pubg_reader">
+      <UniqueIdentifier>{027ECA2B-37F8-527C-B081-C4CAD72D9AD1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\adapters\sources\pubg_reader\detail">
+      <UniqueIdentifier>{809854D4-2CB4-5230-ACE5-A6D60114D5D0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\adapters\spatial">
+      <UniqueIdentifier>{0BA3E7C6-5186-5740-A3BC-0238CD04F92A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\adapters\spatial\traceline">
+      <UniqueIdentifier>{D50D7514-D88E-5EC0-BFC7-6BB58E088A9E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\application">
+      <UniqueIdentifier>{3CF947FA-3536-5797-8EA3-415ACB968305}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\application\assets">
+      <UniqueIdentifier>{CE3065D9-028F-508D-AAE5-FE56A687074E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\application\diagnostics">
+      <UniqueIdentifier>{4C4DF6E5-E14A-5942-A05A-149E903594E2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\application\extensions">
+      <UniqueIdentifier>{933A4D29-9A39-5E00-8B77-9FCA7E0486C3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\application\ports">
+      <UniqueIdentifier>{63896FFB-4D1C-5F51-851D-C82B2F0177F1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\application\settings">
+      <UniqueIdentifier>{980707B0-E049-559E-B8DD-88D07B6533B6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\application\storage">
+      <UniqueIdentifier>{FC8B7F58-3206-527B-9BA5-E830CEB6C94B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\application\tasks">
+      <UniqueIdentifier>{6D79B3DF-9DD9-542B-8D29-EFC4E5EB4B01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\application\workspaces">
+      <UniqueIdentifier>{D0F06B7D-473E-5929-A060-DFE0D6B64699}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\control">
+      <UniqueIdentifier>{E0C516E0-8CA8-56B9-AE82-B87962D20732}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\control\movement">
+      <UniqueIdentifier>{562F993B-561F-5CCF-9DED-CBCD23399D72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\design">
+      <UniqueIdentifier>{4C5D5A50-2B78-5C62-A3A4-A34B55A9F713}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\domain">
+      <UniqueIdentifier>{0C6F6569-1F04-57FD-9D2A-BE34CE71E7C6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\domain\scene">
+      <UniqueIdentifier>{5957EA4E-CDF6-545C-9E07-0511CD0B50CB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\games">
+      <UniqueIdentifier>{1B5494F6-7118-552A-8618-1A8A5CFF9D04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\games\cs2">
+      <UniqueIdentifier>{84D39A59-1968-5B94-BD35-858DE075D4CB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\games\cs2\control">
+      <UniqueIdentifier>{14A1308D-D806-5974-8857-52E50FF14F79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\games\cs2\control\feedback">
+      <UniqueIdentifier>{E8279225-0C1A-5173-8F09-20F9A9457B0C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\games\cs2\control\motion">
+      <UniqueIdentifier>{6C69DD63-21EB-50F5-A6B6-6B24523A1706}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\games\cs2\control\pipeline">
+      <UniqueIdentifier>{6D0BC6AF-3B94-55AE-8D15-438E8B875A55}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\games\cs2\damage_search">
+      <UniqueIdentifier>{A8C72D32-5A81-5919-A478-8B422C74464C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\games\cs2\diagnostics">
+      <UniqueIdentifier>{9CD7EDBE-433C-5D54-A369-5A2136A95258}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\games\cs2\evaluation">
+      <UniqueIdentifier>{26255FB3-F667-5411-9F0E-72524CCED990}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\games\cs2\extensions">
+      <UniqueIdentifier>{1A8CE39E-1AF2-59AA-9844-5B8A001BA2B0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\games\cs2\extensions\best_damage">
+      <UniqueIdentifier>{CCBC1985-CB61-5DF2-821A-37CD35ED7AAE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\games\cs2\extensions\cover">
+      <UniqueIdentifier>{24EF38C6-9A8D-54EA-9851-A8C4BCB93EE8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\games\cs2\extensions\head_damage">
+      <UniqueIdentifier>{63A6C223-927C-5AF1-B483-82B4178079DC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\games\cs2\extensions\remaining_damage">
+      <UniqueIdentifier>{434F3EE7-ABBA-587A-BD32-B35BD213593D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\games\cs2\hitboxes">
+      <UniqueIdentifier>{1D4653EB-5FC1-5762-B6C9-AAE750CCB381}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\games\cs2\hitboxes\generated">
+      <UniqueIdentifier>{FB48BB49-DB16-5458-866F-F147714B846E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\games\cs2\model">
+      <UniqueIdentifier>{B077E9EE-5FD7-557A-8FC7-6A7BC87550CB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\games\cs2\presentation">
+      <UniqueIdentifier>{8F00B39B-3194-5027-AF17-23E06D99C9CB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\games\cs2\rage">
+      <UniqueIdentifier>{D3DCDCB5-8FFD-51F6-A9D5-9520CC6F932A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\games\cs2\settings">
+      <UniqueIdentifier>{F2D7C1D9-1206-5F9A-944C-B5F1BAEA3674}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\games\cs2\trigger">
+      <UniqueIdentifier>{835C8E88-02AF-5060-93F6-47809A40E11D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\games\pubg">
+      <UniqueIdentifier>{9AFBAC5B-F951-5ACD-8CA5-1216454D1D62}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\games\pubg\data">
+      <UniqueIdentifier>{9130AF5F-408A-5C04-A919-541A0DFD18BC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\games\pubg\diagnostics">
+      <UniqueIdentifier>{F5366ACF-62B8-56E2-B03B-FE9162980254}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\games\pubg\model">
+      <UniqueIdentifier>{AD005A46-153B-5201-AC45-79B7EFC4A150}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\games\pubg\pipeline">
+      <UniqueIdentifier>{3B11714A-C6FC-5270-861B-5DB1D9007A0B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\games\pubg\presentation">
+      <UniqueIdentifier>{D731F3F4-DC22-5FF0-AF2A-1783B7454C66}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\games\pubg\runtime">
+      <UniqueIdentifier>{ACDF409A-7CAF-5DE8-A25C-E797996C811A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\games\pubg\settings">
+      <UniqueIdentifier>{FAC21E50-0D38-5540-A0B0-D59F7B7A896E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\platform">
+      <UniqueIdentifier>{DDAD2C77-39AE-5A6E-B2CA-221AE740177E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\platform\windows">
+      <UniqueIdentifier>{A945209C-E019-5039-9C28-D0EF6E7B9923}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\protocol">
+      <UniqueIdentifier>{92EBDF6B-DF81-5716-9FF6-524096438965}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\render">
+      <UniqueIdentifier>{7A5755B9-C486-533E-A44C-E760EE5B4B50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party">
+      <UniqueIdentifier>{CE13807F-679C-5497-993D-EDDAA0E0EE3C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\reader-consumer">
+      <UniqueIdentifier>{CAE0E6B3-15F7-58C4-8460-1929CAA2BBC0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\reader-consumer\src">
+      <UniqueIdentifier>{93D77DEF-ECED-5B60-A79D-B2F8AD437192}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\reader-consumer\src\diagnostics">
+      <UniqueIdentifier>{2F8E4E1E-BD02-51EC-81F7-F017094E8374}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\reader-consumer\src\memory">
+      <UniqueIdentifier>{293109C0-B503-53E9-8CE6-DD3F48D70E9E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\reader-consumer\src\model">
+      <UniqueIdentifier>{954105D5-A367-57D3-98B3-B56F9C65C90E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\reader-consumer\src\model\entities">
+      <UniqueIdentifier>{A41B59E6-D6DC-5BF2-8FF5-D36D78C80A04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\reader-consumer\src\synchronization">
+      <UniqueIdentifier>{20510361-242F-50BA-B90C-C846EEAD595D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\reader-consumer\src\synchronization\codec">
+      <UniqueIdentifier>{98945B23-27FE-5E0F-92FB-0A787FB9733A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\reader-consumer\src\synchronization\consumer">
+      <UniqueIdentifier>{A341DC14-D549-56CA-B3BF-D6608D220107}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\reader-consumer\src\unreal">
+      <UniqueIdentifier>{3370C9CF-F876-5FF7-9C08-AE0971241B48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\ruckig">
+      <UniqueIdentifier>{D918634F-E061-5865-B0A0-ADE00F12BD89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\ruckig\src">
+      <UniqueIdentifier>{035A68F9-41D4-5136-BA33-F9C4F88566DB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\ruckig\src\ruckig">
+      <UniqueIdentifier>{BD2AB5FD-6A52-5CBF-B48E-DB0E010EFC3A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\traceline">
+      <UniqueIdentifier>{2217AE7F-92E0-523E-9F13-8391E14D4BD1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\traceline\include">
+      <UniqueIdentifier>{1F8EB846-F863-5492-900E-E44E18BF5FFE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\traceline\include\cs2-external-autowall">
+      <UniqueIdentifier>{75D96FDD-8BA6-5CF5-A3A6-6DFCF20D49E4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(RepoRoot)src\adapters\outputs\mousebox\serial_sender.cpp">
+      <Filter>src\adapters\outputs\mousebox</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\adapters\sources\cs2_reader\client.cpp">
+      <Filter>src\adapters\sources\cs2_reader</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\adapters\sources\cs2_reader\codec.cpp">
+      <Filter>src\adapters\sources\cs2_reader</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\adapters\sources\inspection\protobuf_json.cpp">
+      <Filter>src\adapters\sources\inspection</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\adapters\sources\pubg_reader\consumer_projection.cpp">
+      <Filter>src\adapters\sources\pubg_reader</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\adapters\sources\pubg_reader\control_projection.cpp">
+      <Filter>src\adapters\sources\pubg_reader</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\adapters\sources\pubg_reader\detail\consumer_local.cpp">
+      <Filter>src\adapters\sources\pubg_reader\detail</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\adapters\sources\pubg_reader\detail\local_projection.cpp">
+      <Filter>src\adapters\sources\pubg_reader\detail</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\adapters\sources\pubg_reader\detail\wire_facts.cpp">
+      <Filter>src\adapters\sources\pubg_reader\detail</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\adapters\sources\pubg_reader\evidence.cpp">
+      <Filter>src\adapters\sources\pubg_reader</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\adapters\sources\pubg_reader\evidence_loader.cpp">
+      <Filter>src\adapters\sources\pubg_reader</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\adapters\sources\pubg_reader\inspection.cpp">
+      <Filter>src\adapters\sources\pubg_reader</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\adapters\sources\pubg_reader\recorded_codec.cpp">
+      <Filter>src\adapters\sources\pubg_reader</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\adapters\sources\pubg_reader\runtime.cpp">
+      <Filter>src\adapters\sources\pubg_reader</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\adapters\sources\pubg_reader\session.cpp">
+      <Filter>src\adapters\sources\pubg_reader</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\adapters\sources\pubg_reader\source.cpp">
+      <Filter>src\adapters\sources\pubg_reader</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\adapters\sources\pubg_reader\transport.cpp">
+      <Filter>src\adapters\sources\pubg_reader</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\adapters\spatial\traceline\ballistics.cpp">
+      <Filter>src\adapters\spatial\traceline</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\adapters\spatial\traceline\catalog.cpp">
+      <Filter>src\adapters\spatial\traceline</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\adapters\spatial\traceline\provider.cpp">
+      <Filter>src\adapters\spatial\traceline</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\application\assets\asset_paths.cpp">
+      <Filter>src\application\assets</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\application\diagnostics\mouse_reports.cpp">
+      <Filter>src\application\diagnostics</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\application\diagnostics\reader_chain.cpp">
+      <Filter>src\application\diagnostics</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\application\diagnostics\runtime_log.cpp">
+      <Filter>src\application\diagnostics</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\application\diagnostics\source_inspector.cpp">
+      <Filter>src\application\diagnostics</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\application\settings\configuration_documents.cpp">
+      <Filter>src\application\settings</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\application\settings\game_configurations.cpp">
+      <Filter>src\application\settings</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\application\settings\settings.cpp">
+      <Filter>src\application\settings</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\application\storage\human_store.cpp">
+      <Filter>src\application\storage</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\application\storage\json_store.cpp">
+      <Filter>src\application\storage</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\application\tasks\background_queue.cpp">
+      <Filter>src\application\tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\application\workspaces\workspace_migration.cpp">
+      <Filter>src\application\workspaces</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\application\workspaces\workspace_storage.cpp">
+      <Filter>src\application\workspaces</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\application\workspaces\workspace_store.cpp">
+      <Filter>src\application\workspaces</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\control\ballistics.cpp">
+      <Filter>src\control</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\control\command_outbox.cpp">
+      <Filter>src\control</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\control\hold_plan.cpp">
+      <Filter>src\control</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\control\human_model.cpp">
+      <Filter>src\control</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\control\human_runtime.cpp">
+      <Filter>src\control</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\control\human_training.cpp">
+      <Filter>src\control</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\control\movement\controller.cpp">
+      <Filter>src\control\movement</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\control\movement\direct.cpp">
+      <Filter>src\control\movement</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\control\movement\recoil_tracking.cpp">
+      <Filter>src\control\movement</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\control\movement\smooth.cpp">
+      <Filter>src\control\movement</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\control\movement\trajectory_smooth.cpp">
+      <Filter>src\control\movement</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\control\sample_time.cpp">
+      <Filter>src\control</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\control\speed_policy.cpp">
+      <Filter>src\control</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\domain\reader_chain_metrics.cpp">
+      <Filter>src\domain</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\domain\scene\observations.cpp">
+      <Filter>src\domain\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\control\static_cover.cpp">
+      <Filter>src\games\cs2\control</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\control\aim_solution.cpp">
+      <Filter>src\games\cs2\control</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\control\calibration_observation.cpp">
+      <Filter>src\games\cs2\control</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\control\count_calibration.cpp">
+      <Filter>src\games\cs2\control</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\control\hitbox_aim.cpp">
+      <Filter>src\games\cs2\control</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\control\modes.cpp">
+      <Filter>src\games\cs2\control</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\control\motion\kinematic.cpp">
+      <Filter>src\games\cs2\control\motion</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\control\motion\v1.cpp">
+      <Filter>src\games\cs2\control\motion</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\control\motion\v2.cpp">
+      <Filter>src\games\cs2\control\motion</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\control\motion\v3.cpp">
+      <Filter>src\games\cs2\control\motion</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\control\output_program.cpp">
+      <Filter>src\games\cs2\control</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\control\pipeline\comparisons.cpp">
+      <Filter>src\games\cs2\control\pipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\control\pipeline\frame_context.cpp">
+      <Filter>src\games\cs2\control\pipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\control\pipeline\geometry.cpp">
+      <Filter>src\games\cs2\control\pipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\control\pipeline\reference.cpp">
+      <Filter>src\games\cs2\control\pipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\control\pipeline\targets.cpp">
+      <Filter>src\games\cs2\control\pipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\control\settings.cpp">
+      <Filter>src\games\cs2\control</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\damage_search\angular_domain.cpp">
+      <Filter>src\games\cs2\damage_search</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\damage_search\search.cpp">
+      <Filter>src\games\cs2\damage_search</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\diagnostics\accuracy_state.cpp">
+      <Filter>src\games\cs2\diagnostics</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\diagnostics\controller_state.cpp">
+      <Filter>src\games\cs2\diagnostics</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\diagnostics\hitbox_state.cpp">
+      <Filter>src\games\cs2\diagnostics</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\diagnostics\map_state.cpp">
+      <Filter>src\games\cs2\diagnostics</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\diagnostics\recoil_state.cpp">
+      <Filter>src\games\cs2\diagnostics</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\diagnostics\runtime_state.cpp">
+      <Filter>src\games\cs2\diagnostics</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\diagnostics\viewpoint_state.cpp">
+      <Filter>src\games\cs2\diagnostics</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\evaluation\recoil.cpp">
+      <Filter>src\games\cs2\evaluation</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\evaluation\weapon_accuracy.cpp">
+      <Filter>src\games\cs2\evaluation</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\extensions\ballistics_session.cpp">
+      <Filter>src\games\cs2\extensions</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\extensions\best_damage\extension.cpp">
+      <Filter>src\games\cs2\extensions\best_damage</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\extensions\best_damage\result.cpp">
+      <Filter>src\games\cs2\extensions\best_damage</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\extensions\cover\extension.cpp">
+      <Filter>src\games\cs2\extensions\cover</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\extensions\cover\sampling.cpp">
+      <Filter>src\games\cs2\extensions\cover</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\extensions\cover\surface_sampling.cpp">
+      <Filter>src\games\cs2\extensions\cover</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\extensions\head_damage\extension.cpp">
+      <Filter>src\games\cs2\extensions\head_damage</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\extensions\head_damage\inputs.cpp">
+      <Filter>src\games\cs2\extensions\head_damage</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\extensions\head_damage\result.cpp">
+      <Filter>src\games\cs2\extensions\head_damage</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\extensions\registry.cpp">
+      <Filter>src\games\cs2\extensions</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\extensions\remaining_damage\extension.cpp">
+      <Filter>src\games\cs2\extensions\remaining_damage</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\extensions\remaining_damage\inputs.cpp">
+      <Filter>src\games\cs2\extensions\remaining_damage</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\extensions\remaining_damage\result.cpp">
+      <Filter>src\games\cs2\extensions\remaining_damage</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\hitboxes\assets.cpp">
+      <Filter>src\games\cs2\hitboxes</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\hitboxes\direction_proximity.cpp">
+      <Filter>src\games\cs2\hitboxes</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\hitboxes\frame.cpp">
+      <Filter>src\games\cs2\hitboxes</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\hitboxes\geometry.cpp">
+      <Filter>src\games\cs2\hitboxes</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\hitboxes\volume.cpp">
+      <Filter>src\games\cs2\hitboxes</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\hitboxes\intersection.cpp">
+      <Filter>src\games\cs2\hitboxes</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\hitboxes\pose.cpp">
+      <Filter>src\games\cs2\hitboxes</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\module_factory.cpp">
+      <Filter>src\games\cs2</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\presentation\best_damage.cpp">
+      <Filter>src\games\cs2\presentation</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\presentation\extension_submission.cpp">
+      <Filter>src\games\cs2\presentation</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\presentation\radar_frame.cpp">
+      <Filter>src\games\cs2\presentation</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\presentation\head_damage_label.cpp">
+      <Filter>src\games\cs2\presentation</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\presentation\remaining_damage_label.cpp">
+      <Filter>src\games\cs2\presentation</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\presentation\submission.cpp">
+      <Filter>src\games\cs2\presentation</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\rage\analysis.cpp">
+      <Filter>src\games\cs2\rage</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\rage\output_program.cpp">
+      <Filter>src\games\cs2\rage</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\rage\scoring.cpp">
+      <Filter>src\games\cs2\rage</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\rage\selection.cpp">
+      <Filter>src\games\cs2\rage</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\rage\settings.cpp">
+      <Filter>src\games\cs2\rage</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\rage\threat.cpp">
+      <Filter>src\games\cs2\rage</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\rage\worker.cpp">
+      <Filter>src\games\cs2\rage</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\settings\configuration.cpp">
+      <Filter>src\games\cs2\settings</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\trigger\controller.cpp">
+      <Filter>src\games\cs2\trigger</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\trigger\reaction_monitor.cpp">
+      <Filter>src\games\cs2\trigger</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\trigger\detection.cpp">
+      <Filter>src\games\cs2\trigger</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\cs2\trigger\reaction.cpp">
+      <Filter>src\games\cs2\trigger</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\pubg\data\ballistic_profiles.cpp">
+      <Filter>src\games\pubg\data</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\pubg\diagnostics\aim_algorithm.cpp">
+      <Filter>src\games\pubg\diagnostics</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\pubg\diagnostics\connection_status.cpp">
+      <Filter>src\games\pubg\diagnostics</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\pubg\diagnostics\reader_metrics.cpp">
+      <Filter>src\games\pubg\diagnostics</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\pubg\diagnostics\reader_metrics_presentation.cpp">
+      <Filter>src\games\pubg\diagnostics</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\pubg\diagnostics\reader_telemetry.cpp">
+      <Filter>src\games\pubg\diagnostics</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\pubg\diagnostics\runtime_state.cpp">
+      <Filter>src\games\pubg\diagnostics</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\pubg\diagnostics\timing_metadata.cpp">
+      <Filter>src\games\pubg\diagnostics</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\pubg\module.cpp">
+      <Filter>src\games\pubg</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\pubg\module_factory.cpp">
+      <Filter>src\games\pubg</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\pubg\pipeline\aim_geometry.cpp">
+      <Filter>src\games\pubg\pipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\pubg\pipeline\ballistic_aim.cpp">
+      <Filter>src\games\pubg\pipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\pubg\pipeline\calibration_profiles.cpp">
+      <Filter>src\games\pubg\pipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\pubg\pipeline\eligibility.cpp">
+      <Filter>src\games\pubg\pipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\pubg\pipeline\latency_prediction.cpp">
+      <Filter>src\games\pubg\pipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\pubg\pipeline\live_controller.cpp">
+      <Filter>src\games\pubg\pipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\pubg\pipeline\motion_planner.cpp">
+      <Filter>src\games\pubg\pipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\pubg\pipeline\native_aim.cpp">
+      <Filter>src\games\pubg\pipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\pubg\pipeline\target_selector.cpp">
+      <Filter>src\games\pubg\pipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\pubg\pipeline\weapon_aim.cpp">
+      <Filter>src\games\pubg\pipeline</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\pubg\presentation\esp_scene.cpp">
+      <Filter>src\games\pubg\presentation</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\pubg\presentation\preview_scene.cpp">
+      <Filter>src\games\pubg\presentation</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\pubg\presentation\submission.cpp">
+      <Filter>src\games\pubg\presentation</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\pubg\runtime\backend.cpp">
+      <Filter>src\games\pubg\runtime</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\pubg\runtime\backend_calibration.cpp">
+      <Filter>src\games\pubg\runtime</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\pubg\runtime\backend_configuration.cpp">
+      <Filter>src\games\pubg\runtime</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\pubg\runtime\backend_device.cpp">
+      <Filter>src\games\pubg\runtime</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\pubg\runtime\backend_inspection.cpp">
+      <Filter>src\games\pubg\runtime</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\pubg\runtime\backend_reader.cpp">
+      <Filter>src\games\pubg\runtime</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\pubg\runtime\calibration.cpp">
+      <Filter>src\games\pubg\runtime</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\pubg\runtime\output.cpp">
+      <Filter>src\games\pubg\runtime</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\pubg\settings\application_adapter.cpp">
+      <Filter>src\games\pubg\settings</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\games\registry.cpp">
+      <Filter>src\games</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\platform\windows\console.cpp">
+      <Filter>src\platform\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\platform\windows\dynamic_library.cpp">
+      <Filter>src\platform\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\platform\windows\foreground_process.cpp">
+      <Filter>src\platform\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\platform\windows\framed_socket.cpp">
+      <Filter>src\platform\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\platform\windows\input.cpp">
+      <Filter>src\platform\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\platform\windows\key_binding.cpp">
+      <Filter>src\platform\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\platform\windows\ports.cpp">
+      <Filter>src\platform\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\platform\windows\qpc.cpp">
+      <Filter>src\platform\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\platform\windows\serial_port.cpp">
+      <Filter>src\platform\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\protocol\control_codec.cpp">
+      <Filter>src\protocol</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\render\bundled_font.cpp">
+      <Filter>src\render</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\render\composition_target.cpp">
+      <Filter>src\render</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\render\d2d_esp_geometry.cpp">
+      <Filter>src\render</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\render\d2d_scene_painter.cpp">
+      <Filter>src\render</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\render\d3d_mesh_painter.cpp">
+      <Filter>src\render</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\render\directx_renderer.cpp">
+      <Filter>src\render</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\render\dxgi_adapters.cpp">
+      <Filter>src\render</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\render\esp_bearing.cpp">
+      <Filter>src\render</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\render\esp_scale.cpp">
+      <Filter>src\render</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\render\frame_clock.cpp">
+      <Filter>src\render</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\render\frame_timing.cpp">
+      <Filter>src\render</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\render\gpu_completion.cpp">
+      <Filter>src\render</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)src\render\triangle_mesh.cpp">
+      <Filter>src\render</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)third_party\reader-consumer\src\model\primitives.cpp">
+      <Filter>third_party\reader-consumer\src\model</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\codec\clock_codec.cpp">
+      <Filter>third_party\reader-consumer\src\synchronization\codec</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\codec\consumer_codec.cpp">
+      <Filter>third_party\reader-consumer\src\synchronization\codec</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\codec\protobuf_codec.cpp">
+      <Filter>third_party\reader-consumer\src\synchronization\codec</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\codec\record_codec.cpp">
+      <Filter>third_party\reader-consumer\src\synchronization\codec</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\codec\state_codec.cpp">
+      <Filter>third_party\reader-consumer\src\synchronization\codec</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\codec\wire_codec.cpp">
+      <Filter>third_party\reader-consumer\src\synchronization\codec</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\consumer\diff.cpp">
+      <Filter>third_party\reader-consumer\src\synchronization\consumer</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\consumer\state.cpp">
+      <Filter>third_party\reader-consumer\src\synchronization\consumer</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\container_validation.cpp">
+      <Filter>third_party\reader-consumer\src\synchronization</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\diff.cpp">
+      <Filter>third_party\reader-consumer\src\synchronization</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\instance_registry.cpp">
+      <Filter>third_party\reader-consumer\src\synchronization</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\local_validation.cpp">
+      <Filter>third_party\reader-consumer\src\synchronization</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\motion_weapon_validation.cpp">
+      <Filter>third_party\reader-consumer\src\synchronization</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\session.cpp">
+      <Filter>third_party\reader-consumer\src\synchronization</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\skeleton_validation.cpp">
+      <Filter>third_party\reader-consumer\src\synchronization</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\state.cpp">
+      <Filter>third_party\reader-consumer\src\synchronization</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)third_party\ruckig\src\ruckig\brake.cpp">
+      <Filter>third_party\ruckig\src\ruckig</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)third_party\ruckig\src\ruckig\position_first_step1.cpp">
+      <Filter>third_party\ruckig\src\ruckig</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)third_party\ruckig\src\ruckig\position_first_step2.cpp">
+      <Filter>third_party\ruckig\src\ruckig</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)third_party\ruckig\src\ruckig\position_second_step1.cpp">
+      <Filter>third_party\ruckig\src\ruckig</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)third_party\ruckig\src\ruckig\position_second_step2.cpp">
+      <Filter>third_party\ruckig\src\ruckig</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)third_party\ruckig\src\ruckig\position_third_step1.cpp">
+      <Filter>third_party\ruckig\src\ruckig</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)third_party\ruckig\src\ruckig\position_third_step2.cpp">
+      <Filter>third_party\ruckig\src\ruckig</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)third_party\ruckig\src\ruckig\velocity_second_step1.cpp">
+      <Filter>third_party\ruckig\src\ruckig</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)third_party\ruckig\src\ruckig\velocity_second_step2.cpp">
+      <Filter>third_party\ruckig\src\ruckig</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)third_party\ruckig\src\ruckig\velocity_third_step1.cpp">
+      <Filter>third_party\ruckig\src\ruckig</Filter>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)third_party\ruckig\src\ruckig\velocity_third_step2.cpp">
+      <Filter>third_party\ruckig\src\ruckig</Filter>
+    </ClCompile>
+    <ClInclude Include="$(RepoRoot)src\adapters\outputs\mousebox\connection_probe.hpp">
+      <Filter>src\adapters\outputs\mousebox</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\adapters\outputs\mousebox\one_shot.hpp">
+      <Filter>src\adapters\outputs\mousebox</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\adapters\outputs\mousebox\serial_sender.hpp">
+      <Filter>src\adapters\outputs\mousebox</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\adapters\sources\cs2_reader\client.hpp">
+      <Filter>src\adapters\sources\cs2_reader</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\adapters\sources\cs2_reader\codec.hpp">
+      <Filter>src\adapters\sources\cs2_reader</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\adapters\sources\cs2_reader\subscription.hpp">
+      <Filter>src\adapters\sources\cs2_reader</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\adapters\sources\inspection\generated_schema.hpp">
+      <Filter>src\adapters\sources\inspection</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\adapters\sources\inspection\protobuf_json.hpp">
+      <Filter>src\adapters\sources\inspection</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\adapters\sources\pubg_reader\connection.hpp">
+      <Filter>src\adapters\sources\pubg_reader</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\adapters\sources\pubg_reader\contract.hpp">
+      <Filter>src\adapters\sources\pubg_reader</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\adapters\sources\pubg_reader\control_projection.hpp">
+      <Filter>src\adapters\sources\pubg_reader</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\adapters\sources\pubg_reader\detail\consumer_facts.hpp">
+      <Filter>src\adapters\sources\pubg_reader\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\adapters\sources\pubg_reader\detail\local_projection.hpp">
+      <Filter>src\adapters\sources\pubg_reader\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\adapters\sources\pubg_reader\detail\wire_facts.hpp">
+      <Filter>src\adapters\sources\pubg_reader\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\adapters\sources\pubg_reader\evidence.hpp">
+      <Filter>src\adapters\sources\pubg_reader</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\adapters\sources\pubg_reader\evidence_loader.hpp">
+      <Filter>src\adapters\sources\pubg_reader</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\adapters\sources\pubg_reader\inspection.hpp">
+      <Filter>src\adapters\sources\pubg_reader</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\adapters\sources\pubg_reader\recorded_codec.hpp">
+      <Filter>src\adapters\sources\pubg_reader</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\adapters\sources\pubg_reader\runtime.hpp">
+      <Filter>src\adapters\sources\pubg_reader</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\adapters\sources\pubg_reader\session.hpp">
+      <Filter>src\adapters\sources\pubg_reader</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\adapters\sources\pubg_reader\source.hpp">
+      <Filter>src\adapters\sources\pubg_reader</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\adapters\sources\pubg_reader\transport.hpp">
+      <Filter>src\adapters\sources\pubg_reader</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\adapters\spatial\traceline\ballistics.hpp">
+      <Filter>src\adapters\spatial\traceline</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\adapters\spatial\traceline\catalog.hpp">
+      <Filter>src\adapters\spatial\traceline</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\adapters\spatial\traceline\provider.hpp">
+      <Filter>src\adapters\spatial\traceline</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\application\assets\asset_paths.hpp">
+      <Filter>src\application\assets</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\application\diagnostics\mouse_reports.hpp">
+      <Filter>src\application\diagnostics</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\application\diagnostics\presentation_format.hpp">
+      <Filter>src\application\diagnostics</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\application\diagnostics\reader_chain.hpp">
+      <Filter>src\application\diagnostics</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\application\diagnostics\runtime_log.hpp">
+      <Filter>src\application\diagnostics</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\application\diagnostics\source_inspector.hpp">
+      <Filter>src\application\diagnostics</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\application\diagnostics\text.hpp">
+      <Filter>src\application\diagnostics</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\application\extensions\contracts.hpp">
+      <Filter>src\application\extensions</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\application\extensions\host.hpp">
+      <Filter>src\application\extensions</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\application\extensions\serial_host.hpp">
+      <Filter>src\application\extensions</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\application\json.hpp">
+      <Filter>src\application</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\application\ports\data_source.hpp">
+      <Filter>src\application\ports</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\application\ports\game_application.hpp">
+      <Filter>src\application\ports</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\application\ports\game_configuration.hpp">
+      <Filter>src\application\ports</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\application\ports\game_module.hpp">
+      <Filter>src\application\ports</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\application\ports\output_device.hpp">
+      <Filter>src\application\ports</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\application\ports\output_program.hpp">
+      <Filter>src\application\ports</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\application\ports\scene_visibility.hpp">
+      <Filter>src\application\ports</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\application\ports\shot_prediction.hpp">
+      <Filter>src\application\ports</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\application\ports\source_inspection.hpp">
+      <Filter>src\application\ports</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\application\settings\application_values.hpp">
+      <Filter>src\application\settings</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\application\settings\configuration_documents.hpp">
+      <Filter>src\application\settings</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\application\settings\game_configurations.hpp">
+      <Filter>src\application\settings</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\application\settings\settings.hpp">
+      <Filter>src\application\settings</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\application\storage\human_store.hpp">
+      <Filter>src\application\storage</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\application\storage\json_store.hpp">
+      <Filter>src\application\storage</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\application\tasks\background_queue.hpp">
+      <Filter>src\application\tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\application\workspaces\workspace_migration.hpp">
+      <Filter>src\application\workspaces</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\application\workspaces\workspace_storage.hpp">
+      <Filter>src\application\workspaces</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\application\workspaces\workspace_store.hpp">
+      <Filter>src\application\workspaces</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\control\activation.hpp">
+      <Filter>src\control</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\control\ballistics.hpp">
+      <Filter>src\control</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\control\button_feedback.hpp">
+      <Filter>src\control</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\control\command_outbox.hpp">
+      <Filter>src\control</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\control\device_motion.hpp">
+      <Filter>src\control</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\control\hold_plan.hpp">
+      <Filter>src\control</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\control\human_motion.hpp">
+      <Filter>src\control</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\control\human_runtime.hpp">
+      <Filter>src\control</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\control\motion_policy.hpp">
+      <Filter>src\control</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\control\motion_step.hpp">
+      <Filter>src\control</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\control\movement\algorithm.hpp">
+      <Filter>src\control\movement</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\control\movement\controller.hpp">
+      <Filter>src\control\movement</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\control\movement\direct.hpp">
+      <Filter>src\control\movement</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\control\movement\factors.hpp">
+      <Filter>src\control\movement</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\control\movement\recoil_tracking.hpp">
+      <Filter>src\control\movement</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\control\movement\smooth.hpp">
+      <Filter>src\control\movement</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\control\movement\trajectory_smooth.hpp">
+      <Filter>src\control\movement</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\control\movement\types.hpp">
+      <Filter>src\control\movement</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\control\output_mode.hpp">
+      <Filter>src\control</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\control\sample_time.hpp">
+      <Filter>src\control</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\control\speed_policy.hpp">
+      <Filter>src\control</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\design\theme_tokens.hpp">
+      <Filter>src\design</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\domain\connection_policy.hpp">
+      <Filter>src\domain</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\domain\game.hpp">
+      <Filter>src\domain</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\domain\math.hpp">
+      <Filter>src\domain</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\domain\physics.hpp">
+      <Filter>src\domain</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\domain\reader_chain_metrics.hpp">
+      <Filter>src\domain</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\domain\rolling_counter.hpp">
+      <Filter>src\domain</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\domain\scene\observations.hpp">
+      <Filter>src\domain\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\domain\source_clock.hpp">
+      <Filter>src\domain</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\domain\source_receipt.hpp">
+      <Filter>src\domain</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\domain\source_sample.hpp">
+      <Filter>src\domain</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\control\aim_solution.hpp">
+      <Filter>src\games\cs2\control</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\control\static_cover.hpp">
+      <Filter>src\games\cs2\control</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\control\aim_types.hpp">
+      <Filter>src\games\cs2\control</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\control\calibration_observation.hpp">
+      <Filter>src\games\cs2\control</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\control\count_calibration.hpp">
+      <Filter>src\games\cs2\control</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\control\hitbox_aim.hpp">
+      <Filter>src\games\cs2\control</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\control\hitbox_aim_settings.hpp">
+      <Filter>src\games\cs2\control</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\control\feedback\pending_motion.hpp">
+      <Filter>src\games\cs2\control\feedback</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\control\modes.hpp">
+      <Filter>src\games\cs2\control</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\control\motion\controller.hpp">
+      <Filter>src\games\cs2\control\motion</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\control\motion\kinematic.hpp">
+      <Filter>src\games\cs2\control\motion</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\control\motion\types.hpp">
+      <Filter>src\games\cs2\control\motion</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\control\motion\v1.hpp">
+      <Filter>src\games\cs2\control\motion</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\control\motion\v2.hpp">
+      <Filter>src\games\cs2\control\motion</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\control\motion\v3.hpp">
+      <Filter>src\games\cs2\control\motion</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\control\output_program.hpp">
+      <Filter>src\games\cs2\control</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\control\pipeline\angles.hpp">
+      <Filter>src\games\cs2\control\pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\control\pipeline\comparisons.hpp">
+      <Filter>src\games\cs2\control\pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\control\pipeline\frame_context.hpp">
+      <Filter>src\games\cs2\control\pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\control\pipeline\geometry.hpp">
+      <Filter>src\games\cs2\control\pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\control\pipeline\reference.hpp">
+      <Filter>src\games\cs2\control\pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\control\pipeline\targets.hpp">
+      <Filter>src\games\cs2\control\pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\control\pipeline\timing.hpp">
+      <Filter>src\games\cs2\control\pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\control\policy.hpp">
+      <Filter>src\games\cs2\control</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\control\settings.hpp">
+      <Filter>src\games\cs2\control</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\damage_search\angular_domain.hpp">
+      <Filter>src\games\cs2\damage_search</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\damage_search\search.hpp">
+      <Filter>src\games\cs2\damage_search</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\diagnostics\accuracy_state.hpp">
+      <Filter>src\games\cs2\diagnostics</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\diagnostics\control_messages.hpp">
+      <Filter>src\games\cs2\diagnostics</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\diagnostics\controller_state.hpp">
+      <Filter>src\games\cs2\diagnostics</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\diagnostics\hitbox_state.hpp">
+      <Filter>src\games\cs2\diagnostics</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\diagnostics\map_state.hpp">
+      <Filter>src\games\cs2\diagnostics</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\diagnostics\recoil_state.hpp">
+      <Filter>src\games\cs2\diagnostics</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\diagnostics\runtime_state.hpp">
+      <Filter>src\games\cs2\diagnostics</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\diagnostics\viewpoint_state.hpp">
+      <Filter>src\games\cs2\diagnostics</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\evaluation\recoil.hpp">
+      <Filter>src\games\cs2\evaluation</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\evaluation\weapon_accuracy.hpp">
+      <Filter>src\games\cs2\evaluation</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\extensions\ballistics_session.hpp">
+      <Filter>src\games\cs2\extensions</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\extensions\best_damage\definition.hpp">
+      <Filter>src\games\cs2\extensions\best_damage</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\extensions\best_damage\extension.hpp">
+      <Filter>src\games\cs2\extensions\best_damage</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\extensions\best_damage\result.hpp">
+      <Filter>src\games\cs2\extensions\best_damage</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\extensions\cover\definition.hpp">
+      <Filter>src\games\cs2\extensions\cover</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\extensions\cover\extension.hpp">
+      <Filter>src\games\cs2\extensions\cover</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\extensions\cover\result.hpp">
+      <Filter>src\games\cs2\extensions\cover</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\extensions\cover\sampling.hpp">
+      <Filter>src\games\cs2\extensions\cover</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\extensions\frame_input.hpp">
+      <Filter>src\games\cs2\extensions</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\extensions\head_damage\definition.hpp">
+      <Filter>src\games\cs2\extensions\head_damage</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\extensions\head_damage\extension.hpp">
+      <Filter>src\games\cs2\extensions\head_damage</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\extensions\head_damage\inputs.hpp">
+      <Filter>src\games\cs2\extensions\head_damage</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\extensions\head_damage\result.hpp">
+      <Filter>src\games\cs2\extensions\head_damage</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\extensions\registry.hpp">
+      <Filter>src\games\cs2\extensions</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\extensions\remaining_damage\definition.hpp">
+      <Filter>src\games\cs2\extensions\remaining_damage</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\extensions\remaining_damage\extension.hpp">
+      <Filter>src\games\cs2\extensions\remaining_damage</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\extensions\remaining_damage\inputs.hpp">
+      <Filter>src\games\cs2\extensions\remaining_damage</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\extensions\remaining_damage\result.hpp">
+      <Filter>src\games\cs2\extensions\remaining_damage</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\hitboxes\assets.hpp">
+      <Filter>src\games\cs2\hitboxes</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\hitboxes\frame.hpp">
+      <Filter>src\games\cs2\hitboxes</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\hitboxes\generated\agents_14192.hpp">
+      <Filter>src\games\cs2\hitboxes\generated</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\hitboxes\geometry.hpp">
+      <Filter>src\games\cs2\hitboxes</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\hitboxes\volume.hpp">
+      <Filter>src\games\cs2\hitboxes</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\hitboxes\intersection.hpp">
+      <Filter>src\games\cs2\hitboxes</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\hitboxes\pose.hpp">
+      <Filter>src\games\cs2\hitboxes</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\model\accuracy.hpp">
+      <Filter>src\games\cs2\model</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\model\geometry.hpp">
+      <Filter>src\games\cs2\model</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\model\recoil_state.hpp">
+      <Filter>src\games\cs2\model</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\model\snapshot.hpp">
+      <Filter>src\games\cs2\model</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\model\target_filter.hpp">
+      <Filter>src\games\cs2\model</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\module_factory.hpp">
+      <Filter>src\games\cs2</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\presentation\best_damage.hpp">
+      <Filter>src\games\cs2\presentation</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\presentation\cover_geometry.hpp">
+      <Filter>src\games\cs2\presentation</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\presentation\extension_submission.hpp">
+      <Filter>src\games\cs2\presentation</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\presentation\radar_frame.hpp">
+      <Filter>src\games\cs2\presentation</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\presentation\head_damage_label.hpp">
+      <Filter>src\games\cs2\presentation</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\presentation\remaining_damage_label.hpp">
+      <Filter>src\games\cs2\presentation</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\presentation\submission.hpp">
+      <Filter>src\games\cs2\presentation</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\rage\analysis.hpp">
+      <Filter>src\games\cs2\rage</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\rage\output_program.hpp">
+      <Filter>src\games\cs2\rage</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\rage\scoring.hpp">
+      <Filter>src\games\cs2\rage</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\rage\settings.hpp">
+      <Filter>src\games\cs2\rage</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\rage\threat.hpp">
+      <Filter>src\games\cs2\rage</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\rage\worker.hpp">
+      <Filter>src\games\cs2\rage</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\settings\configuration.hpp">
+      <Filter>src\games\cs2\settings</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\settings\hitbox_inset.hpp">
+      <Filter>src\games\cs2\settings</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\trigger\controller.hpp">
+      <Filter>src\games\cs2\trigger</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\trigger\click_timing.hpp">
+      <Filter>src\games\cs2\trigger</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\trigger\reaction_monitor.hpp">
+      <Filter>src\games\cs2\trigger</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\trigger\detection.hpp">
+      <Filter>src\games\cs2\trigger</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\trigger\reaction.hpp">
+      <Filter>src\games\cs2\trigger</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\cs2\trigger\weapon_filter.hpp">
+      <Filter>src\games\cs2\trigger</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\pubg\data\ballistic_profiles.hpp">
+      <Filter>src\games\pubg\data</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\pubg\diagnostics\aim_algorithm.hpp">
+      <Filter>src\games\pubg\diagnostics</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\pubg\diagnostics\connection_status.hpp">
+      <Filter>src\games\pubg\diagnostics</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\pubg\diagnostics\reader_metrics.hpp">
+      <Filter>src\games\pubg\diagnostics</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\pubg\diagnostics\reader_metrics_presentation.hpp">
+      <Filter>src\games\pubg\diagnostics</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\pubg\diagnostics\reader_telemetry.hpp">
+      <Filter>src\games\pubg\diagnostics</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\pubg\diagnostics\runtime_state.hpp">
+      <Filter>src\games\pubg\diagnostics</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\pubg\diagnostics\timing_metadata.hpp">
+      <Filter>src\games\pubg\diagnostics</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\pubg\model\aim_part.hpp">
+      <Filter>src\games\pubg\model</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\pubg\model\ballistics_settings.hpp">
+      <Filter>src\games\pubg\model</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\pubg\model\bone_role.hpp">
+      <Filter>src\games\pubg\model</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\pubg\model\control_frame.hpp">
+      <Filter>src\games\pubg\model</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\pubg\model\esp_layers.hpp">
+      <Filter>src\games\pubg\model</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\pubg\model\identity.hpp">
+      <Filter>src\games\pubg\model</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\pubg\model\native_aim_profiles.hpp">
+      <Filter>src\games\pubg\model</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\pubg\model\source_sample.hpp">
+      <Filter>src\games\pubg\model</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\pubg\model\timing_settings.hpp">
+      <Filter>src\games\pubg\model</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\pubg\model\weapon_aim.hpp">
+      <Filter>src\games\pubg\model</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\pubg\module.hpp">
+      <Filter>src\games\pubg</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\pubg\module_factory.hpp">
+      <Filter>src\games\pubg</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\pubg\pipeline\ballistic_aim.hpp">
+      <Filter>src\games\pubg\pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\pubg\pipeline\calibration_profiles.hpp">
+      <Filter>src\games\pubg\pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\pubg\pipeline\eligibility.hpp">
+      <Filter>src\games\pubg\pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\pubg\pipeline\latency_prediction.hpp">
+      <Filter>src\games\pubg\pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\pubg\pipeline\live_controller.hpp">
+      <Filter>src\games\pubg\pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\pubg\pipeline\motion_planner.hpp">
+      <Filter>src\games\pubg\pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\pubg\pipeline\native_aim.hpp">
+      <Filter>src\games\pubg\pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\pubg\pipeline\target_selector.hpp">
+      <Filter>src\games\pubg\pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\pubg\presentation\esp_scene.hpp">
+      <Filter>src\games\pubg\presentation</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\pubg\presentation\preview_scene.hpp">
+      <Filter>src\games\pubg\presentation</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\pubg\presentation\submission.hpp">
+      <Filter>src\games\pubg\presentation</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\pubg\runtime\backend.hpp">
+      <Filter>src\games\pubg\runtime</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\pubg\runtime\backend_data.hpp">
+      <Filter>src\games\pubg\runtime</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\pubg\runtime\runtime_models.hpp">
+      <Filter>src\games\pubg\runtime</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\pubg\runtime\status_text.hpp">
+      <Filter>src\games\pubg\runtime</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\pubg\settings\application_adapter.hpp">
+      <Filter>src\games\pubg\settings</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\games\registry.hpp">
+      <Filter>src\games</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\platform\windows\console.hpp">
+      <Filter>src\platform\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\platform\windows\dynamic_library.hpp">
+      <Filter>src\platform\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\platform\windows\foreground_process.hpp">
+      <Filter>src\platform\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\platform\windows\framed_socket.hpp">
+      <Filter>src\platform\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\platform\windows\input.hpp">
+      <Filter>src\platform\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\platform\windows\key_binding.hpp">
+      <Filter>src\platform\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\platform\windows\ports.hpp">
+      <Filter>src\platform\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\platform\windows\qpc.hpp">
+      <Filter>src\platform\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\platform\windows\serial_port.hpp">
+      <Filter>src\platform\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\protocol\control_codec.hpp">
+      <Filter>src\protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\render\bundled_font.hpp">
+      <Filter>src\render</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\render\composition_target.hpp">
+      <Filter>src\render</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\render\d2d_esp_geometry.hpp">
+      <Filter>src\render</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\render\d2d_scene_painter.hpp">
+      <Filter>src\render</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\render\d3d_mesh_painter.hpp">
+      <Filter>src\render</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\render\directx_error.hpp">
+      <Filter>src\render</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\render\directx_renderer.hpp">
+      <Filter>src\render</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\render\dxgi_adapters.hpp">
+      <Filter>src\render</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\render\esp_bearing.hpp">
+      <Filter>src\render</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\render\esp_options.hpp">
+      <Filter>src\render</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\render\esp_scale.hpp">
+      <Filter>src\render</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\render\frame_clock.hpp">
+      <Filter>src\render</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\render\frame_timing.hpp">
+      <Filter>src\render</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\render\gpu_completion.hpp">
+      <Filter>src\render</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\render\graphics_adapter.hpp">
+      <Filter>src\render</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\render\primitives.hpp">
+      <Filter>src\render</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\render\scene_submission.hpp">
+      <Filter>src\render</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\render\triangle_mesh.hpp">
+      <Filter>src\render</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\diagnostics\work_progress.hpp">
+      <Filter>third_party\reader-consumer\src\diagnostics</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\memory\address.hpp">
+      <Filter>third_party\reader-consumer\src\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\memory\issue.hpp">
+      <Filter>third_party\reader-consumer\src\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\memory\read_stats.hpp">
+      <Filter>third_party\reader-consumer\src\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\model\actor_directory.hpp">
+      <Filter>third_party\reader-consumer\src\model</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\model\capture_metrics.hpp">
+      <Filter>third_party\reader-consumer\src\model</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\model\category.hpp">
+      <Filter>third_party\reader-consumer\src\model</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\model\current_facts.hpp">
+      <Filter>third_party\reader-consumer\src\model</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\model\entities\body_skeleton.hpp">
+      <Filter>third_party\reader-consumer\src\model\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\model\entities\character.hpp">
+      <Filter>third_party\reader-consumer\src\model\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\model\entities\container.hpp">
+      <Filter>third_party\reader-consumer\src\model\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\model\entities\creature.hpp">
+      <Filter>third_party\reader-consumer\src\model\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\model\entities\field_presence.hpp">
+      <Filter>third_party\reader-consumer\src\model\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\model\entities\item.hpp">
+      <Filter>third_party\reader-consumer\src\model\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\model\entities\movement.hpp">
+      <Filter>third_party\reader-consumer\src\model\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\model\entities\muzzle.hpp">
+      <Filter>third_party\reader-consumer\src\model\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\model\entities\observation.hpp">
+      <Filter>third_party\reader-consumer\src\model\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\model\entities\pickup.hpp">
+      <Filter>third_party\reader-consumer\src\model\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\model\entities\skeleton.hpp">
+      <Filter>third_party\reader-consumer\src\model\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\model\entities\vehicle.hpp">
+      <Filter>third_party\reader-consumer\src\model\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\model\entities\world_velocity.hpp">
+      <Filter>third_party\reader-consumer\src\model\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\model\entity_admission.hpp">
+      <Filter>third_party\reader-consumer\src\model</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\model\entity_collection.hpp">
+      <Filter>third_party\reader-consumer\src\model</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\model\frame.hpp">
+      <Filter>third_party\reader-consumer\src\model</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\model\geometry.hpp">
+      <Filter>third_party\reader-consumer\src\model</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\model\local.hpp">
+      <Filter>third_party\reader-consumer\src\model</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\model\primitives.hpp">
+      <Filter>third_party\reader-consumer\src\model</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\model\raw_field.hpp">
+      <Filter>third_party\reader-consumer\src\model</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\model\session.hpp">
+      <Filter>third_party\reader-consumer\src\model</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\model\subscription.hpp">
+      <Filter>third_party\reader-consumer\src\model</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\model\view.hpp">
+      <Filter>third_party\reader-consumer\src\model</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\basic_session.hpp">
+      <Filter>third_party\reader-consumer\src\synchronization</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\codec\consumer_codec.hpp">
+      <Filter>third_party\reader-consumer\src\synchronization\codec</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\codec\consumer_members.hpp">
+      <Filter>third_party\reader-consumer\src\synchronization\codec</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\codec\detail.hpp">
+      <Filter>third_party\reader-consumer\src\synchronization\codec</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\codec\schema.hpp">
+      <Filter>third_party\reader-consumer\src\synchronization\codec</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\codec\wire.hpp">
+      <Filter>third_party\reader-consumer\src\synchronization\codec</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\consumer\diff.hpp">
+      <Filter>third_party\reader-consumer\src\synchronization\consumer</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\consumer\projection.hpp">
+      <Filter>third_party\reader-consumer\src\synchronization\consumer</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\consumer\session.hpp">
+      <Filter>third_party\reader-consumer\src\synchronization\consumer</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\consumer\state.hpp">
+      <Filter>third_party\reader-consumer\src\synchronization\consumer</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\container_projection.hpp">
+      <Filter>third_party\reader-consumer\src\synchronization</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\container_validation.hpp">
+      <Filter>third_party\reader-consumer\src\synchronization</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\diff.hpp">
+      <Filter>third_party\reader-consumer\src\synchronization</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\instance_registry.hpp">
+      <Filter>third_party\reader-consumer\src\synchronization</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\local_projection.hpp">
+      <Filter>third_party\reader-consumer\src\synchronization</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\local_validation.hpp">
+      <Filter>third_party\reader-consumer\src\synchronization</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\motion_weapon_projection.hpp">
+      <Filter>third_party\reader-consumer\src\synchronization</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\motion_weapon_validation.hpp">
+      <Filter>third_party\reader-consumer\src\synchronization</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\projection.hpp">
+      <Filter>third_party\reader-consumer\src\synchronization</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\projection_authority.hpp">
+      <Filter>third_party\reader-consumer\src\synchronization</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\publication.hpp">
+      <Filter>third_party\reader-consumer\src\synchronization</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\session.hpp">
+      <Filter>third_party\reader-consumer\src\synchronization</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\session_types.hpp">
+      <Filter>third_party\reader-consumer\src\synchronization</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\skeleton_projection.hpp">
+      <Filter>third_party\reader-consumer\src\synchronization</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\skeleton_validation.hpp">
+      <Filter>third_party\reader-consumer\src\synchronization</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\state.hpp">
+      <Filter>third_party\reader-consumer\src\synchronization</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\reader-consumer\src\unreal\transform.hpp">
+      <Filter>third_party\reader-consumer\src\unreal</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\traceline\include\cs2-external-autowall\api.h">
+      <Filter>third_party\traceline\include\cs2-external-autowall</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)third_party\traceline\include\cs2-external-autowall\types.h">
+      <Filter>third_party\traceline\include\cs2-external-autowall</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(RepoRoot)src\protocol\protobuf_reader.hpp">
+      <Filter>src\protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\adapters\sources\cs2_reader\field_values.hpp">
+      <Filter>src\adapters\sources\cs2_reader</Filter>
+    </ClInclude>
+    <ClCompile Include="$(RepoRoot)src\adapters\sources\cs2_reader\field_values.cpp">
+      <Filter>src\adapters\sources\cs2_reader</Filter>
+    </ClCompile>
+    <ClInclude Include="$(RepoRoot)src\adapters\sources\cs2_reader\snapshot_decode.hpp">
+      <Filter>src\adapters\sources\cs2_reader</Filter>
+    </ClInclude>
+    <ClCompile Include="$(RepoRoot)src\adapters\sources\cs2_reader\snapshot_decode.cpp">
+      <Filter>src\adapters\sources\cs2_reader</Filter>
+    </ClCompile>
+    <ClInclude Include="$(RepoRoot)src\adapters\outputs\mousebox\serial_session.hpp">
+      <Filter>src\adapters\outputs\mousebox</Filter>
+    </ClInclude>
+    <ClCompile Include="$(RepoRoot)src\adapters\outputs\mousebox\serial_session.cpp">
+      <Filter>src\adapters\outputs\mousebox</Filter>
+    </ClCompile>
+    <ClInclude Include="$(RepoRoot)src\application\output\output_loop.hpp">
+      <Filter>src\application\output</Filter>
+    </ClInclude>
+    <ClCompile Include="$(RepoRoot)src\application\output\output_loop.cpp">
+      <Filter>src\application\output</Filter>
+    </ClCompile>
+    <ClInclude Include="$(RepoRoot)src\application\output\device_snapshot.hpp">
+      <Filter>src\application\output</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\application\ports\output_link.hpp">
+      <Filter>src\application\ports</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\application\ports\presentation_frame.hpp">
+      <Filter>src\application\ports</Filter>
+    </ClInclude>
+    <ClInclude Include="$(RepoRoot)src\application\diagnostics\device_presentation.hpp">
+      <Filter>src\application\diagnostics</Filter>
+    </ClInclude>
+    <ClCompile Include="$(RepoRoot)src\application\diagnostics\device_presentation.cpp">
+      <Filter>src\application\diagnostics</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(RepoRoot)src\domain\random_range.hpp">
+      <Filter>src\domain</Filter>
+    </ClInclude>
+    <ClCompile Include="$(RepoRoot)src\domain\random_range.cpp">
+      <Filter>src\domain</Filter>
+    </ClCompile>
+    <ClInclude Include="$(RepoRoot)src\application\settings\random_range.hpp">
+      <Filter>src\application\settings</Filter>
+    </ClInclude>
+    <ClCompile Include="$(RepoRoot)src\application\settings\random_range.cpp">
+      <Filter>src\application\settings</Filter>
+    </ClCompile>
+    <ClInclude Include="$(RepoRoot)src\control\movement\trajectory.hpp">
+      <Filter>src\control\movement</Filter>
+    </ClInclude>
+    <ClCompile Include="$(RepoRoot)src\control\movement\trajectory.cpp">
+      <Filter>src\control\movement</Filter>
+    </ClCompile>
+    <ClInclude Include="$(RepoRoot)src\control\movement\path_input.hpp">
+      <Filter>src\control\movement</Filter>
+    </ClInclude>
+    <ClCompile Include="$(RepoRoot)src\control\movement\path_input.cpp">
+      <Filter>src\control\movement</Filter>
+    </ClCompile>
+    <ClInclude Include="$(RepoRoot)src\application\settings\mouse_trajectory.hpp">
+      <Filter>src\application\settings</Filter>
+    </ClInclude>
+    <ClCompile Include="$(RepoRoot)src\application\settings\mouse_trajectory.cpp">
+      <Filter>src\application\settings</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

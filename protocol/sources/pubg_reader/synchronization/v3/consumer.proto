@@ -1,0 +1,107 @@
+syntax = "proto3";
+package pubg.reader.synchronization.v3;
+import "synchronization/v3/model/consumer_values.proto";
+
+// Consumer业务时序和固定ACK基线增量；不携带原生地址、槽位、serial、规则或核验证据树。
+message ConsumerSample {
+  uint64 capture_sequence = 1; // 此值真实所属采集序号；基础元数据允许其独立来源序号。
+  uint64 started_qpc = 2; // 原始来源起点，不借用发送时间。
+  uint64 finished_qpc = 3; // 原始来源终点。
+  uint64 clock_mapping_revision = 4; // 对应本连接已确认的Reader来源映射。
+}
+message ConsumerCapture {
+  uint64 capture_sequence = 1; // 本批独立类别采集序号。
+  uint64 started_qpc = 2; // 第一次目标读取之前。
+  uint64 finished_qpc = 3; // CPU整理与最终提交完成之后。
+  uint64 clock_mapping_revision = 4; // 此批来源时钟映射版本。
+  optional uint64 read_finished_qpc = 5; // 最后一次读取及必要核验完成；缺失不填零。
+}
+message ConsumerFieldSource {
+  repeated uint32 path = 1; // Consumer业务字段号路径；集合下标为0x80000000加零起点下标。不是旧Debug字段路径。
+  uint32 status = 2; // 1可用2部分3读失败4依赖阻断5未尝试6未实现。
+  ConsumerSample sample = 3; // 原始值来源；未取得值时允许缺失。
+  bool reused = 4; // 仅允许明确静态上下文复用，保留真实来源时间。
+  uint32 source_category = 5; // 0基础来源，1活体2载具3地面物资6Local；不能跨类别比较序号。
+}
+message ConsumerGroupRecord {
+  uint32 group = 1; // 实体使用PropertyGroup正式编号；Local使用ContextGroup正式编号。
+  uint32 status = 2; // 独立业务组终态，取值同ConsumerFieldSource.status。
+  bool has_value = 3; // 当前有业务值；false明确撤销该组旧值，不能解释为零。
+  ConsumerSample source = 4; // 本组真实来源采样区间。
+  repeated ConsumerFieldSource sources = 5; // 动态子值自己的真实时刻；每次增量完整刷新，数值相同也不能沿用旧来源。
+  ConsumerGroupValue value = 6; // Baseline及added时必须与has_value一致；Update当前表中禁止提供，值由相对固定基线的changes重建。
+}
+message ConsumerEntity {
+  uint64 entity_id = 1; // Reader分配的不复用业务ID。
+  uint32 kind = 2; // 1人物2载具3独立拾取4生物5地面组；未知或未实现不发布。
+  repeated ConsumerGroupRecord groups = 3; // 当前请求的业务组，唯一且完整，不能带Native Identity组。
+}
+message ConsumerPacing {
+  double target_hz = 1; // 开批冻结的实际请求目标频率。
+  uint64 configuration_revision = 2; // 开批配置版本。
+  uint64 plan_revision = 3; // 开批实际读取计划版本。
+}
+message ConsumerContextValues {
+  optional uint64 world_token = 1; // 世界语义token，不是地址。
+  optional uint64 level_token = 2; // 主Level语义token，不是地址。
+  optional string map_name = 3; // 已核验地图名称，合法空串保持存在。
+  string coordinate_convention = 4; // 坐标轴约定。
+  optional double verified_meters_per_unit = 5; // 已核验尺度，未核验保持缺失。
+  ConsumerOrigin origin = 6; // 本批实际原点。
+  ConsumerPacing pacing = 7; // 开批冻结的调度参数。
+  optional uint64 game_state_token = 8; // 游戏会话上下文token，用于跨流呈现和缓存隔离。
+  bool native_world_velocity_supported = 9; // 已实现总世界速度能力；某批读取失败不能把能力降为false或启用旧差分后备。
+}
+message ConsumerContext {
+  ConsumerContextValues values = 1; // Baseline必传；Update仅在replace_context_values=true时传。
+  repeated ConsumerGroupRecord local_groups = 2; // 仅Local类别有值；Update仅刷新终态/真实时刻，值由local_changes重建。
+  repeated ConsumerFieldSource sources = 3; // 上下文业务字段自己的真实来源，每次增量刷新。
+}
+message ConsumerBatch {
+  ConsumerCapture capture = 1; // 正式开读、读完及提交锚点。
+  uint32 category = 2; // 1活体2载具3地面物资6Local。
+  fixed64 features = 3; // 本批冻结业务能力；0表示该类别全部当前已实现功能。
+}
+message ConsumerBaseline {
+  uint64 session_id = 1; // 本连接独立会话。
+  uint64 epoch = 2; // 世界及地址空间代次。
+  uint64 generation = 3; // 不可变基线代号。
+  uint64 fence = 4; // 可靠栅栏。
+  uint64 revision = 5; // 状态版本。
+  ConsumerBatch batch = 6; // 原始类别时序。
+  ConsumerContext context = 7; // 当前完整业务上下文。
+  repeated ConsumerEntity entities = 8; // 当前全部有效业务实体；Local为空。
+  optional fixed64 send_started_qpc = 9; // 完成封装后、首次send前盖戳；只原位写八字节，短写不刷新。
+}
+message ConsumerWithdrawal {
+  uint64 entity_id = 1; // 撤销基线实体的当前资格。
+  uint32 reason = 2; // 0未知1暂不可读2范围退出3实例退役4实例替换。
+}
+message ConsumerValueChange {
+  uint64 entity_id = 1; // Actor补丁的实体ID；Local补丁必须为零，不伪造Actor。
+  uint32 group = 2; // 对应实体或Local的正式业务组编号。
+  bool clear = 3; // true清除该组值，且value必须缺失。
+  ConsumerGroupValue value = 4; // 完整替换此业务组的值，optional缺失/零/false保持不同。
+}
+message ConsumerUpdate {
+  uint64 session_id = 1; // 本连接独立会话。
+  uint64 epoch = 2; // 必须与固定基线相同。
+  uint64 baseline_generation = 3; // 精确已ACK基线代号。
+  uint64 fence = 4; // 必须匹配已安装栅栏。
+  uint64 base_revision = 5; // 固定基线版本，禁止依赖上一增量。
+  uint64 revision = 6; // 当前严格单调版本。
+  ConsumerBatch batch = 7; // 当前真实业务采样时刻。
+  ConsumerContext context = 8; // 当前终态与来源；值按replace_context_values规则传输。
+  repeated ConsumerEntity current_entities = 9; // 当前全部实体及组终态/时刻表；禁止携带value；不是Native证明。
+  repeated ConsumerEntity added = 10; // 固定基线中不存在的完整业务实体。
+  repeated ConsumerWithdrawal withdrawn = 11; // 基线中不再有当前资格的实体。
+  repeated ConsumerValueChange changes = 12; // 相对固定ACK基线的实体业务组变化。
+  repeated ConsumerValueChange local_changes = 13; // 相对固定ACK基线的Local组变化。
+  bool replace_context_values = 14; // 明确替换全部静态业务上下文值，不刷新原始来源时间。
+  optional fixed64 send_started_qpc = 15; // 首次send前原位fixed64盖戳；缺失不补零。
+}
+message ConsumerKindContract {
+  uint32 kind = 1; // Consumer正式实体种类。
+  repeated uint32 enabled_groups = 2; // 仅可发送的纯业务组，不包括Native Identity。
+  repeated uint32 implemented_value_groups = 3; // 其中真正实现了值链的业务组；未实现终态不得冒充已实现能力。
+}

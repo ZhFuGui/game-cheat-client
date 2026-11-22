@@ -1,0 +1,16 @@
+{
+  "source": "U:\\pubg\\analysis\\reader\\consumer-debug-skeleton-20261022\\protocol\\sdk",
+  "stage": "G:\\mousebox-analysis\\consumer-v3-20261022\\sdk-af09ae0f",
+  "manifestSha256": "af09ae0f45189ff7b544e1ca96c3c0daf663e43b8de0c1ea751d5d063b4e463b",
+  "descriptorSha256": "4e5f26fed497f86a37d686df443be54d42dcc5e1eeeae79143a19f209e5f6f92",
+  "files": 99,
+  "sourceFiles": 86,
+  "allCpp": 28,
+  "clientCpp": 17,
+  "providerCpp": 11,
+  "protoFiles": 12,
+  "sourceManifestSha256": "d10e21b2f7ae918cb0316adb9cb804378c11441300b04b4bf520ec0edf273288",
+  "propsSha256": "1f97d270e478fe99cb2f999240bc277b2438884eb38f3e47f8373940b30d6df3",
+  "productionModified": true,
+  "importedUtc": "2026-10-21T22:55:49.3646449Z"
+}

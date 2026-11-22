@@ -1,0 +1,5780 @@
+{
+  "schema_version": 1,
+  "pack_id": "pubg-gs-25901960",
+  "units": {
+    "distance": "m",
+    "time": "s",
+    "speed": "m/s",
+    "angle": "rad"
+  },
+  "source": {
+    "kind": "public_reference",
+    "producer": "pubg.gs",
+    "game_build": "25901960",
+    "recorded_date": "2026-10-14",
+    "live_game_verified": false
+  },
+  "profiles": [
+    {
+      "profile_id": "Item_Weapon_Groza_C",
+      "display_name": "Groza",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_Groza_C"
+        ],
+        "actor_class_names": [
+          "WeapGroza_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 715,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                0,
+                715
+              ],
+              [
+                100,
+                618
+              ],
+              [
+                200,
+                527
+              ],
+              [
+                300,
+                445
+              ],
+              [
+                400,
+                369
+              ],
+              [
+                500,
+                323
+              ],
+              [
+                600,
+                300
+              ],
+              [
+                700,
+                283
+              ],
+              [
+                800,
+                267
+              ],
+              [
+                900,
+                252
+              ],
+              [
+                1000,
+                239
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/groza/",
+        "content_sha256": "b7f82d406d9ca4e0acaaa9a7eba427574640278d40373b490788e0da7d573caa",
+        "locator": "pubg-gs.json#/weapons/0"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_ACE32_C",
+      "display_name": "ACE32",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_ACE32_C"
+        ],
+        "actor_class_names": [
+          "WeapACE32_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 720,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                0,
+                720
+              ],
+              [
+                100,
+                628
+              ],
+              [
+                200,
+                535
+              ],
+              [
+                300,
+                452
+              ],
+              [
+                400,
+                375
+              ],
+              [
+                500,
+                325
+              ],
+              [
+                600,
+                303
+              ],
+              [
+                700,
+                285
+              ],
+              [
+                800,
+                269
+              ],
+              [
+                900,
+                253
+              ],
+              [
+                1000,
+                240
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/ace32/",
+        "content_sha256": "416a256edd5275477aa28f396ee3fabf92156aedcafb0720121b5ab60ab7288c",
+        "locator": "pubg-gs.json#/weapons/1"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_AK47_C",
+      "display_name": "AKM",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_AK47_C"
+        ],
+        "actor_class_names": [
+          "WeapAK47_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 715,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                0,
+                715
+              ],
+              [
+                100,
+                618
+              ],
+              [
+                200,
+                527
+              ],
+              [
+                300,
+                445
+              ],
+              [
+                400,
+                369
+              ],
+              [
+                500,
+                323
+              ],
+              [
+                600,
+                300
+              ],
+              [
+                700,
+                283
+              ],
+              [
+                800,
+                267
+              ],
+              [
+                900,
+                252
+              ],
+              [
+                1000,
+                239
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/akm/",
+        "content_sha256": "e9779d30eaebfdad373f8e2bf734869cd0f7e349af1fd43d851cc20ffea68e3c",
+        "locator": "pubg-gs.json#/weapons/2"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_AUG_C",
+      "display_name": "AUG",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_AUG_C"
+        ],
+        "actor_class_names": [
+          "WeapAUG_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 890,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                0,
+                890
+              ],
+              [
+                100,
+                795
+              ],
+              [
+                200,
+                702
+              ],
+              [
+                300,
+                620
+              ],
+              [
+                400,
+                542
+              ],
+              [
+                500,
+                467
+              ],
+              [
+                600,
+                395
+              ],
+              [
+                700,
+                333
+              ],
+              [
+                800,
+                300
+              ],
+              [
+                900,
+                282
+              ],
+              [
+                1000,
+                268
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/aug/",
+        "content_sha256": "eccf49187824b73df420d2bc22f5412ba33d30591fad4dcca6c821e0aebdda2c",
+        "locator": "pubg-gs.json#/weapons/3"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_BerylM762_C",
+      "display_name": "Beryl M762",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_BerylM762_C"
+        ],
+        "actor_class_names": [
+          "WeapBerylM762_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 715,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                0,
+                740
+              ],
+              [
+                100,
+                640
+              ],
+              [
+                200,
+                548
+              ],
+              [
+                300,
+                464
+              ],
+              [
+                400,
+                386
+              ],
+              [
+                500,
+                329
+              ],
+              [
+                600,
+                305
+              ],
+              [
+                700,
+                286
+              ],
+              [
+                800,
+                271
+              ],
+              [
+                900,
+                254
+              ],
+              [
+                1000,
+                241
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/beryl-m762/",
+        "content_sha256": "cd639cab13b9d61b6cc2b719532fd31579c2d83aa06a409f77708427f79dbd3c",
+        "locator": "pubg-gs.json#/weapons/4"
+      },
+      "notes": [
+        "Published curve at 0m differs from InitialSpeed; preserved separately, never rescaled or silently reconciled"
+      ]
+    },
+    {
+      "profile_id": "Item_Weapon_Duncans_M416_C",
+      "display_name": "Duncan's M416",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_Duncans_M416_C"
+        ],
+        "actor_class_names": [
+          "WeapDuncansHK416_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 880,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                0,
+                880
+              ],
+              [
+                100,
+                780
+              ],
+              [
+                200,
+                686
+              ],
+              [
+                300,
+                599
+              ],
+              [
+                400,
+                519
+              ],
+              [
+                500,
+                443
+              ],
+              [
+                600,
+                374
+              ],
+              [
+                700,
+                327
+              ],
+              [
+                800,
+                305
+              ],
+              [
+                900,
+                288
+              ],
+              [
+                1000,
+                273
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/duncan-s-m416/",
+        "content_sha256": "4fe52ef8dc06aaa7ae48e19cb16551c989d96d6ae06804482fd0ff599ffdce4b",
+        "locator": "pubg-gs.json#/weapons/5"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_FAMASG2_C",
+      "display_name": "FAMAS",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_FAMASG2_C"
+        ],
+        "actor_class_names": [
+          "WeapFamasG2_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 925,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                0,
+                925
+              ],
+              [
+                100,
+                825
+              ],
+              [
+                200,
+                726
+              ],
+              [
+                300,
+                637
+              ],
+              [
+                400,
+                562
+              ],
+              [
+                500,
+                481
+              ],
+              [
+                600,
+                408
+              ],
+              [
+                700,
+                345
+              ],
+              [
+                800,
+                315
+              ],
+              [
+                900,
+                296
+              ],
+              [
+                1000,
+                281
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/famas/",
+        "content_sha256": "e63b77a1a0154ef03cb438e1d4aa442ac41fd35d594bd2986fa2ecda556abc62",
+        "locator": "pubg-gs.json#/weapons/6"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_G36C_C",
+      "display_name": "G36C",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_G36C_C"
+        ],
+        "actor_class_names": [
+          "WeapG36C_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 870,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                0,
+                870
+              ],
+              [
+                100,
+                771
+              ],
+              [
+                200,
+                678
+              ],
+              [
+                300,
+                591
+              ],
+              [
+                400,
+                511
+              ],
+              [
+                500,
+                436
+              ],
+              [
+                600,
+                367
+              ],
+              [
+                700,
+                325
+              ],
+              [
+                800,
+                303
+              ],
+              [
+                900,
+                287
+              ],
+              [
+                1000,
+                272
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/g36c/",
+        "content_sha256": "2d985a0b5ca21eebdc199379d238de3e956853560f9cf984e5870d4d1fe03161",
+        "locator": "pubg-gs.json#/weapons/7"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_K2_C",
+      "display_name": "K2",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_K2_C"
+        ],
+        "actor_class_names": [
+          "WeapK2_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 880,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                -0.39,
+                880
+              ],
+              [
+                120,
+                747
+              ],
+              [
+                208,
+                649
+              ],
+              [
+                301,
+                558
+              ],
+              [
+                400,
+                480
+              ],
+              [
+                500,
+                410
+              ],
+              [
+                600,
+                352
+              ],
+              [
+                700,
+                315
+              ],
+              [
+                800,
+                290
+              ],
+              [
+                899,
+                273
+              ],
+              [
+                996,
+                259
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/k2/",
+        "content_sha256": "bf3ac104cced7ccf5df79f5545a8f170721ed9e88ac46db3f394c81ab11823c1",
+        "locator": "pubg-gs.json#/weapons/8"
+      },
+      "notes": [
+        "Published velocity curve has negative-distance keys; preserved as published, physical query domain needs review"
+      ]
+    },
+    {
+      "profile_id": "Item_Weapon_Lunchmeats_AK47_C",
+      "display_name": "Lunchmeat's AKM",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_Lunchmeats_AK47_C"
+        ],
+        "actor_class_names": [
+          "WeapLunchmeatsAK47_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 715,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                0,
+                715
+              ],
+              [
+                100,
+                618
+              ],
+              [
+                200,
+                527
+              ],
+              [
+                300,
+                445
+              ],
+              [
+                400,
+                369
+              ],
+              [
+                500,
+                323
+              ],
+              [
+                600,
+                300
+              ],
+              [
+                700,
+                283
+              ],
+              [
+                800,
+                267
+              ],
+              [
+                900,
+                252
+              ],
+              [
+                1000,
+                239
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/lunchmeat-s-akm/",
+        "content_sha256": "b8d29fb6238637f5bbe3a9457abd50d9c63d51e8841208551aee403083eec03d",
+        "locator": "pubg-gs.json#/weapons/9"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_M16A4_C",
+      "display_name": "M16A4",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_M16A4_C"
+        ],
+        "actor_class_names": [
+          "WeapM16A4_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 900,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                0,
+                910
+              ],
+              [
+                100,
+                808
+              ],
+              [
+                200,
+                713
+              ],
+              [
+                300,
+                624
+              ],
+              [
+                400,
+                541
+              ],
+              [
+                500,
+                464
+              ],
+              [
+                600,
+                394
+              ],
+              [
+                700,
+                335
+              ],
+              [
+                800,
+                310
+              ],
+              [
+                900,
+                293
+              ],
+              [
+                1000,
+                278
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/m16a4/",
+        "content_sha256": "7652bcfd47c2c16bec58e21e23de8373a8e0c7859111bfd840a5de1d2d72ec3c",
+        "locator": "pubg-gs.json#/weapons/10"
+      },
+      "notes": [
+        "Published curve at 0m differs from InitialSpeed; preserved separately, never rescaled or silently reconciled"
+      ]
+    },
+    {
+      "profile_id": "Item_Weapon_HK416_C",
+      "display_name": "M416",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_HK416_C"
+        ],
+        "actor_class_names": [
+          "WeapHK416_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 880,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                0,
+                880
+              ],
+              [
+                100,
+                780
+              ],
+              [
+                200,
+                686
+              ],
+              [
+                300,
+                599
+              ],
+              [
+                400,
+                519
+              ],
+              [
+                500,
+                443
+              ],
+              [
+                600,
+                374
+              ],
+              [
+                700,
+                327
+              ],
+              [
+                800,
+                305
+              ],
+              [
+                900,
+                288
+              ],
+              [
+                1000,
+                273
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/m416/",
+        "content_sha256": "27e71b37f34b51ca45d70bdc5d64ccd5fcb4588ecf2201066b19c5c832f62a01",
+        "locator": "pubg-gs.json#/weapons/11"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_Mk47Mutant_C",
+      "display_name": "Mk47 Mutant",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_Mk47Mutant_C"
+        ],
+        "actor_class_names": [
+          "WeapMk47Mutant_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 780,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                0,
+                780
+              ],
+              [
+                100,
+                677
+              ],
+              [
+                200,
+                582
+              ],
+              [
+                300,
+                495
+              ],
+              [
+                400,
+                415
+              ],
+              [
+                500,
+                344
+              ],
+              [
+                600,
+                313
+              ],
+              [
+                700,
+                294
+              ],
+              [
+                800,
+                277
+              ],
+              [
+                900,
+                261
+              ],
+              [
+                1000,
+                246
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/mk47-mutant/",
+        "content_sha256": "e35cb830f28e8ef4ced31536d8e1e90ec54b3b73bf8dee58a247f11956508da9",
+        "locator": "pubg-gs.json#/weapons/12"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_QBZ95_C",
+      "display_name": "QBZ",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_QBZ95_C"
+        ],
+        "actor_class_names": [
+          "WeapQBZ95_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 870,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                0,
+                930
+              ],
+              [
+                100,
+                826
+              ],
+              [
+                200,
+                729
+              ],
+              [
+                300,
+                639
+              ],
+              [
+                400,
+                555
+              ],
+              [
+                500,
+                477
+              ],
+              [
+                600,
+                405
+              ],
+              [
+                700,
+                342
+              ],
+              [
+                800,
+                314
+              ],
+              [
+                900,
+                295
+              ],
+              [
+                1000,
+                280
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/qbz/",
+        "content_sha256": "2dff76d22e47f897e2ca5cbadae160cc3d7831a636a759138dcb5542171863a1",
+        "locator": "pubg-gs.json#/weapons/13"
+      },
+      "notes": [
+        "Published curve at 0m differs from InitialSpeed; preserved separately, never rescaled or silently reconciled"
+      ]
+    },
+    {
+      "profile_id": "Item_Weapon_SCAR-L_C",
+      "display_name": "SCAR-L",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_SCAR-L_C"
+        ],
+        "actor_class_names": [
+          "WeapSCAR-L_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 870,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                0,
+                870
+              ],
+              [
+                100,
+                771
+              ],
+              [
+                200,
+                678
+              ],
+              [
+                300,
+                591
+              ],
+              [
+                400,
+                511
+              ],
+              [
+                500,
+                436
+              ],
+              [
+                600,
+                367
+              ],
+              [
+                700,
+                325
+              ],
+              [
+                800,
+                303
+              ],
+              [
+                900,
+                287
+              ],
+              [
+                1000,
+                272
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/scar-l/",
+        "content_sha256": "854070bf6b70fdd68fcd3d5706cd6cee57fbf97c5eef3f65df143e2bc610d353",
+        "locator": "pubg-gs.json#/weapons/14"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_Dragunov_C",
+      "display_name": "Dragunov",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_Dragunov_C"
+        ],
+        "actor_class_names": [
+          "WeapDragunov_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 830,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                0,
+                830
+              ],
+              [
+                100,
+                760
+              ],
+              [
+                200,
+                700
+              ],
+              [
+                300,
+                640
+              ],
+              [
+                400,
+                580
+              ],
+              [
+                500,
+                530
+              ],
+              [
+                600,
+                480
+              ],
+              [
+                700,
+                430
+              ],
+              [
+                800,
+                385
+              ],
+              [
+                900,
+                346
+              ],
+              [
+                1000,
+                310
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/dragunov/",
+        "content_sha256": "64f51dc3e2a35e630c88162719d0e67cc0318ad0ced328dc6b9ed0a66cc5b1c0",
+        "locator": "pubg-gs.json#/weapons/15"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_Mk14_C",
+      "display_name": "Mk14",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_Mk14_C"
+        ],
+        "actor_class_names": [
+          "WeapMk14_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 853,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                0,
+                853
+              ],
+              [
+                100,
+                778
+              ],
+              [
+                200,
+                706
+              ],
+              [
+                300,
+                639
+              ],
+              [
+                400,
+                575
+              ],
+              [
+                500,
+                515
+              ],
+              [
+                600,
+                461
+              ],
+              [
+                700,
+                413
+              ],
+              [
+                800,
+                372
+              ],
+              [
+                900,
+                340
+              ],
+              [
+                1000,
+                316
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/mk14/",
+        "content_sha256": "e40f153b6ab5a5c94e03295ca0d597665624ea768ede592dd368f019a4f6306b",
+        "locator": "pubg-gs.json#/weapons/16"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_SKS_C",
+      "display_name": "SKS",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_SKS_C"
+        ],
+        "actor_class_names": [
+          "WeapSKS_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 800,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                0,
+                800
+              ],
+              [
+                100,
+                728
+              ],
+              [
+                200,
+                662
+              ],
+              [
+                300,
+                596
+              ],
+              [
+                400,
+                537
+              ],
+              [
+                500,
+                483
+              ],
+              [
+                600,
+                435
+              ],
+              [
+                700,
+                387
+              ],
+              [
+                800,
+                348
+              ],
+              [
+                900,
+                320
+              ],
+              [
+                1000,
+                298
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/sks/",
+        "content_sha256": "f138e252e1924690cb529ac1a2bc060f6e1886bb1091db863719264b6b09a6dd",
+        "locator": "pubg-gs.json#/weapons/17"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_FNFal_C",
+      "display_name": "SLR",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_FNFal_C"
+        ],
+        "actor_class_names": [
+          "WeapFNFal_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 870,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                0,
+                870
+              ],
+              [
+                100,
+                792
+              ],
+              [
+                200,
+                720
+              ],
+              [
+                300,
+                648
+              ],
+              [
+                400,
+                584
+              ],
+              [
+                500,
+                525
+              ],
+              [
+                600,
+                473
+              ],
+              [
+                700,
+                421
+              ],
+              [
+                800,
+                379
+              ],
+              [
+                900,
+                348
+              ],
+              [
+                1000,
+                324
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/slr/",
+        "content_sha256": "9be487afa40515c2524547e933d265259ab4f8d66f0cff7f967fb4dd4c63be18",
+        "locator": "pubg-gs.json#/weapons/18"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_VSS_C",
+      "display_name": "VSS",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_VSS_C"
+        ],
+        "actor_class_names": [
+          "WeapVSS_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 430,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                0,
+                430
+              ],
+              [
+                100,
+                417
+              ],
+              [
+                200,
+                404
+              ],
+              [
+                300,
+                391
+              ],
+              [
+                400,
+                378
+              ],
+              [
+                500,
+                366
+              ],
+              [
+                600,
+                353
+              ],
+              [
+                700,
+                340
+              ],
+              [
+                800,
+                327
+              ],
+              [
+                900,
+                314
+              ],
+              [
+                1000,
+                300
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/vss/",
+        "content_sha256": "274afdd4125dd3aff6e22ff6f01901cde416d751b08545bf173aa1f0018b72b3",
+        "locator": "pubg-gs.json#/weapons/19"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_Mads_QBU88_C",
+      "display_name": "Mad's QBU",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_Mads_QBU88_C"
+        ],
+        "actor_class_names": [
+          "WeapMadsQBU88_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 945,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                0,
+                990
+              ],
+              [
+                100,
+                884
+              ],
+              [
+                200,
+                783
+              ],
+              [
+                300,
+                690
+              ],
+              [
+                400,
+                603
+              ],
+              [
+                500,
+                521
+              ],
+              [
+                600,
+                446
+              ],
+              [
+                700,
+                377
+              ],
+              [
+                800,
+                328
+              ],
+              [
+                900,
+                305
+              ],
+              [
+                1000,
+                289
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/mad-s-qbu/",
+        "content_sha256": "656c71598817bc91fbf93b9be540e027ba4797858828cd616e57c513c38123fb",
+        "locator": "pubg-gs.json#/weapons/20"
+      },
+      "notes": [
+        "Published curve at 0m differs from InitialSpeed; preserved separately, never rescaled or silently reconciled"
+      ]
+    },
+    {
+      "profile_id": "Item_Weapon_Mini14_C",
+      "display_name": "Mini14",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_Mini14_C"
+        ],
+        "actor_class_names": [
+          "WeapMini14_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 990,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                0,
+                990
+              ],
+              [
+                100,
+                884
+              ],
+              [
+                200,
+                783
+              ],
+              [
+                300,
+                690
+              ],
+              [
+                400,
+                603
+              ],
+              [
+                500,
+                521
+              ],
+              [
+                600,
+                446
+              ],
+              [
+                700,
+                377
+              ],
+              [
+                800,
+                328
+              ],
+              [
+                900,
+                305
+              ],
+              [
+                1000,
+                289
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/mini14/",
+        "content_sha256": "c4be3b699007b2cef7669ad56df13838b32f4f23f53476b62266936e117a94fd",
+        "locator": "pubg-gs.json#/weapons/21"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_Mk12_C",
+      "display_name": "Mk12",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_Mk12_C"
+        ],
+        "actor_class_names": [
+          "WeapMk12_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 900,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                0,
+                900
+              ],
+              [
+                100,
+                820
+              ],
+              [
+                200,
+                720
+              ],
+              [
+                300,
+                635
+              ],
+              [
+                400,
+                555
+              ],
+              [
+                500,
+                480
+              ],
+              [
+                600,
+                408
+              ],
+              [
+                700,
+                365
+              ],
+              [
+                800,
+                338
+              ],
+              [
+                900,
+                311
+              ],
+              [
+                1000,
+                295
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/mk12/",
+        "content_sha256": "2d9e6d45eb64308356ccc05a07c01339bbc7db6668d145509afc27b57eef0823",
+        "locator": "pubg-gs.json#/weapons/22"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_QBU88_C",
+      "display_name": "QBU",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_QBU88_C"
+        ],
+        "actor_class_names": [
+          "WeapQBU88_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 945,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                0,
+                990
+              ],
+              [
+                100,
+                884
+              ],
+              [
+                200,
+                783
+              ],
+              [
+                300,
+                690
+              ],
+              [
+                400,
+                603
+              ],
+              [
+                500,
+                521
+              ],
+              [
+                600,
+                446
+              ],
+              [
+                700,
+                377
+              ],
+              [
+                800,
+                328
+              ],
+              [
+                900,
+                305
+              ],
+              [
+                1000,
+                289
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/qbu/",
+        "content_sha256": "343cd8b34a3ff3b526ba0ca7f12c850791023cdf8024f9eded2fb578c20da1bf",
+        "locator": "pubg-gs.json#/weapons/23"
+      },
+      "notes": [
+        "Published curve at 0m differs from InitialSpeed; preserved separately, never rescaled or silently reconciled"
+      ]
+    },
+    {
+      "profile_id": "Item_Weapon_L6_C",
+      "display_name": "Lynx AMR",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_L6_C"
+        ],
+        "actor_class_names": [
+          "WeapL6_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 1200,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                0,
+                1200
+              ],
+              [
+                150,
+                1100
+              ],
+              [
+                250,
+                1020
+              ],
+              [
+                350,
+                909
+              ],
+              [
+                450,
+                799
+              ],
+              [
+                550,
+                695
+              ],
+              [
+                700,
+                629
+              ],
+              [
+                1000,
+                609
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/lynx-amr/",
+        "content_sha256": "d2ebdb949ff54088d58e86e33bcf2f9d1e1eb2fae05ea833422cdc72204e39bd",
+        "locator": "pubg-gs.json#/weapons/24"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_AWM_C",
+      "display_name": "AWM",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_AWM_C"
+        ],
+        "actor_class_names": [
+          "WeapAWM_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 945,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                0,
+                954
+              ],
+              [
+                100,
+                886
+              ],
+              [
+                200,
+                822
+              ],
+              [
+                300,
+                761
+              ],
+              [
+                400,
+                702
+              ],
+              [
+                500,
+                645
+              ],
+              [
+                600,
+                592
+              ],
+              [
+                700,
+                542
+              ],
+              [
+                800,
+                494
+              ],
+              [
+                900,
+                451
+              ],
+              [
+                1000,
+                411
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/awm/",
+        "content_sha256": "5290c4f2c1e616ab1c1f7559f6bf17d6722cc64eb97653a6072b04593229e100",
+        "locator": "pubg-gs.json#/weapons/25"
+      },
+      "notes": [
+        "Published curve at 0m differs from InitialSpeed; preserved separately, never rescaled or silently reconciled"
+      ]
+    },
+    {
+      "profile_id": "Item_Weapon_Julies_Kar98k_C",
+      "display_name": "Julie's Kar98k",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_Julies_Kar98k_C"
+        ],
+        "actor_class_names": [
+          "WeapJuliesKar98k_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 760,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                0,
+                780
+              ],
+              [
+                100,
+                731
+              ],
+              [
+                200,
+                684
+              ],
+              [
+                300,
+                639
+              ],
+              [
+                400,
+                596
+              ],
+              [
+                500,
+                554
+              ],
+              [
+                600,
+                515
+              ],
+              [
+                700,
+                478
+              ],
+              [
+                800,
+                444
+              ],
+              [
+                900,
+                413
+              ],
+              [
+                1000,
+                384
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/julie-s-kar98k/",
+        "content_sha256": "1101f79f6aae3e320225edf8138f577474973c42c74838190687949918b3c864",
+        "locator": "pubg-gs.json#/weapons/26"
+      },
+      "notes": [
+        "Published curve at 0m differs from InitialSpeed; preserved separately, never rescaled or silently reconciled"
+      ]
+    },
+    {
+      "profile_id": "Item_Weapon_Kar98k_C",
+      "display_name": "Kar98k",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_Kar98k_C"
+        ],
+        "actor_class_names": [
+          "WeapKar98k_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 760,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                0,
+                780
+              ],
+              [
+                100,
+                731
+              ],
+              [
+                200,
+                684
+              ],
+              [
+                300,
+                639
+              ],
+              [
+                400,
+                596
+              ],
+              [
+                500,
+                554
+              ],
+              [
+                600,
+                515
+              ],
+              [
+                700,
+                478
+              ],
+              [
+                800,
+                444
+              ],
+              [
+                900,
+                413
+              ],
+              [
+                1000,
+                384
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/kar98k/",
+        "content_sha256": "51690bd921fc54580890c41a41be6655fdeff82370c2bc7ee8da612cef18ed6e",
+        "locator": "pubg-gs.json#/weapons/27"
+      },
+      "notes": [
+        "Published curve at 0m differs from InitialSpeed; preserved separately, never rescaled or silently reconciled"
+      ]
+    },
+    {
+      "profile_id": "Item_Weapon_M24_C",
+      "display_name": "M24",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_M24_C"
+        ],
+        "actor_class_names": [
+          "WeapM24_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 790,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                0,
+                815
+              ],
+              [
+                100,
+                741
+              ],
+              [
+                200,
+                671
+              ],
+              [
+                300,
+                605
+              ],
+              [
+                400,
+                543
+              ],
+              [
+                500,
+                486
+              ],
+              [
+                600,
+                434
+              ],
+              [
+                700,
+                390
+              ],
+              [
+                800,
+                353
+              ],
+              [
+                900,
+                326
+              ],
+              [
+                1000,
+                306
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/m24/",
+        "content_sha256": "ab37fbeb085e7ac946a668a72e3f9cd4f8f77629080a48f8d10cf35a04e8f292",
+        "locator": "pubg-gs.json#/weapons/28"
+      },
+      "notes": [
+        "Published curve at 0m differs from InitialSpeed; preserved separately, never rescaled or silently reconciled"
+      ]
+    },
+    {
+      "profile_id": "Item_Weapon_Mosin_C",
+      "display_name": "Mosin Nagant",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_Mosin_C"
+        ],
+        "actor_class_names": [
+          "WeapMosinNagant_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 760,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                0,
+                780
+              ],
+              [
+                100,
+                731
+              ],
+              [
+                200,
+                684
+              ],
+              [
+                300,
+                639
+              ],
+              [
+                400,
+                596
+              ],
+              [
+                500,
+                554
+              ],
+              [
+                600,
+                515
+              ],
+              [
+                700,
+                478
+              ],
+              [
+                800,
+                444
+              ],
+              [
+                900,
+                413
+              ],
+              [
+                1000,
+                384
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/mosin-nagant/",
+        "content_sha256": "50e7ddeb8132ce6dc00e14f090e1c17638afe6c8ede8c73a9836df511e901d74",
+        "locator": "pubg-gs.json#/weapons/29"
+      },
+      "notes": [
+        "Published curve at 0m differs from InitialSpeed; preserved separately, never rescaled or silently reconciled"
+      ]
+    },
+    {
+      "profile_id": "Item_Weapon_Win1894_C",
+      "display_name": "Win94",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_Win1894_C"
+        ],
+        "actor_class_names": [
+          "WeapWin94_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 760,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                0,
+                760
+              ],
+              [
+                100,
+                712
+              ],
+              [
+                200,
+                665
+              ],
+              [
+                300,
+                621
+              ],
+              [
+                400,
+                578
+              ],
+              [
+                500,
+                536
+              ],
+              [
+                600,
+                497
+              ],
+              [
+                700,
+                459
+              ],
+              [
+                800,
+                422
+              ],
+              [
+                900,
+                378
+              ],
+              [
+                1000,
+                353
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/win94/",
+        "content_sha256": "bd8454f22a7017e710aec9a6ab872089dc2250b5ef68bcca3e223d33a22524d7",
+        "locator": "pubg-gs.json#/weapons/30"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_DP28_C",
+      "display_name": "DP-28",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_DP28_C"
+        ],
+        "actor_class_names": [
+          "WeapDP28_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 715,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                0,
+                840
+              ],
+              [
+                100,
+                759
+              ],
+              [
+                200,
+                683
+              ],
+              [
+                300,
+                611
+              ],
+              [
+                400,
+                544
+              ],
+              [
+                500,
+                480
+              ],
+              [
+                600,
+                420
+              ],
+              [
+                700,
+                365
+              ],
+              [
+                800,
+                329
+              ],
+              [
+                900,
+                310
+              ],
+              [
+                1000,
+                295
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/dp-28/",
+        "content_sha256": "122256db2b355f7cc0e7909e33dd14e92de5f6432d9f927473ee102ae07e577f",
+        "locator": "pubg-gs.json#/weapons/31"
+      },
+      "notes": [
+        "Published curve at 0m differs from InitialSpeed; preserved separately, never rescaled or silently reconciled"
+      ]
+    },
+    {
+      "profile_id": "Item_Weapon_M249_C",
+      "display_name": "M249",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_M249_C"
+        ],
+        "actor_class_names": [
+          "WeapM249_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 915,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                0,
+                915
+              ],
+              [
+                100,
+                811
+              ],
+              [
+                200,
+                715
+              ],
+              [
+                300,
+                625
+              ],
+              [
+                400,
+                541
+              ],
+              [
+                500,
+                464
+              ],
+              [
+                600,
+                394
+              ],
+              [
+                700,
+                335
+              ],
+              [
+                800,
+                310
+              ],
+              [
+                900,
+                293
+              ],
+              [
+                1000,
+                278
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/m249/",
+        "content_sha256": "a71350914fef7e672632561d91874c140cacb68d721e02e84d860f6123f5bbdc",
+        "locator": "pubg-gs.json#/weapons/32"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_MG3_C",
+      "display_name": "MG3",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_MG3_C"
+        ],
+        "actor_class_names": [
+          "WeapMG3_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 820,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                0,
+                820
+              ],
+              [
+                100,
+                746
+              ],
+              [
+                200,
+                676
+              ],
+              [
+                300,
+                610
+              ],
+              [
+                400,
+                547
+              ],
+              [
+                500,
+                490
+              ],
+              [
+                600,
+                438
+              ],
+              [
+                700,
+                393
+              ],
+              [
+                800,
+                355
+              ],
+              [
+                900,
+                327
+              ],
+              [
+                1000,
+                307
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/mg3/",
+        "content_sha256": "713fae14a57e2528f90e0967264e21431937fd0978c4f83e6b4c3f1fa88b07fd",
+        "locator": "pubg-gs.json#/weapons/33"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_RPD_C",
+      "display_name": "RPD",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_RPD_C"
+        ],
+        "actor_class_names": [
+          "WeapRPD_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 735,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                0,
+                735
+              ],
+              [
+                100,
+                691
+              ],
+              [
+                200,
+                649
+              ],
+              [
+                300,
+                610
+              ],
+              [
+                400,
+                574
+              ],
+              [
+                500,
+                539
+              ],
+              [
+                600,
+                507
+              ],
+              [
+                700,
+                477
+              ],
+              [
+                800,
+                448
+              ],
+              [
+                900,
+                421
+              ],
+              [
+                1000,
+                396
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/rpd/",
+        "content_sha256": "252a34dd1251796e49c1c85ebb983680f21438edd250fb55aad70b56e98a6f96",
+        "locator": "pubg-gs.json#/weapons/34"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_Vector_C",
+      "display_name": "Vector",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_Vector_C"
+        ],
+        "actor_class_names": [
+          "WeapVector_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": null,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                0,
+                380
+              ],
+              [
+                100,
+                304
+              ],
+              [
+                200,
+                266
+              ],
+              [
+                300,
+                238
+              ],
+              [
+                400,
+                215
+              ],
+              [
+                500,
+                195
+              ],
+              [
+                600,
+                177
+              ],
+              [
+                700,
+                160
+              ],
+              [
+                800,
+                145
+              ],
+              [
+                900,
+                130
+              ],
+              [
+                1000,
+                117
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/vector/",
+        "content_sha256": "0f9f4b4c5cb6fe57579d887a0f6c69bd52033fcb19cd168de7e8f79411762680",
+        "locator": "pubg-gs.json#/weapons/35"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_JS9_C",
+      "display_name": "JS9",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_JS9_C"
+        ],
+        "actor_class_names": [
+          "WeapJS9_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 400,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                0,
+                400
+              ],
+              [
+                100,
+                360
+              ],
+              [
+                200,
+                325
+              ],
+              [
+                300,
+                290
+              ],
+              [
+                400,
+                260
+              ],
+              [
+                500,
+                235
+              ],
+              [
+                600,
+                212
+              ],
+              [
+                700,
+                190
+              ],
+              [
+                800,
+                171
+              ],
+              [
+                900,
+                154
+              ],
+              [
+                1000,
+                135
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/js9/",
+        "content_sha256": "8d07b38d5af592188edf640178c8c70f644703e9e04004b99d0c4926ad18382c",
+        "locator": "pubg-gs.json#/weapons/36"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_MP5K_C",
+      "display_name": "MP5K",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_MP5K_C"
+        ],
+        "actor_class_names": [
+          "WeapMP5K_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 400,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                0,
+                380
+              ],
+              [
+                100,
+                304
+              ],
+              [
+                200,
+                266
+              ],
+              [
+                300,
+                238
+              ],
+              [
+                400,
+                215
+              ],
+              [
+                500,
+                195
+              ],
+              [
+                600,
+                177
+              ],
+              [
+                700,
+                160
+              ],
+              [
+                800,
+                145
+              ],
+              [
+                900,
+                130
+              ],
+              [
+                1000,
+                117
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/mp5k/",
+        "content_sha256": "53993b09e613449b7bb5511c4834a0fcd4c0cb3e31af6a59ec98f429705e42a0",
+        "locator": "pubg-gs.json#/weapons/37"
+      },
+      "notes": [
+        "Published curve at 0m differs from InitialSpeed; preserved separately, never rescaled or silently reconciled"
+      ]
+    },
+    {
+      "profile_id": "Item_Weapon_MP9_C",
+      "display_name": "MP9",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_MP9_C"
+        ],
+        "actor_class_names": [
+          "WeapMP9_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 400,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                0,
+                400
+              ],
+              [
+                100,
+                304
+              ],
+              [
+                200,
+                266
+              ],
+              [
+                300,
+                238
+              ],
+              [
+                400,
+                215
+              ],
+              [
+                500,
+                195
+              ],
+              [
+                600,
+                177
+              ],
+              [
+                700,
+                160
+              ],
+              [
+                800,
+                145
+              ],
+              [
+                900,
+                130
+              ],
+              [
+                1000,
+                117
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/mp9/",
+        "content_sha256": "b5e16030fb3b2c88189635bb4535c7aa4e394fa6d629b9e48d53d206af5a7b7b",
+        "locator": "pubg-gs.json#/weapons/38"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_UZI_C",
+      "display_name": "Micro UZI",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_UZI_C"
+        ],
+        "actor_class_names": [
+          "WeapUZI_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 350,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                0,
+                350
+              ],
+              [
+                100,
+                291
+              ],
+              [
+                200,
+                257
+              ],
+              [
+                300,
+                232
+              ],
+              [
+                400,
+                210
+              ],
+              [
+                500,
+                191
+              ],
+              [
+                600,
+                174
+              ],
+              [
+                700,
+                158
+              ],
+              [
+                800,
+                143
+              ],
+              [
+                900,
+                131
+              ],
+              [
+                1000,
+                119
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/micro-uzi/",
+        "content_sha256": "407fef262da61d614ff894df530aa69eed60eb20a44302e0d40154f52d099ce2",
+        "locator": "pubg-gs.json#/weapons/39"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_P90_C",
+      "display_name": "P90",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_P90_C"
+        ],
+        "actor_class_names": [
+          "WeapP90_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 716,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                0,
+                716
+              ],
+              [
+                100,
+                559
+              ],
+              [
+                200,
+                422
+              ],
+              [
+                300,
+                324
+              ],
+              [
+                400,
+                289
+              ],
+              [
+                500,
+                264
+              ],
+              [
+                600,
+                240
+              ],
+              [
+                700,
+                218
+              ],
+              [
+                800,
+                199
+              ],
+              [
+                900,
+                182
+              ],
+              [
+                1000,
+                165
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/p90/",
+        "content_sha256": "8a5c9e50b2ca30fdeab308d59b66ff50f73a2e174f9484de2e0f7ccd8f20d74f",
+        "locator": "pubg-gs.json#/weapons/40"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_BizonPP19_C",
+      "display_name": "PP-19 Bizon",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_BizonPP19_C"
+        ],
+        "actor_class_names": [
+          "WeapBizonPP19_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 350,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                0,
+                380
+              ],
+              [
+                100,
+                304
+              ],
+              [
+                200,
+                266
+              ],
+              [
+                300,
+                238
+              ],
+              [
+                400,
+                215
+              ],
+              [
+                500,
+                195
+              ],
+              [
+                600,
+                177
+              ],
+              [
+                700,
+                160
+              ],
+              [
+                800,
+                145
+              ],
+              [
+                900,
+                130
+              ],
+              [
+                1000,
+                117
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/pp-19-bizon/",
+        "content_sha256": "fa90e77c0420bb521cf3f4dff5b206265deafb45c874a8b249292bd094c9eac9",
+        "locator": "pubg-gs.json#/weapons/41"
+      },
+      "notes": [
+        "Published curve at 0m differs from InitialSpeed; preserved separately, never rescaled or silently reconciled"
+      ]
+    },
+    {
+      "profile_id": "Item_Weapon_Thompson_C",
+      "display_name": "Tommy Gun",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_Thompson_C"
+        ],
+        "actor_class_names": [
+          "WeapThompson_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 280,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                0,
+                280
+              ],
+              [
+                100,
+                253
+              ],
+              [
+                200,
+                231
+              ],
+              [
+                300,
+                212
+              ],
+              [
+                400,
+                196
+              ],
+              [
+                500,
+                180
+              ],
+              [
+                600,
+                166
+              ],
+              [
+                700,
+                153
+              ],
+              [
+                800,
+                141
+              ],
+              [
+                900,
+                131
+              ],
+              [
+                1000,
+                121
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/tommy-gun/",
+        "content_sha256": "3ca0656ac6d9fa978494a21154d242e42c8d9af1bed1d128750507b5fc57faa0",
+        "locator": "pubg-gs.json#/weapons/42"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_UMP_C",
+      "display_name": "UMP",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_UMP_C"
+        ],
+        "actor_class_names": [
+          "WeapUMP_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 400,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                0,
+                360
+              ],
+              [
+                100,
+                320
+              ],
+              [
+                200,
+                292
+              ],
+              [
+                300,
+                268
+              ],
+              [
+                400,
+                246
+              ],
+              [
+                500,
+                227
+              ],
+              [
+                600,
+                209
+              ],
+              [
+                700,
+                193
+              ],
+              [
+                800,
+                178
+              ],
+              [
+                900,
+                164
+              ],
+              [
+                1000,
+                152
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/ump/",
+        "content_sha256": "96a3e9882720ad7f66a315fda2667935552626eab6cb217adeeef4ebd928289c",
+        "locator": "pubg-gs.json#/weapons/43"
+      },
+      "notes": [
+        "Published curve at 0m differs from InitialSpeed; preserved separately, never rescaled or silently reconciled"
+      ]
+    },
+    {
+      "profile_id": "Item_Weapon_UziPro_C",
+      "display_name": "UZI Pro",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_UziPro_C"
+        ],
+        "actor_class_names": [
+          "WeapUziPro_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 350,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                0,
+                350
+              ],
+              [
+                100,
+                291
+              ],
+              [
+                200,
+                257
+              ],
+              [
+                300,
+                232
+              ],
+              [
+                400,
+                210
+              ],
+              [
+                500,
+                191
+              ],
+              [
+                600,
+                174
+              ],
+              [
+                700,
+                158
+              ],
+              [
+                800,
+                143
+              ],
+              [
+                900,
+                131
+              ],
+              [
+                1000,
+                119
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/uzi-pro/",
+        "content_sha256": "bb1c8e0bfa01413917234edd2d839db866fe309a653da29c9a16133b4ce46511",
+        "locator": "pubg-gs.json#/weapons/44"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_DP12_C",
+      "display_name": "DBS",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_DP12_C"
+        ],
+        "actor_class_names": [
+          "WeapDP12_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 360,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 150,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                0,
+                360
+              ],
+              [
+                150,
+                250
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/dbs/",
+        "content_sha256": "d76153795e39c584e86084d758206751b0eb9a48e684645afd2e1adec99e1a26",
+        "locator": "pubg-gs.json#/weapons/45"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_OriginS12_C",
+      "display_name": "O12",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_OriginS12_C"
+        ],
+        "actor_class_names": [
+          "WeapOriginS12_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 625,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                0,
+                625
+              ],
+              [
+                50,
+                625
+              ],
+              [
+                100,
+                389
+              ],
+              [
+                200,
+                320
+              ],
+              [
+                300,
+                120
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/o12/",
+        "content_sha256": "eb12f8101e924189900b331af1ef759198cd3bac92d0cf5e4116c43cf4331895",
+        "locator": "pubg-gs.json#/weapons/46"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_Saiga12_C",
+      "display_name": "S12K",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_Saiga12_C"
+        ],
+        "actor_class_names": [
+          "WeapSaiga12_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 350,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 150,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                0,
+                360
+              ],
+              [
+                150,
+                250
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/s12k/",
+        "content_sha256": "4ef4130841023f846192a36a7c508663ae9ca1a988c5bdcc986cc0c708f3d87a",
+        "locator": "pubg-gs.json#/weapons/47"
+      },
+      "notes": [
+        "Published curve at 0m differs from InitialSpeed; preserved separately, never rescaled or silently reconciled"
+      ]
+    },
+    {
+      "profile_id": "Item_Weapon_Winchester_C",
+      "display_name": "S1897",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_Winchester_C"
+        ],
+        "actor_class_names": [
+          "WeapWinchester_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 360,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 150,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                0,
+                360
+              ],
+              [
+                150,
+                250
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/s1897/",
+        "content_sha256": "59aa3abbd1bd35a39aeda2dfc5a8db5ae459c456d1f8b62ef4fe994b68db283b",
+        "locator": "pubg-gs.json#/weapons/48"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_Berreta686_C",
+      "display_name": "S686",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_Berreta686_C"
+        ],
+        "actor_class_names": [
+          "WeapBerreta686_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 370,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 150,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                0,
+                360
+              ],
+              [
+                150,
+                250
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/s686/",
+        "content_sha256": "cf0bec525fb1bedc7729e5e15093dc29764c14de79caf22d7c69c72f9a057a97",
+        "locator": "pubg-gs.json#/weapons/49"
+      },
+      "notes": [
+        "Published curve at 0m differs from InitialSpeed; preserved separately, never rescaled or silently reconciled"
+      ]
+    },
+    {
+      "profile_id": "Item_Weapon_StunGun_C",
+      "display_name": "Stun Gun",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_StunGun_C"
+        ],
+        "actor_class_names": [
+          "WeapStunGun_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 180,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 100,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                0,
+                180
+              ],
+              [
+                25,
+                120
+              ],
+              [
+                50,
+                60
+              ],
+              [
+                75,
+                0
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/stun-gun/",
+        "content_sha256": "49f9385f06c4850e0249bbe954fc370e795f2386a2527b1fe17bc942bf0658cb",
+        "locator": "pubg-gs.json#/weapons/50"
+      },
+      "notes": [
+        "Published velocity curve contains non-positive speed; requires review before flight-time integration"
+      ]
+    },
+    {
+      "profile_id": "Item_Weapon_BZGL_C",
+      "display_name": "BZ Grenade Launcher",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_BZGL_C"
+        ],
+        "actor_class_names": [
+          "WeapBZGL_Subzero_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": null,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": null,
+          "velocity_curve": null,
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/bz-grenade-launcher/",
+        "content_sha256": "48e939ddd0689d3c726ea4a77d61720a866d1fda05bb87523fa671fe78f5541d",
+        "locator": "pubg-gs.json#/weapons/51"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_DesertEagle_C",
+      "display_name": "Deagle",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_DesertEagle_C"
+        ],
+        "actor_class_names": [
+          "WeapDesertEagle_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 450,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                0,
+                450
+              ],
+              [
+                55,
+                370
+              ],
+              [
+                100,
+                326
+              ],
+              [
+                200,
+                273
+              ],
+              [
+                300,
+                239
+              ],
+              [
+                400,
+                213
+              ],
+              [
+                500,
+                190
+              ],
+              [
+                600,
+                170
+              ],
+              [
+                700,
+                152
+              ],
+              [
+                800,
+                136
+              ],
+              [
+                900,
+                122
+              ],
+              [
+                1000,
+                109
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/deagle/",
+        "content_sha256": "27b14199c0f4ea9c832e10781bd3fce13045eff6fba518e7163e2f2bde5784e3",
+        "locator": "pubg-gs.json#/weapons/52"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_M79_C",
+      "display_name": "M79",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_M79_C"
+        ],
+        "actor_class_names": [
+          "WeapM79_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": null,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": null,
+          "velocity_curve": null,
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/m79/",
+        "content_sha256": "1964b9c59a4f800b1d1a1e2b6039e05ffd28be28ed3feb3fe322b4701047ee03",
+        "locator": "pubg-gs.json#/weapons/53"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_G18_C",
+      "display_name": "P18C",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_G18_C"
+        ],
+        "actor_class_names": [
+          "WeapG18_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 375,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": null,
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/p18c/",
+        "content_sha256": "4eafff010598de2bbd4a8a4193970bc76d2d04aa57544e443b64e33639fbe954",
+        "locator": "pubg-gs.json#/weapons/54"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_M1911_C",
+      "display_name": "P1911",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_M1911_C"
+        ],
+        "actor_class_names": [
+          "WeapM1911_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 250,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": null,
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/p1911/",
+        "content_sha256": "53c78c26299b267a0b9c46541441c2eec33f72504c46ff044b8a629ffbf7fa99",
+        "locator": "pubg-gs.json#/weapons/55"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_M9_C",
+      "display_name": "P92",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_M9_C"
+        ],
+        "actor_class_names": [
+          "WeapM9_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 380,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": null,
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/p92/",
+        "content_sha256": "1167fa68a40870db0d55a1622df6822040752fe01e5ad68112ce8970a8111c7b",
+        "locator": "pubg-gs.json#/weapons/56"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_NagantM1895_C",
+      "display_name": "R1895",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_NagantM1895_C"
+        ],
+        "actor_class_names": [
+          "WeapNagantM1895_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 330,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": null,
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/r1895/",
+        "content_sha256": "10d041681b0dbb3bbea82e5f6dec0c6ebabb4590e50c51ef510fc87f4285da1c",
+        "locator": "pubg-gs.json#/weapons/57"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_Rhino_C",
+      "display_name": "R45",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_Rhino_C"
+        ],
+        "actor_class_names": [
+          "WeapRhino_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 330,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": null,
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/r45/",
+        "content_sha256": "febecc50e868aba0a8103e372723d5ee00c192525ce41117fdffd3ed5aea4602",
+        "locator": "pubg-gs.json#/weapons/58"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_Sawnoff_C",
+      "display_name": "Sawed-Off",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_Sawnoff_C"
+        ],
+        "actor_class_names": [
+          "WeapSawnOff_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 330,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 150,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                0,
+                360
+              ],
+              [
+                150,
+                250
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/sawed-off/",
+        "content_sha256": "bdb09dc9ba734b1d5b9b32e4de18d257016941d9b82fccf8f03489a8e3f9dcaa",
+        "locator": "pubg-gs.json#/weapons/59"
+      },
+      "notes": [
+        "Published curve at 0m differs from InitialSpeed; preserved separately, never rescaled or silently reconciled"
+      ]
+    },
+    {
+      "profile_id": "Item_Weapon_vz61Skorpion_C",
+      "display_name": "Skorpion",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_vz61Skorpion_C"
+        ],
+        "actor_class_names": [
+          "Weapvz61Skorpion_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 350,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": {
+            "abscissa": "published_distance_m",
+            "ordinate": "published_speed_mps",
+            "keys": [
+              [
+                0,
+                350
+              ],
+              [
+                100,
+                291
+              ],
+              [
+                200,
+                257
+              ],
+              [
+                300,
+                232
+              ],
+              [
+                400,
+                210
+              ],
+              [
+                500,
+                191
+              ],
+              [
+                600,
+                174
+              ],
+              [
+                700,
+                158
+              ],
+              [
+                800,
+                143
+              ],
+              [
+                900,
+                131
+              ],
+              [
+                1000,
+                119
+              ]
+            ],
+            "interpolation": null,
+            "tangents": null,
+            "precision": "published tooltip; formatting may round source values"
+          },
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/skorpion/",
+        "content_sha256": "902739fdca970a58a8653d3e2752695b606eee519afdcf2cd5369cb3ca3174d4",
+        "locator": "pubg-gs.json#/weapons/60"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_Crossbow_C",
+      "display_name": "Crossbow",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_Crossbow_C"
+        ],
+        "actor_class_names": [
+          "WeapCrossbow_1_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 160,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 1000,
+          "velocity_curve": null,
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/crossbow/",
+        "content_sha256": "e8af7d7cd659a92947e315e73e80117a560ca812052cd8609133d47e5795f543",
+        "locator": "pubg-gs.json#/weapons/61"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_Mortar_C",
+      "display_name": "Mortar",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_Mortar_C"
+        ],
+        "actor_class_names": [
+          "WeapMortar_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": null,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": null,
+          "velocity_curve": null,
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/mortar/",
+        "content_sha256": "30ab31216bec60fe0bcd338903db6b90006621e2b720134753829e52263323cd",
+        "locator": "pubg-gs.json#/weapons/62"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_PanzerFaust100M_C",
+      "display_name": "Panzerfaust",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_PanzerFaust100M_C"
+        ],
+        "actor_class_names": [
+          "WeapPanzerFaust100M1_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": null,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": null,
+          "velocity_curve": null,
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/panzerfaust/",
+        "content_sha256": "8f3730b48265a4d6221a22b6c53bf3f1701d396fb7a711e254ad41d5ed54f7a6",
+        "locator": "pubg-gs.json#/weapons/63"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_Cowbar_C",
+      "display_name": "Crowbar",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_Cowbar_C"
+        ],
+        "actor_class_names": [
+          "WeapCowbar_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": null,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": null,
+          "velocity_curve": null,
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/crowbar/",
+        "content_sha256": "6a2edd4b663445779972a888c37993c95121e082790e07318dccebff334ae31c",
+        "locator": "pubg-gs.json#/weapons/64"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_Machete_C",
+      "display_name": "Machete",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_Machete_C"
+        ],
+        "actor_class_names": [
+          "WeapMachete_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": null,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": null,
+          "velocity_curve": null,
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/machete/",
+        "content_sha256": "849d66e11391bf7760b5713863b014c065f52db547d95856008faa0a9e53ba36",
+        "locator": "pubg-gs.json#/weapons/65"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_Pan_C",
+      "display_name": "Pan",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_Pan_C"
+        ],
+        "actor_class_names": [
+          "WeapPan_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": null,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": null,
+          "velocity_curve": null,
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/pan/",
+        "content_sha256": "68a3ed3d0e578dd09c1ccffa1d3e90c33685cc5b9a4b901887433de8be00f261",
+        "locator": "pubg-gs.json#/weapons/66"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_Pickaxe_C",
+      "display_name": "Pickaxe",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_Pickaxe_C"
+        ],
+        "actor_class_names": [
+          "WeapPickaxe_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": null,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": null,
+          "velocity_curve": null,
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/pickaxe/",
+        "content_sha256": "3d325378d0f89b21fc5c76cd3876098d3bfa7d90f8f0deccec95d6291ad2564d",
+        "locator": "pubg-gs.json#/weapons/67"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_Sickle_C",
+      "display_name": "Sickle",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_Sickle_C"
+        ],
+        "actor_class_names": [
+          "WeapSickle_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": null,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": null,
+          "velocity_curve": null,
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/sickle/",
+        "content_sha256": "942340e753c62a5b0736714f873315e3508719c8ba942aa5e02ab18dd156b5c9",
+        "locator": "pubg-gs.json#/weapons/68"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_IntegratedRepair_C",
+      "display_name": "All-In-One Repair Kit",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_IntegratedRepair_C"
+        ],
+        "actor_class_names": [
+          "WeapIntegratedRepair_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": null,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": null,
+          "velocity_curve": null,
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/all-in-one-repair-kit/",
+        "content_sha256": "8637c08c3294adf9dfd3973e7aac39a016e32434ee02fc3f585f60077c15b1d0",
+        "locator": "pubg-gs.json#/weapons/69"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_TraumaBag_C",
+      "display_name": "EMT Gear",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_TraumaBag_C"
+        ],
+        "actor_class_names": [
+          "WeapTraumaBag_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": null,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": null,
+          "velocity_curve": null,
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/emt-gear/",
+        "content_sha256": "125fc94f8d14cc9a86c350411415307a566151d2944458fb6968d29785c47fc8",
+        "locator": "pubg-gs.json#/weapons/70"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_FlareGun_C",
+      "display_name": "Flare Gun",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_FlareGun_C"
+        ],
+        "actor_class_names": [
+          "WeapFlareGun_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": null,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": null,
+          "velocity_curve": null,
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/flare-gun/",
+        "content_sha256": "8f10e980f4858d41bc7cb564eb854372494d062d0eee215b300684d04011eb29",
+        "locator": "pubg-gs.json#/weapons/71"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_IceGun_C",
+      "display_name": "Flare Gun",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_IceGun_C"
+        ],
+        "actor_class_names": [
+          "WeapIceGun_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": null,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": null,
+          "velocity_curve": null,
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/flare-gun-2/",
+        "content_sha256": "102b76527ba9073e297ee67d45b07ebda677448cbc6510b52c704e8053be3c9f",
+        "locator": "pubg-gs.json#/weapons/72"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_Shield_C",
+      "display_name": "Shield",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_Shield_C"
+        ],
+        "actor_class_names": [
+          "WeapTacticalShield_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": null,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": null,
+          "velocity_curve": null,
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/shield/",
+        "content_sha256": "e95c74ec412e7e490382a80762b190cbfa59db352344c8dab66f2e25de657f6e",
+        "locator": "pubg-gs.json#/weapons/73"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_TacPack_C",
+      "display_name": "Tactical Pack",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_TacPack_C"
+        ],
+        "actor_class_names": [
+          "WeapTacPack_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": null,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": null,
+          "velocity_curve": null,
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/tactical-pack/",
+        "content_sha256": "441770731798726d4824c1a0c266014319edeecc695b2e779bb9d0814533a1bb",
+        "locator": "pubg-gs.json#/weapons/74"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_CamoNet_C",
+      "display_name": "Vehicle Camo Netting",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_CamoNet_C"
+        ],
+        "actor_class_names": [
+          "WeapCamoNet_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": null,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": null,
+          "velocity_curve": null,
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/vehicle-camo-netting/",
+        "content_sha256": "a6aaf139568907ca20c94b9c36e229f37d85018a8bca98dc7a05affd7917bbc5",
+        "locator": "pubg-gs.json#/weapons/75"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_CamoNet_Desert_C",
+      "display_name": "Vehicle Camo Netting",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_CamoNet_Desert_C"
+        ],
+        "actor_class_names": [
+          "WeapCamoNet_Desert_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": null,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": null,
+          "velocity_curve": null,
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/vehicle-camo-netting-2/",
+        "content_sha256": "ed7dd2436c83e151f897500f4cded9347ca1c0fde9bdc3926d32e0bc241395d9",
+        "locator": "pubg-gs.json#/weapons/76"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_CamoNet_Taego_C",
+      "display_name": "Vehicle Camo Netting",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_CamoNet_Taego_C"
+        ],
+        "actor_class_names": [
+          "WeapCamonet_Taego_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": null,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": null,
+          "velocity_curve": null,
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/vehicle-camo-netting-4/",
+        "content_sha256": "824773c21b1393c710b24dd4735cd80278f7702af4d66886afbced2aadf8248f",
+        "locator": "pubg-gs.json#/weapons/77"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_CamoNet_Rondo_C",
+      "display_name": "Vehicle Camo Netting",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_CamoNet_Rondo_C"
+        ],
+        "actor_class_names": [
+          "WeapCamoNet_Rondo_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": null,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": null,
+          "velocity_curve": null,
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/vehicle-camo-netting-3/",
+        "content_sha256": "04454ea00e42336658cda2c8d474c05cd67f8567c09222d7aef70f78b9afcb2d",
+        "locator": "pubg-gs.json#/weapons/78"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_Ziplinegun_C",
+      "display_name": "Zipline Gun",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_Ziplinegun_C"
+        ],
+        "actor_class_names": [
+          "WeapZiplinegun_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": 160,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": 55,
+          "velocity_curve": null,
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/zipline-gun/",
+        "content_sha256": "33645eafab69287d02fe0f281c307a7fcdcce857445dbb1733a83c10757371f8",
+        "locator": "pubg-gs.json#/weapons/79"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_JerryCan_C",
+      "display_name": "Gas Can",
+      "bindings": {
+        "item_ids": [
+          "Item_JerryCan_C"
+        ],
+        "actor_class_names": [
+          "WeapJerryCan_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": null,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": null,
+          "velocity_curve": null,
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/gas-can/",
+        "content_sha256": "134fd79cae6ece6cac91d180d60558b95446e13c593dae784dfb98108d5eaa46",
+        "locator": "pubg-gs.json#/weapons/80"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_TimeBombKit_C",
+      "display_name": "Blue Zone Generator",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_TimeBombKit_C"
+        ],
+        "actor_class_names": [
+          "WeapPlantedTimeBomb_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": null,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": null,
+          "velocity_curve": null,
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/blue-zone-generator/",
+        "content_sha256": "f821eb9b49b666dafcdc3e1d83c9f88d0c17b2c46ae6483828d293c05d879a18",
+        "locator": "pubg-gs.json#/weapons/81"
+      },
+      "notes": []
+    },
+    {
+      "profile_id": "Item_Weapon_DefusingBombKit_C",
+      "display_name": "Dismantle Kit",
+      "bindings": {
+        "item_ids": [
+          "Item_Weapon_DefusingBombKit_C"
+        ],
+        "actor_class_names": [
+          "WeapDefusingBombKit_C"
+        ],
+        "verified_with_reader": false
+      },
+      "applicability": {
+        "ammo_item_id": null,
+        "attachment_signature": null,
+        "firing_mode": null
+      },
+      "readiness": "reference_only",
+      "model": {
+        "id": "published_reference.v1",
+        "parameters": {
+          "initial_speed_mps": null,
+          "gravity_vector_mps2": null,
+          "shooter_velocity_inheritance": null,
+          "simulation_step_s": null,
+          "max_travel_distance_m": null,
+          "velocity_curve": null,
+          "drag_law": null,
+          "sight_and_muzzle_geometry": null
+        }
+      },
+      "provenance": {
+        "source_ref": "https://pubg.gs/weapons/dismantle-kit/",
+        "content_sha256": "9b13102795b80932c0856aacf7aa0ba53c95fac4485a050311b700dc28d743c2",
+        "locator": "pubg-gs.json#/weapons/82"
+      },
+      "notes": []
+    }
+  ],
+  "revision": "sha256:2db29ff6d22bfda3673d3009085f0d743b4e522df6fa85baa196e27c6cd8b495"
+}

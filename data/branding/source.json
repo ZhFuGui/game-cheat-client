@@ -1,0 +1,21 @@
+{
+  "source": "https://chatgpt.com/s/m_6ade3942d94881919944170fd53e4eb7",
+  "sha256": "6c4e08ba747c815ae4d6b5e4464d81d731b668396999b0292bd64eda4afd68c1",
+  "usage": "Application icon; tighter transparent framing, approved for replacing all icon entry points on 2026-10-26",
+  "derivedFromSha256": "2bb010edbacc052d4fda8a5ab009875821d84af35b9cb1530e6ab5c37d8e5a46",
+  "processing": {
+    "tool": "image_gen",
+    "transparentBackground": true,
+    "operation": "Tight transparent framing; generated derivative rather than a lossless pixel crop",
+    "prompt": "Edit this existing application icon ONLY by tightly cropping the transparent outside canvas around the entire existing artwork. This is a crop/reframing operation, NOT a redesign. Preserve the exact golden hand holding the mouse, all original mouse outline details, shape, colors, lighting, texture, proportions and transparency. Include the COMPLETE artwork including the top of the mouse and the bottom curved wrist edge; cut off no part of the subject. Remove as much empty outer transparent margin as possible. Output a square transparent PNG suitable as a Windows app icon: keep the intact artwork at its original aspect ratio, center it in the square, and make its longer dimension occupy about 97% of the square height, leaving only about 1.5% transparent margin at top and bottom. Because the subject is narrow, transparent space on left and right is expected. Preserve all fine edge antialiasing, no background, no new shadow, no text, no added elements, no outline or decorative border, no stylistic changes."
+  },
+  "sizes": [
+    16,
+    24,
+    32,
+    48,
+    64,
+    128,
+    256
+  ]
+}

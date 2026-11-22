@@ -1,0 +1,2 @@
+#include "font_resource.h"
+MOUSEBOX_PRIMARY_FONT RCDATA "canger-jinkai-05-w03.ttf"

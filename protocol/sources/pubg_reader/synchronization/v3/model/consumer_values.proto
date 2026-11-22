@@ -1,0 +1,252 @@
+syntax = "proto3";
+package pubg.reader.synchronization.v3;
+// 自动生成的纯业务值；无地址、serial、原生骨架下标或局部矩阵。
+enum ConsumerBoneRole {
+  CONSUMER_BONE_UNSPECIFIED = 0; // 未知主干语义，不能当作有效骨点。
+  CONSUMER_BONE_PELVIS = 1; // 稳定人体主干语义1，不依赖参考骨架下标。
+  CONSUMER_BONE_SPINE_01 = 2; // 稳定人体主干语义2，不依赖参考骨架下标。
+  CONSUMER_BONE_SPINE_02 = 3; // 稳定人体主干语义3，不依赖参考骨架下标。
+  CONSUMER_BONE_SPINE_03 = 4; // 稳定人体主干语义4，不依赖参考骨架下标。
+  CONSUMER_BONE_NECK = 5; // 稳定人体主干语义5，不依赖参考骨架下标。
+  CONSUMER_BONE_HEAD = 6; // 稳定人体主干语义6，不依赖参考骨架下标。
+  CONSUMER_BONE_CLAVICLE_LEFT = 7; // 稳定人体主干语义7，不依赖参考骨架下标。
+  CONSUMER_BONE_UPPER_ARM_LEFT = 8; // 稳定人体主干语义8，不依赖参考骨架下标。
+  CONSUMER_BONE_LOWER_ARM_LEFT = 9; // 稳定人体主干语义9，不依赖参考骨架下标。
+  CONSUMER_BONE_HAND_LEFT = 10; // 稳定人体主干语义10，不依赖参考骨架下标。
+  CONSUMER_BONE_CLAVICLE_RIGHT = 11; // 稳定人体主干语义11，不依赖参考骨架下标。
+  CONSUMER_BONE_UPPER_ARM_RIGHT = 12; // 稳定人体主干语义12，不依赖参考骨架下标。
+  CONSUMER_BONE_LOWER_ARM_RIGHT = 13; // 稳定人体主干语义13，不依赖参考骨架下标。
+  CONSUMER_BONE_HAND_RIGHT = 14; // 稳定人体主干语义14，不依赖参考骨架下标。
+  CONSUMER_BONE_THIGH_LEFT = 15; // 稳定人体主干语义15，不依赖参考骨架下标。
+  CONSUMER_BONE_CALF_LEFT = 16; // 稳定人体主干语义16，不依赖参考骨架下标。
+  CONSUMER_BONE_FOOT_LEFT = 17; // 稳定人体主干语义17，不依赖参考骨架下标。
+  CONSUMER_BONE_THIGH_RIGHT = 18; // 稳定人体主干语义18，不依赖参考骨架下标。
+  CONSUMER_BONE_CALF_RIGHT = 19; // 稳定人体主干语义19，不依赖参考骨架下标。
+  CONSUMER_BONE_FOOT_RIGHT = 20; // 稳定人体主干语义20，不依赖参考骨架下标。
+}
+message ConsumerVector {
+  float x = 1; // 世界X分量。
+  float y = 2; // 世界Y分量。
+  float z = 3; // 世界Z分量。
+}
+message ConsumerOrigin {
+  sint32 x = 1; // 坐标原点X。
+  sint32 y = 2; // 坐标原点Y。
+  sint32 z = 3; // 坐标原点Z。
+}
+message ConsumerRotation {
+  float pitch = 1; // 俯仰角，度。
+  float yaw = 2; // 偏航角，度。
+  float roll = 3; // 滚转角，度。
+}
+message ConsumerQuaternion {
+  float x = 1; // 四元数X。
+  float y = 2; // 四元数Y。
+  float z = 3; // 四元数Z。
+  float w = 4; // 四元数W。
+}
+message ConsumerTransform {
+  ConsumerQuaternion rotation = 1; // 世界旋转。
+  ConsumerVector translation = 2; // 世界位置。
+  ConsumerVector scale = 3; // 缩放。
+}
+message ConsumerReference {
+  uint64 id = 1; // 不复用的业务实体ID。
+  uint32 kind = 2; // 实体种类，1人物2载具3拾取4生物5地面组。
+}
+message ConsumerSpatial {
+  optional ConsumerVector position = 1; // 真实当前位置，单位沿用坐标上下文。
+  optional ConsumerOrigin origin = 2; // 该位置所属真实原点。
+}
+message ConsumerLivingState {
+  optional sint32 team = 1; // 队伍编号，零合法。
+  optional bool is_bot = 2; // 已核验人机标志，false合法。
+  optional uint32 character_type = 6; // 已解释活体类型，未知缺失。
+}
+message ConsumerName {
+  optional string value = 1; // 显示名或可信标识，空串合法。
+}
+message ConsumerWorldVelocity {
+  optional ConsumerVector velocity = 1; // 身体总世界线速度，包含已核验骑乘/基座运动，cm/s。
+  optional uint32 source = 2; // 业务速度分支语义，1运动2物理3骑乘4基座5明确零。
+  optional ConsumerReference owner = 3; // 该身体总世界速度所属实体。
+}
+message ConsumerMovement {
+  optional ConsumerVector component_velocity = 1; // 原生运动组件速度，不等同身体总世界速度。
+  optional ConsumerWorldVelocity world = 4; // 独立采样的身体总世界速度。
+}
+message ConsumerBone {
+  ConsumerBoneRole role = 1; // 20种人体主干语义，不是原生骨骼下标。
+  optional ConsumerVector world_position = 5; // 该语义骨点当前世界位置。
+  optional ConsumerBoneRole parent_role = 2; // 主干业务父语义，缺失不伪造原生层级。
+}
+message ConsumerSkeleton {
+  optional ConsumerOrigin origin = 1; // 骨点统一绑定的真实原点。
+  repeated ConsumerBone bones = 2; // 当前主干语义骨点，缺点不补零。
+  optional ConsumerReference owner = 3; // 姿态所属人物。
+  optional uint64 layout_token = 4; // 已核验骨架布局语义token。
+  optional uint64 pose_token = 5; // 当前姿态提供组件生命周期token。
+}
+message ConsumerVehicleState {
+  optional float health = 1; // 载具耐久。
+  optional float max_health = 2; // 最大耐久。
+  optional float fuel = 3; // 燃料。
+  optional float max_fuel = 4; // 最大燃料。
+  optional bool engine_running = 5; // 引擎状态。
+  optional bool destroyed = 6; // 已毁状态。
+  optional bool is_dying = 7; // 原生dying状态。
+  optional bool is_broken = 8; // 原生broken状态。
+}
+message ConsumerSeat {
+  optional sint32 index = 1; // 座位业务编号。
+  uint32 occupancy = 2; // 占用状态。
+  uint32 coverage = 3; // 乘员采样覆盖状态。
+  repeated ConsumerReference riders = 4; // 独立跨流人物引用。
+}
+message ConsumerSeats {
+  uint32 coverage = 1; // 座位读取覆盖状态。
+  optional uint32 declared_seats = 2; // 座位数量。
+  optional uint32 occupied_seats = 3; // 占用数量。
+  repeated ConsumerSeat seats = 4; // 当前座位与乘员。
+}
+message ConsumerVehicleModel {
+  optional string model_key = 1; // 车型业务键。
+  optional string class_name = 2; // 可信车型名称。
+}
+message ConsumerVehicleType {
+  uint32 kind = 1; // 已核验载具类型。
+}
+message ConsumerCreatureType {
+  optional uint32 character_type = 1; // 已解释活体类型。
+  uint32 species = 2; // 已核验物种。
+}
+message ConsumerContainerType {
+  uint32 kind = 1; // 已核验地面组类型。
+}
+message ConsumerItemDefinition {
+  optional uint32 item_id = 1; // 物品定义ID。
+  optional string identifier = 2; // 可信物品标识。
+  optional string display_name = 3; // 物品显示名。
+}
+message ConsumerItemClassification {
+  uint32 category = 1; // 已解释物品类别。
+  uint32 status = 2; // 分类可用状态。
+}
+message ConsumerStack {
+  optional sint32 quantity = 1; // 物品数量，零合法。
+  optional float durability = 2; // 耐久。
+  optional float max_durability = 3; // 最大耐久。
+}
+message ConsumerGroundMember {
+  uint64 id = 1; // 地面成员不复用业务ID。
+  optional ConsumerSpatial spatial = 2; // 成员自己的位置。
+  optional ConsumerItemDefinition definition = 3; // 成员物品定义。
+  optional ConsumerStack stack = 4; // 成员数量及耐久。
+  optional ConsumerItemClassification classification = 5; // 成员物品类别。
+}
+message ConsumerGroundContents {
+  uint32 coverage = 1; // 成员完整采样覆盖状态。
+  repeated ConsumerGroundMember members = 2; // 当前全部已核验地面成员。
+}
+message ConsumerLocalControl {
+  optional uint64 controller_token = 1; // 不暴露地址的控制器生命周期token。
+  optional ConsumerReference character = 2; // 本地身体引用，死亡后可以缺失。
+  optional ConsumerReference controlled = 3; // 实际控制对象引用。
+}
+message ConsumerCamera {
+  optional ConsumerVector position = 1; // 当前实际视点位置。
+  optional ConsumerRotation rotation = 2; // 当前最终视角。
+  optional float fov_degrees = 3; // 当前有效视野角。
+  optional ConsumerOrigin origin = 4; // 视点所属原点。
+  optional float cached_fov_degrees = 5; // 缓存FOV。
+  optional float locked_fov_degrees = 6; // 锁定FOV。
+  optional float cache_time_seconds = 7; // 相机缓存世界时间。
+  optional uint64 controller_token = 8; // 相机所属控制器token。
+  optional uint64 source_token = 9; // 相机来源生命周期及归属token。
+}
+message ConsumerCameraTarget {
+  optional bool has_target = 1; // 当前是否有视点目标。
+  optional bool pending_active = 2; // 是否处于待切换目标状态。
+  optional ConsumerReference target = 3; // 当前视点目标引用。
+}
+message ConsumerMuzzle {
+  optional ConsumerOrigin origin = 1; // 枪口所属原点。
+  optional string attach_name = 2; // 挂点语义名。
+  optional string bone_name = 3; // 挂点绑定的语义骨名。
+  optional uint32 binding = 6; // 已核验挂点绑定方式。
+  optional ConsumerTransform world_transform = 10; // 当前枪口世界位置和朝向，不含局部矩阵。
+}
+message ConsumerRecoil {
+  optional float target_pitch = 1; // 原生俯仰剩余目标量，不是已施加角。
+  optional float target_yaw = 2; // 原生偏航剩余目标量。
+  optional float recovery_target = 3; // 原生恢复目标量。
+}
+message ConsumerWeapon {
+  optional uint64 weapon_token = 1; // 不暴露地址的当前武器生命周期token。
+  optional string name = 2; // 当前武器可信名称。
+  optional sint32 active_slot = 3; // 当前武器槽业务编号。
+  optional ConsumerMuzzle muzzle = 4; // 当前武器世界枪口几何。
+  optional ConsumerRecoil recoil = 5; // 独立采样的原生后坐目标。
+  optional uint32 trajectory_generation = 6; // 原生轨迹建立计数，零合法。
+  optional bool has_current_item = 7; // 是否有当前物品，false不是读取失败。
+  optional ConsumerReference owner = 8; // 持有武器的当前身体。
+}
+message ConsumerSpectators {
+  optional uint32 count = 1; // 本地身体当前观战人数。
+  optional ConsumerReference owner = 2; // 观战人数所属的当前身体。
+}
+message ConsumerControllerRotation {
+  optional uint64 controller_token = 1; // 控制器生命周期token。
+  optional ConsumerRotation rotation = 2; // 独立原生控制器旋转。
+}
+message ConsumerHolding {
+  optional bool accepted_holding = 3; // 原生接受的屏息状态。
+  optional float blend = 4; // 原生屏息过渡值。
+}
+message ConsumerSway {
+  optional ConsumerRotation rotation = 3; // 已核定原生sway量，不能擅自重复叠加。
+}
+message ConsumerAimBasis {
+  optional ConsumerReference owner = 1; // 所属人物身体引用。
+  optional uint64 weapon_token = 2; // 所属武器生命周期token。
+  optional uint64 native_context_token = 3; // 原生输入上下文token，依赖对象或解释语义变化时改变。
+  optional ConsumerVector direction = 6; // 已核验原生散布前基方向。
+  optional float zeroing_distance_m = 7; // 原生归零距离，米。
+  optional float zeroing_correction_degrees = 8; // 归零修正，度。
+  optional uint32 integrated_steps = 9; // 积分步数。
+  optional bool zeroing_reached_distance = 10; // 积分是否到达归零距离。
+  optional float integrated_distance_cm = 11; // 实际积分距离，厘米。
+  optional uint32 branch = 12; // 1枪口归零分支2无trace视点分支。
+  optional uint32 stage = 13; // 1原生分支后散布前。
+  optional bool native_zeroing_applied = 14; // 是否已包含原生归零，防止重复叠加。
+  optional string native_profile = 15; // 已核定业务语义版本，不是内存规则/地址证据。
+  optional uint64 controller_token = 16; // 基方向绑定的控制器token。
+}
+message ConsumerGroupValue {
+  oneof value {
+    ConsumerSpatial spatial = 1; // 已请求且本批可用的Spatial业务值。
+    ConsumerLivingState living_state = 2; // 已请求且本批可用的LivingState业务值。
+    ConsumerName name = 3; // 已请求且本批可用的Name业务值。
+    ConsumerMovement movement = 4; // 已请求且本批可用的Movement业务值。
+    ConsumerSkeleton skeleton = 5; // 已请求且本批可用的Skeleton业务值。
+    ConsumerVehicleState vehicle_state = 6; // 已请求且本批可用的VehicleState业务值。
+    ConsumerSeats seats = 7; // 已请求且本批可用的Seats业务值。
+    ConsumerVehicleModel vehicle_model = 8; // 已请求且本批可用的VehicleModel业务值。
+    ConsumerVehicleType vehicle_type = 9; // 已请求且本批可用的VehicleType业务值。
+    ConsumerCreatureType creature_type = 10; // 已请求且本批可用的CreatureType业务值。
+    ConsumerContainerType container_type = 11; // 已请求且本批可用的ContainerType业务值。
+    ConsumerItemDefinition item_definition = 12; // 已请求且本批可用的ItemDefinition业务值。
+    ConsumerItemClassification item_classification = 13; // 已请求且本批可用的ItemClassification业务值。
+    ConsumerStack stack = 14; // 已请求且本批可用的Stack业务值。
+    ConsumerGroundContents ground_contents = 15; // 已请求且本批可用的GroundContents业务值。
+    ConsumerLocalControl local_control = 16; // 已请求且本批可用的LocalControl业务值。
+    ConsumerCamera camera = 17; // 已请求且本批可用的Camera业务值。
+    ConsumerCameraTarget camera_target = 18; // 已请求且本批可用的CameraTarget业务值。
+    ConsumerWeapon weapon = 19; // 已请求且本批可用的Weapon业务值。
+    ConsumerSpectators spectators = 20; // 已请求且本批可用的Spectators业务值。
+    ConsumerControllerRotation controller_rotation = 21; // 已请求且本批可用的ControllerRotation业务值。
+    ConsumerHolding holding = 22; // 已请求且本批可用的Holding业务值。
+    ConsumerSway sway = 23; // 已请求且本批可用的Sway业务值。
+    ConsumerAimBasis aim_basis = 24; // 已请求且本批可用的AimBasis业务值。
+  }
+}

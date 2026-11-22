@@ -1,1 +1,1 @@
-hello pubg-mousebox-aimbot !
+hello mousebox-aimbot !

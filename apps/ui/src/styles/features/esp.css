@@ -1,0 +1,115 @@
+.visuals-page {
+  display: flex;
+  flex-direction: column;
+}
+.visuals-page > .browser-page-content {
+  flex: 1;
+  min-height: 0;
+}
+.visuals-page > .visuals-esp-panel {
+  padding: 0;
+}
+.esp-page {
+  padding: 20px 24px 15px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+.esp-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 13px;
+}
+.esp-status {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+  font-size: 11px;
+  color: var(--muted-foreground);
+}
+.esp-body {
+  display: flex;
+  flex: 1;
+  gap: 15px;
+  min-height: 0;
+}
+.esp-settings {
+  display: flex;
+  flex-direction: column;
+  width: 275px;
+  flex-shrink: 0;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 17px 16px 0;
+}
+.esp-panel-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.esp-panel-heading h2 {
+  font-size: 12px;
+}
+.esp-panel-heading small {
+  font-size: 10px;
+  color: var(--muted-foreground);
+}
+.esp-settings .tabs {
+  display: flex;
+  margin-bottom: 18px;
+}
+.esp-settings .tabs button {
+  flex: 1;
+}
+.esp-settings-scroll {
+  overflow: auto;
+  flex: 1;
+  padding-right: 2px;
+}
+.esp-settings-scroll > .field {
+  margin-bottom: 18px;
+}
+.esp-settings-scroll h3 {
+  color: var(--muted-foreground);
+  font-size: 10px;
+  font-weight: 400;
+  margin: 14px 0 7px;
+}
+.esp-settings-scroll > .hint {
+  margin: 16px 0;
+}
+.esp-panel-footer {
+  padding: 14px 0;
+  border-top: 1px solid var(--border);
+  margin-top: 10px;
+}
+.native-surface {
+  flex: 1;
+  min-width: 100px;
+  min-height: 150px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--canvas);
+  overflow: hidden;
+}
+.esp-footer {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 12px;
+  font-size: 11px;
+  color: var(--muted-foreground);
+}
+.esp-footer a {
+  margin-left: auto;
+}
+.esp-footer a:hover {
+  text-decoration: underline;
+}

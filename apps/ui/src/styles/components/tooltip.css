@@ -1,0 +1,19 @@
+.ui-tooltip-positioner { z-index: 1100; }
+.ui-tooltip { width: min(420px, calc(100vw - 32px)); padding: 16px 18px; border: 1px solid var(--border); border-radius: 10px; background: var(--popover); color: var(--foreground); box-shadow: 0 8px 28px #0002; font-size: 12px; line-height: 1.8; }
+.ui-tooltip strong { display: block; font-size: 13px; margin-bottom: 10px; }
+.ui-tooltip p + p { margin-top: 10px; }
+.ui-tooltip { max-height: min(520px, calc(100vh - 32px)); overflow-y: auto; }
+.field-label { display: flex; align-items: center; gap: 7px; min-width: 0; }
+.field-label > label { margin: 0; }
+.field > .field-label { font-size: 12px; font-weight: 500; }
+.help-trigger { display: inline-grid; place-items: center; flex: 0 0 auto; width: 22px; height: 22px; padding: 0; border: 0; border-radius: 4px; background: transparent; color: var(--muted-foreground); cursor: help; }
+.help-trigger:hover { color: var(--foreground); background: color-mix(in srgb, var(--foreground) 7%, transparent); }
+.help-trigger:focus-visible { outline: 2px solid var(--ring); outline-offset: 1px; }
+.nav-entry { position: relative; min-width: 0; }
+.nav-item.has-help { padding-right: 38px; }
+.nav-help-trigger { position: absolute; top: 50%; right: 9px; transform: translateY(-50%); display: grid; place-items: center; width: 22px; height: 26px; padding: 0; border: 0; border-radius: 4px; color: var(--muted-foreground); background: transparent; cursor: help; }
+.nav-entry:has(.nav-item.active) .nav-help-trigger { color: var(--sidebar-accent-foreground); }
+.nav-help-trigger:hover { background: color-mix(in srgb, var(--foreground) 10%, transparent); }
+.nav-help-trigger:focus-visible { outline: 2px solid var(--ring); outline-offset: 1px; }
+:root[data-sidebar-collapsed="true"] .sidebar .nav-help-trigger { top: auto; bottom: 1px; right: 1px; transform: none; width: 15px; height: 15px; }
+:root[data-sidebar-collapsed="true"] .sidebar .nav-help-trigger svg { width: 11px; height: 11px; }

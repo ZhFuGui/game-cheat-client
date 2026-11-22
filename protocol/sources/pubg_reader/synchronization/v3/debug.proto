@@ -1,0 +1,136 @@
+syntax = "proto3";
+package pubg.reader.synchronization.v3;
+
+import "synchronization/v3/model/shared.proto";
+import "synchronization/v3/model/living.proto";
+import "synchronization/v3/model/vehicle.proto";
+import "synchronization/v3/model/ground_loot.proto";
+import "synchronization/v3/model/local.proto";
+
+message FrameContext {
+  repeated ContextState groups = 1; // World/Map/Coordinates/Pacing四组完整终态；本地专属数据仅在local提供。
+  LocalState local = 2; // 仅CATEGORY_LOCAL必须提供的本地客户端聚合；其他类别禁止提供。
+}
+
+message GroupVerification {
+  PropertyGroup group = 1; // 唯一组，必须覆盖 KindContract.enabled_groups。
+  CurrentStatus status = 2; // 本帧终态，失败/未实现也必须存在。
+  fixed64 present_fields = 3; // 当前字段位域，缺位不继承旧当前资格。
+  SampleInterval verified_sample = 4; // 本帧真实核验，capture_sequence 必须等本帧。
+  repeated NestedSample nested_samples = 5; // 所有嵌套独立观察，不能从父组隐式刷新子项证明。
+  SampleInterval source = 6; // 本批真实属性采样区间；有值时必传，即使数值未变也不能沿用基线时戳，无字段时缺失。
+}
+message EntityVerification {
+  uint64 entity_id = 1; // 本流不复用的 registry ID。
+  EntityKind kind = 2; // 规范化主类型，不能跨类型续用同 ID。
+  InstanceIdentity instance = 3; // 当前真实实例，全部字段存在。
+  repeated GroupVerification groups = 4; // 完整启用组终态，值与证据一起遗漏仍拒绝。
+}
+message SourceVerification {
+  bool opening_complete = 1; // 输入目录完整复制并核验；false不代表已知空，不宣称本批重读名单。
+  bool closing_complete = 2; // 已按提交时最近成功成员目录完成撤销；false无当前资格。
+  fixed64 level_address = 3; // 本帧主 Level。
+  uint64 opening_slots = 4; // 原始槽位，包括空值、未知、重复。
+  uint64 closing_slots = 5; // 闭帧真实槽位数。
+  SampleInterval opening = 6; // 输入目录复制的真实区间，序号为directory_generation，可早于本批。
+  SampleInterval closing = 7; // 最近成功成员目录的真实区间，序号为membership_generation，可早于本批。
+  fixed64 opening_container_address = 8; // 开帧数组地址，已知空可为0。
+  fixed64 closing_container_address = 9; // 闭帧数组地址。
+}
+message CaptureInterval {
+  uint64 capture_sequence = 1; // 本帧采集序号。
+  uint64 started_qpc = 2; // 本帧首次目标数据读取之前记录的起点，包含采集开销，发送时不刷新。
+  uint64 finished_qpc = 3; // 完整闭帧提交边界，包含读取后的DTO/事实整理及最终系统进程身份提交检查；读取完成边界使用read_finished_qpc。
+  uint64 clock_mapping_revision = 4; // 使用已协商且有效的映射。
+  optional uint64 read_finished_qpc = 5; // 本帧最后一次目标数据读取及必要读取核验完成瞬间；后续DTO/事实整理不计入，须落在started至finished范围内；缺失不填0。
+}
+message CurrentVerification {
+  bool frame_accepted = 1; // 失败版本撤销旧成功资格，可靠 Invalidate 优先。
+  CaptureInterval capture = 2; // 原始开闭窗口。
+  repeated EntityVerification entities = 3; // 当前全部可发布实例，不只列变化对象。
+  reserved 4;
+  Category category = 6; // 此批唯一业务类别。
+  uint64 directory_generation = 7; // Actor类别采用的完整名单代次；LOCAL不依赖目录，必须为0。
+  uint64 classification_generation = 8; // Actor类别采用的分类代次；LOCAL必须为0。
+  SampleInterval directory_observation = 9; // 名单实际观察区间，允许早于本批采样。
+  SampleInterval classification_observation = 10; // 分类实际观察区间，不冒充本批读取。
+  TaskSummary tasks = 11; // 本批属性任务守恒统计。
+  uint64 membership_generation = 12; // 本批提交时实际使用的最近完成成员目录代次。
+  SampleInterval membership_observation = 13; // 成员目录的真实观察区间，不冒充本批完整重读。
+  SourceVerification source = 5; // Actor类别必须有真实来源证明；LOCAL必须缺失，由Context.local独立源链证明。
+}
+message PropertyValue {
+  oneof value {
+    IdentityValue identity = 1; // Identity规范化值。
+    SpatialValue spatial = 2; // Spatial规范化值。
+    CharacterStateValue character_state = 3; // 人物状态。
+    StringValue character_name = 5; // 人物名称。
+    VehicleStateValue vehicle_state = 6; // 载具状态。
+    VehicleSeatsValue vehicle_seats = 7; // 座位和乘员。
+    NameValue vehicle_name = 8; // 载具名称。
+    VehicleModelValue vehicle_model = 9; // 车型。
+    ItemOwnerValue pickup_owner = 10; // 拾取关联。
+    ItemStackValue pickup_stack = 11; // 实例物品。
+    ItemDefinitionValue pickup_definition = 12; // 定义。
+    VehicleClassificationValue vehicle_classification = 13; // 载具准入分类。
+    PickupClassificationValue pickup_classification = 14; // 拾取准入分类。
+    CreatureClassificationValue creature_classification = 15; // 生物准入分类。
+    ItemClassificationValue pickup_item_classification = 16; // 未实现分类不得填默认值。
+    GroundGroupClassificationValue ground_group_classification = 17; // 容器原生准入分类。
+    GroundGroupContentsValue ground_group_contents = 18; // 地面掉落组成员及独立物品属性。
+    CharacterSkeletonValue character_skeleton = 20; // 人物主 Mesh 的当前骨骼姿态、名称与父子关系，时间来自本组 source_sample。
+    CharacterMovementValue character_movement = 21; // 人物原生运动组件的本批速度及来源，时间来自本组 source_sample；失败清空，不沿用历史速度。
+  }
+}
+message PropertyState {
+  PropertyGroup group = 1; // 唯一启用组。
+  CurrentStatus status = 2; // 当前组终态，必须与证据一致。
+  fixed64 present_fields = 3; // 恰好对应提供值字段，非位域字段禁止存在。
+  PropertyValue value = 4; // 仅规范化组值；无值时缺失。
+  SampleInterval source_sample = 5; // 真实属性采样序号/QPC；同值被本批重读仍更新，只有真实复用才保留原来源，不虚拟刷新。
+  SampleInterval verified_sample = 6; // 当前实际核验序号/QPC。
+  repeated NestedSample nested_samples = 7; // 子项自身观察，重复/缺失或越域拒绝。
+}
+message EntityRecord {
+  uint64 entity_id = 1; // 本流统一registry ID。
+  EntityKind kind = 2; // 当前已实现的五种独立 Actor 种类。
+  InstanceIdentity instance = 3; // 必须与Identity组和当前证明完全相等。
+  repeated PropertyState properties = 4; // 精确规范化投影；拒绝未协商组、额外值字段和重复项。
+}
+message EntityWithdrawal {
+  uint64 entity_id = 1; // 撤销基线实例的当前资格。
+  WithdrawalReason reason = 2; // 暂不可读、范围退出、退役分开。
+}
+message PropertyPatch {
+  uint64 entity_id = 1; // 基线实例ID，不能兼作added/withdrawn。
+  PropertyGroup group = 2; // 唯一组，重复拒绝。
+  PatchOperation operation = 3; // 显式SET/CLEAR/REPLACE。
+  fixed64 set_fields = 4; // 当前要设置的字段，0/false/空串合法。
+  fixed64 clear_fields = 5; // 从基线清除，不能与set交集。
+  PropertyValue value = 6; // 类型与掩码精确一致。
+  SampleInterval source_sample = 7; // 此次变化值原始QPC及原capture_sequence，不能缺失后套发送时刻。
+}
+message Update {
+  uint64 session_id = 1; // 此独立同步连接的随机标识。
+  uint64 epoch = 2; // 当前采集代次，旧代次不能复活。
+  uint64 baseline_generation = 3; // 已ACK的不可变基线代号。
+  uint64 fence = 4; // 可靠提升/失效栅栏。
+  uint64 base_revision = 5; // 固定基线版本。
+  uint64 revision = 6; // 单调状态版本，失败也消费。
+  CurrentVerification current = 7; // 完整当前证明及原始采集时序，不按帧年龄过期。
+  repeated EntityRecord added = 8; // 完整规范化新增，不能带v3额外字段。
+  repeated EntityWithdrawal withdrawn = 9; // 基线当前资格撤销。
+  repeated PropertyPatch changed = 10; // 相对固定基线变化和清除。
+  FrameContext context = 11; // 同版本冻结上下文及当前证明，与实体一次原子提交。
+  optional fixed64 send_started_qpc = 12; // 本次完整消息封装结束后、首次TCP发送接口调用前立即记录的协商域QPC；缺失不填0，绑定本消息session/epoch/revision及current.capture。
+  // 取时后仅原位写入预留的8字节fixed64；该写入及首次发送接口调用前指令开销包含在发送锚点之后，无重新编码或长度变化。
+  // 重建→验证完整组/引用/时钟映射/提交时序→原子commit；失败不ACK成功状态。
+}
+
+message TaskSummary {
+  uint64 planned = 1; // 已计划任务数。
+  uint64 succeeded = 2; // 成功终态数。
+  uint64 read_failed = 3; // 读取失败终态数。
+  uint64 dependency_blocked = 4; // 依赖阻断终态数。
+  uint64 not_executed = 5; // 未执行数；完整批次必须为零。
+}

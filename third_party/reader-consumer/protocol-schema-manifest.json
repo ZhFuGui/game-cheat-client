@@ -1,0 +1,77 @@
+{
+  "wire_protocol_version": 3,
+  "clock_contract_version": 1,
+  "data_schema_version": 3,
+  "control_version": 3,
+  "compiler_version": "libprotoc 35.1",
+  "descriptor_sha256": "4e5f26fed497f86a37d686df443be54d42dcc5e1eeeae79143a19f209e5f6f92",
+  "proto_root": "protocol",
+  "data_entry": "synchronization/v3/consumer.proto",
+  "data_package": "pubg.reader.synchronization.v3",
+  "data_message_type": "pubg.reader.synchronization.v3.ConsumerUpdate",
+  "control_entry": "synchronization/v3/synchronization.proto",
+  "control_package": "pubg.reader.synchronization.v3",
+  "synchronization_version": 3,
+  "synchronization_status": "active",
+  "synchronization_entries": [
+    "synchronization/v3/synchronization.proto",
+    "synchronization/v3/consumer.proto"
+  ],
+  "synchronization_package": "pubg.reader.synchronization.v3",
+  "reliable_entry": "synchronization/v3/synchronization.proto",
+  "reliable_record_type": "pubg.reader.synchronization.v3.ReliableEnvelope",
+  "transport": "independent_category_profile_reliable_tcp",
+  "default_profile": "Consumer",
+  "consumer_entry": "synchronization/v3/consumer.proto",
+  "debug_entry": "synchronization/v3/debug.proto",
+  "schemas": [
+    {
+      "path": "foundation/common.proto",
+      "sha256": "172e0693708b05eebda66e5a1385ae8a5f683b59a0b51f229eb11daa4afa91d3"
+    },
+    {
+      "path": "synchronization/v3/consumer.proto",
+      "sha256": "c1cc58b424ea8f33281ba6b815af608f535f6fc48b42e72814209946accc1604"
+    },
+    {
+      "path": "synchronization/v3/debug.proto",
+      "sha256": "dc673e938216c8c61db942f98b3c3b76bf8ceebef761112bf84653ea9ea643d5"
+    },
+    {
+      "path": "synchronization/v3/model/consumer_values.proto",
+      "sha256": "3a1b4048bbb13b333f40ac0e0c52f11ebc84a73210294da4d1b848e07f0afd25"
+    },
+    {
+      "path": "synchronization/v3/model/container.proto",
+      "sha256": "48b96a8436078b8c8787ed4a522aa9beee32d5ff4e6728ab1ae2308c4b614187"
+    },
+    {
+      "path": "synchronization/v3/model/ground_loot.proto",
+      "sha256": "40b2ef3101014d7a0f2d2cfffc2d9184e17dc2c5eb30f307d26527ef96135384"
+    },
+    {
+      "path": "synchronization/v3/model/living.proto",
+      "sha256": "ffd4091b8fb6e9e03260a6a203ef2509b4195e3d166563c1c40d20f95d0c42c7"
+    },
+    {
+      "path": "synchronization/v3/model/local.proto",
+      "sha256": "c9d2b060a7ce541880d791c6fc90f68190439ae7595d048f8e786572c6929b53"
+    },
+    {
+      "path": "synchronization/v3/model/projectile.proto",
+      "sha256": "011c2dc2d26790b85cca08fed60d1fd0e7355ecfe6cff1204b234f3d7ae3c8b9"
+    },
+    {
+      "path": "synchronization/v3/model/shared.proto",
+      "sha256": "70d70df54b3d7f7c0954f817d952a0e341b7c49573a52cef132a715b4163899d"
+    },
+    {
+      "path": "synchronization/v3/model/vehicle.proto",
+      "sha256": "f58d894f8e0c7c562e80a22eb3331d237e1f29351ee8ed7a557142c73d9aed72"
+    },
+    {
+      "path": "synchronization/v3/synchronization.proto",
+      "sha256": "e3a83a569168dee718eb3725f001d4185e0aefa3f6575abef0341dfea10d110e"
+    }
+  ]
+}

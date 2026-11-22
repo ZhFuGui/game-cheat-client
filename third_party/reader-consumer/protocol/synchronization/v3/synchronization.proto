@@ -1,0 +1,235 @@
+syntax = "proto3";
+package pubg.reader.synchronization.v3;
+// Reader 增量通信入口。TCP记录为4字节大端长度+完整ReliableEnvelope；每方向独立严格递增序号，从1开始。
+// Hello之前正文硬限16384字节；长度/阶段/速率先检查再分配。Hello未完成超时3000ms关闭。
+// 帧不按采集年龄拒收或自动撤销；年龄只用于真实延迟诊断。时序、完整核验和显式失效规则仍须满足。
+// 标识UTF-8最多128字节，所有enum与repeated项须检查未知值/重复；不得静默去重后通过校验。
+// 有界队列仅保最新待发送状态与正在写的一条，可靠控制队列最多64条；慢消费者不能反压采集。
+// 可靠失效优先待写大记录；半写记录不可插入消息。若不能在协商失效期限内写完，直接关闭连接。
+// EOF/断线立即撤销当前值/基线；重连独立新会话，退避100/200/500/1000/2000/5000ms±20%，健康5秒复位。
+// Baseline/Update统一核对每epoch已确认World/Level/坐标身份；同epoch失效/未知不清栅栏，仅更高epoch重置。
+import "synchronization/v3/debug.proto";
+import "synchronization/v3/consumer.proto";
+enum SubscriptionProfile {
+  SUBSCRIPTION_PROFILE_UNSPECIFIED = 0; // Hello缺失时按Consumer；回复必须显式1或2。
+  SUBSCRIPTION_CONSUMER = 1; // 默认纯业务订阅，不读取或构建附加调试信息。
+  SUBSCRIPTION_DEBUG = 2; // 显式订阅丰富来源和调试证据。
+}
+import "synchronization/v3/model/shared.proto";
+
+enum ClockKind {
+  CLOCK_KIND_UNSPECIFIED = 0; // 不合法的时钟类型。
+  CLOCK_WINDOWS_QPC = 1; // Windows性能计数器；域含所属机器本次启动身份。
+  CLOCK_MONOTONIC_COUNTER = 2; // 消费者自有单调计数器；域含进程实例，不冒充Windows QPC。
+}
+message ClockIdentity {
+  string domain_id = 1; // 非空、最多128个可打印ASCII字节；唯一标识计数器原点及生命周期。
+  ClockKind kind = 2; // 计数器类型；不是UTC，也不能直接和另一域相减。
+  uint64 frequency = 3; // 每秒计数，1至10^12；例如单调纳秒计数器为10^9。
+}
+message ClockMapping {
+  string domain_id = 1; // 此宿主/本次启动的已核验时钟域标识，不能仅凭字符串冒充同域证明。
+  ClockKind kind = 2; // 当前只允许已验证的Windows QPC。
+  uint64 qpc_frequency = 3; // 此域每秒tick，全部样本共享。
+  uint64 mapping_revision = 4; // 此连接确认的映射版本，更新映射先可靠确认。
+  uint64 reader_monotonic_anchor_ns = 5; // Reader steady_clock epoch对应的明确标定锚点，单位ns。
+  uint64 qpc_anchor = 6; // 与anchor_ns同一次标定的QPC tick。
+  uint64 max_error_ns = 7; // 标定最大误差上界，必须不超过1ms；仅约束时钟精度。
+  uint64 valid_from_qpc = 8; // 映射有效起点，样本必须在窗口内。
+  uint64 valid_until_qpc = 9; // 同一启动/QPC域中时钟数学可表示终点；不按运行时长断线，也不是帧年龄期限。
+  // QPC=anchor_qpc+(monotonic_ns-anchor_ns)*frequency/1e9，整数安全算术并计舍入误差。
+  // 只映射Reader自身的steady_clock与Reader QPC，不是两机之间的时钟映射。
+  // 消费者核对字段、区间、频率、误差界和源端先后；不同域不得和本地接收时刻相减。
+  // 缺少跨机标定不影响数据安装；同机也须在消费者本地确认域和频率后才可直接比较。
+}
+message TransportPolicy {
+  reserved 1; // 取消UDP，不再协商数据报。
+  uint32 max_tcp_record_bytes = 2; // 协商可靠正文上限，范围65536～16777216。
+  reserved 3;
+  uint32 heartbeat_interval_ms = 4; // 已连接心跳间隔，范围100～1000，默认250。
+  uint32 heartbeat_timeout_ms = 5; // 无有效往返的关闭期限，范围3～10倍间隔。
+  uint32 acknowledgement_timeout_ms = 6; // Baseline/失效确认超时，范围100～3000，最多3次有界重投后重连。
+  uint32 record_progress_timeout_ms = 7; // 半写/半读无进展期限，范围100～3000；按实际字节返回更新。
+  reserved 8; // 取消按记录总年龄超时，仅检测真实无进展。
+  uint32 invalidation_delivery_timeout_ms = 9; // 高优先级失效送达期限，范围10～250，遇大记录不能满足则断连。
+}
+message Hello {
+  SubscriptionProfile profile = 13; // 本连接冻结模式，默认Consumer。
+  fixed64 features = 14; // 0为类别全部已实现业务；本轮非0明确Unsupported，不静默忽略。
+  uint32 protocol_version = 1; // 必须为3，未知版本明确拒绝。
+  string consumer_instance_id = 2; // 消费应用本次运行身份，最多128字节。
+  reserved 3, 5; // 全TCP；删除旧的强制同机claimed_clock_domain。
+  TransportPolicy requested_transport = 4; // 在硬上下界内请求，选定值不得超双方承诺。
+  repeated KindContract requested_kinds = 6; // 每kind启用/必需组与理解能力，重复kind/组拒绝。
+  uint64 nonce = 7; // 本握手非零随机挑战，回复必须对应。
+  string subscription_id = 8; // 此消费者内订阅身份，重连只替换本订阅。
+  Category category = 9; // 本连接唯一类别，容器及投掷物当前返回Unsupported。
+  double target_hz = 10; // 请求采集及发布上限，大于0至144，支持小数。
+  optional ClockIdentity consumer_clock = 11; // 可选接收端时钟；缺失时照常订阅，但不支持时钟探测。
+  uint32 clock_contract_version = 12; // 必须为1；明确采用源/接收端分域契约，旧同机语义不兼容。
+}
+message HelloAccepted {
+  SubscriptionProfile profile = 15; // 明确确认的冻结模式。
+  fixed64 features = 16; // 明确确认的业务能力。
+  repeated ConsumerKindContract business_kinds = 17; // Consumer仅声明净化业务组；Debug使用negotiated_kinds。
+  uint32 protocol_version = 1; // 实际采用版本3。
+  string reader_stream_id = 2; // Reader进程执行流，重启变化。
+  string consumer_instance_id = 3; // 已确认消费应用运行实例。
+  uint64 session_id = 4; // 非零随机连接会话，重连变化。
+  uint64 epoch = 5; // 当前采集代次。
+  TransportPolicy transport = 6; // 双方确认采用的完整有界策略。
+  ClockMapping clock = 7; // Reader来源时钟及其内部映射；验证结构后即可安装数据，无需先跨机标定。
+  repeated KindContract negotiated_kinds = 8; // 不变的每kind完整terminal契约；能力调整新会话/可靠新基线。
+  uint64 nonce = 9; // 回显挑战，拒绝错误nonce。
+  string subscription_id = 10; // 已确认订阅身份。
+  Category category = 11; // 此连接独立类别。
+  PacingValue adopted = 12; // 已采用请求频率及周期。
+  uint32 clock_contract_version = 13; // 必须为1，与Hello一致。
+  optional ClockIdentity consumer_clock = 14; // 原样确认消费者时钟；不代表已完成跨机标定。
+}
+// 可选诊断交换，不参与基线ACK、帧有效性或采集调度。每连接至多一条回复在途，最高5次/秒。
+message ClockProbe {
+  uint64 request_id = 1; // 本会话严格递增、非零；不能复用旧探测ID。
+  optional fixed64 consumer_sent_tick = 2; // t0：消费者封装后、首次send前盖戳；0是合法计数值。
+}
+message ClockProbeReply {
+  uint64 request_id = 1; // 精确对应探测ID；Envelope绑定会话，重连后旧样本不得复用。
+  uint64 epoch = 2; // 请求被处理时的全局代次；不是某一业务采集序号。
+  uint64 clock_mapping_revision = 3; // 对应HelloAccepted.clock中的Reader内部映射版本。
+  optional fixed64 consumer_sent_tick = 4; // 原样回显t0，单位为consumer_clock.frequency。
+  optional fixed64 reader_received_qpc = 5; // t1：Reader发现完整请求记录后、解码前的Reader QPC。
+  optional fixed64 reader_sent_qpc = 6; // t2：回复封装后、首次send前原位盖戳；短写不刷新。
+  // 消费者在完整回复正文组装后、解码前记录本地t3；t0/t3同域，t1/t2同域。
+  // 往返净时间=(t3-t0)/消费者频率-(t2-t1)/Reader频率。禁止直接相减不同域原始tick。
+  // 偏移估计至少带半个净往返的不确定度，不假定上下行对称。四时戳不能证明未来漂移上限。
+  // 映射需报告样本ID、年龄、误差和漂移假设；未映射时跨机单程延迟缺失，不填0。
+  // 探测失败不能撤销有效实体，不设置采集TTL。所有发出的回复必须具有t0/t1/t2。
+}
+message Baseline {
+  uint64 session_id = 1; // 独立同步会话。
+  uint64 epoch = 2; // 原采集代次。
+  uint64 generation = 3; // 单调不可变基线代号，同token内容不同拒绝。
+  uint64 fence = 4; // 严格递增栅栏，撤销所有旧消息资格。
+  uint64 revision = 5; // 原状态版本，精确ACK后才能作为固定基线。
+  CurrentVerification current = 6; // 原采集时序与本帧完整核验证明。
+  repeated EntityRecord entities = 7; // 仅规范化声明投影，禁止携带不可patch额外字段。
+  FrameContext context = 8; // 同版本World/Map/Coordinate/Local/Pacing本批上下文。
+  optional fixed64 send_started_qpc = 9; // 本次消息完成序列化与封装后、首次发送接口调用前立即取得的协商域QPC；缺失不填0，不参与基线状态/token身份。
+  // 为携带此锚点，取时后仅原位写入已预留的8字节fixed64；该8字节写入及接口调用前指令开销计入发送锚点后的耗时。
+  // 提升待ACK期间暂停新增量但继续采集；较高失败即使正在等ACK也可靠Invalidate撤销pending。
+  // 已安装同token同body的重投可回ACK，但不得重装、改变采样时间或降低revision/capture下界。
+}
+message AppliedAck {
+  uint64 session_id = 1; // 此消费者会话，不能推动其他消费者。
+  uint64 epoch = 2; // 精确所属代次。
+  uint64 baseline_generation = 3; // 固定基线代号，不由普通Update ACK隐式提升。
+  uint64 fence = 4; // 已应用栅栏。
+  uint64 base_revision = 5; // 安装基线版本，提升ACK必须精确匹配pending。
+  uint64 applied_revision = 6; // 原子commit后的状态版本；基线ACK必须等base_revision。
+  uint64 capture_sequence = 7; // 精确已应用采集序号，基线ACK必须等pending capseq。
+  // 先完整重建/验证/提交前时序复验→原子commit→ACK，不能以收到/发送成功代替。
+}
+enum ResyncReason {
+  RESYNC_REASON_UNSPECIFIED = 0; // 未知原因，仍不能沿用当前旧值。
+  RESYNC_BASELINE_MISSING = 1; // 没有对应固定基线。
+  reserved 2;
+  RESYNC_VALIDATION_FAILED = 3; // 规范化组/实例/来源/引用验证失败。
+  RESYNC_EPOCH_CHANGED = 4; // 采集上下文代次变化。
+  RESYNC_TRANSPORT_RECONNECTED = 5; // 重连新会话。
+  RESYNC_CLOCK_INVALID = 6; // 来源时钟结构或源内先后不合法；不用于跨机标定缺失或陈旧。
+  RESYNC_READER_FAILED = 7; // Reader当前类别批次或依赖模块失败，不表示实例销毁。
+}
+message ResyncRequest {
+  uint64 request_id = 1; // 非零幂等请求ID，100ms最小重试间隔，合并重复请求。
+  uint64 session_id = 2; // 未知会话先Hello。
+  uint64 epoch = 3; // 本地已知代次。
+  uint64 baseline_generation = 4; // 本地基线token，不代表仍有效。
+  uint64 last_applied_revision = 5; // 原子应用版本，不用最高已收到版本冒充。
+  ResyncReason reason = 6; // 实际重同步原因。
+}
+message Invalidate {
+  uint64 session_id = 1; // 可靠失效所属会话。
+  uint64 epoch = 2; // 可同epoch失效，不要求先有成功采样。
+  uint64 fence = 3; // 严格递增栅栏，抢占pending ACK与旧消息。
+  uint64 revision = 4; // 失败版本下界，同epoch恢复baseline必须严格更高。
+  ResyncReason reason = 5; // 真实失败/代次/断连原因。
+  uint64 capture_sequence = 6; // 非零失败cap下界；后续cap=0模块失败不清旧下界，换epoch才清。
+}
+message InvalidationAck {
+  uint64 session_id = 1; // 此会话确认。
+  uint64 epoch = 2; // 精确失效代次。
+  uint64 fence = 3; // 精确已安装栅栏。
+  uint64 revision = 4; // 已安装失败版本下界。
+  uint64 capture_sequence_floor = 5; // 保留的失败采集下界，确认不是清值成功帧ACK。
+}
+enum ControlOperation {
+  CONTROL_OPERATION_UNSPECIFIED = 0; // 未知操作拒绝。
+  CONTROL_GET = 1; // 查询实际采用配置，不推进版本。
+  CONTROL_SET = 2; // 绝对设置，不累加sleep或旧请求。
+}
+enum ResultStatus {
+  RESULT_STATUS_UNSPECIFIED = 0; // 无明确结果，客户端不能视为成功。
+  RESULT_OK = 1; // 成功，返回实际采用值。
+  RESULT_INVALID_ARGUMENT = 2; // 参数不合法。
+  RESULT_UNSUPPORTED = 3; // 能力/版本不支持。
+  RESULT_TOO_LARGE = 4; // 完整记录超硬/协商上限。
+  RESULT_NOT_READY = 5; // 当前不可用，未伪装成功。
+  RESULT_CONFLICT = 6; // 同request_id内容冲突或配置前置版本不符。
+  RESULT_INTERNAL_ERROR = 7; // 内部失败，可靠失效/重同步。
+}
+message CaptureRateRequest {
+  uint64 request_id = 1; // 非零幂等ID，同ID异内容拒绝；有界最近请求缓存过期后重发先GET。
+  ControlOperation operation = 2; // GET或绝对SET。
+  optional double target_hz = 3; // SET必须提供有限正数且不超过144；非法请求明确拒绝，GET不得附带。
+  optional uint64 expected_pacing_revision = 4; // SET必须提供配置前置版本，GET不得附带；显式0合法，缺失返回INVALID_ARGUMENT，过时返回CONFLICT。
+}
+message CaptureRateResponse {
+  uint64 request_id = 1; // 对应请求。
+  ResultStatus status = 2; // 明确结果，失败也回复。
+  PacingValue adopted = 3; // 实际采用FPS/精确周期/版本；与后续开帧冻结配置对应。
+  double category_target_hz = 4; // 此类别全部有效订阅的最高请求频率。
+  string message = 5; // 有界诊断说明，最多1024 UTF-8字节。
+  double classification_target_hz = 6; // 当前最高有效业务请求加1Hz。
+  double directory_target_hz = 7; // 当前最高有效业务请求加2Hz。
+}
+message Heartbeat {
+  uint64 nonce = 1; // 非零往返挑战，不能收到任意流量就视为双向健康。
+  bool reply = 2; // true为对应nonce回复，不递归回复。
+  uint64 last_applied_revision = 3; // 当前消费端已应用进度，仅诊断不提升基线。
+  uint64 pending_generation = 4; // 发送端待确认基线进度，仅诊断。
+}
+message ErrorResponse {
+  uint64 request_id = 1; // 对应请求，协议阶段错误无请求时为0。
+  ResultStatus status = 2; // 明确有界失败结果。
+  string message = 3; // 有界原因，最多1024字节，不泄露无限日志。
+  bool close_connection = 4; // true时撤销当前资格并关闭，不能无限等待恢复。
+}
+enum Direction {
+  DIRECTION_UNSPECIFIED = 0; // 无方向拒绝。
+  DIRECTION_READER = 1; // Reader到消费者，独立序号空间。
+  DIRECTION_SUBSCRIBER = 2; // 消费者到Reader，独立序号空间。
+}
+message ReliableEnvelope {
+  uint32 protocol_version = 1; // 正式版本3。
+  uint64 record_sequence = 2; // 每方向从1严格递增，重复/跳号/回退拒绝并重会话。
+  Direction direction = 3; // 与连接角色一致，不能共用双向序号。
+  uint64 session_id = 4; // Hello阶段为0，确认后每条必须精确匹配会话。
+  oneof payload {
+    Hello hello = 5; // 有界握手。
+    HelloAccepted hello_accepted = 6; // 确认契约/时钟/参数。
+    Baseline baseline = 7; // 可靠不可变完整基线。
+    AppliedAck ack = 8; // 原子应用确认。
+    ResyncRequest resync = 9; // 有界重同步请求。
+    Invalidate invalidate = 10; // 高优先级可靠失效。
+    Update update = 11; // 一个完整类别增量，始终可靠TCP。
+    CaptureRateRequest capture_rate = 12; // GET/SET控制。
+    CaptureRateResponse capture_rate_response = 13; // 明确控制结果。
+    Heartbeat heartbeat = 14; // 双向nonce往返健康。
+    ErrorResponse error = 15; // 阶段/参数/能力/资源明确失败。
+    InvalidationAck invalidation_ack = 16; // 失效屏障确认，可幂等重投。
+    ClockProbe clock_probe = 17; // 消费者发起可选跨域诊断。
+    ConsumerBaseline consumer_baseline = 19; // 仅Consumer连接可安装的业务基线。
+    ConsumerUpdate consumer_update = 20; // 仅Consumer连接的固定基线增量。
+    ClockProbeReply clock_probe_reply = 18; // Reader来源域中的实际接收/发送锚点。
+  }
+}

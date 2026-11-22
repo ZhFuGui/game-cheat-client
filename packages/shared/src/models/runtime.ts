@@ -1,0 +1,117 @@
+import { z } from "zod";
+import {rageScoringSchema} from "../games/cs2/rageScoring";
+import { readerMetricsSchema } from "./readerMetrics";
+import { cs2RecoilTelemetrySchema } from "../games/cs2/telemetry";
+import { cs2ControllerSchema } from "../games/cs2/controller";
+import { gameExtensionStatesSchema } from "./extensions";
+import { cs2MapSchema } from "../games/cs2/map";
+import {cs2HitboxStateSchema} from "../games/cs2/hitboxes";
+import { cs2ViewpointSchema } from "../games/cs2/viewpoint";
+import { cs2AccuracySchema } from "../games/cs2/accuracy";
+const display = z.union([
+    z.string(),
+    z.number().finite(),
+    z.boolean(),
+    z.null(),
+]);
+export const connectionIndicatorSchema = z.object({
+    phase: z.enum(["closed", "ready", "error", "degraded", "connecting"]),
+    message: z.string(),
+    retryable: z.boolean().optional(),
+}).strict();
+export const connectionsSchema = z.object({
+    reader: connectionIndicatorSchema,
+    serial: connectionIndicatorSchema,
+    box: connectionIndicatorSchema,
+}).strict();
+export const runtimeStateSchema = z
+    .object({
+    connections: connectionsSchema.optional(),
+    espPresentation:z.object({
+        placement:z.enum(["embedded","overlay"]),state:z.enum(["idle","waiting","ready","error"]),
+        visible:z.boolean(),capture:z.enum(["include","exclude"]),captureApplied:z.boolean(),
+        renderer:z.enum(["pending","hardware","software"]),message:z.string().max(1024),
+    }).strict().optional(),
+    readerMetrics: readerMetricsSchema.optional(),
+    espTiming:z.object({windowMs:z.literal(2000),completionAvailable:z.boolean(),
+        processingMs:z.number().finite().nonnegative().nullable(),drawingMs:z.number().finite().nonnegative().nullable(),
+        samples:z.number().int().nonnegative()}).strict().optional(),
+    readerRunning: z.boolean().optional(),
+    readerConnected: z.boolean().optional(),
+    cs2RequestedHz: z.number().finite().min(1).max(300).optional(),
+    cs2SubscribedHz: z.number().finite().min(1).max(300).nullable().optional(),
+    cs2CaptureHz: z.number().finite().min(1).max(300).nullable().optional(),
+    cs2SubscriptionPending: z.boolean().optional(),
+    cs2SubscriptionError: z.string().optional(),
+    cs2Recoil: cs2RecoilTelemetrySchema.nullable().optional(),
+    cs2Viewpoint: cs2ViewpointSchema.nullable().optional(),
+    cs2Accuracy: cs2AccuracySchema.nullable().optional(),
+    cs2Controller: cs2ControllerSchema.optional(),
+    cs2Trigger:z.object({enabled:z.boolean(),supported:z.boolean(),block:z.string().max(128),
+      clicks:z.number().int().nonnegative(),target:z.number().int().nonnegative().nullable(),
+      hitbox:z.number().int().nonnegative().nullable()}).strict().optional(),
+    cs2Rage:z.object({enabled:z.boolean(),active:z.boolean(),supported:z.boolean(),block:z.string().max(128),
+      clicks:z.number().int().nonnegative(),target:z.number().int().nonnegative().nullable(),
+      bone:z.number().int().nonnegative().nullable(),damage:z.number().finite().nonnegative().nullable(),
+      threat:z.number().finite().min(0).max(1).nullable(),scoring:rageScoringSchema.nullable().optional()}).strict().optional(),
+    extensions: gameExtensionStatesSchema.optional(),
+    cs2Map: cs2MapSchema.nullable().optional(),
+    cs2Hitboxes:cs2HitboxStateSchema.optional(),
+    boxReady: z.boolean().optional(),
+    boxFeedbackAgeMs: z.number().finite().nonnegative().nullable().optional(),
+    boxFeedbackSequence: z.number().int().min(0).max(0xFFFFFFFF).nullable().optional(),
+    boxReceiverReady: z.boolean().nullable().optional(),
+    boxButtonsKnown: z.boolean().nullable().optional(),
+    aimArmed: z.boolean().optional(),
+    aimAutomatic: z.boolean().optional(),
+    aimReference: z.enum(["native", "camera", "input", "pending"]).optional(),
+    effectiveAimPart: z.number().int().min(0).max(4).optional(),
+    weaponAimCategory: z.enum(["SR", "DMR", "AR", "SMG", "LMG", "Shotgun", "Handgun", "Other"]).nullable().optional(),
+    weaponAimOverride: z.boolean().optional(),
+    nativeZeroingMeters: z.number().finite().nullable().optional(),
+    testArmed: z.boolean().optional(),
+    calibrating: z.boolean().optional(),
+    capturing: z.boolean().optional(),
+    canCalibrate: z.boolean().optional(),
+    canAim: z.boolean().optional(),
+    adapterReady: z.boolean().optional(),
+    localBodyKnown: z.boolean().optional(),
+    characters: display.optional(),
+    target: display.optional(),
+    gap: display.optional(),
+    fov: display.optional(),
+    angle: display.optional(),
+    targetDistance: display.optional(),
+    control: z.string().optional(),
+    calibration: z.string().optional(),
+    profiles: z.string().optional(),
+    prediction: z.string().optional(),
+    button: z.string().optional(),
+    boxStatus: z.string().optional(),
+    speedHint: z.string().optional(),
+    deviceCapabilitiesKnown: z.boolean().optional(),
+    deviceBaudRate: z.number().int().positive().nullable().optional(),
+    deviceMaximumStepCounts: z.number().int().positive().nullable().optional(),
+    deviceMinimumIntervalMs: z.number().int().positive().nullable().optional(),
+    deviceMaximumCountsPerSecond: z.number().finite().positive().nullable().optional(),
+    renderer: z.string().optional(),
+    adapter: z.string().optional(),
+    adapterId: z.string().optional(),
+    adapterNotice: z.string().optional(),
+    graphicsError: z.string().optional(),
+    ballistics: z.string().optional(),
+    ballisticsError: z.string().optional(),
+    ballisticProfile: z.string().optional(),
+    bulletFlightMs: z.number().finite().nullable().optional(),
+    bulletDropMeters: z.number().finite().nullable().optional(),
+    espVisible: z.string().optional(),
+    espDrawFramesPerSecond: z.number().int().nonnegative().optional(),
+    espSequences: z.string().optional(),
+    espFov: z.string().optional(),
+    espUnits: z.string().optional(),
+    hasCurrentItem: z.boolean().nullable().optional(),
+    currentWeaponClass: z.string().nullable().optional(),
+    spectators: z.number().int().min(0).max(2147483647).nullable().optional(),
+})
+    .passthrough();
+export type RuntimeState = z.infer<typeof runtimeStateSchema>;

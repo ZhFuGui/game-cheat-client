@@ -1,0 +1,20 @@
+{
+  "订阅链路耗时":"Subscription timing",
+  "近2秒平均 · 每个订阅独立统计":"Trailing 2-second average · separate for each subscription",
+  "订阅":"Subscription",
+  "读取耗时":"Reading",
+  "开始读取 → 读完":"Read started → read finished",
+  "发送准备":"Send preparation",
+  "读完 → 准备发送":"Read finished → send started",
+  "发送至接收":"Send to receive",
+  "准备发送 → 本软件完整接收":"Send started → fully received here",
+  "等待此订阅的新帧":"Waiting for a new frame on this subscription",
+  "当前帧缺少必要时间戳":"Required timestamps are missing",
+  "时间戳无法组成有效区间":"Timestamps do not form a valid interval",
+  "近2秒没有有效计时样本":"No valid timing samples in the last 2 seconds",
+  "{{count}}帧有效样本":"{{count}} valid frames",
+  "时钟估算不确定度 ±{{error}} ms":"Clock estimate uncertainty ±{{error}} ms",
+  "暂无订阅，连接 Reader 后显示各订阅链路。":"Connect Reader to see the timing of each subscription.",
+  "按完整收到的新数据帧统计；心跳、重复帧不计入。发送准备包含整理、排队与封装，接收终点在解码之前。":"Only newly received complete data frames are counted. Heartbeats and duplicates are excluded. Preparation includes processing, queuing and encoding; reception ends before decoding.",
+  "前两段使用 Reader 同一时钟；发送至接收通过现有时钟校准估算，缺少时间戳或有效校准时显示 —。":"The first two stages use Reader's clock. Send-to-receive is estimated using the existing clock calibration; missing timestamps or calibration are shown as —."
+}

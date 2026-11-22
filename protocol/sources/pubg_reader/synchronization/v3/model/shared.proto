@@ -1,0 +1,232 @@
+syntax = "proto3";
+package pubg.reader.synchronization.v3;
+
+import "foundation/common.proto";
+
+enum EntityKind {
+  ENTITY_KIND_UNSPECIFIED = 0; // 未核验类型，不能建立实例。
+  ENTITY_CHARACTER = 1; // 人物，武器作为装备嵌套。
+  ENTITY_VEHICLE = 2; // 载具，乘员引用同一 registry 的人物 ID。
+  ENTITY_PICKUP = 3; // 独立拾取 Actor，UItem 是属性。
+  ENTITY_CREATURE = 4; // 独立生物，原生类型与物种分开。
+  ENTITY_CONTAINER = 6; // 真正容器，当前读取未实现。
+  ENTITY_PROJECTILE = 7; // 投掷物，当前读取未实现。
+  ENTITY_GROUND_GROUP = 5; // 独立地面掉落组 Actor；组件成员和 UItem 保持嵌套。
+}
+enum PropertyGroup {
+  PROPERTY_GROUP_UNSPECIFIED = 0; // 无效组，整包拒绝；C++ Identity 从 0 起必须显式映射。
+  PROPERTY_IDENTITY = 1; // 位 0 实例、1 类型、2 全部原始来源。
+  PROPERTY_SPATIAL = 2; // 位 0 位置、1 原点、2 根地址、3 原始根引用。
+  PROPERTY_CHARACTER_STATE = 3; // 位 0 队伍、1 Bot、2 标记、3 PS虚表、4 原生raw、5 已解释类型。
+  PROPERTY_CHARACTER_NAME = 5; // 位 0 显示名称，空串合法。
+  PROPERTY_VEHICLE_STATE = 6; // 位 0 血量、1 上限、2 燃料、3 上限、4 dying、5 broken、6 组件、7 raw。
+  PROPERTY_VEHICLE_SEATS = 7; // 位 0 嵌套座位、1 声明数、2 占座数。
+  PROPERTY_VEHICLE_NAME = 8; // 位 0 raw索引、1 raw编号、2 索引、3 编号、4 完整文本。
+  PROPERTY_VEHICLE_MODEL = 9; // 位 0 类地址、1 raw类引用、2 类名称、3 车型键。
+  PROPERTY_PICKUP_OWNER = 10; // 位 0 UItem地址、1 源槽位。
+  PROPERTY_PICKUP_STACK = 11; // 位 0 数量、1 耐久、2 上限。
+  PROPERTY_PICKUP_DEFINITION = 12; // 位 0 定义ID、1 名称、2 显示名称、3 定义地址。
+  PROPERTY_VEHICLE_CLASSIFICATION = 13; // 位 0 类型、1 原生虚表、2 规则键。
+  PROPERTY_PICKUP_CLASSIFICATION = 14; // 位 0 原生虚表、1 规则键、2 原始实例名称。
+  PROPERTY_CREATURE_CLASSIFICATION = 15; // 位 0 原生raw、1 物种、2 PS、3 PS虚表、4 虚表、5 解释版本、6 原始名称。
+  PROPERTY_PICKUP_ITEM_CLASSIFICATION = 16; // 位 0 类别、1 分类状态、2 规则、3 版本；未实现必须终态零掩码。
+  PROPERTY_GROUND_GROUP_CLASSIFICATION = 17; // 位 0 子类、1 原生虚表、2 规则键、3 原始实例名称。
+  PROPERTY_GROUND_GROUP_CONTENTS = 18; // 位 0 成员与槽位账本、1 声明槽数、2 占用槽数、3 准入数、4 开帧来源、5 闭帧来源。
+  PROPERTY_CHARACTER_SKELETON = 20; // 位0当前骨骼来源、位1完整骨骼集合；失败清除本组，不撤销独立人物位置。
+  PROPERTY_CHARACTER_MOVEMENT = 21; // 位0原生速度向量、位1运动组件身份、位2原始组件引用；独立读取终态，失败不影响位置和骨骼。
+}
+enum CurrentStatus {
+  CURRENT_STATUS_UNSPECIFIED = 0; // 缺少终态，不能授予本帧核验资格；C++ Available 从 0 起必须显式映射。
+  CURRENT_AVAILABLE = 1; // 本次取得并核验相应值。
+  CURRENT_PARTIAL = 2; // 仅 present_fields 中的值当前可用。
+  CURRENT_READ_FAILED = 3; // 本次读取失败，当前值为空。
+  CURRENT_DEPENDENCY_BLOCKED = 4; // 当前依赖不可用，不代表实例退役。
+  CURRENT_NOT_ATTEMPTED = 5; // 未尝试，不代表成功或已知空。
+  CURRENT_NOT_IMPLEMENTED = 6; // 未实现，不得填默认值冒充源值。
+}
+enum WithdrawalReason {
+  WITHDRAWAL_REASON_UNSPECIFIED = 0; // 撤销当前资格，未证明销毁。
+  WITHDRAWAL_READ_FAILURE = 1; // 暂不可核验，恢复同实例时 ID 保持。
+  WITHDRAWAL_OUT_OF_SCOPE = 2; // 完整来源证明范围退出，不是销毁。
+  WITHDRAWAL_INSTANCE_RETIRED = 3; // 真实生命周期来源证明退役。
+  WITHDRAWAL_INSTANCE_REPLACED = 4; // 索引或串号变化，旧 ID 不复用。
+}
+enum PatchOperation {
+  PATCH_OPERATION_UNSPECIFIED = 0; // 未知操作，整包拒绝。
+  PATCH_SET = 1; // 设置/清除指定字段，未命中字段取固定基线。
+  PATCH_CLEAR = 2; // 清空组的全部值，保留本帧失败/未知终态。
+  PATCH_REPLACE = 3; // 完整替换组的值，集合不追加合并。
+}
+message KindContract {
+  EntityKind kind = 1; // 唯一启用种类；重复种类拒绝。
+  repeated PropertyGroup enabled_groups = 2; // 每实体必须报告这些组的完整终态，重复或缺组拒绝。
+  repeated PropertyGroup implemented_value_groups = 3; // Reader 真正实现的值链；NotImplemented 终态不冒充已实现能力。
+}
+message InstanceIdentity {
+  optional fixed64 object_address = 1; // 源UObject地址必须存在且有效；Actor、控制器和相机管理器使用同一真实生命周期身份格式。
+  optional sint32 object_internal_index = 2; // 索引必须存在，0 合法，不能用 truthiness 判断。
+  optional uint32 object_serial_number = 3; // 串号必须存在，0 与未提供明确区分。
+}
+message SampleInterval {
+  uint64 capture_sequence = 1; // 产生原始样本的采集序号，不用当前发送序号代替。
+  uint64 started_qpc = 2; // 原始采样或实际核验起点，单位为协商 QPC tick。
+  uint64 finished_qpc = 3; // 原始终点，必须不早于起点。
+  uint64 clock_mapping_revision = 4; // 对应本会话已确认时钟映射版本。
+}
+enum ObservationStatus {
+  OBSERVATION_STATUS_UNSPECIFIED = 0; // 子项没有明确观察结果，不能解释为成功。
+  OBSERVATION_AVAILABLE = 1; // 子项自己的有效读取。
+  OBSERVATION_PARTIAL = 2; // 子项自己的部分有效读取。
+  OBSERVATION_FAILED = 3; // 子项真实尝试失败。
+  OBSERVATION_NOT_ATTEMPTED = 4; // 子项没有安排读取，业务值必须为空。
+  OBSERVATION_UNVERIFIED = 5; // 子项尚未核验，不能借父组代替独立核验。
+}
+message ObservationEvidence {
+  SampleInterval value_sample = 1; // 独立子项值的原样本；失败且无值时缺失。
+  SampleInterval latest_attempt = 2; // 子项自身最近真实尝试，不能套父组成功时间。
+  optional ObservationStatus value_status = 3; // 仅有真实值时为 AVAILABLE/PARTIAL；与CurrentStatus逐值映射不混算。
+  ObservationStatus latest_status = 4; // 子项独立终态；未尝试可无区间，业务值必须为空。
+}
+message NestedSample {
+  repeated uint32 path = 1; // 普通数为对象字段号；最高位为1表示零起点集合索引，必须精确匹配规范化值路径。
+  ObservationEvidence observation = 2; // 此武器/座位/乘员/物品子项自己的采样证据，重复路径拒绝。
+}
+message NameValue {
+  optional uint32 raw_index = 1; // 名称索引原位值，0合法。
+  optional uint32 raw_number = 2; // 名称编号原位值。
+  optional uint32 index = 3; // 已解码比较索引。
+  optional uint32 number = 4; // 已解码编号。
+  optional string full_name = 5; // 核验文本，合法空串保持存在。
+}
+message SourceValue {
+  uint32 kind = 1; // 当前主来源 SceneArray=1，其它未实现来源不冒充。
+  fixed64 container_address = 2; // 实际来源数组。
+  fixed64 level_address = 3; // 实际来源关卡。
+  optional sint32 slot_index = 4; // 原始槽位，0合法。
+  fixed64 raw_value = 5; // 原槽位位值；重复 Actor 多槽来源全部保留。
+}
+message IdentityValue {
+  InstanceIdentity instance = 1; // 必须与 EntityVerification 实例相等。
+  EntityKind kind = 2; // 必须与 EntityVerification 类型相等。
+  repeated SourceValue sources = 3; // 每个独立源槽位，不只保第一项。
+}
+message SpatialValue {
+  pubg.reader.foundation.Vec3 position = 1; // 当前源单位位置。
+  pubg.reader.foundation.WorldOrigin origin = 2; // 本次位置绑定原点，必须与当前Context一致。
+  optional fixed64 root_component_address = 3; // 核验根组件。
+  optional fixed64 root_pointer_raw = 4; // 本次原始根引用。
+}
+message StringValue {
+  optional string value = 1; // 已知空字符串是值，不是CLEAR。
+}
+message ItemOwnerValue {
+  optional fixed64 source_object_address = 1; // 已关联UItem。
+  optional sint32 slot_index = 2; // 源槽位。
+}
+message ItemStackValue {
+  optional sint32 quantity = 1; // 实例数量，0合法。
+  optional float durability = 2; // 实例耐久。
+  optional float max_durability = 3; // 实例上限。
+}
+message ItemDefinitionValue {
+  optional uint32 item_id = 1; // 当前定义ID。
+  NameValue identifier = 2; // 当前名称。
+  optional string display_name = 3; // 当前显示名称。
+  optional fixed64 definition_address = 4; // 定义地址。
+}
+message ItemClassificationValue {
+  optional uint32 category = 1; // 独立分类观察实际类别，0合法。
+  optional uint32 status = 2; // 实际分类结论。
+  optional string rule_id = 3; // 实际规则。
+  optional string rules_revision = 4; // 实际版本。
+}
+message FieldSource {
+  uint32 field = 1; // 相应公共上下文或Local组Value的字段号，重复或未提供的字段拒绝。
+  SampleInterval source_sample = 2; // 该字段真实原采样/解释/配置冻结的序号和QPC。
+  bool reused = 3; // 允许World根缓存及已核验同World的目录地图元数据，始终保留真实原样本。
+  uint32 origin = 4; // 1内存读取、2实际解释、3开帧冻结配置，不混作内存读取。
+  Category source_category = 5; // 当前业务来源使用所属类别；UNSPECIFIED用于基础根观察或目录元数据，禁止跨域比较序号；Map另按目录代次核验。
+}
+enum ContextGroup {
+  CONTEXT_GROUP_UNSPECIFIED = 0; // 缺少上下文类型，拒绝。
+  CONTEXT_WORLD = 1; // 世界身份、raw及缓存真实性。
+  CONTEXT_MAP = 2; // 独立世界名称/地图关联。
+  CONTEXT_COORDINATES = 3; // 坐标约定、经核验单位及当前原点。
+  CONTEXT_PACING = 5; // 本帧开帧冻结的实际采用参数。
+}
+message WorldValue {
+  optional fixed64 world_state = 1; // 原根值，可来自真实缓存，field_source保持历史。
+  optional fixed64 world_address = 2; // 本帧实际解释和链路核验World。
+  optional fixed64 game_state_raw = 3; // 本帧GS原引用。
+  optional fixed64 game_state_address = 4; // 本帧GS地址。
+  optional fixed64 level_raw = 5; // 本帧Level原引用。
+  optional fixed64 level_address = 6; // 本帧主Level，必须与来源一致。
+  optional float time_seconds = 7; // 独立实际世界时间，缺页不否定身份。
+  optional sint32 alive_teams = 8; // 源队伍数，缺失不造0。
+  optional bool root_unverified = 9; // 本帧根未复验事实，false也必须存在。
+  optional bool cache_used = 10; // 本帧是否用缓存根，保真实状态。
+}
+message MapValue {
+  optional fixed64 observed_world_address = 1; // 独立样本World，必须与当前World一致才可绑定。
+  NameValue world_name = 2; // 实际FName及可信文本。
+  optional bool root_unverified = 3; // 此独立地图观察的根状态。
+  optional string map_key = 4; // 仅实际核验映射时提供，当前Reader不负责注册表标定。
+  optional uint32 classification_status = 5; // 实际地图关联结果，不填默认0伪装采样。
+  optional string rule_id = 6; // 实际地图映射规则。
+  optional string rules_revision = 7; // 实际规则版本。
+}
+message CoordinatesValue {
+  optional string convention = 1; // 显式开帧配置约定，如UNREAL_LEFT_HANDED_Z_UP。
+  optional double verified_meters_per_unit = 2; // 只在已核验时提供，配置0.01不自动代表已核验。
+  pubg.reader.foundation.WorldOrigin origin = 3; // 原点真实source与关闭核验。
+  optional string rules_revision = 4; // 本帧冻结配置解释版本。
+}
+message PacingValue {
+  optional uint64 configuration_revision = 1; // 开帧实际采用版本，不能套编码时最新配置。
+  optional double target_hz = 2; // 本批冻结的目标频率，支持小数，范围大于0至144。
+  optional uint64 target_interval_ns = 3; // 精确实际周期，ceil(1000000000/FPS)，单位ns。
+}
+message ContextValue {
+  oneof value {
+    WorldValue world = 1; // 世界规范化值。
+    MapValue map = 2; // 地图规范化值。
+    CoordinatesValue coordinates = 3; // 坐标规范化值。
+    PacingValue pacing = 5; // 本帧调帧配置。
+  }
+}
+message ContextState {
+  ContextGroup group = 1; // World/Map/Coordinates/Pacing四组必须各有一次终态，重复或遗漏拒绝。
+  CurrentStatus status = 2; // 当前成功/部分/失败等终态。
+  fixed64 present_fields = 3; // 当前有值字段位域，未知字段不能继承。
+  ContextValue value = 4; // 同session/epoch/revision本帧值，不套最新Metadata。
+  repeated FieldSource field_sources = 5; // 每个有值字段自己的真实原采样，完整且唯一。
+  SampleInterval verified_sample = 6; // 当前关闭核验，不替代各字段原样本。
+}
+enum Category {
+  CATEGORY_UNSPECIFIED = 0; // 缺失或无效类别。
+  CATEGORY_LIVING = 1; // 人物和生物共同采集，模型类型保持区别。
+  CATEGORY_VEHICLES = 2; // 载具。
+  CATEGORY_GROUND_LOOT = 3; // 独立拾取物和地面组及嵌套成员。
+  CATEGORY_CONTAINERS = 4; // 真正容器，当前不支持采集。
+  CATEGORY_PROJECTILES = 5; // 投掷物，当前不支持采集。
+  CATEGORY_LOCAL = 6; // 本地客户端相机、控制关系、当前手持武器和观战数；独立于Actor目录与Living采集。
+}
+message EntityReference {
+  string reader_instance_id = 1; // Reader运行实例。
+  uint64 epoch = 2; // 所属全局代次。
+  uint64 entity_id = 3; // 生命周期内不复用的实体ID。
+  EntityKind kind = 4; // 被引用实体类型。
+  InstanceIdentity instance = 5; // 本批实际核验的生命周期身份；关联ID不能仅由历史地址匹配获得。
+}
+
+// Mesh来源共用结构；具体位置仍由各自样本与原点解释。
+message SkeletonSource {
+  InstanceIdentity mesh = 1; // 本次实际Mesh组件的真实生命周期身份；人物主干和本地武器各用自己的组件。
+  InstanceIdentity skeletal_mesh = 2; // 当前参考骨架资源的真实生命周期身份。
+  InstanceIdentity pose_component = 3; // 实际提供组件空间姿态的组件；主姿态映射时可与 mesh 不同。
+  uint32 read_buffer_index = 4; // 本次选择的可读双缓冲下标，0 合法；不能固定使用 AF8。
+  uint32 bone_count = 5; // 当前参考骨架真实总数，含辅助与虚拟骨；仅作来源边界，不等于本消息主干节点数。
+  uint32 pose_transform_count = 6; // 实际姿态来源数组的变换数，主姿态来源可有不同骨骼数。
+  pubg.reader.foundation.Transform component_to_world = 7; // mesh 本轮真实组件到世界变换，用于组件空间位置转世界坐标。
+  pubg.reader.foundation.WorldOrigin origin = 8; // 本批绑定的世界原点；骨骼 world_position 尚未叠加此原点。
+}

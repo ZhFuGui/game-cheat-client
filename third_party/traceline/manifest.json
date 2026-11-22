@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "abi": 1,
+  "headers": [
+    {
+      "file": "include/cs2-external-autowall/api.h",
+      "sha256": "bea810bfa46843eedd0004b259f2d27f3873e15db8f07f29b78faca265dc05e5"
+    },
+    {
+      "file": "include/cs2-external-autowall/types.h",
+      "sha256": "bf52b173bb286e04a0787998dc33ac65a9c11e81087dd206d8eb36acfbfba6ae"
+    }
+  ],
+  "librarySha256": "3b4fa514d88f1674df9f499cd90f919cd960086ab10da36a22c36564c50402f0",
+  "catalogSha256": "bc1aeed9469bb2f37dec703b2fcce07a113c79b54a5f98bdbb77c72c15b8d535",
+  "upstreamCommit": "692c6824587ba6c237283cf9eb7bd7f0baaa6524",
+  "upstreamArtifact": "cs2-external-autowall.dll",
+  "upstreamWorkingTree": true
+}

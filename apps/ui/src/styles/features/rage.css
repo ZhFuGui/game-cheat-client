@@ -1,0 +1,24 @@
+.rage-parameters { margin-block-start: 8px; padding-inline-start: 16px; }
+.rage-derived { color: var(--muted-foreground); }
+.rage-policy { display: flex; align-items: center; align-self: center; gap: 7px; font-size: 12px; }
+.rage-score-details dl {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 184px), 1fr));
+  gap: 8px 22px;
+  margin-block: 8px;
+}
+.rage-score-details dl > div { display: flex; justify-content: space-between; gap: 12px; font-size: 12px; }
+.rage-score-details dt,.rage-score-state { color: var(--muted-foreground); font-size: 12px; }
+.rage-score-details dd { margin: 0; font-variant-numeric: tabular-nums; }
+.rage-score-formulas { min-width: 0; border-top: 1px solid var(--border); padding-top: 10px; font-size: 12px; line-height: 1.6; overflow-wrap: anywhere; }
+.rage-score-formulas h3 { font-size: 13px; font-weight: 600; margin: 0; }
+.rage-score-formulas p { margin: 6px 0 0; color: var(--muted-foreground); }
+.rage-score-formulas dl {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 275px), 1fr));
+  gap: 9px 22px;
+  margin-block: 10px;
+}
+.rage-score-formulas dt { font-weight: 500; margin-bottom: 3px; }
+.rage-score-formulas dd { margin: 0; }
+.rage-score-equation { font-variant-numeric: tabular-nums; }

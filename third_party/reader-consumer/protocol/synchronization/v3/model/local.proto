@@ -1,0 +1,245 @@
+syntax = "proto3";
+package pubg.reader.synchronization.v3;
+
+import "foundation/common.proto";
+import "synchronization/v3/model/shared.proto";
+
+// Unreal FRotator 的三个角度；具体含义由所属字段定义，不能混淆相机与控制器旋转。
+message ViewRotation {
+    float pitch = 1; // 俯仰角，单位度；实际采样为零时仍是有效值。
+    float yaw = 2;   // 偏航角，单位度；不能借人物朝向代替。
+    float roll = 3;  // 横滚角，单位度；不能假定恒为零。
+}
+message ViewSourceValue {
+    optional fixed64 controller_address = 1;      // 本次实际本地控制器地址，不要求存在身体 Pawn。
+    InstanceIdentity controller_instance = 2;     // 控制器自身的真实 GU 生命周期身份。
+    optional fixed64 camera_manager_address = 3;  // 本次控制器关联的相机管理器地址。
+    InstanceIdentity camera_manager_instance = 4; // 相机管理器自身的真实 GU 生命周期身份。
+}
+message ViewPoseValue {
+    pubg.reader.foundation.Vec3 location = 1;      // 最终客户端视点位置，源单位；与本条 origin 绑定。
+    ViewRotation rotation = 2;                     // 最终视点 pitch/yaw/roll，包含当前视角计算与混合结果。
+    optional float fov_degrees = 3;                // 本次最终视点的源 FOV，单位度；不猜测宽高比或视角模式。
+    pubg.reader.foundation.WorldOrigin origin = 4; // 本次位置依赖且通过关闭核验的坐标原点。
+    optional float camera_cache_time_seconds =
+        5; // 相机缓存的源世界时间；与Reader QPC区分，同游戏tick可重复，不作为有效期或过期条件。
+    optional float cached_fov_degrees = 6; // 本次缓存中的源FOV，单位度；与最终有效FOV分开保存。
+    optional float locked_fov_degrees = 7; // 本次锁定FOV原值；大于0时覆盖缓存FOV，0或负值明确保留，不伪造为缺失。
+}
+message ViewTargetValue {
+    optional fixed64 target_address =
+        1; // 本次观测的原关联按pending非零优先、否则current选取；不执行目标更新helper，不宣称完整模拟GetViewTarget或目标独占混合POV。
+    InstanceIdentity target_instance = 2;        // 只有本次目标生命周期成功核验才存在；不要求目标在 Actor 目录中。
+    optional fixed64 current_target_address = 3; // 本次当前ViewTarget原始关联；相机混合时不保证它等于最终视点来源。
+    optional fixed64 pending_target_address = 4; // 本次待切换ViewTarget原始关联；读到零明确表示无待切换目标。
+}
+message ViewSourceState {
+    CurrentStatus status = 1;               // 控制器、管理器链和身份的本次终态。
+    fixed64 present_fields = 2;             // ViewSourceValue 字段存在掩码；零值不能代替缺失。
+    ViewSourceValue value = 3;              // 不继承其他批次的地址或身份。
+    repeated FieldSource field_sources = 4; // 各字段的本次真实源读取区间和类别采集序号。
+    SampleInterval verified_sample = 5;     // 控制器及管理器实际关闭核验区间。
+}
+message ViewPoseState {
+    CurrentStatus status = 1;               // 最终位置、旋转、FOV及原点的本次终态。
+    fixed64 present_fields = 2;             // ViewPoseValue 字段存在掩码。
+    ViewPoseValue value = 3;                // 仅本批当前值；失败字段必须缺失，不沿用旧姿态。
+    repeated FieldSource field_sources = 4; // 姿态块与原点各自真实读取区间，不能统一套发送时间。
+    SampleInterval verified_sample = 5;     // 实际源链、解释依据和坐标原点关闭核验区间。
+}
+message ViewTargetState {
+    CurrentStatus status = 1;               // 目标关联和可选身份的独立终态；失败不撤销已核验姿态。
+    fixed64 present_fields = 2;             // ViewTargetValue 字段存在掩码。
+    ViewTargetValue value = 3;              // 原始关联可存在而目标身份缺失；不猜测人物、载具或观战模式。
+    repeated FieldSource field_sources = 4; // 目标关联与目标 GU 身份的真实源读取区间。
+    SampleInterval verified_sample = 5;     // 目标关联和可用生命周期身份的实际关闭核验区间。
+}
+message ViewState {
+    ViewSourceState source = 1; // 必须存在的本地视图来源终态。
+    ViewPoseState pose = 2;     // 必须存在的最终视点终态，部分字段失败独立缺失。
+    ViewTargetState target = 3; // 必须存在的目标关联终态；可失败或部分可用。
+                                // 本轮没有经过核验的 FPP/TPP/观战模式读取链，因此不声明这些能力或填猜测值。
+}
+
+message LocalControlValue {
+    optional fixed64 game_instance_raw = 1;             // 本帧GI原引用。
+    optional fixed64 game_instance = 2;                 // 本帧GI地址。
+    optional fixed64 local_player = 3;                  // 本帧本地玩家对象。
+    optional fixed64 controller = 4;                    // 本帧控制器。
+    optional fixed64 controlled_pawn = 5;               // 当前实际被控Pawn原关联，已知0保持存在。
+    optional fixed64 player_state = 6;                  // 本帧本地PS，已知0保持存在。
+    optional fixed64 character_address = 7;             // 本帧核验身体地址，驾驶时与Pawn分开。
+    pubg.reader.foundation.Vec3 reference_position = 8; // 独立真实样本的本地参考位置。
+    optional uint64 character_entity_id = 9;            // 与实体/乘员统一registry ID，跨类别人物身份。
+    optional uint64 possessed_entity_id = 10; // 与实体统一registry ID，跨类别统一身份；另一类别尚未到达时保持未解析。
+    EntityReference character_ref = 11;       // 本批核验身体身份形成的跨流引用，未核验则缺失。
+    EntityReference possessed_ref = 12;       // 本批核验被控对象形成的跨流引用，不能从旧地址缓存推导。
+}
+message WeaponMuzzleValue {
+    SkeletonSource source = 1;      // 武器Mesh、骨架资源、姿态源、双缓冲及本批坐标原点；不是人物主干骨架源。
+    NameValue attach_name = 2;      // 武器原生FiringAttachPoint；保留原始FName，未解析名称时不伪造full_name。
+    NameValue bone_name = 3;        // 挂点绑定的参考骨骼FName，或原生同名骨骼回退；索引仅对source骨架有效。
+    optional uint32 bone_index = 4; // 参考骨架中的真实下标，0合法。
+    optional uint32 pose_index = 5; // 本批实际姿态数组下标；主姿态映射失败时整组缺失，不使用Identity冒充。
+    optional uint32 binding = 6;    // 1资源Socket；2Skeleton Socket；3原生同名骨骼。找不到二者时不退回Mesh原点。
+    InstanceIdentity socket = 7;    // 实际Socket的生命周期；同名骨骼回退时缺失。
+    pubg.reader.foundation.Transform relative_transform =
+        8; // Socket相对于绑定骨骼的变换；同名骨骼回退是已证明的单位变换。
+    pubg.reader.foundation.Transform bone_component_transform = 9; // 本批绑定骨骼的真实组件空间变换。
+    pubg.reader.foundation.Transform world_transform =
+        10; // 几何世界变换：translation是枪口位置（cm，未加origin），rotation是挂点世界四元数，scale保留。它不是归零/散布/弹道修正后的实际发射方向，也不保证与本批camera.pose在同一时刻读取。
+}
+
+// 仅本地身体当前原生槽位的武器，不枚举备用武器或其他人物装备。
+message LocalWeaponValue {
+    optional fixed64 object_address = 1;         // 本次当前武器Actor地址，不是顶层实体ID。
+    NameValue class_name = 2;                    // 本次核验的武器类名；失败保持缺失。
+    InstanceIdentity instance = 3;               // 当前武器真实生命周期身份；切枪或对象复用后不得沿用。
+    WeaponMuzzleValue muzzle = 4;                // 本次枪口几何挂点变换；独立观察路径[5,4]，失败保留空结构和失败证据。
+    WeaponRecoilTargetsValue recoil_targets = 5; // 原生待应用后坐目标量；独立观察路径[5,5]，不是已施加角或每帧角增量。
+    WeaponTrajectoryGenerationValue trajectory_generation =
+        6; // 原生轨迹建立计数；独立观察路径[5,6]，不是持续开火布尔值。
+}
+
+message WeaponRecoilTargetsValue {
+    optional float target_pitch = 1; // 原生RecoilTargetPitch：会被逐帧消费的剩余俯仰目标输入量；不可直接作为度数补偿。
+    optional float target_yaw = 2;   // 原生RecoilTargetYaw：剩余偏航目标输入量；与pitch连续读取，零值有效。
+    optional float recovery_target = 3; // 原生RecoilRecoveryTarget：恢复分支使用的目标输入量；不是累计反向角。
+    // 观察区间覆盖本批真实的目标对与恢复量两次读取；不宣称三者原子，也未混入呼吸、镜头震动或散布。
+}
+message WeaponTrajectoryGenerationValue {
+    optional uint32 counter =
+        1; // 武器原生uint32计数：建立本地轨迹记录时递增；按轨迹而非保证每次扳机/每发弹药一次。不是命中或服务器确认。
+           // 初次样本仅建立基准，不能认定刚开火；同武器生命周期内后续变化才是观察区间中的生成证据。
+           // 允许uint32回绕；跨Reader/epoch/身体/当前武器身份或缺失区间必须重建基准，禁止将切枪认作开火。
+           // 保持原始计数，不制造精确开火时刻、持续开火状态或漏掉的逐发方向；QPC仅是观察时间。
+}
+message CurrentWeaponValue {
+    InstanceIdentity character = 1;        // 本次控制器链核验的本地身体；不使用观战目标。
+    InstanceIdentity processor = 2;        // 本次身体关联的武器处理组件生命周期。
+    optional sint32 active_slot = 3;       // 原生有符号槽位；0有效，负数或越界明确表示无当前武器。
+    optional fixed64 raw_weapon_value = 4; // 当前槽位原引用；原生读到0保留，不借其他槽位补齐。
+    LocalWeaponValue weapon = 5;           // 仅当前槽位；独立观察路径[5]，空结构配失败观察表示读取失败。
+    optional uint32 declared_slots = 6;    // 原生装备数组槽数，仅作边界来源；Reader不复制或读取其他槽位。
+    optional bool has_current_item = 7; // 本批原生当前槽有生命周期有效的对象为true；getter解析为空为false，失败/不确定缺失。具体拿什么见weapon.class_name，不仅限枪械；不代表动画结束或可开火。
+}
+message LocalSpectatorsValue {
+    InstanceIdentity character = 1; // 该计数所属的本地身体真实生命周期；死亡/观战时不转成被观察人物。
+    optional uint32 count = 2;      // 本批原生被观战人数，非负int32范围；0为真实无人观战，缺失不是0。
+}
+message LocalControlState {
+    CurrentStatus status = 1;               // 本次本地控制关系终态；失败不撤销独立相机。
+    fixed64 present_fields = 2;             // LocalControlValue字段存在掩码。
+    LocalControlValue value = 3;            // 本次控制关系与可选跨流身份，不能从旧Living或地址缓存推导。
+    repeated FieldSource field_sources = 4; // 每个字段本次实际读取或解释区间。
+    SampleInterval verified_sample = 5;     // 本地所属链与生命周期的关闭核验区间。
+}
+message CurrentWeaponState {
+    CurrentStatus status = 1;               // 当前槽位读取终态；无身体、切枪和读取失败分开表达。
+    fixed64 present_fields = 2;             // CurrentWeaponValue字段存在掩码；未读取字段缺失。
+    CurrentWeaponValue value = 3;           // 只包含本地身体当前武器，不包含其他人物或备用武器。
+    repeated FieldSource field_sources = 4; // 本次身体、处理器、当前槽位及武器各自真实读取区间。
+    SampleInterval verified_sample = 5;     // 身体所属链、当前槽位和解释依据的实际关闭核验。
+    repeated NestedSample nested_samples =
+        6; // 当前武器[5]、枪口[5,4]、后坐目标[5,5]、轨迹生成[5,6]的独立观察；失败不借父样本刷新。
+}
+message LocalSpectatorsState {
+    CurrentStatus status = 1;               // 本次本地身体计数终态。
+    fixed64 present_fields = 2;             // LocalSpectatorsValue字段存在掩码。
+    LocalSpectatorsValue value = 3;         // 当前本地身体及被观战人数；没有身体时为空。
+    repeated FieldSource field_sources = 4; // 本次身体身份及计数的真实读取区间。
+    SampleInterval verified_sample = 5;     // 本地控制关联及身体生命周期关闭核验区间。
+}
+message LocalState {
+    LocalControlState control = 1;         // 本地控制关系；与相机目标、身体存在性分开。
+    ViewState camera = 2;                  // 最终相机来源、姿态和目标；死亡及观战后仍可独立提供。
+    CurrentWeaponState current_weapon = 3; // 本地身体当前手持武器及枪口；不采其他人物武器。
+    LocalSpectatorsState spectators = 4;   // 本地身体被观战人数；不读取被观战者的计数。
+    ControllerRotationState controller_rotation =
+        5;                                 // 可选独立的原生控制器旋转；缺组表示未提供，失败用本组终态，不借相机补齐。
+    NativeHoldingState native_holding = 6; // 可选独立的本地动作组件接受屏息状态与过渡；失败不撤销相机或当前武器。
+    NativeSwayState native_sway = 7;       // 可选独立的本地原生曲线计算结果；不是纯呼吸、已施加后坐或最终发射方向。
+    LocalAimBasisState aim_basis = 8; // 可选独立的已核定原生分支散布前基方向；未闭合分支不借相机、旧轨迹或其他组补值。
+}
+
+message ControllerRotationValue {
+    InstanceIdentity controller = 1; // 本次本地控制器的完整生命周期身份；不依赖身体、武器或相机管理器存在。
+    ViewRotation rotation =
+        2; // 当前版本原生Controller::GetControlRotation返回的FRotator，单位度；当前姿态状态，不是相邻样本差分或单次角增量。未证明包含哪些后坐修饰，不能冒称真实发射方向、纯后坐角或无镜头震动的瞄准角。
+}
+message ControllerRotationState {
+    CurrentStatus status = 1;               // 本组实际读取及关闭核验的终态；失败不撤销其他Local组。
+    fixed64 present_fields = 2;             // ControllerRotationValue字段存在掩码；真实零角保留，未读/失败不能填零。
+    ControllerRotationValue value = 3;      // 仅本批当前值，不复用上一批控制器或角度。
+    repeated FieldSource field_sources = 4; // 身份与角度各自实际源读取区间；不是发送或控制生效时刻。
+    SampleInterval verified_sample =
+        5; // 本次指针链、控制器生命周期、虚表及原生getter的实际关闭核验区间；沿用该批QPC域与映射版本。
+}
+
+message NativeHoldingValue {
+    InstanceIdentity character = 1;     // 本批实际本地身体生命周期，不借用观战目标或其他组的历史身份。
+    InstanceIdentity component = 2;     // 该身体关联并经本批关闭核验的原生动作组件生命周期。
+    optional bool accepted_holding = 3; // 原生组件实际接受的屏息状态；false是有效读值，不代表缺失，也不等于键盘意图。
+    optional float holding_blend = 4;   // 原生屏息过渡因子；零值有效，不能当作残余晃动角、通用抑制率或完全无晃动证明。
+}
+message NativeHoldingState {
+    CurrentStatus status = 1;     // 两个动态字段独立读取的本次终态；一项失败可Partial，两项均失败不保留当前值。
+    fixed64 present_fields = 2;   // NativeHoldingValue存在掩码；零和false必须保留存在性，掩码不用于推断实现能力。
+    NativeHoldingValue value = 3; // 仅本批核验值，成功动态字段依赖本批身体和组件身份，不沿用上一批。
+    repeated FieldSource field_sources = 4; // 身份和两个动态字段各自真实源区间，origin=1；不能套关闭或发送时间。
+    SampleInterval verified_sample = 5;     // 本次本地身体、所属组件及解释依据的真实关闭核验区间。
+}
+message NativeSwayValue {
+    InstanceIdentity character = 1; // 本批计算来源的本地身体真实生命周期。
+    InstanceIdentity weapon = 2;    // 当前已实现的原生本地曲线分支实际依赖的当前武器生命周期；无武器不补同步缓存零值。
+    ViewRotation rotation =
+        3; // 按本批真实输入执行已核验原生本地曲线分支得到的三轴FRotator，单位度；可能同时含姿态、运动、配件与屏息等修饰，不命名为纯呼吸角，不与相机/枪口/后坐目标任意相加。
+}
+message NativeSwayState {
+    CurrentStatus status = 1;   // 本组原生计算及关闭核验的独立终态；当前未提供时整组缺失，失败不借其他组补值。
+    fixed64 present_fields = 2; // NativeSwayValue存在掩码；全零旋转是有值，缺失不是零，掩码不表示支持哪些native分支。
+    NativeSwayValue value = 3;  // 仅本批输入得到且通过本组核验的结果，不重发旧动态值冒充本轮采样。
+    repeated FieldSource field_sources =
+        4; // 身份为实际读取origin=1，rotation为实际解释origin=2；保留输入及解释覆盖的真实区间，不假称原子读取。
+    SampleInterval verified_sample = 5; // 本批身体、当前武器、输入所属链和原生解释依据的实际关闭核验区间。
+}
+
+enum AimBasisBranch {
+    AIM_BASIS_BRANCH_UNSPECIFIED = 0; // 未证明实际采用的分支，不能作为当前有效值。
+    AIM_BASIS_BARREL = 1;             // 本批已核验原生barrel分支门为真，采用当前枪口几何与原生归零计算。
+    AIM_BASIS_VIEW_NO_TRACE = 2;      // 本批原生门明确跳过物理查询及枪口归零，保留原生adjusted-aim视角forward；不能代表需要trace的分支。
+}
+enum AimBasisStage {
+    AIM_BASIS_STAGE_UNSPECIFIED = 0;      // 阶段未知，不能宣称是射击计算的任何具体边界。
+    AIM_BASIS_POST_BRANCH_PRE_SPREAD = 1; // 原生分支及归零后、当前随机散布处理前；不是本次弹体最终出射方向。
+}
+message LocalAimBasisValue {
+    InstanceIdentity character = 1;         // 本批真实本地身体生命周期；不以观战对象代替。
+    InstanceIdentity weapon = 2;            // 本批实际当前武器生命周期，与源身体和分支输入共同关闭核验。
+    InstanceIdentity mesh = 3;              // 仅BARREL：本次原生挂点几何实际使用的武器Mesh生命周期。
+    InstanceIdentity gun_data = 4;          // 本次分支门和枪械数据选择实际使用的GunData生命周期。
+    InstanceIdentity trajectory_config = 5; // 仅BARREL：本次原生归零实际使用的弹道配置生命周期。
+    pubg.reader.foundation.Vec3 direction =
+        6; // 世界坐标轴单位forward；BARREL包含实际枪口几何及原生归零，VIEW_NO_TRACE来自已核验原生视角路径。禁止再任意叠加native_sway或待应用recoil_targets。
+    optional float zeroing_distance_m = 7; // 仅BARREL：本次原生选择的归零距离，单位米；VIEW_NO_TRACE缺失，不制造0。
+    optional float zeroing_correction_degrees =
+        8;                                // 仅BARREL：本次施加到枪口俯仰的原生归零修正，单位度；不是呼吸角或后坐角。
+    optional uint32 integrated_steps = 9; // 仅原生高级归零积分分支实际执行时提供的步数；不为解析分支制造0。
+    optional bool zeroing_reached_distance =
+        10; // 仅高级积分实际判断是否到达目标距离；false是有效结果，不等于缺失或服务器判定。
+    optional float integrated_distance_cm = 11; // 仅高级积分实际得到的距离，源单位厘米；与步数及reached共同存在。
+    optional AimBasisBranch branch = 12;        // 本批通过原生条件核验的实际分支；需要物理查询但未闭合时整组失败，不能标为VIEW_NO_TRACE。
+    optional AimBasisStage stage = 13;          // 本值在原生射击计算中的明确阶段；当前仅支持POST_BRANCH_PRE_SPREAD。
+    optional bool native_zeroing_applied =
+        14; // BARREL必须为true；VIEW_NO_TRACE必须显式false且不带归零字段。false不是缺失，也不表示未实现分支可冒充成功。
+    optional string native_profile =
+        15; // 已核验规则版本：2610.1.1.71/barrel-zeroing-v1或2610.1.1.71/view-no-trace-v1；消费者按分支核对，不能忽略未知规则。
+}
+message LocalAimBasisState {
+    CurrentStatus status = 1;     // 本组独立终态；原生分支未闭合或必需来源失败时不提供方向，其他Local组仍独立有效。
+    fixed64 present_fields = 2;   // 精确对应本批值；积分三项只在实际积分时共同存在，不按位域猜测支持能力。
+    LocalAimBasisValue value = 3; // 仅本批真实输入得到的散布前基方向，不沿用历史角度，不冒称服务器最终弹道。
+    repeated FieldSource field_sources =
+        4; // 五项源身份origin=1；方向、归零及实际分支解释origin=2；保留本批真实读取/解释覆盖区间。
+    SampleInterval verified_sample = 5; // 身体、武器、Mesh、选中数据、弹道配置、分支门和解释依据的实际关闭核验区间。
+}

@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:mousebox:weapon-profile-pack:v1",
+  "title": "Mousebox weapon model data pack v1",
+  "description": "Source-neutral envelope. Unknown values remain null. A model id names a versioned adapter, never executable code. Readiness does not itself enable runtime output.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "pack_id", "revision", "units", "source", "profiles"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "pack_id": {"type": "string", "minLength": 1},
+    "revision": {"type": "string", "minLength": 1, "description": "Producer-defined immutable revision; current public adapter uses its own semantic SHA256. Raw file integrity is separate."},
+    "units": {
+      "type": "object", "additionalProperties": false,
+      "required": ["distance", "time", "speed", "angle"],
+      "properties": {"distance": {"const": "m"}, "time": {"const": "s"}, "speed": {"const": "m/s"}, "angle": {"const": "rad"}}
+    },
+    "source": {
+      "type": "object", "additionalProperties": false,
+      "required": ["kind", "producer", "game_build", "recorded_date", "live_game_verified"],
+      "properties": {
+        "kind": {"enum": ["public_reference", "reader_analysis", "reader_live", "local_calibration"]},
+        "producer": {"type": "string", "minLength": 1},
+        "game_build": {"type": ["string", "null"]},
+        "recorded_date": {"type": "string"},
+        "live_game_verified": {"type": "boolean"}
+      }
+    },
+    "profiles": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/profile"}},
+    "extensions": {"type": "object"}
+  },
+  "$defs": {
+    "profile": {
+      "type": "object", "additionalProperties": false,
+      "required": ["profile_id", "display_name", "bindings", "applicability", "readiness", "model", "provenance", "notes"],
+      "properties": {
+        "profile_id": {"type": "string", "minLength": 1},
+        "display_name": {"type": "string"},
+        "bindings": {
+          "type": "object", "additionalProperties": false,
+          "required": ["item_ids", "actor_class_names", "verified_with_reader"],
+          "properties": {
+            "item_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+            "actor_class_names": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+            "verified_with_reader": {"type": "boolean"}
+          }
+        },
+        "applicability": {
+          "type": "object", "additionalProperties": false,
+          "required": ["ammo_item_id", "attachment_signature", "firing_mode"],
+          "properties": {"ammo_item_id": {"type": ["string", "null"]}, "attachment_signature": {"type": ["string", "null"]}, "firing_mode": {"type": ["string", "null"]}}
+        },
+        "readiness": {"enum": ["reference_only", "reader_verified", "calibrated"]},
+        "model": {
+          "type": "object", "additionalProperties": false, "required": ["id", "parameters"],
+          "properties": {"id": {"type": "string", "pattern": "^[a-z][a-z0-9_.-]*\\.v[1-9][0-9]*$"}, "parameters": {"type": "object"}}
+        },
+        "provenance": {
+          "type": "object", "required": ["source_ref", "content_sha256", "locator"],
+          "properties": {"source_ref": {"type": "string", "minLength": 1}, "content_sha256": {"type": ["string", "null"], "pattern": "^[a-f0-9]{64}$"}, "locator": {"type": ["string", "null"]}}
+        },
+        "notes": {"type": "array", "items": {"type": "string"}},
+        "extensions": {"type": "object"}
+      }
+    }
+  }
+}

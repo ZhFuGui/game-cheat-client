@@ -1,0 +1,75 @@
+.logs-page {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.logs-toolbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 17px;
+}
+.logs-toolbar > input {
+  flex: 1;
+  min-width: 160px;
+}
+.logs-toolbar > .ui-select {
+  width: 135px;
+}
+.logs-toolbar > small {
+  min-width: 70px;
+  text-align: right;
+  color: var(--muted-foreground);
+  font-size: 10px;
+}
+.log-list {
+  flex: 1;
+  min-height: 200px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--card);
+  overflow: auto;
+}
+.log-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 15px;
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+.log-row time {
+  width: 154px;
+  white-space: nowrap;
+  overflow: hidden;
+  flex-shrink: 0;
+  color: var(--muted-foreground);
+  font-size: 10px;
+}
+.log-level {
+  width: 52px;
+  color: var(--muted-foreground);
+  flex-shrink: 0;
+}
+.log-error .log-level {
+  color: var(--destructive);
+}
+.log-warning .log-level {
+  color: var(--warning);
+}
+.log-message {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.logs-empty {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  color: var(--muted-foreground);
+  font-size: 12px;
+}

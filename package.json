@@ -1,0 +1,41 @@
+{
+  "name": "mousebox-aimbot",
+  "version": "2.8.53",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.18.2",
+  "scripts": {
+    "check:architecture": "node tools/check-architecture.mjs",
+    "test:architecture": "node --test tests/architecture/*.test.mjs",
+    "dev": "pnpm --filter @mousebox/desktop dev",
+    "build:ui": "node tools/workflow.mjs build --scope ui",
+    "build:desktop": "node tools/workflow.mjs build --scope web",
+    "build:native": "powershell -NoProfile -File tools/build.ps1 -Configuration Release",
+    "build": "node tools/workflow.mjs build",
+    "typecheck": "pnpm -r typecheck",
+    "lint": "eslint apps/desktop/src tests/desktop && pnpm --filter @mousebox/ui lint",
+    "test": "node --test tests/architecture/*.test.mjs && node tools/check-architecture.mjs && vitest run",
+    "dist:win": "node tools/workflow.mjs package",
+    "workflow": "node tools/workflow.mjs",
+    "check": "node tools/workflow.mjs check --changed",
+    "check:all": "node tools/workflow.mjs check",
+    "test:changed": "node tools/workflow.mjs check --changed",
+    "dist:dir": "node tools/workflow.mjs package --dir",
+    "build:plan": "node tools/workflow.mjs plan"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.39.4",
+    "@testing-library/jest-dom": "6.9.1",
+    "@testing-library/react": "16.3.2",
+    "@testing-library/user-event": "14.6.1",
+    "@types/node": "22.19.0",
+    "eslint": "9.39.4",
+    "eslint-plugin-react-hooks": "5.2.0",
+    "eslint-plugin-react-refresh": "0.4.26",
+    "globals": "16.5.0",
+    "jsdom": "26.1.0",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.63.0",
+    "vitest": "3.2.7"
+  }
+}

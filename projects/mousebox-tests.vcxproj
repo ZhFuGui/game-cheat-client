@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64"><Configuration>Debug</Configuration><Platform>x64</Platform></ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64"><Configuration>Release</Configuration><Platform>x64</Platform></ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals"><VCProjectVersion>17.0</VCProjectVersion><ProjectGuid>{8B679BE8-4CA1-4C3C-9E85-54FE7EF40406}</ProjectGuid><Keyword>Win32Proj</Keyword><RootNamespace>mousebox_tests</RootNamespace><WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion></PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration"><ConfigurationType>Application</ConfigurationType><PlatformToolset>v143</PlatformToolset><CharacterSet>Unicode</CharacterSet><UseDebugLibraries Condition="'$(Configuration)'=='Debug'">true</UseDebugLibraries><UseDebugLibraries Condition="'$(Configuration)'=='Release'">false</UseDebugLibraries></PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="PropertySheets"><Import Project="..\build\common.props" /></ImportGroup>
+  <ItemDefinitionGroup>
+    <ClCompile><AdditionalIncludeDirectories>$(RepoRoot)third_party\reader-consumer\src;$(RepoRoot)third_party\json\include;$(RepoRoot)apps\native-host;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories><ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel><MultiProcessorCompilation>true</MultiProcessorCompilation><PreprocessorDefinitions>_USE_MATH_DEFINES;%(PreprocessorDefinitions)</PreprocessorDefinitions><AdditionalOptions>/external:I"$(RepoRoot)third_party\ruckig\include" /external:I"$(RepoRoot)third_party\json\include" %(AdditionalOptions)</AdditionalOptions></ClCompile>
+    <Link><AdditionalDependencies>Ws2_32.lib;d3d11.lib;dxgi.lib;d2d1.lib;dwrite.lib;ole32.lib;Shell32.lib;%(AdditionalDependencies)</AdditionalDependencies></Link>
+    <ResourceCompile><AdditionalIncludeDirectories>$(RepoRoot)data\fonts;$(RepoRoot)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories></ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ResourceCompile Include="$(RepoRoot)apps\native-host\resources\fonts.rc" />
+    <ClCompile Include="$(RepoRoot)tests\native\**\*.cpp"><ObjectFileName>$(IntDir)native\%(RecursiveDir)%(Filename).obj</ObjectFileName></ClCompile>
+    <ClCompile Include="$(RepoRoot)apps\native-host\window\*.cpp"><ObjectFileName>$(IntDir)host\window\%(Filename).obj</ObjectFileName></ClCompile>
+    <ClCompile Include="$(RepoRoot)apps\native-host\bridge\runtime_service*.cpp"><ObjectFileName>$(IntDir)host\bridge\%(Filename).obj</ObjectFileName></ClCompile>
+    <ClCompile Include="$(RepoRoot)apps\native-host\bridge\request_ledger.cpp"><ObjectFileName>$(IntDir)host-request-ledger.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="$(RepoRoot)apps\native-host\composition\game_modules.cpp"><ObjectFileName>$(IntDir)host-game-modules.obj</ObjectFileName></ClCompile>
+    <ClCompile Include="$(RepoRoot)apps\native-host\input\*.cpp"><ObjectFileName>$(IntDir)host\input\%(Filename).obj</ObjectFileName></ClCompile>
+    <ClCompile Include="$(RepoRoot)tests\clock_tests.cpp" />
+    <ClCompile Include="$(RepoRoot)tests\latency_prediction_tests.cpp" />
+    <ClCompile Include="$(RepoRoot)tests\ballistics_tests.cpp" />
+    <ClCompile Include="$(RepoRoot)tests\control_logic_tests.cpp" />
+    <ClCompile Include="$(RepoRoot)tests\stabilization_tests.cpp" />
+    <ClCompile Include="$(RepoRoot)tests\button_feedback_tests.cpp" />
+    <ClCompile Include="$(RepoRoot)tests\control_reader_tests.cpp" />
+    <ClCompile Include="$(RepoRoot)tests\spectator_reader_tests.cpp" />
+    <ClCompile Include="$(RepoRoot)tests\ballistic_reader_tests.cpp" />
+  </ItemGroup>
+  <ItemGroup><ProjectReference Include="mousebox-core.vcxproj"><Project>{8B679BE8-4CA1-4C3C-9E85-54FE7EF40403}</Project></ProjectReference></ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>

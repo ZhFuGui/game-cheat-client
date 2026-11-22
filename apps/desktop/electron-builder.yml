@@ -1,0 +1,37 @@
+appId: cn.fugui.mousebox
+productName: mousebox-aimbot
+directories:
+  output: ../../out/desktop-release
+files:
+  - dist/**
+  - package.json
+  - '!**/{LICENSE,LICENCE,NOTICE,COPYING,COPYRIGHT,license,licence,notice,copying,copyright}'
+  - '!**/{LICENSE,LICENCE,NOTICE,COPYING,COPYRIGHT,license,licence,notice,copying,copyright}*.{txt,md,html,htm,rtf,json}'
+  - '!**/{licenses,licences,LICENSES,LICENCES}/**'
+afterPack: ../../tools/after-pack.cjs
+extraResources:
+  - from: ../ui/dist
+    to: ui
+  - from: ../../out/desktop-native
+    to: native
+  - from: ../../data/games/pubg/weapons/2026-10-15/profiles.json
+    to: native/data/games/pubg/weapons/profiles.json
+  - from: ../../data/games/cs2/cover
+    to: native/data/games/cs2/cover
+  - from: resources/icon.ico
+    to: icon.ico
+win:
+  icon: resources/icon.ico
+  target:
+    - target: nsis
+      arch: [x64]
+    - target: zip
+      arch: [x64]
+  signAndEditExecutable: true
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  shortcutName: mousebox-aimbot
+asar: true

@@ -1,0 +1,57 @@
+syntax = "proto3";
+package pubg.reader.synchronization.v3;
+
+import "synchronization/v3/model/shared.proto";
+import "foundation/common.proto";
+
+message CharacterStateValue {
+  optional sint32 team_id = 1; // 原始队伍，0合法。
+  optional bool is_bot = 2; // 已核验Bot，false合法。
+  optional uint32 flags_raw = 3; // PS原标记。
+  optional fixed64 player_state_vtable = 4; // 实际PS虚表。
+  optional uint32 character_type_raw = 5; // 实际原生字节。
+  optional uint32 character_type = 6; // 显式核验解释，不直接把raw冒充已解释值。
+}
+message CharacterMovementValue {
+  pubg.reader.foundation.Vec3 velocity = 1; // 本批原生 MovementComponent.Velocity，XYZ 与世界坐标轴一致，游戏坐标单位/秒；合法零保留。此字段不是人物身体总世界速度：骑乘或附着时可能不含父对象运动，零值不表示身体静止。接收端须另行核实总世界速度，未知则保持缺失，不能盲目相加或沿用旧值。
+  InstanceIdentity component = 2; // 实际人物运动组件的生命周期身份；本批所属链与 serial 核验通过后提供。
+  optional fixed64 raw_component = 3; // 本批 CharacterMovement 字段的原始加密引用；缺失不填零或借用上批。
+  CharacterWorldVelocityValue world = 4; // 独立子采样，观察路径[4]。仅采用本批完整原生分支的结果，不能再加一次载具速度；空结构配失败观察表示已尝试但不可用。
+}
+message CharacterWorldVelocityValue {
+  pubg.reader.foundation.Vec3 velocity = 1; // Actor::GetVelocity 等价的世界线速度，单位cm/s，XYZ世界轴；已含该原生分支的骑乘/移动基座速度，0合法。不是任意骨骼点的瞬时速度，不额外添加角速度叉乘或推测动画运动。
+  optional uint32 source = 2; // 1运动组件；2物理刚体；3当前骑乘载具；4原生移动基座叠加；5原生明确返回零。未知分支保持缺失，不猜测。
+  InstanceIdentity actor = 3; // 该速度所属的人物身体生命周期；敌我及本地人物使用同一读取规则。
+  InstanceIdentity component = 4; // 实际提供速度的运动/物理组件；原生明确零分支可以缺失。
+  InstanceIdentity carrier = 5; // 当前骑乘或移动基座的Actor生命周期；不依赖低频Vehicle流，不使用LastVehiclePawn。
+}
+
+// 人物属性，随 Living 独立采样；不要求与 Local 同一时刻。
+message Bone {
+  optional uint32 index = 1; // 当前参考骨架零起点索引，必须存在；不跨骨架使用固定索引。
+  optional sint32 parent_index = 2; // 参考骨架父索引，-1 为根；缺失表示该关系未取得或未核验。
+  NameValue name = 3; // 原始 FName 与核验名称；full_name 缺失时不能把原始索引解释为已知名称。
+  pubg.reader.foundation.Transform component_transform = 4; // 本轮真实组件空间变换；未映射/读取失败时缺失。
+  pubg.reader.foundation.Vec3 world_position = 5; // component_to_world 作用于 component_transform.translation 后的位置；与当前原点绑定。
+  optional sint32 pose_index = 6; // 实际姿态数组下标；-1 为原生主姿态未映射，不能伪造 Identity 变换。
+}
+message CharacterSkeletonValue {
+  SkeletonSource source = 1; // 本轮核验的解释依据；来源失效后撤销整组。
+  // 仅人体主干：pelvis、spine_01/02/03、neck_01、head，以及左右
+  // clavicle、upperarm、lowerarm、hand、thigh、calf、foot（_l/_r），共20种语义。
+  // 名称大小写不敏感且唯一；按原生index严格递增，index必须小于source.bone_count。
+  // 保留原生parent_index，父节点可以未发送，不重编号、不补造root或辅助骨。
+  // Available且原生骨架非空时20种主干均完整；Partial允许缺点或缺变换。
+  // 非空源无法确认主干时仅提供source（mask1），不是已知空集合。
+  // 仅原生bone_count=0可Available且提供已知空bones（mask3）。动态值逐轮重读。
+  repeated Bone bones = 2; // 稀疏人体主干集合；整组替换，失败不继承上轮坐标，不采集完整动画骨架。
+}
+message CreatureClassificationValue {
+  optional uint32 native_type_raw = 1; // 原生ETslCharacterType，熊raw为5。
+  optional uint32 species = 2; // 物种，Bear为1；不把原生raw当物种。
+  optional fixed64 player_state_address = 3; // 实际怪物PS。
+  optional fixed64 player_state_vtable = 4; // 怪物PS虚表。
+  optional fixed64 native_vtable = 5; // Actor虚表。
+  optional string interpretation_revision = 6; // 解释规则版本。
+  NameValue instance_name_raw = 7; // 实际源名称；当前未采独立interpreted type，不额外造值。
+}

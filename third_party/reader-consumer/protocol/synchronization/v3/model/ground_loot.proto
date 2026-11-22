@@ -1,0 +1,82 @@
+syntax = "proto3";
+package pubg.reader.synchronization.v3;
+
+import "synchronization/v3/model/shared.proto";
+
+message PickupClassificationValue {
+  optional fixed64 native_vtable = 1; // 原生拾取证据。
+  optional string rule_id = 2; // 实际准入规则。
+  NameValue instance_name_raw = 3; // 实际原始FName，不猜道具类别。
+}
+message GroundGroupClassificationValue {
+  optional uint32 kind = 1; // 原生核验容器子类；当前仅实现 LOOT_GROUP=1。
+  optional fixed64 native_vtable = 2; // 当前容器原生虚表类型证据。
+  optional string rule_id = 3; // 本次采用的类型准入规则。
+  NameValue instance_name_raw = 4; // 本次取得的 Actor 原始 FName，不猜物品类别。
+}
+message GroundCollectionSourceValue {
+  fixed64 set_address = 1; // 此容器 OwnedComponents 稀疏集合结构地址。
+  fixed64 data_address = 2; // 源稀疏槽位数组地址，已知空时可为零。
+  fixed64 allocation_bitmap_address = 3; // 实际采用的内联或堆分配位图地址。
+  sint32 declared_slots = 4; // 源数组声明的总槽位数，包含空洞。
+  sint32 capacity = 5; // 源数组容量，不作为读取数量。
+  sint32 allocation_bits = 6; // 源分配位图声明的有效位数。
+  sint32 allocation_capacity = 7; // 源分配位图容量。
+  sint32 first_free_index = 8; // 源自由槽链首索引，空链的 -1 保留。
+  sint32 free_slots = 9; // 源自由槽数；声明槽数减去它为占用槽数。
+}
+enum GroundSlotStatus {
+  GROUND_SLOT_STATUS_UNSPECIFIED = 0; // 没有明确终态，不得声明完整覆盖。
+  GROUND_SLOT_VACANT = 1; // 分配位为零的自由槽，不读取其中的对象地址。
+  GROUND_SLOT_UNCLASSIFIED = 2; // 占用组件未核验为地面物品成员。
+  GROUND_SLOT_READ_FAILED = 3; // 该槽或必要关联读取失败。
+  GROUND_SLOT_INVALID = 4; // 已读取结构或地址无效。
+  GROUND_SLOT_DUPLICATE = 5; // 此槽重复引用已处理成员，属性只读取一次。
+  GROUND_SLOT_WITHDRAWN = 6; // 闭帧时成员被移除、复用或归属变化。
+  GROUND_SLOT_ADMITTED = 7; // 已确认地面物品组件身份与本容器归属。
+}
+message GroundSlotValue {
+  sint32 slot_index = 1; // 开帧集合原始源槽位，连续覆盖 declared_slots。
+  bool allocated = 2; // 开帧位图的实际占用状态，false 表示自由槽。
+  GroundSlotStatus status = 3; // 此槽读取及关闭核验的终态；不透传无效对象地址。
+}
+message GroundMemberAssociationValue {
+  fixed64 owner_actor = 1; // 经核验的所属容器 Actor，必须等于当前顶层容器地址。
+  sint32 slot_index = 2; // 此组件的开帧原始稀疏槽位索引。
+  fixed64 raw_component_value = 3; // 此槽实际组件位值，必须与成员实例地址一致。
+}
+message GroundMemberClassificationValue {
+  optional fixed64 native_vtable = 1; // 成员组件实际虚表，仅作为本次类型证据。
+  optional fixed64 class_address = 2; // 经核验的成员类对象，用于继承关系判定。
+  optional string rule_id = 3; // 当前成员类型核验规则。
+}
+message GroundItemValue {
+  ItemOwnerValue owner = 1; // 当前 UItem 与该组件的归属；其证据使用 item 根路径。
+  ItemStackValue stack = 2; // 数量及耐久，保持自己的独立观察。
+  ItemDefinitionValue definition = 3; // 物品定义及名称，保持自己的独立观察。
+  ItemClassificationValue classification = 4; // 独立分类器未实现时缺失，不能填默认类别。
+}
+message GroundMemberValue {
+  InstanceIdentity instance = 1; // 组件自己的 GUObjects 地址、索引及串号；没有顶层 entity_id。
+  GroundMemberAssociationValue association = 2; // 当前源槽位、分配状态和容器归属。
+  GroundMemberClassificationValue classification = 3; // 成员原生类型证据，不把普通组件当物品。
+  SpatialValue spatial = 4; // 此成员自己的位置与原点；不能借用容器坐标绘制所有物品。
+  GroundItemValue item = 5; // 成员持有的 UItem 数据；失败时可保空结构和自己的失败证据。
+}
+message GroundMembersValue {
+  repeated GroundMemberValue members = 1; // 仅当前身份、类型和归属均核验成功的成员。
+  uint32 coverage = 2; // 所有来源槽位达到终态的覆盖状态，不代表所有字段读取成功。
+  repeated GroundSlotValue slots = 3; // 每个开帧槽位一次终态记录，不输出未准入对象的原始地址。
+}
+message GroundGroupContentsValue {
+  GroundMembersValue members = 1; // 完整替换成员集合与槽位账本；已知空仍提供此结构。
+  optional uint32 declared_slots = 2; // 开帧原始槽位总数，包含空洞及普通组件。
+  optional uint32 occupied_slots = 3; // 实际分配位为一的组件槽数，不等于物品数量。
+  optional uint32 admitted_members = 4; // 本次有效地面物品成员数量，不含重复源槽。
+  GroundCollectionSourceValue opening_source = 5; // 开帧集合结构；独立 nested_samples 路径 [5]。
+  GroundCollectionSourceValue closing_source = 6; // 闭帧集合结构；独立 nested_samples 路径 [6]。
+  // 路径 [1,1,INDEX] 核验成员身份与归属，其中 INDEX=0x80000000|零起点成员下标。
+  // 其下路径 [3] 类型、[4] 空间、[5] UItem 归属各有独立证据。
+  // 物品 stack/definition/classification 路径分别为 [1,1,INDEX,5,2]、[...,5,3]、[...,5,4]。
+  // 父组不能刷新子项；失败子项不得携带历史业务值，未实现分类保持缺失。
+}

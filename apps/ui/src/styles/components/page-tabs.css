@@ -1,0 +1,129 @@
+.page-tabs {
+  --page-tab-surface: var(--background);
+  flex-shrink: 0;
+  position: relative;
+  isolation: isolate;
+  min-width: 0;
+  background: var(--page-tab-chrome);
+}
+.page-tabs::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: var(--border); z-index: 0; pointer-events: none; }
+.page-tabs-track {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: var(--page-tabs-height, 35.5px);
+  padding: 0 16px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.page-tabs-track::-webkit-scrollbar { display: none; }
+.page-tab-item {
+  position: relative;
+  flex: 0 1 208px;
+  min-width: 142px;
+}
+.page-tab {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  min-width: 0;
+  height: var(--page-tab-height, 31.45px);
+  margin: 0;
+  padding: 0 15px;
+  border: 1px solid transparent;
+  border-bottom: 0;
+  border-radius: 9px 9px 0 0;
+  background: var(--page-tab-inactive-background);
+  color: var(--muted-foreground);
+  font-size: 12px;
+  font-weight: 500;
+  text-align: left;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+}
+.page-tab:not([aria-selected="true"])::after {
+  position: absolute;
+  content: "";
+  top: 9px;
+  bottom: 9px;
+  right: -3px;
+  width: 1px;
+  background: var(--border);
+}
+.page-tab[data-before-active]::after { display: none; }
+.page-tab:not([aria-selected="true"]):hover {
+  background: color-mix(in srgb, var(--foreground) 5%, var(--page-tab-inactive-background));
+  color: var(--foreground);
+}
+.page-tab[aria-selected="true"] {
+  z-index: 1;
+  border-color: var(--border);
+  background: var(--page-tab-surface);
+  color: var(--foreground);
+}
+.page-tab[aria-selected="true"]::before,
+.page-tab[aria-selected="true"]::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  width: 8px;
+  height: 8px;
+  pointer-events: none;
+}
+.page-tab[aria-selected="true"]::before {
+  left: -9px;
+  border-bottom-right-radius: 8px;
+  box-shadow: 3px 3px 0 3px var(--page-tab-surface);
+}
+.page-tab[aria-selected="true"]::after {
+  right: -9px;
+  border-bottom-left-radius: 8px;
+  box-shadow: -3px 3px 0 3px var(--page-tab-surface);
+}
+.page-tab:focus-visible { outline: none; }
+.page-tab:focus-visible:not([data-pointer-focus]) .page-tab-label {
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 4px;
+}
+.page-tab[data-reorderable] { touch-action: pan-y; }
+.page-tabs[data-reordering] .page-tab-item { transition: transform 120ms ease; }
+.page-tabs[data-reordering] .page-tab-item[data-dragging] { transition: none; }
+.page-tabs[data-reordering] .page-tab[data-dragging] {
+  transition: none;
+  cursor: grabbing;
+  background: var(--page-tab-surface);
+  box-shadow: 0 0 0 1px var(--border), 0 2px 8px color-mix(in srgb, var(--foreground) 15%, transparent);
+}
+@media (prefers-reduced-motion: reduce) { .page-tabs[data-reordering] .page-tab-item { transition: none; } }
+.page-tab-icon { display: flex; align-items: center; flex-shrink: 0; opacity: .8; }
+.page-tab[aria-selected="true"] .page-tab-icon { color: var(--primary); opacity: 1; }
+.page-tab-label { overflow: hidden; text-overflow: ellipsis; }
+.page-tab-item[data-has-accessory] .page-tab { padding-right: 42px; }
+.page-tab-accessory { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); z-index: 2; display: flex; }
+.page-tab-accessory .nav-help-trigger { position: static; transform: none; }
+.aim-page .browser-page-content > .page { padding: 0; }
+.page.browser-page { padding: 0; }
+.browser-page > .page-tabs { position: sticky; top: 0; z-index: 4; }
+.browser-page-content {
+  min-width: 0;
+  padding: 28px clamp(24px, 3vw, 40px) 40px;
+  background: var(--background);
+}
+.page-scaffold {
+  /* Scale the visible gap (row minus tab), not just the old track padding. */
+  --page-tab-height: calc(37px * .85);
+  --page-tab-headroom: calc(9px * .45);
+  --page-tabs-height: calc(var(--page-tab-height) + var(--page-tab-headroom));
+  isolation: isolate;
+}
+.page-scaffold .page-tabs {
+  position: sticky;
+  top: 0;
+  z-index: 4;
+}

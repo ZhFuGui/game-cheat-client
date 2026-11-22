@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="$(RepoRoot)third_party\reader-consumer\src\model\primitives.cpp">
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <ObjectFileName>$(IntDir)vendor-reader\model\primitives.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\codec\clock_codec.cpp">
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <ObjectFileName>$(IntDir)vendor-reader\synchronization\codec\clock_codec.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\codec\consumer_codec.cpp">
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <ObjectFileName>$(IntDir)vendor-reader\synchronization\codec\consumer_codec.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\codec\protobuf_codec.cpp">
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <ObjectFileName>$(IntDir)vendor-reader\synchronization\codec\protobuf_codec.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\codec\record_codec.cpp">
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <ObjectFileName>$(IntDir)vendor-reader\synchronization\codec\record_codec.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\codec\state_codec.cpp">
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <ObjectFileName>$(IntDir)vendor-reader\synchronization\codec\state_codec.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\codec\wire_codec.cpp">
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <ObjectFileName>$(IntDir)vendor-reader\synchronization\codec\wire_codec.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\consumer\diff.cpp">
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <ObjectFileName>$(IntDir)vendor-reader\synchronization\consumer\diff.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\consumer\state.cpp">
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <ObjectFileName>$(IntDir)vendor-reader\synchronization\consumer\state.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\container_validation.cpp">
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <ObjectFileName>$(IntDir)vendor-reader\synchronization\container_validation.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\diff.cpp">
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <ObjectFileName>$(IntDir)vendor-reader\synchronization\diff.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\instance_registry.cpp">
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <ObjectFileName>$(IntDir)vendor-reader\synchronization\instance_registry.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\local_validation.cpp">
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <ObjectFileName>$(IntDir)vendor-reader\synchronization\local_validation.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\motion_weapon_validation.cpp">
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <ObjectFileName>$(IntDir)vendor-reader\synchronization\motion_weapon_validation.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\session.cpp">
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <ObjectFileName>$(IntDir)vendor-reader\synchronization\session.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\skeleton_validation.cpp">
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <ObjectFileName>$(IntDir)vendor-reader\synchronization\skeleton_validation.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="$(RepoRoot)third_party\reader-consumer\src\synchronization\state.cpp">
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <ObjectFileName>$(IntDir)vendor-reader\synchronization\state.obj</ObjectFileName>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,54 @@
+{
+  "protocol": "cs2.reader.v2",
+  "protocol_version": 2,
+  "schema_sha256": "de589b63c5efe26492a267bafed709034f8ad31cec02990a3662a87eacaff727",
+  "descriptor": "reader-v2.descriptor.pb",
+  "files": [
+    {
+      "path": "reader/v2/model.proto",
+      "sha256": "41215c0fb0f3d76b6db7aa6e7a814eb39f39203953e680be5f66494d33bb654f"
+    },
+    {
+      "path": "reader/v2/snapshot.proto",
+      "sha256": "91b4e4d0759bc937f2127253f2c73d1472a4516f54bf3f769f0b5425ab879464"
+    },
+    {
+      "path": "reader/v2/reader.proto",
+      "sha256": "5bd25cc3e0a72aa9fab3986ba532c304ceb50f9b6b144dfd7d9d398a2f80d4c9"
+    },
+    {
+      "path": "reader/v2/contract.json",
+      "sha256": "a296a4481fde395d42f688fe1546f4608041a44abeea4485844ceafc673a887d"
+    },
+    {
+      "path": "reader/v2/schema-manifest.json",
+      "sha256": "e44f9a3d13ea5d2c4c9fbe9d7592d9303da24be4af492ea24e8fb6cf13deb668"
+    },
+    {
+      "path": "reader-v2.descriptor.pb",
+      "sha256": "de589b63c5efe26492a267bafed709034f8ad31cec02990a3662a87eacaff727"
+    },
+    {
+      "path": "diagnostic-codes.json",
+      "sha256": "587b70b83ecec1394d536e41878f96d1a7df66b7dbbeaf0fd256738074019abb"
+    }
+  ],
+  "recoil_evaluator": {
+    "path": "third_party/cs2-reader/include/cs2_reader/v2/recoil.hpp",
+    "sha256": "c657fc60db1e0ed953904b1f3cc0f8e9e10b36e1ae56a996e5fa567cf75cbb3f"
+  },
+  "sdk_files": [
+    {
+      "path": "third_party/cs2-reader/include/cs2_reader/v2/recoil.hpp",
+      "sha256": "c657fc60db1e0ed953904b1f3cc0f8e9e10b36e1ae56a996e5fa567cf75cbb3f"
+    },
+    {
+      "path": "third_party/cs2-reader/include/cs2_reader/v2/record.hpp",
+      "sha256": "b2c9ff5c0359b18d134415f496844a9640b070bc6007e69d6e3db2a22aa72486"
+    },
+    {
+      "path": "third_party/cs2-reader/include/cs2_reader/v2/schema.hpp",
+      "sha256": "bb625cb123524ad63627bff2022005067a63b5e0b19eef8c74c2ef80e4797244"
+    }
+  ]
+}

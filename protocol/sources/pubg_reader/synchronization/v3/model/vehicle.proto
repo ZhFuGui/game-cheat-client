@@ -1,0 +1,54 @@
+syntax = "proto3";
+package pubg.reader.synchronization.v3;
+
+import "synchronization/v3/model/shared.proto";
+
+message VehicleStateValue {
+  optional float health = 1; // 当前生命值。
+  optional float max_health = 2; // 当前上限。
+  optional float fuel = 3; // 当前燃料。
+  optional float max_fuel = 4; // 燃料上限。
+  optional bool dying = 5; // 实际状态，false合法。
+  optional bool broken = 6; // 实际状态，false合法。
+  optional fixed64 component_address = 7; // 原生状态组件。
+  optional fixed64 component_pointer_raw = 8; // 原引用。
+}
+message RiderValue {
+  optional fixed64 raw_pawn_value = 1; // 结构性原始引用。
+  optional fixed64 pawn_address = 2; // 经子项核验的Pawn，失败不保留业务关联。
+  optional sint32 source_slot_index = 3; // 原乘员槽位。
+  optional uint64 character_entity_id = 4; // 统一registry人物ID，可引用另一类别流的人物，未到达时保持未解析。
+  EntityReference character_ref = 5; // 本批真实生命周期核验后的跨流人物引用；对应类别尚未到达时允许未解析。
+}
+message RidersValue {
+  optional uint32 declared_slots = 1; // 本次核验声明数。
+  optional uint32 active_members = 2; // 本次核验成员数。
+  uint32 coverage = 3; // 集合覆盖终态。
+  repeated RiderValue riders = 4; // 整体替换，每项保持自身观察。
+}
+message SeatValue {
+  optional sint32 seat_index = 1; // 结构性源座位索引。
+  optional fixed64 component_address = 2; // 源组件关联。
+  optional uint32 occupancy = 3; // 仅自身值核验时存在；失败不把默认Unknown冒充已读状态。
+  RidersValue riders = 4; // 独立乘员集合，不刷新其样本。
+}
+message SeatsValue {
+  repeated SeatValue seats = 1; // 完整/部分座位值。
+  uint32 coverage = 2; // 整组覆盖。
+}
+message VehicleSeatsValue {
+  SeatsValue members = 1; // 规范化座位与乘员。
+  optional uint32 declared_slots = 2; // 原声明座位数。
+  optional uint32 occupied_slots = 3; // 已核验占座数。
+}
+message VehicleModelValue {
+  optional fixed64 class_address = 1; // 当前类地址。
+  optional fixed64 class_pointer_raw = 2; // 原类引用。
+  NameValue class_name = 3; // 已核验类名称。
+  optional string model_key = 4; // 当前车型键。
+}
+message VehicleClassificationValue {
+  optional uint32 kind = 1; // 已核验车型分类，0与缺失不同。
+  optional fixed64 native_vtable = 2; // 类型证据虚表。
+  optional string rule_id = 3; // 实际准入规则键。
+}

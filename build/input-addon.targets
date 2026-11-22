@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!-- A second artifact of the existing native project, not another VS project.
+       Reuse the same capture objects and core library in the foreground process. -->
+  <PropertyGroup>
+    <InputAddonEntry>$(RepoRoot)apps\native-host\input\addon\entry.cpp</InputAddonEntry>
+    <InputAddonObject>$(IntDir)input-addon-entry.obj</InputAddonObject>
+    <InputAddonRuntime Condition="'$(Configuration)'=='Debug'">/MDd /Od /Zi</InputAddonRuntime>
+    <InputAddonRuntime Condition="'$(Configuration)'!='Debug'">/MD /O2 /Zi</InputAddonRuntime>
+  </PropertyGroup>
+  <ItemGroup>
+    <InputAddonDependency Include="$(RepoRoot)apps\native-host\input\addon\*.hpp;$(RepoRoot)third_party\node-api\*.h" />
+    <InputAddonLinkObject Include="$(IntDir)host\input\raw_capture.obj;$(IntDir)host\input\raw_input_buffer.obj;$(IntDir)host\input\raw_registration.obj;$(IntDir)host\input\capture_channel.obj;$(IntDir)host\input\capture_payload.obj;$(IntDir)host\input\capture_server.obj;$(OutDir)mousebox-core.lib" />
+  </ItemGroup>
+  <Target Name="BuildInputAddon" AfterTargets="Build"
+          Inputs="$(InputAddonEntry);@(InputAddonDependency);@(InputAddonLinkObject)"
+          Outputs="$(OutDir)mousebox-input.node">
+    <Exec Command="&quot;$(VCToolsInstallDir)bin\Hostx64\x64\cl.exe&quot; /nologo /c /W4 /WX /sdl /permissive- /std:c++20 /EHsc /utf-8 /DWIN32_LEAN_AND_MEAN /DNOMINMAX $(InputAddonRuntime) /external:W0 /external:I&quot;$(RepoRoot)third_party\node-api&quot; /external:I&quot;$(RepoRoot)third_party\json\include&quot; /I&quot;$(RepoRoot)src&quot; /I&quot;$(RepoRoot)apps\native-host&quot; /I&quot;$(RepoRoot)mousebox-firmware\protocol\include&quot; /Fo&quot;$(InputAddonObject)&quot; /Fd&quot;$(IntDir)input-addon-compile.pdb&quot; &quot;$(InputAddonEntry)&quot;" />
+    <Exec Command="&quot;$(VCToolsInstallDir)bin\Hostx64\x64\link.exe&quot; /nologo /DLL /DEBUG /INCREMENTAL:NO /MACHINE:X64 /OUT:&quot;$(OutDir)mousebox-input.node&quot; /PDB:&quot;$(OutDir)mousebox-input.pdb&quot; /IMPLIB:&quot;$(IntDir)mousebox-input.lib&quot; &quot;$(InputAddonObject)&quot; @(InputAddonLinkObject->'&quot;%(Identity)&quot;', ' ') User32.lib Advapi32.lib Bcrypt.lib Setupapi.lib Uuid.lib Shell32.lib Ole32.lib" />
+  </Target>
+</Project>

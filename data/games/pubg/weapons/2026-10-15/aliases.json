@@ -1,0 +1,2957 @@
+{
+  "schema_version": 1,
+  "matching": "exact; ambiguous aliases must not select a record automatically",
+  "runtime_verified_with_reader": false,
+  "aliases": {
+    "Item_Weapon_Groza_C": [
+      {
+        "item_id": "Item_Weapon_Groza_C",
+        "evidence": "item_id"
+      }
+    ],
+    "Groza": [
+      {
+        "item_id": "Item_Weapon_Groza_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_Groza_C",
+        "evidence": "published_weapon_tag"
+      },
+      {
+        "item_id": "Item_Weapon_Groza_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_Groza_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "WeapGroza": [
+      {
+        "item_id": "Item_Weapon_Groza_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "WeapGroza_C": [
+      {
+        "item_id": "Item_Weapon_Groza_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_ACE32_C": [
+      {
+        "item_id": "Item_Weapon_ACE32_C",
+        "evidence": "item_id"
+      }
+    ],
+    "ACE32": [
+      {
+        "item_id": "Item_Weapon_ACE32_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_ACE32_C",
+        "evidence": "published_weapon_tag"
+      },
+      {
+        "item_id": "Item_Weapon_ACE32_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_ACE32_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "WeapACE32": [
+      {
+        "item_id": "Item_Weapon_ACE32_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "WeapACE32_C": [
+      {
+        "item_id": "Item_Weapon_ACE32_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_AK47_C": [
+      {
+        "item_id": "Item_Weapon_AK47_C",
+        "evidence": "item_id"
+      }
+    ],
+    "AKM": [
+      {
+        "item_id": "Item_Weapon_AK47_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_AK47_C",
+        "evidence": "published_weapon_tag"
+      },
+      {
+        "item_id": "Item_Weapon_AK47_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_AK47_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      },
+      {
+        "item_id": "Item_Weapon_Lunchmeats_AK47_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      }
+    ],
+    "WeapAK47": [
+      {
+        "item_id": "Item_Weapon_AK47_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "WeapAK47_C": [
+      {
+        "item_id": "Item_Weapon_AK47_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_AUG_C": [
+      {
+        "item_id": "Item_Weapon_AUG_C",
+        "evidence": "item_id"
+      }
+    ],
+    "AUG": [
+      {
+        "item_id": "Item_Weapon_AUG_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_AUG_C",
+        "evidence": "published_weapon_tag"
+      }
+    ],
+    "WeapAUG": [
+      {
+        "item_id": "Item_Weapon_AUG_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "WeapAUG_C": [
+      {
+        "item_id": "Item_Weapon_AUG_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "AUG A3": [
+      {
+        "item_id": "Item_Weapon_AUG_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_AUG_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "Item_Weapon_BerylM762_C": [
+      {
+        "item_id": "Item_Weapon_BerylM762_C",
+        "evidence": "item_id"
+      }
+    ],
+    "Beryl M762": [
+      {
+        "item_id": "Item_Weapon_BerylM762_C",
+        "evidence": "published_display_name"
+      }
+    ],
+    "WeapBerylM762": [
+      {
+        "item_id": "Item_Weapon_BerylM762_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "M762": [
+      {
+        "item_id": "Item_Weapon_BerylM762_C",
+        "evidence": "published_weapon_tag"
+      }
+    ],
+    "WeapBerylM762_C": [
+      {
+        "item_id": "Item_Weapon_BerylM762_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Beryl": [
+      {
+        "item_id": "Item_Weapon_BerylM762_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_BerylM762_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "Item_Weapon_Duncans_M416_C": [
+      {
+        "item_id": "Item_Weapon_Duncans_M416_C",
+        "evidence": "item_id"
+      }
+    ],
+    "Duncan's M416": [
+      {
+        "item_id": "Item_Weapon_Duncans_M416_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_Duncans_M416_C",
+        "evidence": "published_weapon_tag"
+      }
+    ],
+    "WeapDuncansHK416": [
+      {
+        "item_id": "Item_Weapon_Duncans_M416_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "WeapDuncansHK416_C": [
+      {
+        "item_id": "Item_Weapon_Duncans_M416_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "M416": [
+      {
+        "item_id": "Item_Weapon_Duncans_M416_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_Duncans_M416_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      },
+      {
+        "item_id": "Item_Weapon_HK416_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_HK416_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_HK416_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "Item_Weapon_FAMASG2_C": [
+      {
+        "item_id": "Item_Weapon_FAMASG2_C",
+        "evidence": "item_id"
+      }
+    ],
+    "FAMAS": [
+      {
+        "item_id": "Item_Weapon_FAMASG2_C",
+        "evidence": "published_display_name"
+      }
+    ],
+    "WeapFamasG2": [
+      {
+        "item_id": "Item_Weapon_FAMASG2_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "FAMASG2": [
+      {
+        "item_id": "Item_Weapon_FAMASG2_C",
+        "evidence": "published_weapon_tag"
+      }
+    ],
+    "WeapFamasG2_C": [
+      {
+        "item_id": "Item_Weapon_FAMASG2_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_G36C_C": [
+      {
+        "item_id": "Item_Weapon_G36C_C",
+        "evidence": "item_id"
+      }
+    ],
+    "G36C": [
+      {
+        "item_id": "Item_Weapon_G36C_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_G36C_C",
+        "evidence": "published_weapon_tag"
+      },
+      {
+        "item_id": "Item_Weapon_G36C_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_G36C_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "WeapG36C": [
+      {
+        "item_id": "Item_Weapon_G36C_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "WeapG36C_C": [
+      {
+        "item_id": "Item_Weapon_G36C_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_K2_C": [
+      {
+        "item_id": "Item_Weapon_K2_C",
+        "evidence": "item_id"
+      }
+    ],
+    "K2": [
+      {
+        "item_id": "Item_Weapon_K2_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_K2_C",
+        "evidence": "published_weapon_tag"
+      },
+      {
+        "item_id": "Item_Weapon_K2_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_K2_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "WeapK2": [
+      {
+        "item_id": "Item_Weapon_K2_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "WeapK2_C": [
+      {
+        "item_id": "Item_Weapon_K2_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_Lunchmeats_AK47_C": [
+      {
+        "item_id": "Item_Weapon_Lunchmeats_AK47_C",
+        "evidence": "item_id"
+      }
+    ],
+    "Lunchmeat's AKM": [
+      {
+        "item_id": "Item_Weapon_Lunchmeats_AK47_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_Lunchmeats_AK47_C",
+        "evidence": "published_weapon_tag"
+      }
+    ],
+    "WeapLunchmeatsAK47": [
+      {
+        "item_id": "Item_Weapon_Lunchmeats_AK47_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "WeapLunchmeatsAK47_C": [
+      {
+        "item_id": "Item_Weapon_Lunchmeats_AK47_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_M16A4_C": [
+      {
+        "item_id": "Item_Weapon_M16A4_C",
+        "evidence": "item_id"
+      }
+    ],
+    "M16A4": [
+      {
+        "item_id": "Item_Weapon_M16A4_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_M16A4_C",
+        "evidence": "published_weapon_tag"
+      },
+      {
+        "item_id": "Item_Weapon_M16A4_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_M16A4_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "WeapM16A4": [
+      {
+        "item_id": "Item_Weapon_M16A4_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "WeapM16A4_C": [
+      {
+        "item_id": "Item_Weapon_M16A4_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_HK416_C": [
+      {
+        "item_id": "Item_Weapon_HK416_C",
+        "evidence": "item_id"
+      }
+    ],
+    "WeapHK416": [
+      {
+        "item_id": "Item_Weapon_HK416_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "HK416": [
+      {
+        "item_id": "Item_Weapon_HK416_C",
+        "evidence": "published_weapon_tag"
+      }
+    ],
+    "WeapHK416_C": [
+      {
+        "item_id": "Item_Weapon_HK416_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_Mk47Mutant_C": [
+      {
+        "item_id": "Item_Weapon_Mk47Mutant_C",
+        "evidence": "item_id"
+      }
+    ],
+    "Mk47 Mutant": [
+      {
+        "item_id": "Item_Weapon_Mk47Mutant_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_Mk47Mutant_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_Mk47Mutant_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "WeapMk47Mutant": [
+      {
+        "item_id": "Item_Weapon_Mk47Mutant_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "Mutant": [
+      {
+        "item_id": "Item_Weapon_Mk47Mutant_C",
+        "evidence": "published_weapon_tag"
+      }
+    ],
+    "WeapMk47Mutant_C": [
+      {
+        "item_id": "Item_Weapon_Mk47Mutant_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_QBZ95_C": [
+      {
+        "item_id": "Item_Weapon_QBZ95_C",
+        "evidence": "item_id"
+      }
+    ],
+    "QBZ": [
+      {
+        "item_id": "Item_Weapon_QBZ95_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_QBZ95_C",
+        "evidence": "published_weapon_tag"
+      }
+    ],
+    "WeapQBZ95": [
+      {
+        "item_id": "Item_Weapon_QBZ95_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "WeapQBZ95_C": [
+      {
+        "item_id": "Item_Weapon_QBZ95_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "QBZ95": [
+      {
+        "item_id": "Item_Weapon_QBZ95_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_QBZ95_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "Item_Weapon_SCAR-L_C": [
+      {
+        "item_id": "Item_Weapon_SCAR-L_C",
+        "evidence": "item_id"
+      }
+    ],
+    "SCAR-L": [
+      {
+        "item_id": "Item_Weapon_SCAR-L_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_SCAR-L_C",
+        "evidence": "published_weapon_tag"
+      },
+      {
+        "item_id": "Item_Weapon_SCAR-L_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_SCAR-L_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "WeapSCAR-L": [
+      {
+        "item_id": "Item_Weapon_SCAR-L_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "WeapSCAR-L_C": [
+      {
+        "item_id": "Item_Weapon_SCAR-L_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_Dragunov_C": [
+      {
+        "item_id": "Item_Weapon_Dragunov_C",
+        "evidence": "item_id"
+      }
+    ],
+    "Dragunov": [
+      {
+        "item_id": "Item_Weapon_Dragunov_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_Dragunov_C",
+        "evidence": "published_weapon_tag"
+      },
+      {
+        "item_id": "Item_Weapon_Dragunov_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_Dragunov_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "WeapDragunov": [
+      {
+        "item_id": "Item_Weapon_Dragunov_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "WeapDragunov_C": [
+      {
+        "item_id": "Item_Weapon_Dragunov_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_Mk14_C": [
+      {
+        "item_id": "Item_Weapon_Mk14_C",
+        "evidence": "item_id"
+      }
+    ],
+    "Mk14": [
+      {
+        "item_id": "Item_Weapon_Mk14_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_Mk14_C",
+        "evidence": "published_weapon_tag"
+      }
+    ],
+    "WeapMk14": [
+      {
+        "item_id": "Item_Weapon_Mk14_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "WeapMk14_C": [
+      {
+        "item_id": "Item_Weapon_Mk14_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Mk14 EBR": [
+      {
+        "item_id": "Item_Weapon_Mk14_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_Mk14_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "Item_Weapon_SKS_C": [
+      {
+        "item_id": "Item_Weapon_SKS_C",
+        "evidence": "item_id"
+      }
+    ],
+    "SKS": [
+      {
+        "item_id": "Item_Weapon_SKS_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_SKS_C",
+        "evidence": "published_weapon_tag"
+      },
+      {
+        "item_id": "Item_Weapon_SKS_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_SKS_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "WeapSKS": [
+      {
+        "item_id": "Item_Weapon_SKS_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "WeapSKS_C": [
+      {
+        "item_id": "Item_Weapon_SKS_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_FNFal_C": [
+      {
+        "item_id": "Item_Weapon_FNFal_C",
+        "evidence": "item_id"
+      }
+    ],
+    "SLR": [
+      {
+        "item_id": "Item_Weapon_FNFal_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_FNFal_C",
+        "evidence": "published_weapon_tag"
+      },
+      {
+        "item_id": "Item_Weapon_FNFal_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_FNFal_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "WeapFNFal": [
+      {
+        "item_id": "Item_Weapon_FNFal_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "WeapFNFal_C": [
+      {
+        "item_id": "Item_Weapon_FNFal_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_VSS_C": [
+      {
+        "item_id": "Item_Weapon_VSS_C",
+        "evidence": "item_id"
+      }
+    ],
+    "VSS": [
+      {
+        "item_id": "Item_Weapon_VSS_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_VSS_C",
+        "evidence": "published_weapon_tag"
+      },
+      {
+        "item_id": "Item_Weapon_VSS_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_VSS_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "WeapVSS": [
+      {
+        "item_id": "Item_Weapon_VSS_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "WeapVSS_C": [
+      {
+        "item_id": "Item_Weapon_VSS_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_Mads_QBU88_C": [
+      {
+        "item_id": "Item_Weapon_Mads_QBU88_C",
+        "evidence": "item_id"
+      }
+    ],
+    "Mad's QBU": [
+      {
+        "item_id": "Item_Weapon_Mads_QBU88_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_Mads_QBU88_C",
+        "evidence": "published_weapon_tag"
+      }
+    ],
+    "WeapMadsQBU88": [
+      {
+        "item_id": "Item_Weapon_Mads_QBU88_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "WeapMadsQBU88_C": [
+      {
+        "item_id": "Item_Weapon_Mads_QBU88_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "QBU88": [
+      {
+        "item_id": "Item_Weapon_Mads_QBU88_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_Mads_QBU88_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      },
+      {
+        "item_id": "Item_Weapon_QBU88_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_QBU88_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "Item_Weapon_Mini14_C": [
+      {
+        "item_id": "Item_Weapon_Mini14_C",
+        "evidence": "item_id"
+      }
+    ],
+    "Mini14": [
+      {
+        "item_id": "Item_Weapon_Mini14_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_Mini14_C",
+        "evidence": "published_weapon_tag"
+      }
+    ],
+    "WeapMini14": [
+      {
+        "item_id": "Item_Weapon_Mini14_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "WeapMini14_C": [
+      {
+        "item_id": "Item_Weapon_Mini14_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Mini 14": [
+      {
+        "item_id": "Item_Weapon_Mini14_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_Mini14_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "Item_Weapon_Mk12_C": [
+      {
+        "item_id": "Item_Weapon_Mk12_C",
+        "evidence": "item_id"
+      }
+    ],
+    "Mk12": [
+      {
+        "item_id": "Item_Weapon_Mk12_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_Mk12_C",
+        "evidence": "published_weapon_tag"
+      },
+      {
+        "item_id": "Item_Weapon_Mk12_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_Mk12_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "WeapMk12": [
+      {
+        "item_id": "Item_Weapon_Mk12_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "WeapMk12_C": [
+      {
+        "item_id": "Item_Weapon_Mk12_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_QBU88_C": [
+      {
+        "item_id": "Item_Weapon_QBU88_C",
+        "evidence": "item_id"
+      }
+    ],
+    "QBU": [
+      {
+        "item_id": "Item_Weapon_QBU88_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_QBU88_C",
+        "evidence": "published_weapon_tag"
+      }
+    ],
+    "WeapQBU88": [
+      {
+        "item_id": "Item_Weapon_QBU88_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "WeapQBU88_C": [
+      {
+        "item_id": "Item_Weapon_QBU88_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_L6_C": [
+      {
+        "item_id": "Item_Weapon_L6_C",
+        "evidence": "item_id"
+      }
+    ],
+    "Lynx AMR": [
+      {
+        "item_id": "Item_Weapon_L6_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_L6_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_L6_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "WeapL6": [
+      {
+        "item_id": "Item_Weapon_L6_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "L6": [
+      {
+        "item_id": "Item_Weapon_L6_C",
+        "evidence": "published_weapon_tag"
+      }
+    ],
+    "WeapL6_C": [
+      {
+        "item_id": "Item_Weapon_L6_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_AWM_C": [
+      {
+        "item_id": "Item_Weapon_AWM_C",
+        "evidence": "item_id"
+      }
+    ],
+    "AWM": [
+      {
+        "item_id": "Item_Weapon_AWM_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_AWM_C",
+        "evidence": "published_weapon_tag"
+      },
+      {
+        "item_id": "Item_Weapon_AWM_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_AWM_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "WeapAWM": [
+      {
+        "item_id": "Item_Weapon_AWM_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "WeapAWM_C": [
+      {
+        "item_id": "Item_Weapon_AWM_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_Julies_Kar98k_C": [
+      {
+        "item_id": "Item_Weapon_Julies_Kar98k_C",
+        "evidence": "item_id"
+      }
+    ],
+    "Julie's Kar98k": [
+      {
+        "item_id": "Item_Weapon_Julies_Kar98k_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_Julies_Kar98k_C",
+        "evidence": "published_weapon_tag"
+      }
+    ],
+    "WeapJuliesKar98k": [
+      {
+        "item_id": "Item_Weapon_Julies_Kar98k_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "WeapJuliesKar98k_C": [
+      {
+        "item_id": "Item_Weapon_Julies_Kar98k_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Kar98k": [
+      {
+        "item_id": "Item_Weapon_Julies_Kar98k_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_Kar98k_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_Kar98k_C",
+        "evidence": "published_weapon_tag"
+      },
+      {
+        "item_id": "Item_Weapon_Kar98k_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_Kar98k_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "Item_Weapon_Kar98k_C": [
+      {
+        "item_id": "Item_Weapon_Kar98k_C",
+        "evidence": "item_id"
+      }
+    ],
+    "WeapKar98k": [
+      {
+        "item_id": "Item_Weapon_Kar98k_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "WeapKar98k_C": [
+      {
+        "item_id": "Item_Weapon_Kar98k_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_M24_C": [
+      {
+        "item_id": "Item_Weapon_M24_C",
+        "evidence": "item_id"
+      }
+    ],
+    "M24": [
+      {
+        "item_id": "Item_Weapon_M24_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_M24_C",
+        "evidence": "published_weapon_tag"
+      },
+      {
+        "item_id": "Item_Weapon_M24_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_M24_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "WeapM24": [
+      {
+        "item_id": "Item_Weapon_M24_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "WeapM24_C": [
+      {
+        "item_id": "Item_Weapon_M24_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_Mosin_C": [
+      {
+        "item_id": "Item_Weapon_Mosin_C",
+        "evidence": "item_id"
+      }
+    ],
+    "Mosin Nagant": [
+      {
+        "item_id": "Item_Weapon_Mosin_C",
+        "evidence": "published_display_name"
+      }
+    ],
+    "WeapMosinNagant": [
+      {
+        "item_id": "Item_Weapon_Mosin_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "Mosin": [
+      {
+        "item_id": "Item_Weapon_Mosin_C",
+        "evidence": "published_weapon_tag"
+      }
+    ],
+    "WeapMosinNagant_C": [
+      {
+        "item_id": "Item_Weapon_Mosin_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Mosin-Nagant": [
+      {
+        "item_id": "Item_Weapon_Mosin_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_Mosin_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "Item_Weapon_Win1894_C": [
+      {
+        "item_id": "Item_Weapon_Win1894_C",
+        "evidence": "item_id"
+      }
+    ],
+    "Win94": [
+      {
+        "item_id": "Item_Weapon_Win1894_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_Win1894_C",
+        "evidence": "published_weapon_tag"
+      },
+      {
+        "item_id": "Item_Weapon_Win1894_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_Win1894_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "WeapWin94": [
+      {
+        "item_id": "Item_Weapon_Win1894_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "WeapWin94_C": [
+      {
+        "item_id": "Item_Weapon_Win1894_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_DP28_C": [
+      {
+        "item_id": "Item_Weapon_DP28_C",
+        "evidence": "item_id"
+      }
+    ],
+    "DP-28": [
+      {
+        "item_id": "Item_Weapon_DP28_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_DP28_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_DP28_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "WeapDP28": [
+      {
+        "item_id": "Item_Weapon_DP28_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "DP28": [
+      {
+        "item_id": "Item_Weapon_DP28_C",
+        "evidence": "published_weapon_tag"
+      }
+    ],
+    "WeapDP28_C": [
+      {
+        "item_id": "Item_Weapon_DP28_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_M249_C": [
+      {
+        "item_id": "Item_Weapon_M249_C",
+        "evidence": "item_id"
+      }
+    ],
+    "M249": [
+      {
+        "item_id": "Item_Weapon_M249_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_M249_C",
+        "evidence": "published_weapon_tag"
+      },
+      {
+        "item_id": "Item_Weapon_M249_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_M249_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "WeapM249": [
+      {
+        "item_id": "Item_Weapon_M249_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "WeapM249_C": [
+      {
+        "item_id": "Item_Weapon_M249_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_MG3_C": [
+      {
+        "item_id": "Item_Weapon_MG3_C",
+        "evidence": "item_id"
+      }
+    ],
+    "MG3": [
+      {
+        "item_id": "Item_Weapon_MG3_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_MG3_C",
+        "evidence": "published_weapon_tag"
+      },
+      {
+        "item_id": "Item_Weapon_MG3_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_MG3_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "WeapMG3": [
+      {
+        "item_id": "Item_Weapon_MG3_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "WeapMG3_C": [
+      {
+        "item_id": "Item_Weapon_MG3_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_RPD_C": [
+      {
+        "item_id": "Item_Weapon_RPD_C",
+        "evidence": "item_id"
+      }
+    ],
+    "RPD": [
+      {
+        "item_id": "Item_Weapon_RPD_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_RPD_C",
+        "evidence": "published_weapon_tag"
+      }
+    ],
+    "WeapRPD": [
+      {
+        "item_id": "Item_Weapon_RPD_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "WeapRPD_C": [
+      {
+        "item_id": "Item_Weapon_RPD_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_Vector_C": [
+      {
+        "item_id": "Item_Weapon_Vector_C",
+        "evidence": "item_id"
+      }
+    ],
+    "Vector": [
+      {
+        "item_id": "Item_Weapon_Vector_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_Vector_C",
+        "evidence": "published_weapon_tag"
+      },
+      {
+        "item_id": "Item_Weapon_Vector_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_Vector_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "WeapVector": [
+      {
+        "item_id": "Item_Weapon_Vector_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "WeapVector_C": [
+      {
+        "item_id": "Item_Weapon_Vector_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_JS9_C": [
+      {
+        "item_id": "Item_Weapon_JS9_C",
+        "evidence": "item_id"
+      }
+    ],
+    "JS9": [
+      {
+        "item_id": "Item_Weapon_JS9_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_JS9_C",
+        "evidence": "published_weapon_tag"
+      },
+      {
+        "item_id": "Item_Weapon_JS9_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_JS9_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "WeapJS9": [
+      {
+        "item_id": "Item_Weapon_JS9_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "WeapJS9_C": [
+      {
+        "item_id": "Item_Weapon_JS9_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_MP5K_C": [
+      {
+        "item_id": "Item_Weapon_MP5K_C",
+        "evidence": "item_id"
+      }
+    ],
+    "MP5K": [
+      {
+        "item_id": "Item_Weapon_MP5K_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_MP5K_C",
+        "evidence": "published_weapon_tag"
+      },
+      {
+        "item_id": "Item_Weapon_MP5K_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_MP5K_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "WeapMP5K": [
+      {
+        "item_id": "Item_Weapon_MP5K_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "WeapMP5K_C": [
+      {
+        "item_id": "Item_Weapon_MP5K_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_MP9_C": [
+      {
+        "item_id": "Item_Weapon_MP9_C",
+        "evidence": "item_id"
+      }
+    ],
+    "MP9": [
+      {
+        "item_id": "Item_Weapon_MP9_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_MP9_C",
+        "evidence": "published_weapon_tag"
+      },
+      {
+        "item_id": "Item_Weapon_MP9_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_MP9_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "WeapMP9": [
+      {
+        "item_id": "Item_Weapon_MP9_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "WeapMP9_C": [
+      {
+        "item_id": "Item_Weapon_MP9_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_UZI_C": [
+      {
+        "item_id": "Item_Weapon_UZI_C",
+        "evidence": "item_id"
+      }
+    ],
+    "Micro UZI": [
+      {
+        "item_id": "Item_Weapon_UZI_C",
+        "evidence": "published_display_name"
+      }
+    ],
+    "WeapUZI": [
+      {
+        "item_id": "Item_Weapon_UZI_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "UZI": [
+      {
+        "item_id": "Item_Weapon_UZI_C",
+        "evidence": "published_weapon_tag"
+      },
+      {
+        "item_id": "Item_Weapon_UziPro_C",
+        "evidence": "published_weapon_tag"
+      }
+    ],
+    "WeapUZI_C": [
+      {
+        "item_id": "Item_Weapon_UZI_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Micro Uzi": [
+      {
+        "item_id": "Item_Weapon_UZI_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_UZI_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "Item_Weapon_P90_C": [
+      {
+        "item_id": "Item_Weapon_P90_C",
+        "evidence": "item_id"
+      }
+    ],
+    "P90": [
+      {
+        "item_id": "Item_Weapon_P90_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_P90_C",
+        "evidence": "published_weapon_tag"
+      },
+      {
+        "item_id": "Item_Weapon_P90_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_P90_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "WeapP90": [
+      {
+        "item_id": "Item_Weapon_P90_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "WeapP90_C": [
+      {
+        "item_id": "Item_Weapon_P90_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_BizonPP19_C": [
+      {
+        "item_id": "Item_Weapon_BizonPP19_C",
+        "evidence": "item_id"
+      }
+    ],
+    "PP-19 Bizon": [
+      {
+        "item_id": "Item_Weapon_BizonPP19_C",
+        "evidence": "published_display_name"
+      }
+    ],
+    "WeapBizonPP19": [
+      {
+        "item_id": "Item_Weapon_BizonPP19_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "PP19": [
+      {
+        "item_id": "Item_Weapon_BizonPP19_C",
+        "evidence": "published_weapon_tag"
+      }
+    ],
+    "WeapBizonPP19_C": [
+      {
+        "item_id": "Item_Weapon_BizonPP19_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Bizon": [
+      {
+        "item_id": "Item_Weapon_BizonPP19_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_BizonPP19_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "Item_Weapon_Thompson_C": [
+      {
+        "item_id": "Item_Weapon_Thompson_C",
+        "evidence": "item_id"
+      }
+    ],
+    "Tommy Gun": [
+      {
+        "item_id": "Item_Weapon_Thompson_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_Thompson_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_Thompson_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "WeapThompson": [
+      {
+        "item_id": "Item_Weapon_Thompson_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "Thompson": [
+      {
+        "item_id": "Item_Weapon_Thompson_C",
+        "evidence": "published_weapon_tag"
+      }
+    ],
+    "WeapThompson_C": [
+      {
+        "item_id": "Item_Weapon_Thompson_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_UMP_C": [
+      {
+        "item_id": "Item_Weapon_UMP_C",
+        "evidence": "item_id"
+      }
+    ],
+    "UMP": [
+      {
+        "item_id": "Item_Weapon_UMP_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_UMP_C",
+        "evidence": "published_weapon_tag"
+      }
+    ],
+    "WeapUMP": [
+      {
+        "item_id": "Item_Weapon_UMP_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "WeapUMP_C": [
+      {
+        "item_id": "Item_Weapon_UMP_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "UMP9": [
+      {
+        "item_id": "Item_Weapon_UMP_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_UMP_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "Item_Weapon_UziPro_C": [
+      {
+        "item_id": "Item_Weapon_UziPro_C",
+        "evidence": "item_id"
+      }
+    ],
+    "UZI Pro": [
+      {
+        "item_id": "Item_Weapon_UziPro_C",
+        "evidence": "published_display_name"
+      }
+    ],
+    "WeapUziPro": [
+      {
+        "item_id": "Item_Weapon_UziPro_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "WeapUziPro_C": [
+      {
+        "item_id": "Item_Weapon_UziPro_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_DP12_C": [
+      {
+        "item_id": "Item_Weapon_DP12_C",
+        "evidence": "item_id"
+      }
+    ],
+    "DBS": [
+      {
+        "item_id": "Item_Weapon_DP12_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_DP12_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_DP12_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "WeapDP12": [
+      {
+        "item_id": "Item_Weapon_DP12_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "DP12": [
+      {
+        "item_id": "Item_Weapon_DP12_C",
+        "evidence": "published_weapon_tag"
+      }
+    ],
+    "WeapDP12_C": [
+      {
+        "item_id": "Item_Weapon_DP12_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_OriginS12_C": [
+      {
+        "item_id": "Item_Weapon_OriginS12_C",
+        "evidence": "item_id"
+      }
+    ],
+    "O12": [
+      {
+        "item_id": "Item_Weapon_OriginS12_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_OriginS12_C",
+        "evidence": "published_weapon_tag"
+      },
+      {
+        "item_id": "Item_Weapon_OriginS12_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_OriginS12_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "WeapOriginS12": [
+      {
+        "item_id": "Item_Weapon_OriginS12_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "WeapOriginS12_C": [
+      {
+        "item_id": "Item_Weapon_OriginS12_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_Saiga12_C": [
+      {
+        "item_id": "Item_Weapon_Saiga12_C",
+        "evidence": "item_id"
+      }
+    ],
+    "S12K": [
+      {
+        "item_id": "Item_Weapon_Saiga12_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_Saiga12_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_Saiga12_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "WeapSaiga12": [
+      {
+        "item_id": "Item_Weapon_Saiga12_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "Saiga12": [
+      {
+        "item_id": "Item_Weapon_Saiga12_C",
+        "evidence": "published_weapon_tag"
+      }
+    ],
+    "WeapSaiga12_C": [
+      {
+        "item_id": "Item_Weapon_Saiga12_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_Winchester_C": [
+      {
+        "item_id": "Item_Weapon_Winchester_C",
+        "evidence": "item_id"
+      }
+    ],
+    "S1897": [
+      {
+        "item_id": "Item_Weapon_Winchester_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_Winchester_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_Winchester_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "WeapWinchester": [
+      {
+        "item_id": "Item_Weapon_Winchester_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "Winchester": [
+      {
+        "item_id": "Item_Weapon_Winchester_C",
+        "evidence": "published_weapon_tag"
+      }
+    ],
+    "WeapWinchester_C": [
+      {
+        "item_id": "Item_Weapon_Winchester_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_Berreta686_C": [
+      {
+        "item_id": "Item_Weapon_Berreta686_C",
+        "evidence": "item_id"
+      }
+    ],
+    "S686": [
+      {
+        "item_id": "Item_Weapon_Berreta686_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_Berreta686_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_Berreta686_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "WeapBerreta686": [
+      {
+        "item_id": "Item_Weapon_Berreta686_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "Berreta686": [
+      {
+        "item_id": "Item_Weapon_Berreta686_C",
+        "evidence": "published_weapon_tag"
+      }
+    ],
+    "WeapBerreta686_C": [
+      {
+        "item_id": "Item_Weapon_Berreta686_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_StunGun_C": [
+      {
+        "item_id": "Item_Weapon_StunGun_C",
+        "evidence": "item_id"
+      }
+    ],
+    "Stun Gun": [
+      {
+        "item_id": "Item_Weapon_StunGun_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_StunGun_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "WeapStunGun": [
+      {
+        "item_id": "Item_Weapon_StunGun_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "StunGun": [
+      {
+        "item_id": "Item_Weapon_StunGun_C",
+        "evidence": "published_weapon_tag"
+      }
+    ],
+    "WeapStunGun_C": [
+      {
+        "item_id": "Item_Weapon_StunGun_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_BZGL_C": [
+      {
+        "item_id": "Item_Weapon_BZGL_C",
+        "evidence": "item_id"
+      }
+    ],
+    "BZ Grenade Launcher": [
+      {
+        "item_id": "Item_Weapon_BZGL_C",
+        "evidence": "published_display_name"
+      }
+    ],
+    "WeapBZGL_Subzero": [
+      {
+        "item_id": "Item_Weapon_BZGL_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "BZGL": [
+      {
+        "item_id": "Item_Weapon_BZGL_C",
+        "evidence": "published_weapon_tag"
+      }
+    ],
+    "WeapBZGL_Subzero_C": [
+      {
+        "item_id": "Item_Weapon_BZGL_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_DesertEagle_C": [
+      {
+        "item_id": "Item_Weapon_DesertEagle_C",
+        "evidence": "item_id"
+      }
+    ],
+    "Deagle": [
+      {
+        "item_id": "Item_Weapon_DesertEagle_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_DesertEagle_C",
+        "evidence": "published_weapon_tag"
+      },
+      {
+        "item_id": "Item_Weapon_DesertEagle_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_DesertEagle_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "WeapDesertEagle": [
+      {
+        "item_id": "Item_Weapon_DesertEagle_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "WeapDesertEagle_C": [
+      {
+        "item_id": "Item_Weapon_DesertEagle_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_M79_C": [
+      {
+        "item_id": "Item_Weapon_M79_C",
+        "evidence": "item_id"
+      }
+    ],
+    "M79": [
+      {
+        "item_id": "Item_Weapon_M79_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_M79_C",
+        "evidence": "published_weapon_tag"
+      },
+      {
+        "item_id": "Item_Weapon_M79_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "WeapM79": [
+      {
+        "item_id": "Item_Weapon_M79_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "WeapM79_C": [
+      {
+        "item_id": "Item_Weapon_M79_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_G18_C": [
+      {
+        "item_id": "Item_Weapon_G18_C",
+        "evidence": "item_id"
+      }
+    ],
+    "P18C": [
+      {
+        "item_id": "Item_Weapon_G18_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_G18_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_G18_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "WeapG18": [
+      {
+        "item_id": "Item_Weapon_G18_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "G18": [
+      {
+        "item_id": "Item_Weapon_G18_C",
+        "evidence": "published_weapon_tag"
+      }
+    ],
+    "WeapG18_C": [
+      {
+        "item_id": "Item_Weapon_G18_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_M1911_C": [
+      {
+        "item_id": "Item_Weapon_M1911_C",
+        "evidence": "item_id"
+      }
+    ],
+    "P1911": [
+      {
+        "item_id": "Item_Weapon_M1911_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_M1911_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_M1911_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "WeapM1911": [
+      {
+        "item_id": "Item_Weapon_M1911_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "M1911": [
+      {
+        "item_id": "Item_Weapon_M1911_C",
+        "evidence": "published_weapon_tag"
+      }
+    ],
+    "WeapM1911_C": [
+      {
+        "item_id": "Item_Weapon_M1911_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_M9_C": [
+      {
+        "item_id": "Item_Weapon_M9_C",
+        "evidence": "item_id"
+      }
+    ],
+    "P92": [
+      {
+        "item_id": "Item_Weapon_M9_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_M9_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_M9_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "WeapM9": [
+      {
+        "item_id": "Item_Weapon_M9_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "M9": [
+      {
+        "item_id": "Item_Weapon_M9_C",
+        "evidence": "published_weapon_tag"
+      }
+    ],
+    "WeapM9_C": [
+      {
+        "item_id": "Item_Weapon_M9_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_NagantM1895_C": [
+      {
+        "item_id": "Item_Weapon_NagantM1895_C",
+        "evidence": "item_id"
+      }
+    ],
+    "R1895": [
+      {
+        "item_id": "Item_Weapon_NagantM1895_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_NagantM1895_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_NagantM1895_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "WeapNagantM1895": [
+      {
+        "item_id": "Item_Weapon_NagantM1895_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "NagantM1895": [
+      {
+        "item_id": "Item_Weapon_NagantM1895_C",
+        "evidence": "published_weapon_tag"
+      }
+    ],
+    "WeapNagantM1895_C": [
+      {
+        "item_id": "Item_Weapon_NagantM1895_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_Rhino_C": [
+      {
+        "item_id": "Item_Weapon_Rhino_C",
+        "evidence": "item_id"
+      }
+    ],
+    "R45": [
+      {
+        "item_id": "Item_Weapon_Rhino_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_Rhino_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_Rhino_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "WeapRhino": [
+      {
+        "item_id": "Item_Weapon_Rhino_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "Rhino": [
+      {
+        "item_id": "Item_Weapon_Rhino_C",
+        "evidence": "published_weapon_tag"
+      }
+    ],
+    "WeapRhino_C": [
+      {
+        "item_id": "Item_Weapon_Rhino_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_Sawnoff_C": [
+      {
+        "item_id": "Item_Weapon_Sawnoff_C",
+        "evidence": "item_id"
+      }
+    ],
+    "Sawed-Off": [
+      {
+        "item_id": "Item_Weapon_Sawnoff_C",
+        "evidence": "published_display_name"
+      }
+    ],
+    "WeapSawnOff": [
+      {
+        "item_id": "Item_Weapon_Sawnoff_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "Sawnoff": [
+      {
+        "item_id": "Item_Weapon_Sawnoff_C",
+        "evidence": "published_weapon_tag"
+      }
+    ],
+    "WeapSawnOff_C": [
+      {
+        "item_id": "Item_Weapon_Sawnoff_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Sawed-off": [
+      {
+        "item_id": "Item_Weapon_Sawnoff_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "Item_Weapon_vz61Skorpion_C": [
+      {
+        "item_id": "Item_Weapon_vz61Skorpion_C",
+        "evidence": "item_id"
+      }
+    ],
+    "Skorpion": [
+      {
+        "item_id": "Item_Weapon_vz61Skorpion_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_vz61Skorpion_C",
+        "evidence": "published_weapon_tag"
+      },
+      {
+        "item_id": "Item_Weapon_vz61Skorpion_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_vz61Skorpion_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "Weapvz61Skorpion": [
+      {
+        "item_id": "Item_Weapon_vz61Skorpion_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "Weapvz61Skorpion_C": [
+      {
+        "item_id": "Item_Weapon_vz61Skorpion_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_Crossbow_C": [
+      {
+        "item_id": "Item_Weapon_Crossbow_C",
+        "evidence": "item_id"
+      }
+    ],
+    "Crossbow": [
+      {
+        "item_id": "Item_Weapon_Crossbow_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_Crossbow_C",
+        "evidence": "published_weapon_tag"
+      },
+      {
+        "item_id": "Item_Weapon_Crossbow_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_Crossbow_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "WeapCrossbow_1": [
+      {
+        "item_id": "Item_Weapon_Crossbow_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "WeapCrossbow_1_C": [
+      {
+        "item_id": "Item_Weapon_Crossbow_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_Mortar_C": [
+      {
+        "item_id": "Item_Weapon_Mortar_C",
+        "evidence": "item_id"
+      }
+    ],
+    "Mortar": [
+      {
+        "item_id": "Item_Weapon_Mortar_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_Mortar_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "WeapMortar": [
+      {
+        "item_id": "Item_Weapon_Mortar_C",
+        "evidence": "published_blueprint"
+      },
+      {
+        "item_id": "Item_Weapon_Mortar_C",
+        "evidence": "published_weapon_tag"
+      }
+    ],
+    "WeapMortar_C": [
+      {
+        "item_id": "Item_Weapon_Mortar_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_PanzerFaust100M_C": [
+      {
+        "item_id": "Item_Weapon_PanzerFaust100M_C",
+        "evidence": "item_id"
+      }
+    ],
+    "Panzerfaust": [
+      {
+        "item_id": "Item_Weapon_PanzerFaust100M_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_PanzerFaust100M_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_PanzerFaust100M_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "WeapPanzerFaust100M1": [
+      {
+        "item_id": "Item_Weapon_PanzerFaust100M_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "PanzerFaust100M": [
+      {
+        "item_id": "Item_Weapon_PanzerFaust100M_C",
+        "evidence": "published_weapon_tag"
+      }
+    ],
+    "WeapPanzerFaust100M1_C": [
+      {
+        "item_id": "Item_Weapon_PanzerFaust100M_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_Cowbar_C": [
+      {
+        "item_id": "Item_Weapon_Cowbar_C",
+        "evidence": "item_id"
+      }
+    ],
+    "Crowbar": [
+      {
+        "item_id": "Item_Weapon_Cowbar_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_Cowbar_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_Cowbar_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "WeapCowbar": [
+      {
+        "item_id": "Item_Weapon_Cowbar_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "Cowbar": [
+      {
+        "item_id": "Item_Weapon_Cowbar_C",
+        "evidence": "published_weapon_tag"
+      }
+    ],
+    "WeapCowbar_C": [
+      {
+        "item_id": "Item_Weapon_Cowbar_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_Machete_C": [
+      {
+        "item_id": "Item_Weapon_Machete_C",
+        "evidence": "item_id"
+      }
+    ],
+    "Machete": [
+      {
+        "item_id": "Item_Weapon_Machete_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_Machete_C",
+        "evidence": "published_weapon_tag"
+      },
+      {
+        "item_id": "Item_Weapon_Machete_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_Machete_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "WeapMachete": [
+      {
+        "item_id": "Item_Weapon_Machete_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "WeapMachete_C": [
+      {
+        "item_id": "Item_Weapon_Machete_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_Pan_C": [
+      {
+        "item_id": "Item_Weapon_Pan_C",
+        "evidence": "item_id"
+      }
+    ],
+    "Pan": [
+      {
+        "item_id": "Item_Weapon_Pan_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_Pan_C",
+        "evidence": "published_weapon_tag"
+      },
+      {
+        "item_id": "Item_Weapon_Pan_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_Pan_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "WeapPan": [
+      {
+        "item_id": "Item_Weapon_Pan_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "WeapPan_C": [
+      {
+        "item_id": "Item_Weapon_Pan_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_Pickaxe_C": [
+      {
+        "item_id": "Item_Weapon_Pickaxe_C",
+        "evidence": "item_id"
+      }
+    ],
+    "Pickaxe": [
+      {
+        "item_id": "Item_Weapon_Pickaxe_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_Pickaxe_C",
+        "evidence": "published_weapon_tag"
+      }
+    ],
+    "WeapPickaxe": [
+      {
+        "item_id": "Item_Weapon_Pickaxe_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "WeapPickaxe_C": [
+      {
+        "item_id": "Item_Weapon_Pickaxe_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_Sickle_C": [
+      {
+        "item_id": "Item_Weapon_Sickle_C",
+        "evidence": "item_id"
+      }
+    ],
+    "Sickle": [
+      {
+        "item_id": "Item_Weapon_Sickle_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_Sickle_C",
+        "evidence": "published_weapon_tag"
+      },
+      {
+        "item_id": "Item_Weapon_Sickle_C",
+        "evidence": "official_damage_causer_dictionary_exact_class_match"
+      },
+      {
+        "item_id": "Item_Weapon_Sickle_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "WeapSickle": [
+      {
+        "item_id": "Item_Weapon_Sickle_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "WeapSickle_C": [
+      {
+        "item_id": "Item_Weapon_Sickle_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_IntegratedRepair_C": [
+      {
+        "item_id": "Item_Weapon_IntegratedRepair_C",
+        "evidence": "item_id"
+      }
+    ],
+    "All-In-One Repair Kit": [
+      {
+        "item_id": "Item_Weapon_IntegratedRepair_C",
+        "evidence": "published_display_name"
+      }
+    ],
+    "WeapIntegratedRepair": [
+      {
+        "item_id": "Item_Weapon_IntegratedRepair_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "Integrated_Repair_Kit": [
+      {
+        "item_id": "Item_Weapon_IntegratedRepair_C",
+        "evidence": "published_weapon_tag"
+      }
+    ],
+    "WeapIntegratedRepair_C": [
+      {
+        "item_id": "Item_Weapon_IntegratedRepair_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_TraumaBag_C": [
+      {
+        "item_id": "Item_Weapon_TraumaBag_C",
+        "evidence": "item_id"
+      }
+    ],
+    "EMT Gear": [
+      {
+        "item_id": "Item_Weapon_TraumaBag_C",
+        "evidence": "published_display_name"
+      }
+    ],
+    "WeapTraumaBag": [
+      {
+        "item_id": "Item_Weapon_TraumaBag_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "TraumaBag": [
+      {
+        "item_id": "Item_Weapon_TraumaBag_C",
+        "evidence": "published_weapon_tag"
+      }
+    ],
+    "WeapTraumaBag_C": [
+      {
+        "item_id": "Item_Weapon_TraumaBag_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Trauma Bag": [
+      {
+        "item_id": "Item_Weapon_TraumaBag_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "Item_Weapon_FlareGun_C": [
+      {
+        "item_id": "Item_Weapon_FlareGun_C",
+        "evidence": "item_id"
+      }
+    ],
+    "Flare Gun": [
+      {
+        "item_id": "Item_Weapon_FlareGun_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_FlareGun_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      },
+      {
+        "item_id": "Item_Weapon_IceGun_C",
+        "evidence": "published_display_name"
+      }
+    ],
+    "WeapFlareGun": [
+      {
+        "item_id": "Item_Weapon_FlareGun_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "FlareGun": [
+      {
+        "item_id": "Item_Weapon_FlareGun_C",
+        "evidence": "published_weapon_tag"
+      },
+      {
+        "item_id": "Item_Weapon_IceGun_C",
+        "evidence": "published_weapon_tag"
+      }
+    ],
+    "WeapFlareGun_C": [
+      {
+        "item_id": "Item_Weapon_FlareGun_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_IceGun_C": [
+      {
+        "item_id": "Item_Weapon_IceGun_C",
+        "evidence": "item_id"
+      }
+    ],
+    "WeapIceGun": [
+      {
+        "item_id": "Item_Weapon_IceGun_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "WeapIceGun_C": [
+      {
+        "item_id": "Item_Weapon_IceGun_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_Shield_C": [
+      {
+        "item_id": "Item_Weapon_Shield_C",
+        "evidence": "item_id"
+      }
+    ],
+    "Shield": [
+      {
+        "item_id": "Item_Weapon_Shield_C",
+        "evidence": "published_display_name"
+      }
+    ],
+    "WeapTacticalShield": [
+      {
+        "item_id": "Item_Weapon_Shield_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "TacticalShield": [
+      {
+        "item_id": "Item_Weapon_Shield_C",
+        "evidence": "published_weapon_tag"
+      }
+    ],
+    "WeapTacticalShield_C": [
+      {
+        "item_id": "Item_Weapon_Shield_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_TacPack_C": [
+      {
+        "item_id": "Item_Weapon_TacPack_C",
+        "evidence": "item_id"
+      }
+    ],
+    "Tactical Pack": [
+      {
+        "item_id": "Item_Weapon_TacPack_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_TacPack_C",
+        "evidence": "official_item_dictionary_exact_item_match"
+      }
+    ],
+    "WeapTacPack": [
+      {
+        "item_id": "Item_Weapon_TacPack_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "TacPack": [
+      {
+        "item_id": "Item_Weapon_TacPack_C",
+        "evidence": "published_weapon_tag"
+      }
+    ],
+    "WeapTacPack_C": [
+      {
+        "item_id": "Item_Weapon_TacPack_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_CamoNet_C": [
+      {
+        "item_id": "Item_Weapon_CamoNet_C",
+        "evidence": "item_id"
+      }
+    ],
+    "Vehicle Camo Netting": [
+      {
+        "item_id": "Item_Weapon_CamoNet_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_CamoNet_Desert_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_CamoNet_Taego_C",
+        "evidence": "published_display_name"
+      },
+      {
+        "item_id": "Item_Weapon_CamoNet_Rondo_C",
+        "evidence": "published_display_name"
+      }
+    ],
+    "WeapCamoNet": [
+      {
+        "item_id": "Item_Weapon_CamoNet_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "CamoNet": [
+      {
+        "item_id": "Item_Weapon_CamoNet_C",
+        "evidence": "published_weapon_tag"
+      },
+      {
+        "item_id": "Item_Weapon_CamoNet_Desert_C",
+        "evidence": "published_weapon_tag"
+      },
+      {
+        "item_id": "Item_Weapon_CamoNet_Taego_C",
+        "evidence": "published_weapon_tag"
+      },
+      {
+        "item_id": "Item_Weapon_CamoNet_Rondo_C",
+        "evidence": "published_weapon_tag"
+      }
+    ],
+    "WeapCamoNet_C": [
+      {
+        "item_id": "Item_Weapon_CamoNet_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_CamoNet_Desert_C": [
+      {
+        "item_id": "Item_Weapon_CamoNet_Desert_C",
+        "evidence": "item_id"
+      }
+    ],
+    "WeapCamoNet_Desert": [
+      {
+        "item_id": "Item_Weapon_CamoNet_Desert_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "WeapCamoNet_Desert_C": [
+      {
+        "item_id": "Item_Weapon_CamoNet_Desert_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_CamoNet_Taego_C": [
+      {
+        "item_id": "Item_Weapon_CamoNet_Taego_C",
+        "evidence": "item_id"
+      }
+    ],
+    "WeapCamonet_Taego": [
+      {
+        "item_id": "Item_Weapon_CamoNet_Taego_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "WeapCamonet_Taego_C": [
+      {
+        "item_id": "Item_Weapon_CamoNet_Taego_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_CamoNet_Rondo_C": [
+      {
+        "item_id": "Item_Weapon_CamoNet_Rondo_C",
+        "evidence": "item_id"
+      }
+    ],
+    "WeapCamoNet_Rondo": [
+      {
+        "item_id": "Item_Weapon_CamoNet_Rondo_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "WeapCamoNet_Rondo_C": [
+      {
+        "item_id": "Item_Weapon_CamoNet_Rondo_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_Ziplinegun_C": [
+      {
+        "item_id": "Item_Weapon_Ziplinegun_C",
+        "evidence": "item_id"
+      }
+    ],
+    "Zipline Gun": [
+      {
+        "item_id": "Item_Weapon_Ziplinegun_C",
+        "evidence": "published_display_name"
+      }
+    ],
+    "WeapZiplinegun": [
+      {
+        "item_id": "Item_Weapon_Ziplinegun_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "Ziplinegun": [
+      {
+        "item_id": "Item_Weapon_Ziplinegun_C",
+        "evidence": "published_weapon_tag"
+      }
+    ],
+    "WeapZiplinegun_C": [
+      {
+        "item_id": "Item_Weapon_Ziplinegun_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_JerryCan_C": [
+      {
+        "item_id": "Item_JerryCan_C",
+        "evidence": "item_id"
+      }
+    ],
+    "Gas Can": [
+      {
+        "item_id": "Item_JerryCan_C",
+        "evidence": "published_display_name"
+      }
+    ],
+    "WeapJerryCan": [
+      {
+        "item_id": "Item_JerryCan_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "JerryCan": [
+      {
+        "item_id": "Item_JerryCan_C",
+        "evidence": "published_weapon_tag"
+      }
+    ],
+    "WeapJerryCan_C": [
+      {
+        "item_id": "Item_JerryCan_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_TimeBombKit_C": [
+      {
+        "item_id": "Item_Weapon_TimeBombKit_C",
+        "evidence": "item_id"
+      }
+    ],
+    "Blue Zone Generator": [
+      {
+        "item_id": "Item_Weapon_TimeBombKit_C",
+        "evidence": "published_display_name"
+      }
+    ],
+    "WeapPlantedTimeBomb": [
+      {
+        "item_id": "Item_Weapon_TimeBombKit_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "BombmodeTimeBombKit": [
+      {
+        "item_id": "Item_Weapon_TimeBombKit_C",
+        "evidence": "published_weapon_tag"
+      }
+    ],
+    "WeapPlantedTimeBomb_C": [
+      {
+        "item_id": "Item_Weapon_TimeBombKit_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ],
+    "Item_Weapon_DefusingBombKit_C": [
+      {
+        "item_id": "Item_Weapon_DefusingBombKit_C",
+        "evidence": "item_id"
+      }
+    ],
+    "Dismantle Kit": [
+      {
+        "item_id": "Item_Weapon_DefusingBombKit_C",
+        "evidence": "published_display_name"
+      }
+    ],
+    "WeapDefusingBombKit": [
+      {
+        "item_id": "Item_Weapon_DefusingBombKit_C",
+        "evidence": "published_blueprint"
+      }
+    ],
+    "BombmodeDefusingKit": [
+      {
+        "item_id": "Item_Weapon_DefusingBombKit_C",
+        "evidence": "published_weapon_tag"
+      }
+    ],
+    "WeapDefusingBombKit_C": [
+      {
+        "item_id": "Item_Weapon_DefusingBombKit_C",
+        "evidence": "derived_ue_generated_class_name; validate against Reader"
+      }
+    ]
+  },
+  "ambiguous_aliases": {
+    "AKM": [
+      "Item_Weapon_AK47_C",
+      "Item_Weapon_Lunchmeats_AK47_C"
+    ],
+    "M416": [
+      "Item_Weapon_Duncans_M416_C",
+      "Item_Weapon_HK416_C"
+    ],
+    "QBU88": [
+      "Item_Weapon_Mads_QBU88_C",
+      "Item_Weapon_QBU88_C"
+    ],
+    "Kar98k": [
+      "Item_Weapon_Julies_Kar98k_C",
+      "Item_Weapon_Kar98k_C"
+    ],
+    "UZI": [
+      "Item_Weapon_UZI_C",
+      "Item_Weapon_UziPro_C"
+    ],
+    "Flare Gun": [
+      "Item_Weapon_FlareGun_C",
+      "Item_Weapon_IceGun_C"
+    ],
+    "FlareGun": [
+      "Item_Weapon_FlareGun_C",
+      "Item_Weapon_IceGun_C"
+    ],
+    "Vehicle Camo Netting": [
+      "Item_Weapon_CamoNet_C",
+      "Item_Weapon_CamoNet_Desert_C",
+      "Item_Weapon_CamoNet_Rondo_C",
+      "Item_Weapon_CamoNet_Taego_C"
+    ],
+    "CamoNet": [
+      "Item_Weapon_CamoNet_C",
+      "Item_Weapon_CamoNet_Desert_C",
+      "Item_Weapon_CamoNet_Rondo_C",
+      "Item_Weapon_CamoNet_Taego_C"
+    ]
+  }
+}

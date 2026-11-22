@@ -1,0 +1,7 @@
+{
+ "ESP 阶段耗时":"ESP stage timing",
+ "处理":"Processing",
+ "近2秒平均，{{count}}个新数据帧；只计首次完成绘制，重复重绘不重复计数。":"Trailing 2-second average of {{count}} new data frames; only the first completed draw of each frame is counted.",
+ "完整接收 → 渲染线程开始本帧，包含解码、必要计算和排队；PUBG以Living人物帧为起点。":"Complete reception → renderer starts this frame, including decoding, required processing and queuing. PUBG uses the Living frame as its source.",
+ "渲染线程开始本帧 → 绘制完成通知，包含投影、图元生成、提交及执行；含完成通知唤醒延迟，不含屏幕扫描。":"Renderer starts this frame → drawing completion notification, including projection, primitive generation, submission and execution. Includes notification wakeup delay; excludes display scanout."
+}

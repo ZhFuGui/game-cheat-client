@@ -1,0 +1,16 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "types": ["vite/client", "vitest/globals", "@testing-library/jest-dom"],
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./src/*"],
+      "~brand/*": ["../../data/branding/*"],
+      "@mousebox/shared": ["../../packages/shared/src/index.ts"]
+    }
+  },
+  "include": ["src/**/*", "vite.config.ts", "vitest.config.ts"]
+}

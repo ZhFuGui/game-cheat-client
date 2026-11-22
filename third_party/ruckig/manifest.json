@@ -1,0 +1,124 @@
+{
+  "tag": "v0.15.3",
+  "commit": "37b6e7a4c60f5befd2506741d5f7d0ae7eefb3db",
+  "files": [
+    {
+      "sha256": "F0880AC5E5026C92E12C9E2859A7B338C593AACA1A435F29498BD96CBB64D7D3",
+      "path": "third_party\\ruckig\\LICENSE"
+    },
+    {
+      "sha256": "E3D66FB7A7F63774CFB591C9B97CD88B3E7E57E42FC40FEDF7F4619EC09BA62D",
+      "path": "third_party\\ruckig\\README.mousebox.md"
+    },
+    {
+      "sha256": "BE36A9854FA0830C283DF3AAEF5F80C38F59CA29270981A1E1CC8B3C81A40D48",
+      "path": "third_party\\ruckig\\include\\ruckig\\block.hpp"
+    },
+    {
+      "sha256": "F4D30E1F19B239564E9F1D54EB5DE7E6B761C797F42A49CBCCB43677D0E89B59",
+      "path": "third_party\\ruckig\\include\\ruckig\\brake.hpp"
+    },
+    {
+      "sha256": "A5A48E945F92956F7CF181BFC3DDE66AE5E19149B4CC64B655E0A5A15B646069",
+      "path": "third_party\\ruckig\\include\\ruckig\\calculator_cloud.hpp"
+    },
+    {
+      "sha256": "35B49C0E0DC606646F419E285C6633171DF394851DC95C6B4BB99E9F7009AA74",
+      "path": "third_party\\ruckig\\include\\ruckig\\calculator_target.hpp"
+    },
+    {
+      "sha256": "24FB044A409DFBED598A4B83A315ED6CE339EFC184694BCCAC27EF2AE3BD9036",
+      "path": "third_party\\ruckig\\include\\ruckig\\calculator.hpp"
+    },
+    {
+      "sha256": "0C0D0D3B3C29DF72207D0358934F604BF4A3B39125FC69BF3C7D00BE9E34C071",
+      "path": "third_party\\ruckig\\include\\ruckig\\error.hpp"
+    },
+    {
+      "sha256": "37A4DC34E2093E775E3FD5AE6C34971661FD852ED165EE9E7DDC3DCB0B1CC96D",
+      "path": "third_party\\ruckig\\include\\ruckig\\input_parameter.hpp"
+    },
+    {
+      "sha256": "5EAA0374B25E917B9578BE8E2D1821F200ABA4FEC418430F08EDAB4BF52E2F81",
+      "path": "third_party\\ruckig\\include\\ruckig\\output_parameter.hpp"
+    },
+    {
+      "sha256": "7D6D15007BD3E38A84C4390087EA0C928D4801C22FF1AFBF095B0AFA3D8588CF",
+      "path": "third_party\\ruckig\\include\\ruckig\\position.hpp"
+    },
+    {
+      "sha256": "1B7441140A33C8B301FEA051E04D559F0B7441C06DD65C77AF0626F74CCDA571",
+      "path": "third_party\\ruckig\\include\\ruckig\\profile.hpp"
+    },
+    {
+      "sha256": "67D24CE70EC7B17568099759EAE1591FA9983BA9F453BD172DE375223EB477BC",
+      "path": "third_party\\ruckig\\include\\ruckig\\result.hpp"
+    },
+    {
+      "sha256": "7FEA5FA50B14A2DCA3E7814F55C1C561B38812EF48F7900595739E666F2578AA",
+      "path": "third_party\\ruckig\\include\\ruckig\\roots.hpp"
+    },
+    {
+      "sha256": "EA063B1939B20773037A985B88F4891CEC637511404EB469F488633D7597DEE6",
+      "path": "third_party\\ruckig\\include\\ruckig\\ruckig.hpp"
+    },
+    {
+      "sha256": "A9AD8B37C041645D943B8FAD1F1B0CBA4DB9789735375472F575ACD4602760DD",
+      "path": "third_party\\ruckig\\include\\ruckig\\trajectory.hpp"
+    },
+    {
+      "sha256": "F17266D17A0DC7F725402A9732C763AF8FE84D32D53F7E8D748EFF79F3CDDEE9",
+      "path": "third_party\\ruckig\\include\\ruckig\\utils.hpp"
+    },
+    {
+      "sha256": "3BD62B430B304B5A140346B03BDF097024411287CD0CB27DB53BD0E35E0E7DFF",
+      "path": "third_party\\ruckig\\include\\ruckig\\velocity.hpp"
+    },
+    {
+      "sha256": "7868192CF3B83A57A57F49E553319C8FDC8E64BEBBAF6FC54A486450DBD8090A",
+      "path": "third_party\\ruckig\\src\\ruckig\\brake.cpp"
+    },
+    {
+      "sha256": "DB27CC0FA9C1B61932E47F65049E8366E8EB7B015955141AE41952934085FAD6",
+      "path": "third_party\\ruckig\\src\\ruckig\\position_first_step1.cpp"
+    },
+    {
+      "sha256": "4D810791DC0B48735F1E78DB2059615D1EDED944112B456BF322B0A718EED7D8",
+      "path": "third_party\\ruckig\\src\\ruckig\\position_first_step2.cpp"
+    },
+    {
+      "sha256": "D03A1EF6EDB2932EA61352A40A56E59879940002DB410FCE38D8DBD1DD774C8B",
+      "path": "third_party\\ruckig\\src\\ruckig\\position_second_step1.cpp"
+    },
+    {
+      "sha256": "FCCF0F7F56069CDFEA8309BE626C29C7DCC36380E267E5D1F11C5F2E20B0C40E",
+      "path": "third_party\\ruckig\\src\\ruckig\\position_second_step2.cpp"
+    },
+    {
+      "sha256": "48B2589C77257E34E724C7F86F42CE2AC9D8E8119C581078ABF6C905A712828F",
+      "path": "third_party\\ruckig\\src\\ruckig\\position_third_step1.cpp"
+    },
+    {
+      "sha256": "84E560A3A2621E293F55DE5C6B8CB6F3B7DBA88905345145ACA9567AD4A81790",
+      "path": "third_party\\ruckig\\src\\ruckig\\position_third_step2.cpp"
+    },
+    {
+      "sha256": "00F27088B1172244660B4091D751BAC6EF9593BFED7B7B75E06BF3B667B9762D",
+      "path": "third_party\\ruckig\\src\\ruckig\\velocity_second_step1.cpp"
+    },
+    {
+      "sha256": "FCAE4250F109C85B2161322AC2B83E164638A7064C241A534C10847868EDD0BF",
+      "path": "third_party\\ruckig\\src\\ruckig\\velocity_second_step2.cpp"
+    },
+    {
+      "sha256": "053DE9E6EB5662C069AB1DC88FADEF6F42F72FA28BE375A1FA9C78C6F77C7B85",
+      "path": "third_party\\ruckig\\src\\ruckig\\velocity_third_step1.cpp"
+    },
+    {
+      "sha256": "FAC6AAC5BBC55CA6AB5EFF3409CAD47A7A33FF7EB40AF9EB52B4B6BE3BAB8B14",
+      "path": "third_party\\ruckig\\src\\ruckig\\velocity_third_step2.cpp"
+    }
+  ],
+  "archiveSha256": "F3B1E084E2343D5A6E4D80FB0054DCEAEAF168235116F792B89D98BB2DA6980B",
+  "upstream": "https://github.com/pantor/ruckig"
+}

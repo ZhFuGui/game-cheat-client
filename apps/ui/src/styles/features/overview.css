@@ -1,0 +1,81 @@
+.connection-fields {
+  display: grid;
+  grid-template-columns: minmax(150px, 1fr) 105px 115px auto;
+  align-items: end;
+  gap: 14px;
+}
+.dashboard-statistics {
+  display: flex;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 22px 0;
+  margin: 24px 0 28px;
+}
+.dashboard-statistics > div {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 8px;
+  padding-left: 24px;
+  border-left: 1px solid var(--border);
+}
+.dashboard-statistics > div:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+.dashboard-statistics span {
+  font-size: 11px;
+  color: var(--muted-foreground);
+}
+.dashboard-statistics strong {
+  font-size: 22px;
+  letter-spacing: -0.5px;
+  font-weight: 500;
+}
+.details-grid {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 21px 30px;
+}
+.details-grid > div {
+  display: grid;
+  grid-template-columns: 95px 1fr;
+  gap: 10px;
+  font-size: 12px;
+}
+.details-grid dt {
+  color: var(--muted-foreground);
+}
+.details-grid dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.viewpoint-angles dd {
+  font-variant-numeric: tabular-nums;
+}
+.viewpoint-coordinates {
+  overflow-x: auto;
+  margin: 22px 0 15px;
+}
+.viewpoint-coordinates table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+.viewpoint-coordinates th,
+.viewpoint-coordinates td {
+  padding: 11px 12px;
+  border-bottom: 1px solid var(--border);
+  text-align: right;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.viewpoint-coordinates th {
+  color: var(--muted-foreground);
+  font-weight: 400;
+}
+.viewpoint-coordinates th:first-child {
+  padding-left: 0;
+  text-align: left;
+}

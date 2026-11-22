@@ -1,0 +1,37 @@
+.empty-state {
+  padding: 40px 0;
+  text-align: center;
+  color: var(--muted-foreground);
+}
+.connection-error {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: color-mix(in srgb, var(--destructive) 7%, var(--card));
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--destructive) 15%, var(--border));
+  padding: 8px 20px;
+  font-size: 11px;
+  color: var(--destructive);
+}
+.connection-error > .ui-button {
+  margin-left: auto;
+}
+.startup-state {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 17px;
+}
+.startup-state p {
+  color: var(--muted-foreground);
+  font-size: 12px;
+}
+.startup-mark {
+  width: 42px;
+  height: 42px;
+  display: block;
+  object-fit: contain;
+}

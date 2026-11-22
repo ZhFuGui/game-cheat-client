@@ -1,0 +1,27 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36606.8
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{BC8A1FFA-BEE3-4634-8014-F334798102B3}") = "mousebox-core", "projects\mousebox-core.vcxproj", "{8B679BE8-4CA1-4C3C-9E85-54FE7EF40403}"
+EndProject
+Project("{BC8A1FFA-BEE3-4634-8014-F334798102B3}") = "mousebox-native", "projects\mousebox-native.vcxproj", "{8B679BE8-4CA1-4C3C-9E85-54FE7EF40410}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8B679BE8-4CA1-4C3C-9E85-54FE7EF40403}.Debug|x64.ActiveCfg = Debug|x64
+		{8B679BE8-4CA1-4C3C-9E85-54FE7EF40403}.Debug|x64.Build.0 = Debug|x64
+		{8B679BE8-4CA1-4C3C-9E85-54FE7EF40403}.Release|x64.ActiveCfg = Release|x64
+		{8B679BE8-4CA1-4C3C-9E85-54FE7EF40403}.Release|x64.Build.0 = Release|x64
+		{8B679BE8-4CA1-4C3C-9E85-54FE7EF40410}.Debug|x64.ActiveCfg = Debug|x64
+		{8B679BE8-4CA1-4C3C-9E85-54FE7EF40410}.Debug|x64.Build.0 = Debug|x64
+		{8B679BE8-4CA1-4C3C-9E85-54FE7EF40410}.Release|x64.ActiveCfg = Release|x64
+		{8B679BE8-4CA1-4C3C-9E85-54FE7EF40410}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

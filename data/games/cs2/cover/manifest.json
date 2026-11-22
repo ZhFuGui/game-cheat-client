@@ -1,0 +1,453 @@
+{
+  "schema": 1,
+  "abi": 1,
+  "scope": "static-physics",
+  "breakables": "intact",
+  "library": {
+    "file": "bin/win-x64/cs2-external-autowall.dll",
+    "bytes": 851456,
+    "sha256": "3b4fa514d88f1674df9f499cd90f919cd960086ab10da36a22c36564c50402f0"
+  },
+  "ballistics": {
+    "file": "profiles/build-26144732.cs2tlp",
+    "bytes": 10112,
+    "sha256": "17887645c27df1fd6237a89392af18d2c7d6beee217a188f0837bb017f892d96",
+    "gameBuild": 14192
+  },
+  "maps": [
+    {
+      "name": "ar_baggage",
+      "resource": "maps/ar_baggage.vpk",
+      "scenes": [
+        {
+          "variant": "intact",
+          "file": "maps/ar_baggage/scene.cs2tl",
+          "bytes": 39466375,
+          "sha256": "cb2968638a0aa25b21a39f0f0f37799023e0125f37405985506ae94ce2c35407",
+          "fingerprint": "10960884027152181603",
+          "triangles": 290435,
+          "solids": 6657,
+          "closedSolids": 4612,
+          "nodes": 190087,
+          "flags": 2
+        }
+      ]
+    },
+    {
+      "name": "ar_pool_day",
+      "resource": "maps/ar_pool_day.vpk",
+      "scenes": [
+        {
+          "variant": "intact",
+          "file": "maps/ar_pool_day/scene.cs2tl",
+          "bytes": 31579578,
+          "sha256": "c884c290a26edb39cf6acb1ecde643932b70891332f5b3f4bf9723975d215b29",
+          "fingerprint": "13472634864731610413",
+          "triangles": 219094,
+          "solids": 4330,
+          "closedSolids": 2519,
+          "nodes": 137843,
+          "flags": 2
+        }
+      ]
+    },
+    {
+      "name": "ar_shoots",
+      "resource": "maps/ar_shoots.vpk",
+      "scenes": [
+        {
+          "variant": "intact",
+          "file": "maps/ar_shoots/scene.cs2tl",
+          "bytes": 109775966,
+          "sha256": "e793453f2f92e8b6441bc106bb9ea206913e610be3ed292bd8a78033ce7bbe2c",
+          "fingerprint": "17149329858617200412",
+          "triangles": 800946,
+          "solids": 7924,
+          "closedSolids": 6446,
+          "nodes": 529611,
+          "flags": 2
+        }
+      ]
+    },
+    {
+      "name": "ar_shoots_night",
+      "resource": "maps/ar_shoots_night.vpk",
+      "scenes": [
+        {
+          "variant": "intact",
+          "file": "maps/ar_shoots_night/scene.cs2tl",
+          "bytes": 109997553,
+          "sha256": "e446f7ac634a726b270fd419d8c3e635d2c0597624daf9aadca3eac23bdf2d6b",
+          "fingerprint": "13837968345854234907",
+          "triangles": 802741,
+          "solids": 8018,
+          "closedSolids": 6520,
+          "nodes": 530449,
+          "flags": 2
+        }
+      ]
+    },
+    {
+      "name": "cs_italy",
+      "resource": "maps/cs_italy.vpk",
+      "scenes": [
+        {
+          "variant": "intact",
+          "file": "maps/cs_italy/scene.cs2tl",
+          "bytes": 174951240,
+          "sha256": "fae45e48b830f3707314865e303608d7562dce7fc69e01886c3742e98378331d",
+          "fingerprint": "5075927983966609827",
+          "triangles": 1278380,
+          "solids": 20723,
+          "closedSolids": 10907,
+          "nodes": 829153,
+          "flags": 2
+        }
+      ]
+    },
+    {
+      "name": "cs_office",
+      "resource": "maps/cs_office.vpk",
+      "scenes": [
+        {
+          "variant": "intact",
+          "file": "maps/cs_office/scene.cs2tl",
+          "bytes": 14238164,
+          "sha256": "1f8048e43f3c9c4ca63b9a3eb3c097d505746c4d71dbdbf83f5bb3aa01051eea",
+          "fingerprint": "15950992433737768240",
+          "triangles": 104580,
+          "solids": 2019,
+          "closedSolids": 1528,
+          "nodes": 67907,
+          "flags": 2
+        }
+      ]
+    },
+    {
+      "name": "cs_shelter",
+      "resource": "maps/cs_shelter.vpk",
+      "scenes": [
+        {
+          "variant": "intact",
+          "file": "maps/cs_shelter/scene.cs2tl",
+          "bytes": 345253936,
+          "sha256": "aa4ace983bffb8cf07128954e82f5bbb33ce26d294bd7bf351289e77b7b11ecd",
+          "fingerprint": "423734229850433047",
+          "triangles": 2572996,
+          "solids": 21025,
+          "closedSolids": 11836,
+          "nodes": 1621971,
+          "flags": 2
+        }
+      ]
+    },
+    {
+      "name": "de_ancient",
+      "resource": "maps/de_ancient.vpk",
+      "scenes": [
+        {
+          "variant": "intact",
+          "file": "maps/de_ancient/scene.cs2tl",
+          "bytes": 131835020,
+          "sha256": "0bdce81dd4b4e0d1860f3496f3103eb35b2929ec09bacc7390e4a7dc25cea748",
+          "fingerprint": "14588837219156160740",
+          "triangles": 958604,
+          "solids": 9832,
+          "closedSolids": 7736,
+          "nodes": 639505,
+          "flags": 2
+        }
+      ]
+    },
+    {
+      "name": "de_ancient_night",
+      "resource": "maps/de_ancient_night.vpk",
+      "scenes": [
+        {
+          "variant": "intact",
+          "file": "maps/de_ancient_night/scene.cs2tl",
+          "bytes": 132867172,
+          "sha256": "b323007606a319fb235825111dfd17f1757b4e585f37c5544261159eaf4834cb",
+          "fingerprint": "1674594082329886528",
+          "triangles": 966116,
+          "solids": 10148,
+          "closedSolids": 7966,
+          "nodes": 644529,
+          "flags": 2
+        }
+      ]
+    },
+    {
+      "name": "de_anubis",
+      "resource": "maps/de_anubis.vpk",
+      "scenes": [
+        {
+          "variant": "intact",
+          "file": "maps/de_anubis/scene.cs2tl",
+          "bytes": 89771945,
+          "sha256": "be78beb14522fae597940ccd69673f26ed01dcd8152e87e2f44c11ae48197bcd",
+          "fingerprint": "9714572128585381353",
+          "triangles": 673877,
+          "solids": 17153,
+          "closedSolids": 15130,
+          "nodes": 438453,
+          "flags": 2
+        }
+      ]
+    },
+    {
+      "name": "de_boulder",
+      "resource": "maps/de_boulder.vpk",
+      "scenes": [
+        {
+          "variant": "intact",
+          "file": "maps/de_boulder/scene.cs2tl",
+          "bytes": 624641616,
+          "sha256": "7a73271f6c31d0c4d391009afc8bc198a7007650e699ac56b0adafaba707f4e1",
+          "fingerprint": "6826252207710548238",
+          "triangles": 4257128,
+          "solids": 42200,
+          "closedSolids": 20095,
+          "nodes": 2795871,
+          "flags": 2
+        }
+      ]
+    },
+    {
+      "name": "de_cache",
+      "resource": "maps/de_cache.vpk",
+      "scenes": [
+        {
+          "variant": "intact",
+          "file": "maps/de_cache/scene.cs2tl",
+          "bytes": 217099368,
+          "sha256": "c8fcba9d3c34172560b6905e06c1743a34aa5037262e54d23520b2f7092526e5",
+          "fingerprint": "10439294905166315446",
+          "triangles": 1601848,
+          "solids": 20417,
+          "closedSolids": 8812,
+          "nodes": 1016755,
+          "flags": 2
+        }
+      ]
+    },
+    {
+      "name": "de_debris",
+      "resource": "maps/de_debris.vpk",
+      "scenes": [
+        {
+          "variant": "intact",
+          "file": "maps/de_debris/scene.cs2tl",
+          "bytes": 77131628,
+          "sha256": "bde710765c6205526003d97a13feee57980f31e66053d643640888e425b4b6b0",
+          "fingerprint": "14925647265792564621",
+          "triangles": 572500,
+          "solids": 8370,
+          "closedSolids": 3205,
+          "nodes": 370395,
+          "flags": 2
+        }
+      ]
+    },
+    {
+      "name": "de_dust2",
+      "resource": "maps/de_dust2.vpk",
+      "scenes": [
+        {
+          "variant": "intact",
+          "file": "maps/de_dust2/scene.cs2tl",
+          "bytes": 55717114,
+          "sha256": "bd0c24b051bcab01f5b1bfea6d9fbbf727e32102b1c613d1c7bfbaddcee56090",
+          "fingerprint": "2930679743414057109",
+          "triangles": 420394,
+          "solids": 10951,
+          "closedSolids": 10163,
+          "nodes": 270399,
+          "flags": 2
+        }
+      ]
+    },
+    {
+      "name": "de_eldorado",
+      "resource": "maps/de_eldorado.vpk",
+      "scenes": [
+        {
+          "variant": "intact",
+          "file": "maps/de_eldorado/scene.cs2tl",
+          "bytes": 136980640,
+          "sha256": "4fd0a4b228c4501286fb4861a15dc46d4f2192d36aa5c48e3e8a42c0fa4ab852",
+          "fingerprint": "10599397477576732310",
+          "triangles": 1027836,
+          "solids": 9336,
+          "closedSolids": 7218,
+          "nodes": 669115,
+          "flags": 2
+        }
+      ]
+    },
+    {
+      "name": "de_fachwerk",
+      "resource": "maps/de_fachwerk.vpk",
+      "scenes": [
+        {
+          "variant": "intact",
+          "file": "maps/de_fachwerk/scene.cs2tl",
+          "bytes": 205282089,
+          "sha256": "72b6911632c37550faf3a7f49edbd8d0653f75c2a081def80ac0f40b42aed15c",
+          "fingerprint": "13357412275943500568",
+          "triangles": 1518753,
+          "solids": 51872,
+          "closedSolids": 38742,
+          "nodes": 1001383,
+          "flags": 2
+        }
+      ]
+    },
+    {
+      "name": "de_inferno",
+      "resource": "maps/de_inferno.vpk",
+      "scenes": [
+        {
+          "variant": "intact",
+          "file": "maps/de_inferno/scene.cs2tl",
+          "bytes": 353402224,
+          "sha256": "c79168f7c4c6bdaf408e79293c0c2d1cd414d774d19fc2c6828f4f531c51beb0",
+          "fingerprint": "11775482688101373556",
+          "triangles": 2534952,
+          "solids": 25284,
+          "closedSolids": 12789,
+          "nodes": 1653411,
+          "flags": 2
+        }
+      ]
+    },
+    {
+      "name": "de_mirage",
+      "resource": "maps/de_mirage.vpk",
+      "scenes": [
+        {
+          "variant": "intact",
+          "file": "maps/de_mirage/scene.cs2tl",
+          "bytes": 17083443,
+          "sha256": "bdbcd6a4957e1ba3ccdf47cd303fdb093474e9b4ce401dd8bfcdf8a965c7ce9f",
+          "fingerprint": "17031924006934799327",
+          "triangles": 122703,
+          "solids": 3401,
+          "closedSolids": 1991,
+          "nodes": 80363,
+          "flags": 2
+        }
+      ]
+    },
+    {
+      "name": "de_nuke",
+      "resource": "maps/de_nuke.vpk",
+      "scenes": [
+        {
+          "variant": "intact",
+          "file": "maps/de_nuke/scene.cs2tl",
+          "bytes": 23233652,
+          "sha256": "cc101cb777109af5cc85851e2e375a82d23468bc4b4dab27b29a09e07415e17c",
+          "fingerprint": "17087723781222805379",
+          "triangles": 163812,
+          "solids": 5631,
+          "closedSolids": 4944,
+          "nodes": 106803,
+          "flags": 2
+        }
+      ]
+    },
+    {
+      "name": "de_overpass",
+      "resource": "maps/de_overpass.vpk",
+      "scenes": [
+        {
+          "variant": "intact",
+          "file": "maps/de_overpass/scene.cs2tl",
+          "bytes": 92484169,
+          "sha256": "e12af052d613f2d8059e8b0d6b14c0d8f6befd186fef75d53502cdbfd614aa46",
+          "fingerprint": "14975636460820654926",
+          "triangles": 661233,
+          "solids": 10409,
+          "closedSolids": 4601,
+          "nodes": 425187,
+          "flags": 2
+        }
+      ]
+    },
+    {
+      "name": "de_poseidon",
+      "resource": "maps/de_poseidon.vpk",
+      "scenes": [
+        {
+          "variant": "intact",
+          "file": "maps/de_poseidon/scene.cs2tl",
+          "bytes": 66096539,
+          "sha256": "d8d9db2f13103e3b20718fa5e4cec9666932e3a773b8e4e945c67cab92bf9f7f",
+          "fingerprint": "5773125161471554138",
+          "triangles": 493223,
+          "solids": 5314,
+          "closedSolids": 3489,
+          "nodes": 311803,
+          "flags": 2
+        }
+      ]
+    },
+    {
+      "name": "de_train",
+      "resource": "maps/de_train.vpk",
+      "scenes": [
+        {
+          "variant": "intact",
+          "file": "maps/de_train/scene.cs2tl",
+          "bytes": 205812068,
+          "sha256": "4af173016e6fdc01b8094c4ee0b759a3e6d3e3305c4f97743dd7edb2b6801ef7",
+          "fingerprint": "17084432101641220314",
+          "triangles": 1508780,
+          "solids": 26624,
+          "closedSolids": 18287,
+          "nodes": 964879,
+          "flags": 2
+        }
+      ]
+    },
+    {
+      "name": "de_vertigo",
+      "resource": "maps/de_vertigo.vpk",
+      "scenes": [
+        {
+          "variant": "intact",
+          "file": "maps/de_vertigo/scene.cs2tl",
+          "bytes": 26614923,
+          "sha256": "6a937f61f2623e6362874d8d2f8f55a792744459c0c045651dbf41aabf171bc7",
+          "fingerprint": "8839115670545101447",
+          "triangles": 191923,
+          "solids": 10339,
+          "closedSolids": 10133,
+          "nodes": 131365,
+          "flags": 2
+        }
+      ]
+    },
+    {
+      "name": "rush_001",
+      "resource": "maps/rush_001.vpk",
+      "scenes": [
+        {
+          "variant": "intact",
+          "file": "maps/rush_001/scene.cs2tl",
+          "bytes": 592762147,
+          "sha256": "e923bd8ebb8c3bb39de6d036fa13636d8c9691886768766ae32da1c71f68b090",
+          "fingerprint": "676280740519689965",
+          "triangles": 4371519,
+          "solids": 62707,
+          "closedSolids": 35651,
+          "nodes": 2805805,
+          "flags": 2
+        }
+      ]
+    }
+  ],
+  "upstreamUpdateManifestSha256": "d3503cbddba700eeffddd9c24a30e54a135e1211b0fc073d0d274f5864005a5a",
+  "upstreamInventorySha256": "e65de563531b613d34e20ef9ee643869f64105a85f3e9a0d5335fcaef8dce07c"
+}

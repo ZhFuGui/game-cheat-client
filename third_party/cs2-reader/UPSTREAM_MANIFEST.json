@@ -1,0 +1,160 @@
+{
+  "status": "RELEASE_DEBUG_AND_STAGING_VERIFIED",
+  "fixture_kind": "SYNTHETIC_ONLY",
+  "protocol": "cs2.reader.v1",
+  "schema_sha256": "0ddc58a90521768c2505d79fe721c5baf63da535c6f8f67b066434dacbc47b6d",
+  "entry": "reader/v1/reader.proto",
+  "descriptor": "reader-v1.descriptor.pb",
+  "canonical_files": [
+    "reader/v1/model.proto",
+    "reader/v1/reader.proto",
+    "reader/v1/snapshot.proto"
+  ],
+  "checks": 75,
+  "tools": {
+    "grpcio-tools": "1.84.1",
+    "protobuf": "7.36.2"
+  },
+  "cpp_generation": "用与消费者protobuf运行时匹配的protoc执行：-I protocol --cpp_out=<生成目录> reader/v1/model.proto reader/v1/snapshot.proto reader/v1/reader.proto",
+  "cpp_record_header": "sdk/include/cs2_reader/v1/record.hpp",
+  "warning": "夹具仅为合成示例，不含实机玩家数据；候选版实现了TCP服务、时钟往返、骨架语义和原生后坐时间状态。生产端是否已升级应以实际Hello摘要核对，不从本夹具推断",
+  "fixtures": [
+    {
+      "name": "01-hello",
+      "direction": "server_to_client_SYNTHETIC",
+      "body_bytes": 126,
+      "record_bytes": 130,
+      "sha256": "9ee3847efab6b6915b032aba8b9ea7922742c3b2b32750d43189f53bf0d753f4"
+    },
+    {
+      "name": "02-subscribed",
+      "direction": "server_to_client_SYNTHETIC",
+      "body_bytes": 67,
+      "record_bytes": 71,
+      "sha256": "2c22ac761a0749c41b5d8883419fa9bda0ea71a6d3b009c98333c25e928864f4"
+    },
+    {
+      "name": "03-snapshot-zero-false-present",
+      "direction": "server_to_client_SYNTHETIC",
+      "body_bytes": 947,
+      "record_bytes": 951,
+      "sha256": "9798e4c12fd1fbce7b9416020abe5a7f569dfaf8c7fb9bd1c3410a2b29318b63"
+    },
+    {
+      "name": "04-heartbeat-not-a-sample",
+      "direction": "server_to_client_SYNTHETIC",
+      "body_bytes": 59,
+      "record_bytes": 63,
+      "sha256": "a8212260ca2ef4f908e1e33273b2e5c5e1594dd06f96243183228dbd2465ee35"
+    },
+    {
+      "name": "05-invalidate",
+      "direction": "server_to_client_SYNTHETIC",
+      "body_bytes": 88,
+      "record_bytes": 92,
+      "sha256": "4fc8d2164ece7c85740f7d1f2f193c9de2c6bc5d42bf7904d2495f5021ad30b5"
+    },
+    {
+      "name": "06-recover-observer-full-replacement",
+      "direction": "server_to_client_SYNTHETIC",
+      "body_bytes": 645,
+      "record_bytes": 649,
+      "sha256": "9130b7c1fb214dc21b2ea41126541e8a3f3e3874a77abf70323e92ea7789eea6"
+    },
+    {
+      "name": "07-clock-sample",
+      "direction": "server_to_client_SYNTHETIC",
+      "body_bytes": 97,
+      "record_bytes": 101,
+      "sha256": "bcf6150864e7660e5c5a8a933324103ae8b74c84b0fce5b49f3e7d24b9687765"
+    },
+    {
+      "name": "08-stop",
+      "direction": "server_to_client_SYNTHETIC",
+      "body_bytes": 76,
+      "record_bytes": 80,
+      "sha256": "90726f24b678a4d3d3ec7def249b05110d023b7c4ff6e411c3d89dbddd0556c0"
+    },
+    {
+      "name": "client-subscribe",
+      "direction": "client_to_server_SYNTHETIC",
+      "body_bytes": 58,
+      "record_bytes": 62,
+      "sha256": "5a544d6d58f58ac5bbd9f8c3ea946ef91f6768563d5ba93a3885458d9358e505"
+    },
+    {
+      "name": "client-clock-query",
+      "direction": "client_to_server_SYNTHETIC",
+      "body_bytes": 13,
+      "record_bytes": 17,
+      "sha256": "fd5aeb2206ecd130ef3ee88c44373134e64e9668897bb545c162796e9fece21b"
+    },
+    {
+      "name": "skeleton-complete",
+      "direction": "server_to_client_SYNTHETIC_independent_example",
+      "body_bytes": 1505,
+      "record_bytes": 1509,
+      "sha256": "3b5c450fcb7b611400d30344557dc719f896b60566d6cc217f2588447f12a49e"
+    },
+    {
+      "name": "skeleton-partial-missing-head",
+      "direction": "server_to_client_SYNTHETIC_independent_example",
+      "body_bytes": 1476,
+      "record_bytes": 1480,
+      "sha256": "7e8e651aa6638b5b48f82268a7cbca607e34f6741c96d1528a728b212f2da061"
+    },
+    {
+      "name": "skeleton-unknown-model",
+      "direction": "server_to_client_SYNTHETIC_independent_example",
+      "body_bytes": 868,
+      "record_bytes": 872,
+      "sha256": "96faba254308171fbb194abc70c339acd2c384e21e864355559f7cf121f8a699"
+    },
+    {
+      "name": "eye-basis-missing",
+      "direction": "server_to_client_SYNTHETIC_independent_example",
+      "body_bytes": 928,
+      "record_bytes": 932,
+      "sha256": "86ae534049a285fee98767c346313f833eae5a9df2ed6bc6e95da30091940032"
+    },
+    {
+      "name": "eye-basis-context-mismatch",
+      "direction": "server_to_client_SYNTHETIC_independent_example",
+      "body_bytes": 947,
+      "record_bytes": 951,
+      "sha256": "c31c538051f0af00660ffbcfbf3e0931b6effd1011b66f96c809b54a491c244b"
+    },
+    {
+      "name": "eye-basis-cache-zero",
+      "direction": "server_to_client_SYNTHETIC_independent_example",
+      "body_bytes": 942,
+      "record_bytes": 946,
+      "sha256": "80db691f5d3fb3ff8acfe57891f4dadac7d8c7dd0c5b4dbc8542af9f59249c03"
+    },
+    {
+      "name": "eye-basis-history",
+      "direction": "server_to_client_SYNTHETIC_independent_example",
+      "body_bytes": 952,
+      "record_bytes": 956,
+      "sha256": "6999c2bfec3eb98f774b4a7a2e39a3f61f356d1a96abc641bd4f5417dcad125b"
+    },
+    {
+      "name": "eye-basis-parent",
+      "direction": "server_to_client_SYNTHETIC_independent_example",
+      "body_bytes": 947,
+      "record_bytes": 951,
+      "sha256": "7bf7673413513f1d47327e967e81512066570975735c6125c4bc55f2202531ed"
+    },
+    {
+      "name": "eye-basis-delegated",
+      "direction": "server_to_client_SYNTHETIC_independent_example",
+      "body_bytes": 958,
+      "record_bytes": 962,
+      "sha256": "423f23e7ab359bfe8fce6209fa6fb7135c75c100a6d2c880b9777030b897df44"
+    }
+  ],
+  "staging_endpoint": "127.0.0.1:13212",
+  "consumer_guide": "眼角分支接入说明.txt",
+  "eye_completion": true,
+  "native_eye_cases": 468
+}
