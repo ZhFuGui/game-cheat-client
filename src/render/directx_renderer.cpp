@@ -7,6 +7,7 @@
 #include "directx_error.hpp"
 #include "domain/rolling_counter.hpp"
 #include "frame_clock.hpp"
+#include "frame_wait.hpp"
 #include <Windows.h>
 #include <d3d11.h>
 #include <d2d1_1.h>
@@ -300,6 +301,7 @@ struct DirectXRenderer::Impl
         const auto com = CoInitializeEx(nullptr, COINIT_MULTITHREADED);
         std::uint64_t processed = 0;
         bool dirty = false;
+        FrameWait frameWait;
         for (;;)
         {
             HANDLE events[]{shutdown.value, changed.value, nullptr, nullptr};
@@ -310,13 +312,15 @@ struct DirectXRenderer::Impl
             const auto readyEvent = dirty ? latency.value : nullptr;
             if (readyEvent)
                 events[count++] = readyEvent;
-            const auto event = WaitForMultipleObjects(count, events, FALSE, INFINITE);
+            const auto remaining = frameWait.remaining(std::chrono::steady_clock::now());
+            const DWORD timeout = remaining ? static_cast<DWORD>(remaining->count()) : INFINITE;
+            const auto event = WaitForMultipleObjects(count, events, FALSE, timeout);
             if (event == WAIT_OBJECT_0 || event == WAIT_FAILED)
                 break;
-            const auto wake = events[event - WAIT_OBJECT_0];
+            const auto wake = event == WAIT_TIMEOUT ? nullptr : events[event - WAIT_OBJECT_0];
             if (completion)
                 completion->collect();
-            if (wake == completionEvent && !dirty)
+            if (wake && wake == completionEvent && !dirty)
                 continue;
             Request request;
             bool captureNow = false, reset = false;
@@ -325,19 +329,27 @@ struct DirectXRenderer::Impl
                 request = latest;
                 reset = std::exchange(recreateRequested, false);
             }
+            const auto pending = frameWait.remaining(std::chrono::steady_clock::now());
+            const bool stalled = request.visible && request.width && request.height && pending &&
+                                 *pending == std::chrono::milliseconds::zero();
+            reset = reset || stalled;
             if (reset)
             {
                 release();
+                frameWait.reset();
                 const std::lock_guard lock(mutex);
                 statistics.initialized = false;
                 statistics.adapter.clear();
                 statistics.adapterId.clear();
+                if (stalled)
+                    statistics.error = L"Frame presentation stalled; recreating graphics device";
                 captured = {};
                 ++statistics.deviceRecoveries;
             }
             if (!request.visible || !request.width || !request.height)
             {
                 dirty = false;
+                frameWait.reset();
                 processed = request.serial;
                 continue;
             }
@@ -349,11 +361,14 @@ struct DirectXRenderer::Impl
                     initialize(request);
                 // Data events replace the mailbox while GPU back-pressure waits.
                 // The frame-ready event, not a timer, wakes the next draw.
-                if (wake != latency.value)
+                if (reset || wake != latency.value)
                 {
                     const auto ready = WaitForSingleObject(latency.value, 0);
+                    if (ready == WAIT_FAILED)
+                        throw std::runtime_error("Swap-chain frame readiness wait failed");
                     if (ready != WAIT_OBJECT_0)
                     {
+                        frameWait.blocked(std::chrono::steady_clock::now());
                         dirty = true;
                         continue;
                     }
@@ -368,6 +383,7 @@ struct DirectXRenderer::Impl
                 if (!request.visible || !request.width || !request.height)
                 {
                     dirty = false;
+                    frameWait.reset();
                     continue;
                 }
                 if (request.adapter != activePreference)
@@ -449,12 +465,17 @@ struct DirectXRenderer::Impl
                 }
                 processed = request.serial;
                 dirty = hr == DXGI_ERROR_WAS_STILL_DRAWING;
+                if (dirty)
+                    frameWait.blocked(std::chrono::steady_clock::now());
+                else
+                    frameWait.reset();
             }
             catch (const std::exception &error)
             {
                 release();
                 processed = request.serial;
                 dirty = false;
+                frameWait.reset();
                 const std::string message = error.what();
                 const std::lock_guard lock(mutex);
                 statistics.initialized = false;
