@@ -1,0 +1,14 @@
+leonardo_c54d.name=Logitech receiver transparent relay (Leonardo)
+leonardo_c54d.upload.protocol=avr109
+leonardo_c54d.upload.maximum_size=28672
+leonardo_c54d.upload.maximum_data_size=2560
+leonardo_c54d.upload.speed=57600
+leonardo_c54d.build.mcu=atmega32u4
+leonardo_c54d.build.f_cpu=16000000L
+leonardo_c54d.build.vid=0x046D
+leonardo_c54d.build.pid=0xC54D
+leonardo_c54d.build.usb_product="USB Receiver"
+leonardo_c54d.build.board=AVR_LEONARDO
+leonardo_c54d.build.core=bridge
+leonardo_c54d.build.variant=leonardo
+leonardo_c54d.build.extra_flags={build.usb_flags} -DLOGITECH_RELAY -DSERIAL_TX_BUFFER_SIZE=16

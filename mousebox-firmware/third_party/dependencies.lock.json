@@ -1,0 +1,688 @@
+{
+  "schemaVersion": 1,
+  "dependencies": [
+    {
+      "id": "arduino-avr-1.8.7",
+      "source": "https://github.com/arduino/ArduinoCore-avr/tree/1.8.7",
+      "root": "upstream/arduino-avr-1.8.7",
+      "files": [
+        {
+          "path": "platform.txt",
+          "sha256": "6dd40c95796913de6b2e68f3a1e7c4a9204ccd328b7d9063430b73921ee64eb2"
+        },
+        {
+          "path": "variants/leonardo/pins_arduino.h",
+          "sha256": "449274743a34fc1a7601b9aa06035bc9f1f5d951b4c4bdc685b8bdfca2c41c1e"
+        },
+        {
+          "path": "libraries/SPI/keywords.txt",
+          "sha256": "f3dfd00ed48d2735da9f80262e916a89612a1070b646fd94c36119159942249e"
+        },
+        {
+          "path": "libraries/SPI/library.properties",
+          "sha256": "44fe70bb86522405266ed3dffcecfc60396520ec927c6ec50d93a8e0e83a48c2"
+        },
+        {
+          "path": "libraries/SPI/src/SPI.cpp",
+          "sha256": "adae94aae5f04be3225a568a1ed932a917160c0859e51ee3850fa0da4cf4e345"
+        },
+        {
+          "path": "libraries/SPI/src/SPI.h",
+          "sha256": "5b444eebc18adac5a69e99cfdc229cb7c8622125b67e1e0d2e2127fa2cde52b1"
+        },
+        {
+          "path": "libraries/SPI/examples/BarometricPressureSensor/BarometricPressureSensor.ino",
+          "sha256": "c016cda20c69764f55471ccc742c1ac8f5acd72aab4b966051ee1233ddc941a3"
+        },
+        {
+          "path": "libraries/SPI/examples/DigitalPotControl/DigitalPotControl.ino",
+          "sha256": "8640e1f98a4c51aa5576a2cb89a5b09307ddef0f480170833580e83374c65049"
+        },
+        {
+          "path": "cores/arduino/abi.cpp",
+          "sha256": "eee76e094254f0a57f98d3ad413b94ac581103766117b3a568ece620944c5d9a"
+        },
+        {
+          "path": "cores/arduino/Arduino.h",
+          "sha256": "335f45c59532cd7df39ce1435fbf1abf8d503d42ac6085a92e0f2ff75f5fffac"
+        },
+        {
+          "path": "cores/arduino/binary.h",
+          "sha256": "cf4471358657a38f744807fe2b6eb7ab5dd13bab402e77d3dd38e78635c02755"
+        },
+        {
+          "path": "cores/arduino/CDC.cpp",
+          "sha256": "9cefa4fec5eb361179978b9c94f5937dcacf068eafd45eee726646226b258dc2"
+        },
+        {
+          "path": "cores/arduino/Client.h",
+          "sha256": "0619cd22b5f07c705d1c19db2c868bf5e2441ce3278f3fba11e71104ee2636bd"
+        },
+        {
+          "path": "cores/arduino/HardwareSerial.cpp",
+          "sha256": "641c8d9b1f266c7b97ca59bcb0915e09a897ef1fa78dd9cdb2c93ce1c2d19c1b"
+        },
+        {
+          "path": "cores/arduino/HardwareSerial.h",
+          "sha256": "f64d1a45fb14b94ca2425e73978f61bd054a886e5f838089098008d199a9bd73"
+        },
+        {
+          "path": "cores/arduino/HardwareSerial0.cpp",
+          "sha256": "388bd9bcd3ff9c2b30a1d6d9a14a4b61a5ab070cc8000f186138c0d15565adf6"
+        },
+        {
+          "path": "cores/arduino/HardwareSerial1.cpp",
+          "sha256": "a530014dd9f52d02f65db73995b24d18cd38bba586d1249b533826379f82208c"
+        },
+        {
+          "path": "cores/arduino/HardwareSerial2.cpp",
+          "sha256": "d7ade11adc2a90e526f5629d7804b95ec2a34c06a6811f4d072cffba3d5a0daa"
+        },
+        {
+          "path": "cores/arduino/HardwareSerial3.cpp",
+          "sha256": "c3b7fdb1ca29887151676e5dd8fd326ecc932e458cf1138cd275777068a113f3"
+        },
+        {
+          "path": "cores/arduino/HardwareSerial_private.h",
+          "sha256": "ff787b0f29eebaaa903aff4d12349e4a45f5c6ca995cec7aa699bd8296253a93"
+        },
+        {
+          "path": "cores/arduino/hooks.c",
+          "sha256": "525370afcb26502a965376f05b00b4aafc89644e6bc3c693718d56533ca38771"
+        },
+        {
+          "path": "cores/arduino/IPAddress.cpp",
+          "sha256": "e423a28f833614ff4e1cf1e5b841181e8e0c727f4ca3ae81ee66afa84cf75f63"
+        },
+        {
+          "path": "cores/arduino/IPAddress.h",
+          "sha256": "7703aef6f91a385729cf8f16ed561b0f8c7eb823698c80af3a33f9e0de3b4e72"
+        },
+        {
+          "path": "cores/arduino/main.cpp",
+          "sha256": "a2d7d7d72e5259b0212f6682be0ded139f854481fad2c6e742d2f6264924402b"
+        },
+        {
+          "path": "cores/arduino/new",
+          "sha256": "3181c9898df4eb34b6f73b8d64bdb2449c68d39277d4b1fc8e80d2f8fbb296ae"
+        },
+        {
+          "path": "cores/arduino/new.cpp",
+          "sha256": "7aedc314beaa121f3568f6fb25466e5c3fd6c8e096c267d1dd371bd6ba779c57"
+        },
+        {
+          "path": "cores/arduino/new.h",
+          "sha256": "46d737ed07098aa51ea868c000f7dd0a919361cc7481518754632547fa60d858"
+        },
+        {
+          "path": "cores/arduino/PluggableUSB.cpp",
+          "sha256": "6c39d37902d2819007ef6b82c132ba89c821b134e143d59d33c99a46765e2a62"
+        },
+        {
+          "path": "cores/arduino/PluggableUSB.h",
+          "sha256": "555ba172a3004d809a10a8c6bc5ae93154a0148eb5a5a62e9855ad1b57535704"
+        },
+        {
+          "path": "cores/arduino/Print.cpp",
+          "sha256": "4e5077fe1dff0b2f506f23bb2a7dea251f739aa9aab2ad285f71ad6434161e26"
+        },
+        {
+          "path": "cores/arduino/Print.h",
+          "sha256": "29403f23a682faae75437ca4e8370e0075efa3c70f9850d27ff0105eca4c9146"
+        },
+        {
+          "path": "cores/arduino/Printable.h",
+          "sha256": "ba6be49c4ef46aa03fa7b78cc444e72f811805cf33dfdddf26bd062cdbc14a0b"
+        },
+        {
+          "path": "cores/arduino/Server.h",
+          "sha256": "a75dd1f4e53398af5006b2f9b26df53ca76dd3999649bdf31bf4120aef4ea144"
+        },
+        {
+          "path": "cores/arduino/Stream.cpp",
+          "sha256": "a0f2cfbb1489174e0d52ca9798129751e52994f04a9ece88fb465715f8c3b3cb"
+        },
+        {
+          "path": "cores/arduino/Stream.h",
+          "sha256": "4f8adb5c1ab52d5f2b5a831cf8bdc0ae49b92c32dd22f2dc5c53389322701cdb"
+        },
+        {
+          "path": "cores/arduino/Tone.cpp",
+          "sha256": "7c902769f0950fc26a1032258f526775d25ae61aca97de2036653459172f3d00"
+        },
+        {
+          "path": "cores/arduino/Udp.h",
+          "sha256": "2bcab2ff8d1e4acfa389085d81b065dafc0fe7173c808447986f89a852d073ba"
+        },
+        {
+          "path": "cores/arduino/USBAPI.h",
+          "sha256": "72f7b2eb6361a200106d9041dfa77669e438d64c93c253e79cecf385546d90ae"
+        },
+        {
+          "path": "cores/arduino/USBCore.cpp",
+          "sha256": "9750200cafecc523c388b7d9474f2b3b94d71bcca59ab4bc481c668b57e2c836"
+        },
+        {
+          "path": "cores/arduino/USBCore.h",
+          "sha256": "4da9e387bade6ae523b311e8f2cac1db5e5b5353028419a5183a07e67f38552f"
+        },
+        {
+          "path": "cores/arduino/USBDesc.h",
+          "sha256": "09370bbb62b01fe6f56f19aaed0b9cc7a859049ef7ecd94dfccfa19764fd0903"
+        },
+        {
+          "path": "cores/arduino/WCharacter.h",
+          "sha256": "26aa841fe42aeace3a7caf3af27b9ffecde391b4a5661782027c0c14b6ccf4e3"
+        },
+        {
+          "path": "cores/arduino/WInterrupts.c",
+          "sha256": "6550a77cf2e54006286cea7cc22a724d156756a8ad1421b78da6627433449e9b"
+        },
+        {
+          "path": "cores/arduino/wiring.c",
+          "sha256": "586bdf890ff6cd70d2a5457aef406517fff1113dcee51ea9f4f86cd54f8cc204"
+        },
+        {
+          "path": "cores/arduino/wiring_analog.c",
+          "sha256": "af985237cce8dcf22d1a1359bab6af274c780592feae73707c792c334ee63172"
+        },
+        {
+          "path": "cores/arduino/wiring_digital.c",
+          "sha256": "f56a12bb80e3179db3c4803a90b7c3c4ac6b14d4f23ababb121173ef0e27d26c"
+        },
+        {
+          "path": "cores/arduino/wiring_private.h",
+          "sha256": "c416d346d436f2ba55507ba867a0fd6bf8d261440194a237fa318e20c5617bdc"
+        },
+        {
+          "path": "cores/arduino/wiring_pulse.c",
+          "sha256": "44e8c70ed20c11689ecbf6eedd7b469ad7bc1090d0b0ddfe8ec9a10d4a212b2d"
+        },
+        {
+          "path": "cores/arduino/wiring_pulse.S",
+          "sha256": "9810731062c66edf81cfb5af736c66914410471008c40f73dca2562233b135a8"
+        },
+        {
+          "path": "cores/arduino/wiring_shift.c",
+          "sha256": "651f4a11837e609be423ceb0b31cfd5cf6b09bad06f62cbc85c241efae8e50ec"
+        },
+        {
+          "path": "cores/arduino/WMath.cpp",
+          "sha256": "6d7dc0d38000d3d22f56438bc4dd26fe15dd8f9c85fed8d9edf0ba23b6431646"
+        },
+        {
+          "path": "cores/arduino/WString.cpp",
+          "sha256": "e4bdafcba3a370688c74e1f61f19a58289ae3d18372515841e841cd9dca64de8"
+        },
+        {
+          "path": "cores/arduino/WString.h",
+          "sha256": "7c592098302f4c17883863514bfb6de50ab51957d69c5dccbb6ec0900c777a50"
+        }
+      ]
+    },
+    {
+      "id": "usb-host-shield-1.7.0",
+      "source": "https://github.com/felis/USB_Host_Shield_2.0/tree/1.7.0",
+      "root": "upstream/usb-host-shield-1.7.0",
+      "files": [
+        {
+          "path": ".gitattributes",
+          "sha256": "cd5a4c9fdd99bf89f0c11140d09dc4c01f4bcfc077d51fc16201b51d5714d717"
+        },
+        {
+          "path": ".gitignore",
+          "sha256": "373ff4986dfdf895dbb86514d63dc9499dd6b1ee13430238ecabf92625f7cf4e"
+        },
+        {
+          "path": ".gitmodules",
+          "sha256": "172eb938bc5df6706367ef4151a0d200d68b3c3b07ff90433f79e24f07407381"
+        },
+        {
+          "path": "address.h",
+          "sha256": "05a2b39429de2ac30a26b24ca52ce742e8ad0d9bd60450adba4a7ad7691577fc"
+        },
+        {
+          "path": "adk.cpp",
+          "sha256": "65adfb7e7790368314194247a809a1344d712d550b823cd399a589d7555a7d2c"
+        },
+        {
+          "path": "adk.h",
+          "sha256": "f84f7efdf0ad45e82a552719bb404ea50263cf6f9ce50fec6a9445f2a2c615da"
+        },
+        {
+          "path": "AMBX.cpp",
+          "sha256": "ee98bd6ff2393399ef83e87da0dcc7a5ca88f32f0ab3d4cbd87b22aac2b45599"
+        },
+        {
+          "path": "AMBX.h",
+          "sha256": "b7d785b1a29b08897043aed053ed1ce71619378680550a4a4bcfcfd4d08b4410"
+        },
+        {
+          "path": "AMBXEnums.h",
+          "sha256": "2a0d7d6a5cd726cc6c19c8e1ffa56c92761590aa6f34af913edfee6d5acd8dd2"
+        },
+        {
+          "path": "avrpins.h",
+          "sha256": "b18046b91557b06a638607cd96defed65d3365cde3b5763d66a49acb48b420f4"
+        },
+        {
+          "path": "BTD.cpp",
+          "sha256": "23987bbe6c4d6740615bec8148a6122e30ad4fd8a803189401ba34ed8a13db0f"
+        },
+        {
+          "path": "BTD.h",
+          "sha256": "edb2963c1e995c827c8059bb103f26ac734361369448b6278edd26ec1e30f2b2"
+        },
+        {
+          "path": "BTHID.cpp",
+          "sha256": "e4eeb7559d7ce528f34371a158f72f28d454cd2f8ecd107b95467ad27ba4a5f9"
+        },
+        {
+          "path": "BTHID.h",
+          "sha256": "489013ccb6709a57ab2338e51b5d2fe86e2e8763de20a346dd92c0b9a59d0b20"
+        },
+        {
+          "path": "cdcacm.cpp",
+          "sha256": "c53fc9057c0790d7b1dbb1e56017873dd0ab74427f70b61d0296df3ef976ddc6"
+        },
+        {
+          "path": "cdcacm.h",
+          "sha256": "c0b57fb6c761cdd398f2f0a46590c1d0a41f0d97ee33d746079b6b94ee84568e"
+        },
+        {
+          "path": "cdcftdi.cpp",
+          "sha256": "a8833d3d6285430b827cb92857ea50ec34994a2a05ce435104cc10aba4a70366"
+        },
+        {
+          "path": "cdcftdi.h",
+          "sha256": "62dcb5fd1746f18f253d65775ab86e87bb2c98d0426dc590b0695fba5610fc69"
+        },
+        {
+          "path": "cdcprolific.cpp",
+          "sha256": "6fa8c08dc32fdd5f157bb8e1995591c4178ce36e11c6a4f3ca25f7529266cfe1"
+        },
+        {
+          "path": "cdcprolific.h",
+          "sha256": "571dd3d4291e1df4c5999baa3115f8888f585d146e037a4baebe3002889045e9"
+        },
+        {
+          "path": "cdc_XR21B1411.cpp",
+          "sha256": "949e4e5b22f7e4f2318163805d190c669da70b747f2a0962bc51d62dfceae04d"
+        },
+        {
+          "path": "cdc_XR21B1411.h",
+          "sha256": "f259c2306af2c0c12c94d9f19c9cab374b1028fd06ec6c12d7bf24212c4b3ff1"
+        },
+        {
+          "path": "confdescparser.h",
+          "sha256": "d48f7c87a78c3ae5ee3a1c7c71e1079c15f58bd6cc5f1e38c43446db02253b3a"
+        },
+        {
+          "path": "controllerEnums.h",
+          "sha256": "4a434f769da2d59ae92df088f6b7b0bd6a85e0b50576d57a059021a47888c645"
+        },
+        {
+          "path": "gpl2.txt",
+          "sha256": "204d8eff92f95aac4df6c8122bc1505f468f3a901e5a4cc08940e0ede1938994"
+        },
+        {
+          "path": "hexdump.h",
+          "sha256": "5373af39cec3a94113e9df3c3efc34740301b150c8187259e8290ddc8d3ef5ef"
+        },
+        {
+          "path": "hidboot.cpp",
+          "sha256": "971a1534e4ed7168038cb657384bf6111f86d805ee9b3495665c6658401b6097"
+        },
+        {
+          "path": "hidboot.h",
+          "sha256": "927f59d7d0ffceab9dc3ac1d08060cfb39be9798e9ed8288e8813abc7f038603"
+        },
+        {
+          "path": "hidcomposite.cpp",
+          "sha256": "0ea38eb71576ebf2d4ccbbf3489177f37aed2115a547a4b96f0bbdd062fc3934"
+        },
+        {
+          "path": "hidcomposite.h",
+          "sha256": "92983b8a70479755081dfbd1f57bd568251128db0dbedb9708db03dced97e22a"
+        },
+        {
+          "path": "hidescriptorparser.cpp",
+          "sha256": "eb902c4095edd5bbcd7e9b0358cda38ad0057b70fecbc2bd35d4167e7831bb90"
+        },
+        {
+          "path": "hidescriptorparser.h",
+          "sha256": "f1d4be962eb189e3f038149c8970491bb87c4ca83035370d0e0c32340d4d776d"
+        },
+        {
+          "path": "hiduniversal.cpp",
+          "sha256": "66c36421333a3c7f3dce43fd44b68266dc61f7d616b3c339839f7dc187082cff"
+        },
+        {
+          "path": "hiduniversal.h",
+          "sha256": "a3faee71d787ae14f2535c35048d09f413279e9b8bee3cde3d45409be008e5ce"
+        },
+        {
+          "path": "hidusagestr.h",
+          "sha256": "bff1c223261452d21442bd65a6a8d8fa7101cdba26ab6078175f631aca6ec932"
+        },
+        {
+          "path": "hidusagetitlearrays.cpp",
+          "sha256": "d970c3f73d5460f1aa0eead570a2aaefda383cf9b18fcab22396387333ba13c5"
+        },
+        {
+          "path": "keywords.txt",
+          "sha256": "b355cceeaa526b981b20949a8c68c9e9439d3bd277d36fc9fb2d0ed337ef9cbf"
+        },
+        {
+          "path": "library.json",
+          "sha256": "fb6c4fed2c3144d6737dd0ed8d8eb4a1983487666a0cac87145d4d4b0397f196"
+        },
+        {
+          "path": "library.properties",
+          "sha256": "18ec606ead123804645ddd928a498280dbd12019dc02cb84469f79ddca0cda63"
+        },
+        {
+          "path": "macros.h",
+          "sha256": "c0bdc968b0af12ae9cf2f8395f0915dbe97f07173dbc1d48d59302c96a03d70e"
+        },
+        {
+          "path": "masstorage.cpp",
+          "sha256": "e58b7ea9bad005961c07e5a4088891081ee40c88b1f4df35d890a614faadfac6"
+        },
+        {
+          "path": "masstorage.h",
+          "sha256": "066912a6006903bd0edb87f1c77b52c3fb0b8544f16494e2ba67359b79497739"
+        },
+        {
+          "path": "max3421e.h",
+          "sha256": "510b75853c763bd11c127ea4b8f0b2c3f62178237f44dc57a5b4a05debea9d32"
+        },
+        {
+          "path": "max_LCD.cpp",
+          "sha256": "59e4661ab0afe0611b6f0a4eb535bd3342d7e9fc1c969de23b3a7e682534f3c9"
+        },
+        {
+          "path": "max_LCD.h",
+          "sha256": "67f7adf431f78d3c5dc7c5465d0e82c3f3e55b87a0a60f4200d4c174665a2640"
+        },
+        {
+          "path": "message.cpp",
+          "sha256": "2ebeff0f4dead7315ecb2c9bea6ed52c61c94c0206ddfc1bd14ea658e7179c33"
+        },
+        {
+          "path": "message.h",
+          "sha256": "61cf2603be03c1b9cfd20ff319da5a933f12461d34ff14dcc6e191d665c54315"
+        },
+        {
+          "path": "MiniDSP.cpp",
+          "sha256": "4511a948205d743ca86073772327ad67bc48dbef3fead96ecaf66d02cb4b8fa1"
+        },
+        {
+          "path": "MiniDSP.h",
+          "sha256": "b88982013f6dff1be9910419f6d86b30c1e84cb1fb74dee114edb100ccde5895"
+        },
+        {
+          "path": "parsetools.cpp",
+          "sha256": "babdab294cddf70e272a0af560fc302a6caaac1e640db28e132a2f6420aebb1c"
+        },
+        {
+          "path": "parsetools.h",
+          "sha256": "75b5561c792ff0a92a917ae69f9ad507b035e66fc4faf40728beb932ca9233a1"
+        },
+        {
+          "path": "printhex.h",
+          "sha256": "6c11415348c7a1c996f0025a465e22f88a691b56f5f9416d57203d896102afbd"
+        },
+        {
+          "path": "PS3BT.cpp",
+          "sha256": "044d7a460f0a3e8b747116e81ff79b00561b450420ce23e7e34de05ace04673e"
+        },
+        {
+          "path": "PS3BT.h",
+          "sha256": "22807e2f774cc5b6a1e7fa42277bfaea53a14312f559a76633d2e0f8ef74506a"
+        },
+        {
+          "path": "PS3Enums.h",
+          "sha256": "2a02aa03ede397834f50b0653a1cd0894fc01fa2b7e2964ec4499df287e7d8f6"
+        },
+        {
+          "path": "PS3USB.cpp",
+          "sha256": "074f8b191991a05b049250834b5ae8373c02d4ba1cfcf87b48e306e74dba632b"
+        },
+        {
+          "path": "PS3USB.h",
+          "sha256": "6917e77900106c02e2a5dbebcd2d9ebefa1ca55c367a891c44b65533a5e2db90"
+        },
+        {
+          "path": "PS4BT.h",
+          "sha256": "e2fb581d4b3920886b84fe8268d12f52b59ebd6b83526b97f144c5533ff4e425"
+        },
+        {
+          "path": "PS4Parser.cpp",
+          "sha256": "2fac472665813f1be26654e1d4fb528d0a09e634396b3bdc91d0e5aa539cdba5"
+        },
+        {
+          "path": "PS4Parser.h",
+          "sha256": "537b5f8af5a8c2066a14b76dfec804065ced4d406e3a157b1abcf206d777bff1"
+        },
+        {
+          "path": "PS4USB.h",
+          "sha256": "2d45ea47ce9ddcef52fa8752d2d04c918677dc7aa50c8db76cf97ffb30333150"
+        },
+        {
+          "path": "PS5BT.h",
+          "sha256": "44b167f33395a532e247b367d7ecadc0f17fd0138810bdfd58b74c6693e673ce"
+        },
+        {
+          "path": "PS5Parser.cpp",
+          "sha256": "7ca59d2160d3eef6801d126f633fe0d10941cd6d52029fa7d07a67c7af3d091e"
+        },
+        {
+          "path": "PS5Parser.h",
+          "sha256": "e8cfb3ff080d6743d2efc92152e30df0e16d577fea859f3c5d817fdb8addad36"
+        },
+        {
+          "path": "PS5Trigger.cpp",
+          "sha256": "6c1eb27857edf33f5fc04baa434907066a772433b2aff1344ff3f54e38b52349"
+        },
+        {
+          "path": "PS5Trigger.h",
+          "sha256": "9093bd95579e9edfd7c2de89e3c3213810eddb588048565983bf53b315d081a0"
+        },
+        {
+          "path": "PS5USB.h",
+          "sha256": "ac951582c0d922e7035ebbd667a4158cd3d68c1d628fcf43bde45006ef2e95d5"
+        },
+        {
+          "path": "PSBuzz.cpp",
+          "sha256": "518bc6a31d9cf4911ae48ec54ccb1e5fb2e130c0aa8f7c781e8564d87db61627"
+        },
+        {
+          "path": "PSBuzz.h",
+          "sha256": "52ebb11293b5e2a481d8b54ee6eb8917861da13293511f146a37c7bc0ec56752"
+        },
+        {
+          "path": "README.md",
+          "sha256": "ab7a064231bf41539ecd04f15bc01b3c4f996d261aeac825c1b1dc9649510d9a"
+        },
+        {
+          "path": "settings.h",
+          "sha256": "b6ad00557eb9a55bccd39dfcc400a5ec77f29e0f0e53cf8591cec1d9ebb372b5"
+        },
+        {
+          "path": "sink_parser.h",
+          "sha256": "c6a87ff65c63a8f56285998eef681d99dd0044414539ce46d3862cca0bd2b079"
+        },
+        {
+          "path": "SPP.cpp",
+          "sha256": "b7ef13e9d47b1fd5e4fae8a4368d221c7624fe21fe5a7293bb861bc916f8e012"
+        },
+        {
+          "path": "SPP.h",
+          "sha256": "81c1d8235f5376ee5f1eb74db07c763fc636b01832e79d4d7f1979870c92eea3"
+        },
+        {
+          "path": "SwitchProBT.h",
+          "sha256": "f1728e515028ef02f99bb06932f432af8ef51c43a43f2f7416f3c71b43f1139b"
+        },
+        {
+          "path": "SwitchProParser.cpp",
+          "sha256": "e61c24cf189ad75a859ab3514e6ca2b55555d65c7a01a5969c8b13d85d8b19bf"
+        },
+        {
+          "path": "SwitchProParser.h",
+          "sha256": "de4081d99d7d7cecc165bf3723ed88317ad66f49a321bd8bb575ed94b31bc1ed"
+        },
+        {
+          "path": "SwitchProUSB.h",
+          "sha256": "77ad8304cb076d3352dab3c1adb535961309ff34cd6464c5126cd7d0c1368608"
+        },
+        {
+          "path": "UHS2_gpio.cpp",
+          "sha256": "e21b0ebf0f97493e4474fc200f97e46d3a1024a9db604b7165bf5bb6d28293f7"
+        },
+        {
+          "path": "UHS2_gpio.h",
+          "sha256": "59083edacd6c0e776e883063c9501be635dd0ac172445a4116aa94ed1ef4331d"
+        },
+        {
+          "path": "Usb.cpp",
+          "sha256": "4638a552cb1149e35b794537d9cf7a2e49a5fa2a815076729b57a2227cfecce2"
+        },
+        {
+          "path": "Usb.h",
+          "sha256": "b62d0e0dd3a7534a94110959f08d127ae695410392f2c4e25a4fd032e1e34e0f"
+        },
+        {
+          "path": "UsbCore.h",
+          "sha256": "f63f9b513532892bb3ca23df4b765d876e47b0d627dfd7850a77b8cf12608640"
+        },
+        {
+          "path": "usbhid.cpp",
+          "sha256": "84ada67ed44ac4602455c97c55723ec7c07c49c879330bd9a06abcfd2b6d4d35"
+        },
+        {
+          "path": "usbhid.h",
+          "sha256": "29b09585b9feb895d721c41804bb268c73a48c2bf58741941c374b234951c783"
+        },
+        {
+          "path": "usbhost.h",
+          "sha256": "0edd05a149b00655575737c1aa23994d0f9c07e1306b3128f20b809985c59fda"
+        },
+        {
+          "path": "usbhub.cpp",
+          "sha256": "8a1541f283d7810fb0a1f6823bee0ef46fc458226df0e3c8e3e4161e736d9d8c"
+        },
+        {
+          "path": "usbhub.h",
+          "sha256": "be5ccfec209e8c48b44af9cd517cfa003593c65ff0830576d74c6988718e9193"
+        },
+        {
+          "path": "usbh_midi.cpp",
+          "sha256": "e23d50a715b163dd802297a063c7f702415f7ad3591698475d205bfe729993d4"
+        },
+        {
+          "path": "usbh_midi.h",
+          "sha256": "6709c5d81635660d89fb049426441ec3ac289396d1ee0afa8914e1f915fcb969"
+        },
+        {
+          "path": "usb_ch9.h",
+          "sha256": "90512cb941591fbe87d0a21c70053561f68e1f9e92b307b9451ef576450fc032"
+        },
+        {
+          "path": "version_helper.h",
+          "sha256": "ac3acc2997611184dc06a4b421ee5a3361fa42ff280342ed96f5ea96d2f949a7"
+        },
+        {
+          "path": "Wii.cpp",
+          "sha256": "2d44950fa8c048dd1b712c69dbadf6addced82af44c10a58b178bdd95206b968"
+        },
+        {
+          "path": "Wii.h",
+          "sha256": "5a96c84e70983d967c349193d4ddeb768bd2b7db3b47dba4532a654d9e97c886"
+        },
+        {
+          "path": "WiiCameraReadme.md",
+          "sha256": "64201c53cc62a3891c6e48f75eb9f557abc842e5a73cdc6c88941cf1ac4974dd"
+        },
+        {
+          "path": "xboxEnums.h",
+          "sha256": "6443e482e68223767371c005d71b23ae237b9ad63c1fceae9dcb0907eddde2e7"
+        },
+        {
+          "path": "XBOXOLD.cpp",
+          "sha256": "97dce2338b1f2f1e83517fc5bab169d26e8c220ec3933b99d4bcebc29771b5ad"
+        },
+        {
+          "path": "XBOXOLD.h",
+          "sha256": "9fd363817c732627e75ef5ff61de80080655b4f4368ef522f65aa1a8f45a8d3f"
+        },
+        {
+          "path": "XBOXONE.cpp",
+          "sha256": "efed5e2df6d734f1fd833ce88e4ef9624862b6bc8478866b4e5ac51e18935ef1"
+        },
+        {
+          "path": "XBOXONE.h",
+          "sha256": "6f5cbd47ab1c1e0ccf11da84299c17cff2bdd179c0803da8e4790612f338a04e"
+        },
+        {
+          "path": "XBOXONESBT.h",
+          "sha256": "07142695d0acd5e4b2d802c70b53934b460b1e8c170808c3c3927fff3f2e3297"
+        },
+        {
+          "path": "XBOXONESParser.cpp",
+          "sha256": "0eef8d43077f0d0a85641486795558dbb0d1f9f9e162a823c2f303e679696d73"
+        },
+        {
+          "path": "XBOXONESParser.h",
+          "sha256": "59294c16f99b559c8334366b95dc84d85b0a8bdd92ae25b5c585fb26b23e8404"
+        },
+        {
+          "path": "XBOXRECV.cpp",
+          "sha256": "e9d8e6361406d617625c90d618a0a9c25297a7f79f0b739834371bc0ee861d09"
+        },
+        {
+          "path": "XBOXRECV.h",
+          "sha256": "1b9d93051a63e61a4ac83ff4035c1f05e9f58408194556069664f68480c016ec"
+        },
+        {
+          "path": "XBOXUSB.cpp",
+          "sha256": "407bba7b654fefcdb20d471ab96930f2b4187d7403b058b2130b9f8f2f8861e6"
+        },
+        {
+          "path": "XBOXUSB.h",
+          "sha256": "cb4a3c2f1711841a47ab702cf4256e9cdc6e32207b717a6ee53167cebf78fe8b"
+        }
+      ]
+    }
+  ],
+  "overlays": {
+    "root": "patches/avr_bridge",
+    "files": [
+      {
+        "path": "cores/bridge/CDC.cpp",
+        "basePath": "cores/arduino/CDC.cpp",
+        "baseSha256": "9cefa4fec5eb361179978b9c94f5937dcacf068eafd45eee726646226b258dc2",
+        "sha256": "b09a811e51e7fffe4c2bdff8c0d7e2f9d97fb3b2c553f3e05da7363e1fefbf19"
+      },
+      {
+        "path": "cores/bridge/PluggableUSB.cpp",
+        "basePath": "cores/arduino/PluggableUSB.cpp",
+        "baseSha256": "6c39d37902d2819007ef6b82c132ba89c821b134e143d59d33c99a46765e2a62",
+        "sha256": "f9703db7cafd02acfa7bec2a66c58fc358e6885e034cf086f60497c01ffd3291"
+      },
+      {
+        "path": "cores/bridge/USBCore.cpp",
+        "basePath": "cores/arduino/USBCore.cpp",
+        "baseSha256": "9750200cafecc523c388b7d9474f2b3b94d71bcca59ab4bc481c668b57e2c836",
+        "sha256": "ddbafce1b38ea219ee78b2068b496a9af8c935164588bc9f1765ec0237596062"
+      },
+      {
+        "path": "cores/bridge/USBDesc.h",
+        "basePath": "cores/arduino/USBDesc.h",
+        "baseSha256": "09370bbb62b01fe6f56f19aaed0b9cc7a859049ef7ecd94dfccfa19764fd0903",
+        "sha256": "05a40b9f7898d2f6b7ae47c40c2d88ab1b94bb2fc1859d00748efe01630fc2e7"
+      }
+    ]
+  }
+}

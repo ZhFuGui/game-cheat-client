@@ -1,14 +1,17 @@
-param([string]$ArduinoCliPath = '')
+param(
+    [Parameter(Mandatory=$true)][string]$Target,
+    [string]$ArduinoCliPath = '',
+    [ValidateSet('relay','simulation')][string]$Product = 'relay',
+    [string]$BuildName = 'release-v7'
+)
 . (Join-Path $PSScriptRoot 'toolchain.ps1')
-$taskCli = Resolve-ArduinoCli $ArduinoCliPath
-$taskPrevious = [Environment]::GetEnvironmentVariable('ARDUINO_DIRECTORIES_USER', 'Process')
-try {
-    # A process-only override: global Arduino configuration stays untouched.
-    [Environment]::SetEnvironmentVariable('ARDUINO_DIRECTORIES_USER', $taskRoot, 'Process')
-    & $taskCli compile --fqbn logitech-relay:avr:receiver `
-        --build-path (Join-Path $taskRoot 'build\native-v2') `
-        (Join-Path $taskRoot 'firmware\logitech_native_bridge')
-    if ($LASTEXITCODE -ne 0) { throw 'Firmware compilation failed.' }
-} finally {
-    [Environment]::SetEnvironmentVariable('ARDUINO_DIRECTORIES_USER', $taskPrevious, 'Process')
+. (Join-Path $PSScriptRoot 'common/target.ps1')
+if ($BuildName -notmatch '^[a-zA-Z0-9_-]+$') { throw 'Invalid build name.' }
+$taskTarget = Read-FirmwareTarget $taskRoot $Target
+if ($Product -eq 'simulation' -and $taskTarget.builder -eq 'simulation') {
+    & (Join-Path $PSScriptRoot 'test.ps1') -Suite simulation
+} elseif ($Product -eq 'relay' -and $taskTarget.builder -eq 'arduino-avr') {
+    & (Join-Path $PSScriptRoot 'builders/arduino-avr.ps1') -Root $taskRoot -Target $taskTarget -ArduinoCliPath $ArduinoCliPath -BuildName $BuildName
+} else {
+    throw 'This target/product combination is not implemented.'
 }

@@ -1,95 +1,100 @@
 param(
-    [Parameter(Mandatory = $true)]
-    [ValidateSet('List', 'Backup', 'Upload', 'Monitor')]
-    [string]$Action,
-    [string]$RuntimePort = 'COM12',
-    [string]$RuntimeVendorId = '046D',
-    [string]$RuntimeProductId = 'C54D',
-    [string]$RuntimeInterface = '03',
-    [string]$BackupName = 'backup-native-v1-20261012',
-    [string]$HexPath = '',
-    [ValidateRange(1, 60)] [int]$MonitorSeconds = 15
+    [Parameter(Mandatory=$true)][ValidateSet('List','Backup','BackupAndUpload')][string]$Action,
+    [string]$Target = '',
+    [string]$RuntimePort = '',
+    [string]$ExpectedLocationPath = '',
+    [string]$ArtifactManifest = '',
+    [string]$BackupName = '',
+    [switch]$ManualReset,
+    [ValidateRange(15,300)][int]$ResetWaitSeconds = 60
 )
 . (Join-Path $PSScriptRoot 'toolchain.ps1')
-if ($BackupName -notmatch '^[a-zA-Z0-9_-]+$') { throw 'Invalid backup name.' }
-foreach ($taskId in @($RuntimeVendorId, $RuntimeProductId)) {
-    if ($taskId -notmatch '^[a-fA-F0-9]{4}$') { throw 'USB VID/PID must be four hex digits.' }
+. (Join-Path $PSScriptRoot 'device-location.ps1')
+. (Join-Path $PSScriptRoot 'common/target.ps1')
+. (Join-Path $PSScriptRoot 'common/artifact.ps1')
+if ($Action -eq 'List') {
+    Get-FirmwareSerialPorts | Select-Object DeviceID,Name,PNPDeviceID
+    return
 }
-if ($RuntimeInterface -notmatch '^[a-fA-F0-9]{2}$') { throw 'USB interface must be two hex digits.' }
-$taskBackup = Join-Path $taskRoot ('backups\' + $BackupName)
+if (!$RuntimePort -or !$ExpectedLocationPath -or !$Target) { throw 'Explicit target, runtime port and physical USB location are required.' }
+$taskTarget = Read-FirmwareTarget $taskRoot $Target
+if ($taskTarget.builder -ne 'arduino-avr') { throw 'This target has no implemented flash backend.' }
+$ExpectedLocationPath = ConvertTo-BoardUsbLocation @($ExpectedLocationPath)
+if (!$BackupName) { $BackupName = 'before-'+$Target+'-'+(Get-Date -Format 'yyyyMMdd-HHmmss') }
+if ($BackupName -notmatch '^[a-zA-Z0-9_-]+$') { throw 'Invalid backup name.' }
+$taskArtifact = $null
+if ($Action -eq 'BackupAndUpload') {
+    if (!$ArtifactManifest) { throw 'An explicit validated release manifest is required.' }
+    $taskArtifact = Assert-FirmwareArtifact $taskRoot $taskTarget $ArtifactManifest
+}
+$taskBackup = Resolve-FirmwarePath $taskRoot ('backups/'+$BackupName)
+if (Test-Path -LiteralPath $taskBackup) { throw 'Backup already exists; refusing to overwrite.' }
 
 function Assert-RuntimeDevice {
-    $taskPattern = '^USB\\VID_' + $RuntimeVendorId + '&PID_' + $RuntimeProductId + '&MI_' + $RuntimeInterface + '\\'
-    $taskDevices = @(Get-CimInstance Win32_SerialPort | Where-Object {
-        $_.DeviceID -eq $RuntimePort -and $_.PNPDeviceID -match $taskPattern
-    })
-    if ($taskDevices.Count -ne 1) { throw "The expected $RuntimePort / USB identity is missing. Refusing a different device." }
-    return $taskDevices[0]
+    $identity = '^USB\\VID_'+$taskTarget.flash.runtimeVid+'&PID_'+$taskTarget.flash.runtimePid+'&MI_'+$taskTarget.flash.runtimeInterface+'\\'
+    $devices = @(Get-FirmwareSerialPorts | Where-Object { $_.DeviceID -eq $RuntimePort -and $_.PNPDeviceID -match $identity })
+    if ($devices.Count -ne 1) { throw 'Expected runtime port/USB identity is missing.' }
+    Assert-BoardUsbLocation $devices[0].PNPDeviceID $ExpectedLocationPath
+    return $devices[0]
 }
-
-function Enter-Bootloader {
-    $taskDevice = Assert-RuntimeDevice
-    $taskBootPattern = '^USB\\VID_(2341|2A03)&PID_003[67]\\'
-    if (@(Get-CimInstance Win32_SerialPort | Where-Object { $_.PNPDeviceID -match $taskBootPattern }).Count) {
-        throw 'An existing bootloader makes the target ambiguous.'
+function Enter-TargetBootloader {
+    $null = Assert-RuntimeDevice
+    if (@(Select-BoardBootloaders @(Get-FirmwareSerialPorts)).Count) { throw 'An existing bootloader makes the target ambiguous.' }
+    if (!$ManualReset) {
+        $serial = [IO.Ports.SerialPort]::new($RuntimePort,1200)
+        try { $serial.DtrEnable=$true; $serial.Open(); $serial.DtrEnable=$false } finally { $serial.Dispose() }
     }
-    Write-Host "Resetting only $($taskDevice.DeviceID) into its existing bootloader."
-    $taskSerial = [IO.Ports.SerialPort]::new($RuntimePort, 1200)
-    try { $taskSerial.DtrEnable = $true; $taskSerial.Open(); $taskSerial.DtrEnable = $false }
-    finally { $taskSerial.Dispose() }
-    $taskWatch = [Diagnostics.Stopwatch]::StartNew()
-    while ($taskWatch.ElapsedMilliseconds -lt 8000) {
-        $taskBoot = @(Get-CimInstance Win32_SerialPort | Where-Object { $_.PNPDeviceID -match $taskBootPattern })
-        if ($taskBoot.Count -gt 1) { throw 'Multiple bootloaders detected.' }
-        if ($taskBoot.Count -eq 1) {
-            Write-Host "Bootloader: $($taskBoot[0].DeviceID), $($taskBoot[0].PNPDeviceID)"
-            return $taskBoot[0].DeviceID
-        }
+    $waitMs = if ($ManualReset) { $ResetWaitSeconds*1000 } else { 8000 }
+    $watch = [Diagnostics.Stopwatch]::StartNew()
+    while ($watch.ElapsedMilliseconds -lt $waitMs) {
+        $devices = @(Select-BoardBootloaders @(Get-FirmwareSerialPorts))
+        $matching = @($devices | Where-Object {
+            $property = Get-PnpDeviceProperty -InstanceId $_.PNPDeviceID -KeyName DEVPKEY_Device_LocationPaths -ErrorAction Stop
+            (ConvertTo-BoardUsbLocation @($property.Data)) -ceq $ExpectedLocationPath
+        })
+        if ($matching.Count -gt 1) { throw 'Multiple matching bootloaders.' }
+        if ($matching.Count -eq 1) { return $matching[0].DeviceID }
         Start-Sleep -Milliseconds 150
     }
-    throw 'Bootloader not found; no flash operation performed.'
+    throw 'Target bootloader not found; no flash operation performed.'
 }
-
-if ($Action -eq 'List') {
-    Get-CimInstance Win32_SerialPort | Select-Object DeviceID, Name, PNPDeviceID
-    return
+$device = Assert-RuntimeDevice
+$tool = Resolve-Avrdude
+$null = New-Item -ItemType Directory -Path $taskBackup
+$receiptPath = Join-Path $taskBackup 'operation.json'
+$receipt = [ordered]@{ target=$Target; action=$Action; started=(Get-Date -Format o); runtimePort=$RuntimePort;
+    runtimeInstance=$device.PNPDeviceID; location=$ExpectedLocationPath; success=$false; artifactSha256=$null;
+    firmwareVersion=$null; readback=$null; error=$null; bootPort=$null; finished=$null;
+    sourceOfPriorFirmware='Not inferred from the current working tree.' }
+if ($taskArtifact) {
+    $receipt.artifactSha256=$taskArtifact.Manifest.sha256
+    $receipt.firmwareVersion=$taskArtifact.Manifest.firmwareVersion
+    Copy-Item -LiteralPath $taskArtifact.ManifestPath -Destination (Join-Path $taskBackup 'requested-artifact.json')
 }
-if ($Action -eq 'Monitor') {
-    $null = Assert-RuntimeDevice
-    $taskSerial = [IO.Ports.SerialPort]::new($RuntimePort, 115200)
-    try {
-        $taskSerial.DtrEnable = $true; $taskSerial.ReadTimeout = 250; $taskSerial.Open()
-        $taskWatch = [Diagnostics.Stopwatch]::StartNew()
-        while ($taskWatch.Elapsed.TotalSeconds -lt $MonitorSeconds) {
-            try { Write-Output $taskSerial.ReadLine().TrimEnd("`r") }
-            catch [TimeoutException] { }
-        }
-    } finally { $taskSerial.Dispose() }
-    return
+try {
+    $receipt | ConvertTo-Json -Depth 6 | Set-Content -LiteralPath $receiptPath -Encoding UTF8
+    $boot = Enter-TargetBootloader
+    $receipt.bootPort=$boot
+    $arguments = @('-C',$tool.Config,'-p',$taskTarget.flash.mcu,'-c',$taskTarget.flash.backend,'-P',$boot,
+        '-b',([string]$taskTarget.flash.bootBaudRate),'-A','-D',
+        '-U',('flash:r:'+(Join-Path $taskBackup 'flash-before.bin')+':r'),
+        '-U',('eeprom:r:'+(Join-Path $taskBackup 'eeprom-before.bin')+':r'),
+        '-U',('flash:v:'+(Join-Path $taskBackup 'flash-before.bin')+':r'))
+    if ($taskArtifact) {
+        # One programmer process: verify the backup before writing, automatic write
+        # verification, then independent full Flash/EEPROM readback for the receipt.
+        $arguments += @('-U',('flash:w:'+$taskArtifact.Hex+':i'),
+            '-U',('flash:r:'+(Join-Path $taskBackup 'flash-after.bin')+':r'),
+            '-U',('eeprom:r:'+(Join-Path $taskBackup 'eeprom-after.bin')+':r'))
+    } else { $arguments = @('-n')+$arguments }
+    Invoke-AvrdudeBounded -Tool $tool -Arguments $arguments -LogName ('v7-'+$Action)
+    if ($taskArtifact) { $receipt.readback=Assert-FirmwareReadback $taskTarget $taskArtifact $taskBackup }
+    $receipt.success=$true
+} catch { $receipt.error=$_.Exception.Message; throw }
+finally {
+    $receipt.finished=(Get-Date -Format o)
+    $receipt | ConvertTo-Json -Depth 7 | Set-Content -LiteralPath $receiptPath -Encoding UTF8
+    Get-ChildItem -LiteralPath $taskBackup -Filter '*.bin' | Get-FileHash -Algorithm SHA256 |
+        Select-Object Path,Hash | ConvertTo-Json | Set-Content -LiteralPath (Join-Path $taskBackup 'hashes.json') -Encoding UTF8
 }
-$taskAvrdude = Resolve-Avrdude
-if ($Action -eq 'Backup') {
-    if (Test-Path -LiteralPath $taskBackup) { throw 'Backup directory already exists; will not overwrite it.' }
-    New-Item -ItemType Directory -Path $taskBackup | Out-Null
-    Copy-Item -LiteralPath (Join-Path $taskRoot 'firmware\logitech_native_bridge') -Destination (Join-Path $taskBackup 'source') -Recurse
-    Copy-Item -LiteralPath (Join-Path $taskRoot 'hardware\logitech-relay') -Destination (Join-Path $taskBackup 'platform') -Recurse
-    $taskPort = Enter-Bootloader
-    & $taskAvrdude.Exe -C $taskAvrdude.Config -p atmega32u4 -c avr109 -P $taskPort -b 57600 -A -D -n `
-        '-U' ('flash:r:' + (Join-Path $taskBackup 'flash-before.bin') + ':r') `
-        '-U' ('eeprom:r:' + (Join-Path $taskBackup 'eeprom-before.bin') + ':r') `
-        '-U' ('flash:v:' + (Join-Path $taskBackup 'flash-before.bin') + ':r')
-    if ($LASTEXITCODE -ne 0) { throw 'Read-only backup failed.' }
-    Get-FileHash -LiteralPath (Join-Path $taskBackup 'flash-before.bin'),(Join-Path $taskBackup 'eeprom-before.bin') -Algorithm SHA256
-    return
-}
-$taskBackupFile = Join-Path $taskBackup 'flash-before.bin'
-if (!(Test-Path -LiteralPath $taskBackupFile) -or (Get-Item -LiteralPath $taskBackupFile).Length -ne 32768) {
-    throw 'A verified 32 KiB pre-upload flash backup is required.'
-}
-$taskHex = if ($HexPath) { (Resolve-Path -LiteralPath $HexPath).Path } else { Join-Path $taskRoot 'build\native-v2\logitech_native_bridge.ino.hex' }
-if (!(Test-Path -LiteralPath $taskHex)) { throw 'Compiled application HEX is missing.' }
-$taskPort = Enter-Bootloader
-# Application flash only; automatic readback verification remains enabled.
-# Never write the full 32 KiB backup into the application flash region.
-& $taskAvrdude.Exe -C $taskAvrdude.Config -p atmega32u4 -c avr109 -P $taskPort -b 57600 -D '-U' ('flash:w:' + $taskHex + ':i')
-if ($LASTEXITCODE -ne 0) { throw 'Application upload/readback verification failed.' }
+Write-Output ('DEVICE_RECEIPT='+$receiptPath)

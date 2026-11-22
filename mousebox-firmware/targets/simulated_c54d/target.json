@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "id": "simulated_c54d",
+  "version": "7.1.0",
+  "builder": "simulation",
+  "application": "simulation",
+  "capabilities": {
+    "baudRate": 500000,
+    "minIntervalMs": 2,
+    "maxStepCounts": 100,
+    "maxBudget": 200,
+    "legacyFlags": 28
+  },
+  "validation": "offline only; no device access"
+}

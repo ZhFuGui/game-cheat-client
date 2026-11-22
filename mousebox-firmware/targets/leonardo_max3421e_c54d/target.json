@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "leonardo_max3421e_c54d",
+  "version": "7.1.0",
+  "builder": "arduino-avr",
+  "application": "relay",
+  "profile": "logitech_c54d",
+  "composition": "targets/leonardo_max3421e_c54d/composition.hpp",
+  "board": "leonardo_r3_max3421e",
+  "fqbn": "mousebox:avr:leonardo_c54d",
+  "capabilities": {
+    "baudRate": 500000,
+    "minIntervalMs": 2,
+    "maxStepCounts": 100,
+    "maxBudget": 200,
+    "legacyFlags": 28
+  },
+  "flash": {
+    "backend": "avr109",
+    "mcu": "atmega32u4",
+    "flashBytes": 32768,
+    "applicationBytes": 28672,
+    "sramBytes": 2560,
+    "eepromBytes": 1024,
+    "bootBaudRate": 57600,
+    "runtimeVid": "046D",
+    "runtimePid": "C54D",
+    "runtimeInterface": "03"
+  },
+  "validation": "compile-and-simulation-required; physical behavior unverified"
+}
