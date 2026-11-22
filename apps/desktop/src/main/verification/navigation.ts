@@ -14,7 +14,7 @@ export async function verifyNavigation({ window, container, version }: SmokeCont
         const header=document.querySelector('.sidebar-header'),selector=header?.querySelector('[role=combobox]'),version=header?.querySelector('.sidebar-version');
         if(!selector||!version)return null;
         const a=selector.getBoundingClientRect(),b=version.getBoundingClientRect();
-        return {game:selector.textContent,version:version.textContent,projectNameRemoved:!header.textContent.includes('mousebox-aimbot'),
+        return {game:selector.textContent,version:version.textContent,projectNameRemoved:!header.textContent.includes('game-cheat-client'),
           captionRemoved:!document.querySelector('.navigation-caption'),sameRow:Math.abs(a.top+a.height/2-b.top-b.height/2)<1,
           noOverlap:a.right<=b.left,menuTrigger:selector.classList.contains('ui-select-menu')};
       })(),

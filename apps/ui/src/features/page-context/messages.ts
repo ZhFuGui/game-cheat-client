@@ -105,7 +105,7 @@ function pageMessages(page: ContextPage, f: ContextFacts): ContextMessage[] {
     case "rendering":
       return [message("settings:rendering", f.adapterReady ? "当前 ESP 绘制设备" : "等待创建 ESP 绘制设备",
         f.adapterReady && f.adapter ? copy(f.adapter) : copy("按数据到达更新，不设软件 FPS 上限。"))];
-    default: return [message("page:ready", "mousebox-aimbot 已就绪")];
+    default: return [message("page:ready", "game-cheat-client 已就绪")];
   }
 }
 export function buildContextMessages(page: ContextPage, facts: ContextFacts): ContextMessage[] {

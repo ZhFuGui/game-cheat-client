@@ -4,7 +4,7 @@ v7.1新增可协商的有限左键点击，配套PC2.8.7 Triggerbot；当前已�
 
 固件与 PC 工程分开维护。v7 已将协议、控制、接收器格式、MCU、Host/Device 和板资源拆开，完整结构及移植规则见[架构说明](docs/ARCHITECTURE.md)。物理鼠标透传可独立运行；整个项目仍以 Reader 为上游。
 
-当前仓库根为 `G:\mousebox-aimbot`。PC2.0.0迁移保留本目录正式固件与固定v7产物原字节，没有再次烧录；旧仓库只供归档，不能继续作为开发入口。
+固件位于 game-cheat-client 仓库的 `mousebox-firmware/` 目录。PC2.0.0迁移保留本目录正式固件与固定v7产物原字节，没有再次烧录；旧仓库只供归档，不能继续作为开发入口。
 
 当前生产目标：`leonardo_max3421e_c54d`，适用于 16MHz ATmega32U4 / Leonardo R3 + MAX3421E USB Host Shield + 罗技 046D:C54D 接收器。不是所有 32U4 板和接收器的通用镜像；未实现其他硬件时构建直接拒绝，不猜测能力。
 
@@ -39,6 +39,6 @@ mousebox-firmware/tools/device.ps1 -Action List
 
 真实烧录入口为 `tools/device.ps1 -Action BackupAndUpload`，必须显式提供 `-Target`、`-RuntimePort`、`-ExpectedLocationPath` 与 `-ArtifactManifest`。先核验目标/能力/HEX范围和 SHA256，再备份并验证旧完整 Flash、读取 EEPROM，随后只写应用区；自动校验后再读完整 Flash/EEPROM，独立确认应用、引导区和 EEPROM。失败不盲目重试，不写 fuse、引导程序或 EEPROM。
 
-固定发布位于[当前 v7 发布目录](releases/native-v7-clean-20261022/RELEASE.md)，设备操作结果另写 `deployment.json`，不篡改发布准备清单。实际是否烧录成功以部署收据及[交接](HANDOFF.md)最新记录为准。
+本机固定发布目录为 `releases/native-v7-clean-20261022/`，设备操作结果另写 `deployment.json`，不篡改发布准备清单。实际是否烧录成功以部署收据及[交接](HANDOFF.md)最新记录为准。
 
 旧版本、备份、日志与当时验证范围原样保留。重构前工作树移到 `releases/pre-v7-source-20261022/`，旧工具不再作为工作入口；旧说明副本见其中 `README-before-v7.md`。正式工具集中在 `tools/`，按需观测在 `tools/diagnostics/`，恢复原语在 `tools/recovery/`。旧 C 盘 Arduino 目录仅为历史副本。

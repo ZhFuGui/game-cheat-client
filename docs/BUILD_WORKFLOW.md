@@ -4,7 +4,11 @@
 
 ## 日常入口
 
-在`G:\mousebox-aimbot`运行：
+在仓库根目录运行。目录迁移后的本机路径为 `G:\game-cheat-client`。
+
+全新检出后先运行 `pnpm install --frozen-lockfile`。原生构建及打包需要按[固定资源契约](../third_party/traceline/README.md)准备 DLL 和地图缓存。本地解决方案、测试和夹具随开发目录保留。
+
+本机旧目录迁移可使用 [PowerShell 脚本](../tools/rename-game-cheat-client.ps1)。把脚本放在旧目录之外，退出 Codex 和旧目录中的桌面程序后运行。
 
 | 命令 | 行为 |
 |---|---|

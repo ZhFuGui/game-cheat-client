@@ -1,6 +1,6 @@
 # 原生工程与离线验证
 
-正式解决方案 `mousebox-aimbot.sln` 只包含 `mousebox-core` 静态库和 `mousebox-native` 可执行程序。本地解决方案额外包含 `mousebox-tests`。日常增量构建、改动验证和发布入口见[工作流](BUILD_WORKFLOW.md)。界面工作区由pnpm管理。
+正式解决方案 `game-cheat-client.sln` 只包含 `mousebox-core` 静态库和 `mousebox-native` 可执行程序。本地 `game-cheat-client.local.sln` 额外包含 `mousebox-tests`。日常增量构建、改动验证和发布入口见[工作流](BUILD_WORKFLOW.md)。界面工作区由pnpm管理。
 
 ## 构建
 

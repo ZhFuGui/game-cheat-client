@@ -1,4 +1,4 @@
-# mousebox-aimbot 架构
+# game-cheat-client 架构
 
 2026-10-29按用户要求统一撤下正常页面顶部的大标题/简介，PageHeader组件及其调用和样式已移除，框架直接渲染叶页内容；设置内容保留导航与非视觉名称。日志操作并入原筛选工具栏，Reader连接卡不再重复来源标题和已确认/采集目标频率。保留业务卡片标题及真正错误/等待/空状态；没有改Reader订阅、协议或控制资格。
 
@@ -56,7 +56,7 @@ CS2控制按SessionIdentity值对象识别Reader、时钟域、epoch、进程、
 ## 源码结构
 
 ```text
-mousebox-aimbot/
+game-cheat-client/
 ├─ apps/
 │  ├─ desktop/src/
 │  │  ├─ main/application/             # 生命周期、命令、自动连接和表面协调
@@ -114,8 +114,8 @@ mousebox-aimbot/
 ├─ projects/                           # core / native / local tests
 ├─ tests/                              # 本地回归及夹具
 ├─ tools/                              # 构建、架构核验及 VS 目录同步
-├─ mousebox-aimbot.sln                  # 正式两个 C++ 项目
-└─ mousebox-aimbot.local.sln            # 本地另加测试项目
+├─ game-cheat-client.sln                  # 正式两个 C++ 项目
+└─ game-cheat-client.local.sln            # 本地另加测试项目
 ```
 
 ## 职责和依赖

@@ -9,7 +9,7 @@ $vswhere = Join-Path ${env:ProgramFiles(x86)} 'Microsoft Visual Studio/Installer
 if (-not (Test-Path -LiteralPath $vswhere)) { throw '未找到 Visual Studio Installer，请安装 Visual Studio C++ 桌面开发组件。' }
 $msbuild = & $vswhere -latest -products '*' -requires Microsoft.Component.MSBuild -find 'MSBuild/**/Bin/MSBuild.exe' | Select-Object -First 1
 if (-not $msbuild) { throw '未找到 MSBuild。' }
-$solution = if ($IncludeLocalTools) { 'mousebox-aimbot.local.sln' } else { 'mousebox-aimbot.sln' }
+$solution = if ($IncludeLocalTools) { 'game-cheat-client.local.sln' } else { 'game-cheat-client.sln' }
 if (!(Test-Path -LiteralPath (Join-Path $repoRoot $solution))) { throw "未找到解决方案：$solution" }
 $lockFolder = Join-Path $repoRoot 'out/workflow'
 New-Item -ItemType Directory -Path $lockFolder -Force | Out-Null

@@ -37,7 +37,7 @@ else {
             app.exit(1);
         }
         else {
-            dialog.showErrorBox('mousebox-aimbot', error instanceof Error ? error.message : String(error));
+            dialog.showErrorBox(app.getName(), error instanceof Error ? error.message : String(error));
             app.quit();
         }
     });

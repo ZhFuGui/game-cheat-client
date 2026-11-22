@@ -3,7 +3,8 @@
   "version": "2.8.53",
   "private": true,
   "type": "module",
-  "description": "mousebox-aimbot desktop",
+  "productName": "game-cheat-client",
+  "description": "game-cheat-client desktop",
   "author": "FuGui",
   "main": "dist/main/index.js",
   "scripts": {

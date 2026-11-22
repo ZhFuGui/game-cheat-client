@@ -1,5 +1,5 @@
 appId: cn.fugui.mousebox
-productName: mousebox-aimbot
+productName: game-cheat-client
 directories:
   output: ../../out/desktop-release
 files:
@@ -33,5 +33,5 @@ nsis:
   perMachine: false
   allowToChangeInstallationDirectory: true
   createDesktopShortcut: true
-  shortcutName: mousebox-aimbot
+  shortcutName: game-cheat-client
 asar: true

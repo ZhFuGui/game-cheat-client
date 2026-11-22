@@ -21,7 +21,7 @@ const shared = ['packages/shared/src', 'packages/shared/package.json', 'packages
 const desktopResources = ['apps/desktop/resources']
 const fontResources = ['data/fonts']
 const nativeInputs = ['src', 'apps/native-host', 'projects', 'build', 'protocol', 'tests/native',
-  'third_party/reader-consumer', 'third_party/cs2-reader', 'third_party/traceline/include', 'mousebox-firmware/protocol', 'mousebox-aimbot.sln', 'mousebox-aimbot.local.sln', ...fontResources]
+  'third_party/reader-consumer', 'third_party/cs2-reader', 'third_party/traceline/include', 'mousebox-firmware/protocol', 'game-cheat-client.sln', 'game-cheat-client.local.sln', ...fontResources]
 const sourceRoots = [...globalInputs, ...shared, ...nativeInputs, 'apps/ui/src', 'apps/desktop/src', 'tests', 'tools',
   'apps/ui', 'apps/desktop', 'package.json', 'eslint.config.js', 'vitest.config.ts',
   'apps/ui/package.json', 'apps/desktop/package.json', 'apps/ui/tsconfig.json', 'apps/desktop/tsconfig.json', 'data/games/pubg/weapons/2026-10-15/profiles.json', 'data/games/cs2/hitboxes']

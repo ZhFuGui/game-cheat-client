@@ -56,7 +56,7 @@ export function AppLayout() {
         ) : (
           <div className="startup-state">
             <ApplicationMark className="startup-mark"/>
-            <h1>mousebox-aimbot</h1>
+            <h1>game-cheat-client</h1>
             <p>{t(error ? "无法连接原生运行时" : "正在连接原生运行时…")}</p>
             {error && (
               <Button variant="outline" onClick={() => void connectRuntime()}>

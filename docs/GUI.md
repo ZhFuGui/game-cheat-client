@@ -1,4 +1,4 @@
-# Mousebox 桌面界面
+# game-cheat-client 桌面界面
 
 1.0.0 使用 Electron / React，布局与组件组织参考 DIMO。左侧为概览、ESP、Aimbot、速度学习，底部为日志、设置。顶部是紧凑标题栏和连接状态，底部是运行状态。关闭窗口即退出并停止输出，没有托盘常驻。
 
