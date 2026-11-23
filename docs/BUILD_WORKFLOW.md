@@ -28,6 +28,14 @@
 
 2026-10-29用户明确要求分发包不包含许可证、NOTICE或版权说明附带文件。UI公共资源不再提供licenses目录，原生准备不复制LICENSE-NODE-API。标准builder的files规则在生成ASAR前排除这些文件；`tools/after-pack.cjs`清理解包目录中Electron等自动附带文件，并检查ASAR内部零残留。临时增量builder配置同样必须继承这两项，不能从旧配置复制后漏掉。只清理包内文件，图标、代码与运行数据保留。
 
+## 本机生成产物清理
+
+`powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/clean-project-space.ps1` 先预览；加 `-Apply` 执行。默认保留现用程序及目录连接的真实目标、最新一版打包目录、最近完整回退及其后的增量备份、最新安装器/ZIP。`-KeepPackages`、`-KeepRollbacks` 可增加保留数量，最少各一份。
+
+脚本仅从旧程序包、测试程序和较早换版副本中选择生成的二进制/缓存文件；不移除整个项目目录，也不清理源码、Git 历史、用户配置、依赖、地图原件、当前构建缓存和诊断报告。不遍历文件系统连接；执行前再次检查完整路径、受保护目录和父目录连接。占用或访问失败的文件跳过并记录，不结束进程。计划清单、保护目录及执行结果保存在 `out/disk-cleanup/<时间>`。预览大小是文件逻辑大小，实际释放空间可能因硬链接与压缩而不同。
+
+2.8.55 的现用 `out/desktop-release/win-unpacked` 为目录连接，真实内容位于 `out/packages/2.8.55/preview/win-unpacked`；两条路径都必须保护。清理不运行或重启 Reader。
+
 ## 构建与资源
 
 C++的头文件、编译选项、工具链及对象依赖继续交给MSBuild追踪，不用脚本的源码列表代替它。`build.ps1`默认4个编译进程，可用`-CompilerProcesses`调整；同配置用独占文件锁避免两个脚本同时写对象文件。公共编译选项保持稳定；新增第三方依赖应限制在对应项目/源码项，避免无关文件重编译。
