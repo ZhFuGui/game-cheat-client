@@ -59,6 +59,9 @@ async function webTypes(uiOnly = false) {
   return { ui, desktop }
 }
 async function webBuild(uiOnly = false) {
+  await cache.step('resources:valorant-radar',
+    await cacheInput(['apps/ui/public/radar/valorant', 'apps/ui/src/games/valorant/radar/manifest.json', 'tools/check-valorant-radar-assets.mjs']), [],
+    () => run(process.execPath, ['tools/check-valorant-radar-assets.mjs']), { force: values.force })
   await cache.step('resources:fonts', await cacheInput(fontResources), [],
     () => powershell('check-font-resources.ps1'), { force: values.force })
   const { ui, desktop } = await webTypes(uiOnly)

@@ -1,0 +1,52 @@
+{
+  "protocol": "valorant.reader.v1",
+  "revision": 2,
+  "upstream": "https://github.com/ZhFuGui/valorant-reader",
+  "descriptorSha256": "ef15d4c567861cd4f98895cd36b5fd3037045ce5b059155bc891b3bd6d4caf01",
+  "files": [
+    {
+      "path": "reader/v1/contract.json",
+      "sha256": "309512f3acdc164e2057eb44b1683d4369a4c9475b18291a0db4eaaaaa035500"
+    },
+    {
+      "path": "reader/v1/diagnostic.proto",
+      "sha256": "398a9e58ecdee6e41b2f56b44a3e422c910b3f7c9c0aa355ae5903b4465f7be3"
+    },
+    {
+      "path": "reader/v1/model/context.proto",
+      "sha256": "43370c83728e8b76927f7dd2b028c9ccfc1261ab0350f9d3ae08be44d15f35e6"
+    },
+    {
+      "path": "reader/v1/model/foundation/common.proto",
+      "sha256": "0f5827ea411609a86cf70e8b36ffec82fd2453eb920517de38ff17d0f22c99ab"
+    },
+    {
+      "path": "reader/v1/model/position.proto",
+      "sha256": "db791d6e5d7114c34855ce10888b0cd17c863d76f94e9c1502311cd37861ad63"
+    },
+    {
+      "path": "reader/v1/model/skeleton.proto",
+      "sha256": "202940f50a183700fd30c1865d63147189220058cb220d1b13a7f417ae862ef5"
+    },
+    {
+      "path": "reader/v1/model/view.proto",
+      "sha256": "03d8516d888826fe34fac20a96dca0e5f360bdea865880f6d2ac14068ea8fd2a"
+    },
+    {
+      "path": "reader/v1/reader.descriptor.pb",
+      "sha256": "ef15d4c567861cd4f98895cd36b5fd3037045ce5b059155bc891b3bd6d4caf01"
+    },
+    {
+      "path": "reader/v1/reader.proto",
+      "sha256": "a0f8b2294cd2c9abceadc4049cab9dbe4aaaede16d41bf019e10b345d50ebda0"
+    },
+    {
+      "path": "reader/v1/schema-manifest.json",
+      "sha256": "a797d51b7777a49ffb2a1176b9e892967c353af19ce4c53f47115c52321270fa"
+    },
+    {
+      "path": "reader/v1/update.proto",
+      "sha256": "0b2fa18c217fccc2805cbce1f7d6a16cf6ba0ca21c3438bd39790a1c0fe059b1"
+    }
+  ]
+}

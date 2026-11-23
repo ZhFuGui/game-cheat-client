@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "source": "https://valorant-api.com/v1/maps",
+  "retrievedAtUtc": "2026-11-23T19:00:25.0583438Z",
+  "maps": [
+    {
+      "id": "7eaecc1b-4337-bbf6-6ab9-04b8f06b3319",
+      "name": "Ascent",
+      "mapUrl": "/Game/Maps/Ascent/Ascent",
+      "image": "7eaecc1b-4337-bbf6-6ab9-04b8f06b3319.png",
+      "source": "https://media.valorant-api.com/maps/7eaecc1b-4337-bbf6-6ab9-04b8f06b3319/displayicon.png",
+      "sha256": "287357fcfce230ecb67704cafdb519a5bdb91602ed30f897474a65e86469c550",
+      "xMultiplier": 7E-05,
+      "xScalarToAdd": 0.813895,
+      "yMultiplier": -7E-05,
+      "yScalarToAdd": 0.573242
+    },
+    {
+      "id": "d960549e-485c-e861-8d71-aa9d1aed12a2",
+      "name": "Split",
+      "mapUrl": "/Game/Maps/Bonsai/Bonsai",
+      "image": "d960549e-485c-e861-8d71-aa9d1aed12a2.png",
+      "source": "https://media.valorant-api.com/maps/d960549e-485c-e861-8d71-aa9d1aed12a2/displayicon.png",
+      "sha256": "cc102270353627dab124a7c4ecc429fa150982aa7f243b944ac15f8f83b5b7c8",
+      "xMultiplier": 7.8E-05,
+      "xScalarToAdd": 0.842188,
+      "yMultiplier": -7.8E-05,
+      "yScalarToAdd": 0.697578
+    },
+    {
+      "id": "b529448b-4d60-346e-e89e-00a4c527a405",
+      "name": "Fracture",
+      "mapUrl": "/Game/Maps/Canyon/Canyon",
+      "image": "b529448b-4d60-346e-e89e-00a4c527a405.png",
+      "source": "https://media.valorant-api.com/maps/b529448b-4d60-346e-e89e-00a4c527a405/displayicon.png",
+      "sha256": "d41e013eca94e680a61a4d4572929e46d818efce0fb3f065410d9d36399d1a6b",
+      "xMultiplier": 7.8E-05,
+      "xScalarToAdd": 0.556952,
+      "yMultiplier": -7.8E-05,
+      "yScalarToAdd": 1.155886
+    },
+    {
+      "id": "2c9d57ec-4431-9c5e-2939-8f9ef6dd5cba",
+      "name": "Bind",
+      "mapUrl": "/Game/Maps/Duality/Duality",
+      "image": "2c9d57ec-4431-9c5e-2939-8f9ef6dd5cba.png",
+      "source": "https://media.valorant-api.com/maps/2c9d57ec-4431-9c5e-2939-8f9ef6dd5cba/displayicon.png",
+      "sha256": "84f5ff72aa58bf677617ab5792def847c1c154b38f6e7458f7234121baa3507f",
+      "xMultiplier": 5.9E-05,
+      "xScalarToAdd": 0.576941,
+      "yMultiplier": -5.9E-05,
+      "yScalarToAdd": 0.967566
+    },
+    {
+      "id": "2fb9a4fd-47b8-4e7d-a969-74b4046ebd53",
+      "name": "Breeze",
+      "mapUrl": "/Game/Maps/Foxtrot/Foxtrot",
+      "image": "2fb9a4fd-47b8-4e7d-a969-74b4046ebd53.png",
+      "source": "https://media.valorant-api.com/maps/2fb9a4fd-47b8-4e7d-a969-74b4046ebd53/displayicon.png",
+      "sha256": "82c6472afe6f34ac4c0d979fbf6df0a739c174292edf593f29b9495f3b3f84a2",
+      "xMultiplier": 7E-05,
+      "xScalarToAdd": 0.465123,
+      "yMultiplier": -7E-05,
+      "yScalarToAdd": 0.833078
+    },
+    {
+      "id": "224b0a95-48b9-f703-1bd8-67aca101a61f",
+      "name": "Abyss",
+      "mapUrl": "/Game/Maps/Infinity/Infinity",
+      "image": "224b0a95-48b9-f703-1bd8-67aca101a61f.png",
+      "source": "https://media.valorant-api.com/maps/224b0a95-48b9-f703-1bd8-67aca101a61f/displayicon.png",
+      "sha256": "466a3d18f78c251b416533959471bdef80b75e9dd3f8a89b1601e6c1ed4d299f",
+      "xMultiplier": 8.1E-05,
+      "xScalarToAdd": 0.5,
+      "yMultiplier": -8.1E-05,
+      "yScalarToAdd": 0.5
+    },
+    {
+      "id": "2fe4ed3a-450a-948b-6d6b-e89a78e680a9",
+      "name": "Lotus",
+      "mapUrl": "/Game/Maps/Jam/Jam",
+      "image": "2fe4ed3a-450a-948b-6d6b-e89a78e680a9.png",
+      "source": "https://media.valorant-api.com/maps/2fe4ed3a-450a-948b-6d6b-e89a78e680a9/displayicon.png",
+      "sha256": "d533af2a6fbc09f12579b2d33438a610d5846db61e56842ad3038087155851c2",
+      "xMultiplier": 7.2E-05,
+      "xScalarToAdd": 0.454789,
+      "yMultiplier": -7.2E-05,
+      "yScalarToAdd": 0.917752
+    },
+    {
+      "id": "92584fbe-486a-b1b2-9faa-39b0f486b498",
+      "name": "Sunset",
+      "mapUrl": "/Game/Maps/Juliett/Juliett",
+      "image": "92584fbe-486a-b1b2-9faa-39b0f486b498.png",
+      "source": "https://media.valorant-api.com/maps/92584fbe-486a-b1b2-9faa-39b0f486b498/displayicon.png",
+      "sha256": "1188642e2f94f4fbb17d6c61feb9071d349dec21c9749349db710afbc1bbb228",
+      "xMultiplier": 7.8E-05,
+      "xScalarToAdd": 0.5,
+      "yMultiplier": -7.8E-05,
+      "yScalarToAdd": 0.515625
+    },
+    {
+      "id": "fd267378-4d1d-484f-ff52-77821ed10dc2",
+      "name": "Pearl",
+      "mapUrl": "/Game/Maps/Pitt/Pitt",
+      "image": "fd267378-4d1d-484f-ff52-77821ed10dc2.png",
+      "source": "https://media.valorant-api.com/maps/fd267378-4d1d-484f-ff52-77821ed10dc2/displayicon.png",
+      "sha256": "5e0e7d4a80d830d9b8bb0f265cb14245be583bce87a69d3f53a07e9083ca810c",
+      "xMultiplier": 7.8E-05,
+      "xScalarToAdd": 0.480469,
+      "yMultiplier": -7.8E-05,
+      "yScalarToAdd": 0.916016
+    },
+    {
+      "id": "756da597-416b-c0f2-f47b-afbdf28670bc",
+      "name": "Summit",
+      "mapUrl": "/Game/Maps/Plummet/Plummet",
+      "image": "756da597-416b-c0f2-f47b-afbdf28670bc.png",
+      "source": "https://media.valorant-api.com/maps/756da597-416b-c0f2-f47b-afbdf28670bc/displayicon.png",
+      "sha256": "e3ceb9a90958953933aa2e0a7821cb42eb80d622700be89c288d933ac855075f",
+      "xMultiplier": 7.5E-05,
+      "xScalarToAdd": 0.047401,
+      "yMultiplier": -7.5E-05,
+      "yScalarToAdd": 0.978891
+    },
+    {
+      "id": "e2ad5c54-4114-a870-9641-8ea21279579a",
+      "name": "Icebox",
+      "mapUrl": "/Game/Maps/Port/Port",
+      "image": "e2ad5c54-4114-a870-9641-8ea21279579a.png",
+      "source": "https://media.valorant-api.com/maps/e2ad5c54-4114-a870-9641-8ea21279579a/displayicon.png",
+      "sha256": "85b9cef2682985b2cf44f260d995d8123d40246f6d078dbf188fe27ed71723db",
+      "xMultiplier": 7.2E-05,
+      "xScalarToAdd": 0.460214,
+      "yMultiplier": -7.2E-05,
+      "yScalarToAdd": 0.304687
+    },
+    {
+      "id": "1c18ab1f-420d-0d8b-71d0-77ad3c439115",
+      "name": "Corrode",
+      "mapUrl": "/Game/Maps/Rook/Rook",
+      "image": "1c18ab1f-420d-0d8b-71d0-77ad3c439115.png",
+      "source": "https://media.valorant-api.com/maps/1c18ab1f-420d-0d8b-71d0-77ad3c439115/displayicon.png",
+      "sha256": "6761ae83259f4092bc64641159479a21dfb44a41b730f2a56412432685f98f2f",
+      "xMultiplier": 7E-05,
+      "xScalarToAdd": 0.526158,
+      "yMultiplier": -7E-05,
+      "yScalarToAdd": 0.5
+    },
+    {
+      "id": "2bee0dc9-4ffe-519b-1cbd-7fbe763a6047",
+      "name": "Haven",
+      "mapUrl": "/Game/Maps/Triad/Triad",
+      "image": "2bee0dc9-4ffe-519b-1cbd-7fbe763a6047.png",
+      "source": "https://media.valorant-api.com/maps/2bee0dc9-4ffe-519b-1cbd-7fbe763a6047/displayicon.png",
+      "sha256": "f8ccc9cfffaf3eeed0b735cf3ecffc1ce46f0fbb54bdb69d9ba72b63d32b4936",
+      "xMultiplier": 7.5E-05,
+      "xScalarToAdd": 1.09345,
+      "yMultiplier": -7.5E-05,
+      "yScalarToAdd": 0.642728
+    }
+  ]
+}

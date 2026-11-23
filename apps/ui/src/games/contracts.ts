@@ -38,7 +38,7 @@ export interface GameUiModule {
   navigationHelp?:Readonly<Record<string,{title:string;paragraphs:readonly string[]}>>;
   SourcePanel: ComponentType;
   DataPanel: ComponentType;
-  EspSettings: ComponentType<GameEspSettingsProps>;
+  EspSettings?: ComponentType<GameEspSettingsProps>;
   Radar?: ComponentType;
   externalEsp?: boolean;
   settings: readonly GameSettingsPane[];

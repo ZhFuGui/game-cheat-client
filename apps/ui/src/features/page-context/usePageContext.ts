@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useLocation } from "react-router";
 import { useShallow } from "zustand/react/shallow";
 import { useRuntimeStore } from "~/runtime/state";
+import { availableVisualsPages } from "~/navigation/pageGroups";
 import { selectContextFacts } from "./facts";
 import { buildContextMessages } from "./messages";
 import { contextPage, type ContextPage } from "./model";
@@ -9,7 +10,9 @@ import { CONTEXT_ROTATE_MS, contextCandidates, contextIndex, nextContextCursor, 
 
 export function usePageContext() {
   const location = useLocation();
-  const page = contextPage(location.pathname, location.search);
+  const capabilities=useRuntimeStore(s=>s.workspace?.games.find(game=>game.id===s.workspace?.active?.gameId)?.capabilities);
+  const visuals=useMemo(()=>availableVisualsPages(!!capabilities?.includes("esp"),!!capabilities?.includes("radar")),[capabilities]);
+  const page = contextPage(location.pathname, location.search,visuals);
   const facts = useRuntimeStore(useShallow(s => selectContextFacts(s, page)));
   const candidates = useMemo(() => contextCandidates(buildContextMessages(page, facts)), [page, facts]);
   const signature = `${facts.workspaceEpoch ?? "global"}:` + candidates.map(m => m.id).join("|");

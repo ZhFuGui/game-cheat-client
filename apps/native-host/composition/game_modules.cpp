@@ -2,6 +2,7 @@
 #include "games/pubg/module_factory.hpp"
 #include "games/pubg/runtime/backend.hpp"
 #include "games/cs2/module_factory.hpp"
+#include "games/valorant/module_factory.hpp"
 #include "games/cs2/extensions/registry.hpp"
 #include "adapters/spatial/traceline/provider.hpp"
 #include "platform/windows/dynamic_library.hpp"
@@ -38,6 +39,8 @@ std::unique_ptr<application::ports::GameModule> createGameModule(std::string_vie
 {
     if (id == "pubg")
         return games::pubg::makeModule(backend);
+    if (id == "valorant")
+        return games::valorant::makeModule(std::make_unique<OutputBinding>(backend));
     if (id == "cs2")
     {
         auto geometry =

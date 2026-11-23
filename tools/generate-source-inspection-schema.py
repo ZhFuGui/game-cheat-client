@@ -1,4 +1,4 @@
-"""Generate diagnostic field names from the two already frozen descriptors (stdlib only)."""
+"""Generate diagnostic field names from frozen source descriptors (stdlib only)."""
 import argparse
 import hashlib
 import json
@@ -6,7 +6,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 DESCRIPTORS = ["protocol/sources/cs2_reader/reader-v2.descriptor.pb",
-               "protocol/sources/pubg_reader/protocol-descriptor.pb"]
+               "protocol/sources/pubg_reader/protocol-descriptor.pb",
+               "protocol/sources/valorant_reader/reader/v1/reader.descriptor.pb"]
 TARGET = ROOT / "src/adapters/sources/inspection/generated_schema.hpp"
 
 
@@ -87,7 +88,7 @@ if __name__ == "__main__":
     if args.check:
         if not TARGET.exists() or TARGET.read_text(encoding="utf-8") != source:
             raise SystemExit("Source inspection schema is stale; run tools/generate-source-inspection-schema.py")
-        print("PASS: source inspection field names match both frozen descriptors")
+        print("PASS: source inspection field names match all frozen descriptors")
     else:
         TARGET.parent.mkdir(parents=True, exist_ok=True)
         TARGET.write_text(source, encoding="utf-8", newline="\n")

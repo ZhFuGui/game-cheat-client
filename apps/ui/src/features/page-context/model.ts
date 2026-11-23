@@ -1,4 +1,4 @@
-import {resolvePageGroup} from "~/framework/pages/model";
+import {resolvePageGroup,type PageGroup} from "~/framework/pages/model";
 import {readerPages,mousePages,recoilPages,aimPages,visualsPages} from "~/navigation/pageGroups";
 export type ContextPage =
   | "reader" | "dashboard" | "visuals-general" | "esp" | "radar" | "aim-general" | "aimbot" | "triggerbot" | "rage" | "recoil" | "learning" | "reports" | "logs"
@@ -36,13 +36,13 @@ const settingsPages: Record<string, ContextPage> = {
   calibration: "calibration", rendering: "rendering",
   "input-device": "input-device", data: "data",
 };
-export function contextPage(path: string, search: string): ContextPage {
+export function contextPage(path: string, search: string,visuals:PageGroup=visualsPages): ContextPage {
   const section = new URLSearchParams(search).get("section");
   switch (path) {
     case "/": return resolvePageGroup(readerPages,section).context as ContextPage;
     case "/dashboard": return "dashboard";
     case "/esp": return "esp";
-    case "/visuals": return resolvePageGroup(visualsPages,section).context as ContextPage;
+    case "/visuals": return resolvePageGroup(visuals,section).context as ContextPage;
     case "/aim": return resolvePageGroup(aimPages,section).context as ContextPage;
     case "/aimbot": return "aimbot";
     case "/triggerbot": return "triggerbot";

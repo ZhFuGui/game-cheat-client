@@ -116,9 +116,13 @@
 .radar-player-title > span, .radar-player-weapon span:last-child { white-space: nowrap; }
 .radar-player-health { height: 3px; background: var(--muted); border-radius: 99px; overflow: hidden; }
 .radar-player-health > span { display: block; height: 100%; background: var(--team-color); }
+.valorant-radar-layout { grid-template-areas: "leading map trailing"; }
+.valorant-roster-leading { grid-area: leading; --team-color: #76c3ff; }
+.valorant-roster-trailing { grid-area: trailing; --team-color: #ccd4df; }
 @container radar (width < 700px) {
   .radar-layout {
     grid-template: minmax(268px, 1fr) minmax(112px, 0.48fr) / repeat(2, minmax(0, 1fr));
     grid-template-areas: "map map" "ct t";
   }
+  .valorant-radar-layout { grid-template-areas: "map map" "leading trailing"; }
 }

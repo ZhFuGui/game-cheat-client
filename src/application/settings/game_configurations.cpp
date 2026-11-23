@@ -1,6 +1,7 @@
 #include "game_configurations.hpp"
 #include "games/pubg/settings/application_adapter.hpp"
 #include "games/cs2/settings/configuration.hpp"
+#include "games/valorant/settings/configuration.hpp"
 #include "games/registry.hpp"
 #include <algorithm>
 #include <stdexcept>
@@ -32,6 +33,8 @@ const ports::GameConfiguration &gameConfiguration(std::string_view id)
         return pubg;
     if (id == "cs2")
         return games::cs2::configuration();
+    if (id == "valorant")
+        return games::valorant::configuration();
     throw std::runtime_error("此游戏没有已注册的配置适配器");
 }
 } // namespace mousebox::application

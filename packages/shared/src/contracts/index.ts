@@ -9,6 +9,8 @@ import { desktopContracts } from "./desktop";
 import { workspaceContracts } from "./workspaces";
 import { cs2ControllerContracts } from "../games/cs2/controller";
 import { cs2RadarContracts } from "../games/cs2/radar";
+import { valorantSourceContracts } from "../games/valorant/source";
+import { valorantRadarContracts } from "../games/valorant/radar";
 import type { WorkspaceContext } from "../models/workspaces";
 export { surfaceSchema } from "./rendering";
 export { eventSchemas } from "./events";
@@ -25,6 +27,8 @@ export const contracts = {
     ...workspaceContracts,
     ...cs2ControllerContracts,
     ...cs2RadarContracts,
+    ...valorantSourceContracts,
+    ...valorantRadarContracts,
 } as const;
 export type CommandName = keyof typeof contracts;
 export type CommandInput<K extends CommandName> = z.input<(typeof contracts)[K]["input"]>;

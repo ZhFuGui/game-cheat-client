@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 export const gameIdSchema = z.enum(["pubg", "cs2", "valorant", "gta5"]);
-export const gameCapabilitySchema = z.enum(["esp", "aim", "recoil", "triggerbot", "rage", "input-calibration", "algorithm-details"]);
+export const gameCapabilitySchema = z.enum(["esp", "radar", "aim", "recoil", "triggerbot", "rage", "input-calibration", "algorithm-details"]);
 export const workspaceContextSchema = z.object({
   workspaceId: z.string().min(1).max(128),
   gameId: gameIdSchema,

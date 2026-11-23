@@ -8,6 +8,7 @@ import { cs2MapSchema } from "../games/cs2/map";
 import {cs2HitboxStateSchema} from "../games/cs2/hitboxes";
 import { cs2ViewpointSchema } from "../games/cs2/viewpoint";
 import { cs2AccuracySchema } from "../games/cs2/accuracy";
+import { valorantSourceSchema } from "../games/valorant/source";
 const display = z.union([
     z.string(),
     z.number().finite(),
@@ -37,6 +38,7 @@ export const runtimeStateSchema = z
         processingMs:z.number().finite().nonnegative().nullable(),drawingMs:z.number().finite().nonnegative().nullable(),
         samples:z.number().int().nonnegative()}).strict().optional(),
     readerRunning: z.boolean().optional(),
+    valorant: valorantSourceSchema.optional(),
     readerConnected: z.boolean().optional(),
     cs2RequestedHz: z.number().finite().min(1).max(300).optional(),
     cs2SubscribedHz: z.number().finite().min(1).max(300).nullable().optional(),

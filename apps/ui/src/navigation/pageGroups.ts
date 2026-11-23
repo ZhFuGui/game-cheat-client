@@ -1,4 +1,4 @@
-import {definePageGroup} from "~/framework/pages/model";
+import {definePageGroup,type PageGroup} from "~/framework/pages/model";
 
 export const visualsPages = definePageGroup({
   id: "visuals",
@@ -12,6 +12,12 @@ export const visualsPages = definePageGroup({
     { id: "radar", label: "Radar", icon: "radar", view: "radar", context: "radar", panelClassName: "visuals-radar-panel" },
   ],
 });
+
+/** The page content and its status bar must resolve the same available sections. */
+export function availableVisualsPages(esp:boolean,radar:boolean):PageGroup{
+  return {...visualsPages,defaultSection:esp?"esp":radar?"radar":"general",
+    sections:visualsPages.sections.filter(section=>section.id==="general"||section.id==="esp"&&esp||section.id==="radar"&&radar)};
+}
 
 export const aimPages=definePageGroup({
   id:"aim",route:"/aim",label:"Aim",tabsLabel:"Aim 子页",defaultSection:"aimbot",context:"aimbot",

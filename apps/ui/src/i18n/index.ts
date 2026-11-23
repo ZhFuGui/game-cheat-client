@@ -20,6 +20,7 @@ import triggerEnglish from "./locales/trigger-en.json";
 import rageEnglish from "./locales/rage-en.json";
 import rageScoringEnglish from "./locales/rage-scoring-en.json";
 import radarEnglish from "./locales/radar-en.json";
+import valorantEnglish from "./locales/valorant-en.json";
 export const english: Record<string, string> = {
   ...legacyEnglish,
   ...webEnglish,
@@ -41,6 +42,7 @@ export const english: Record<string, string> = {
   ...rageEnglish,
   ...rageScoringEnglish,
   ...radarEnglish,
+  ...valorantEnglish,
 };
 const chinese = Object.fromEntries(
   Object.keys(english).map((key) => [key, key]),

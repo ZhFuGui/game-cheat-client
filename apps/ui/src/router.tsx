@@ -13,7 +13,7 @@ export const router = createMemoryRouter([{
     { path: "dashboard", Component:()=> <Navigate to="/?section=dashboard" replace/> },
     { path: "visuals", lazy: async () => {
       const Page = (await import("./pages/Visuals")).default;
-      return { Component: () => <WorkspaceRoute capability="esp"><Page /></WorkspaceRoute> };
+      return { Component: () => <WorkspaceRoute capability={["esp","radar"]}><Page /></WorkspaceRoute> };
     }},
     { path: "esp", Component: () => <Navigate to={visualsPages.route} replace /> },
     { path: "aim", lazy: async () => {

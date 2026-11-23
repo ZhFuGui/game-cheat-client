@@ -1,7 +1,9 @@
-import { lazy } from "react";
+import { lazy, useMemo } from "react";
 import { AppIcon } from "~/components/icons";
 import { PageScaffold } from "~/framework/pages/PageScaffold";
-import { visualsPages } from "~/navigation/pageGroups";
+import { availableVisualsPages } from "~/navigation/pageGroups";
+import {useRuntimeStore} from "~/runtime/state";
+import {getGameUiModule} from "~/games/registry";
 
 const views = { esp: lazy(() => import("./Esp")), radar: lazy(() => import("./Radar")) };
 const icons = {
@@ -11,5 +13,11 @@ const icons = {
 };
 
 export default function Visuals() {
-  return <PageScaffold group={visualsPages} views={views} icons={icons} className="visuals-page" />;
+  const game=useRuntimeStore(state=>state.workspace?.active?.gameId);
+  const capabilities=useRuntimeStore(state=>state.workspace?.games.find(entry=>entry.id===game)?.capabilities);
+  const module=getGameUiModule(game);
+  const esp=!!module?.EspSettings&&!!capabilities?.includes("esp");
+  const radar=!!module?.Radar&&!!capabilities?.includes("radar");
+  const group=useMemo(()=>availableVisualsPages(esp,radar),[esp,radar]);
+  return <PageScaffold group={group} views={views} icons={icons} className="visuals-page" />;
 }
