@@ -1,6 +1,6 @@
 {
   "name": "@mousebox/shared",
-  "version": "2.8.53",
+  "version": "2.8.54",
   "private": true,
   "type": "module",
   "exports": {
