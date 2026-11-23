@@ -5,6 +5,12 @@ import type { GameUiModule } from "../contracts";
 export const valorantUiModule: GameUiModule = {
   id: "valorant",
   settingValidators: valorantSettingsSchema.shape,
+  AimSettings:lazy(()=>import("./AimSettings").then(module=>({default:module.AimSettings}))),
+  aimGeneral:[
+    {id:"targets",component:lazy(()=>import("./AimGeneralSettings").then(module=>({default:module.TargetSettings})))},
+    {id:"runtime",component:lazy(()=>import("./AimGeneralSettings").then(module=>({default:module.RuntimeSettings})))},
+    {id:"mapping",component:lazy(()=>import("./AimGeneralSettings").then(module=>({default:module.InputMapping})))},
+  ],
   SourcePanel: lazy(() => import("./ReaderConnection").then(module => ({default: module.ReaderConnection}))),
   DataPanel: lazy(() => import("./DataPanel").then(module => ({default: module.DataPanel}))),
   Radar: lazy(() => import("./radar/RadarPage")),

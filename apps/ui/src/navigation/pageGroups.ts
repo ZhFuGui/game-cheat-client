@@ -29,6 +29,12 @@ export const aimPages=definePageGroup({
   ],
 });
 
+export function availableAimPages(aimbot:boolean,triggerbot:boolean,rage:boolean):PageGroup{
+  const enabled:Record<string,boolean>={general:true,aimbot,triggerbot,rage};
+  return {...aimPages,defaultSection:aimbot?"aimbot":triggerbot?"triggerbot":rage?"rage":"general",
+    sections:aimPages.sections.filter(section=>enabled[section.id])};
+}
+
 export const readerPages=definePageGroup({
   id:"reader",route:"/",label:"READER",tabsLabel:"READER 子页",defaultSection:"connection",context:"reader",
   sections:[

@@ -21,6 +21,7 @@ export * from "./games/cs2/radar";
 export * from "./games/valorant/settings";
 export * from "./games/valorant/source";
 export * from "./games/valorant/radar";
+export * from "./games/valorant/aim";
 
 export * from "./games/cs2/trigger";
 export * from "./games/cs2/rage";

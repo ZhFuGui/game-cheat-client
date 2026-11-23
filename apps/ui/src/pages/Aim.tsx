@@ -3,7 +3,7 @@ import {Navigate,useSearchParams} from "react-router";
 import {AppIcon} from "~/components/icons";
 import {PageScaffold} from "~/framework/pages/PageScaffold";
 import {NavigationHelp} from "~/features/navigation/NavigationHelp";
-import {aimPages} from "~/navigation/pageGroups";
+import {availableAimPages} from "~/navigation/pageGroups";
 import {getGameUiModule} from "~/games/registry";
 import {useRuntimeStore} from "~/runtime/state";
 
@@ -14,10 +14,11 @@ export default function Aim(){
   const module=getGameUiModule(game);
   const rageSupported=useRuntimeStore(s=>s.workspace?.games.find(item=>item.id===game)?.capabilities.includes("rage")??false);
   const hasRage=!!module?.Rage&&rageSupported;
+  const hasAim=!!module?.AimSettings,hasTrigger=!!module?.Triggerbot;
   const [params]=useSearchParams();
-  const group=useMemo(()=>({...aimPages,sections:aimPages.sections.filter(section=>section.id!=="rage"||hasRage)}),[hasRage]);
+  const group=useMemo(()=>availableAimPages(hasAim,hasTrigger,hasRage),[hasAim,hasTrigger,hasRage]);
   const triggerHelp=module?.navigationHelp?.["/triggerbot"];
   const accessories=triggerHelp?{triggerbot:<NavigationHelp page="Triggerbot" content={triggerHelp}/>}:{ };
-  if(params.get("section")?.split("/")[0]==="rage"&&!hasRage)return <Navigate to="/aim" replace/>;
+  if(params.get("section")?.split("/")[0]==="rage"&&!hasRage||params.get("section")==="triggerbot"&&!hasTrigger)return <Navigate to="/aim" replace/>;
   return <PageScaffold group={group} views={views} icons={icons} accessories={accessories} className="aim-page"/>;
 }

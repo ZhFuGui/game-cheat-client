@@ -1,4 +1,5 @@
 #include "configuration.hpp"
+#include "games/valorant/control/settings.hpp"
 #include <cmath>
 #include <stdexcept>
 
@@ -21,48 +22,50 @@ class Configuration final : public application::ports::GameConfiguration
     }
     bool permitsAbsentValue(std::string_view key) const noexcept override
     {
-        return key == "valorantShowSelf" || key == "valorantShowAllies" || key == "valorantShowEnemies" ||
-               key == "valorantShowUnknown" || key == "valorantShowCamera" || key == "valorantMetersPerUnit" ||
-               key == "valorantWindowExecutable";
+        return aim::isSetting(key) || key == "valorantShowSelf" || key == "valorantShowAllies" ||
+               key == "valorantShowEnemies" || key == "valorantShowUnknown" || key == "valorantShowCamera" ||
+               key == "valorantMetersPerUnit" || key == "valorantWindowExecutable";
     }
     Json defaults() const override
     {
-        return {{"schemaVersion", 1},
-                {"speedSchema", 2},
-                {"visualsSchema", 1},
-                {"profiles", Json::array()},
-                {"values",
-                 {{"host", "127.0.0.1"},
-                  {"port", 13302},
-                  {"hz", 60.0},
-                  {"valorantSkeletonHz", 60.0},
-                  {"valorantViewHz", 60.0},
-                  {"valorantShowSelf", true},
-                  {"valorantShowAllies", true},
-                  {"valorantShowEnemies", true},
-                  {"valorantShowUnknown", true},
-                  {"valorantShowCamera", true},
-                  {"valorantMetersPerUnit", 0.0},
-                  {"valorantWindowExecutable", "VALORANT-Win64-Shipping.exe"},
-                  {"dpi", 1600},
-                  {"renderAdapter", "auto"}}},
-                {"espValues",
-                 {{"marker", "point"},
-                  {"aspect", "viewport"},
-                  {"fovAxis", "horizontal"},
-                  {"estimatedHeightMeters", 1.0},
-                  {"maximumDistanceMeters", 0.0},
-                  {"names", true},
-                  {"distance", true},
-                  {"bones", true},
-                  {"tracers", false},
-                  {"crosshair", true},
-                  {"aimRange", false},
-                  {"targetHighlight", false},
-                  {"teammates", false},
-                  {"opponents", false},
-                  {"bots", false},
-                  {"self", false}}}};
+        auto result = Json{{"schemaVersion", 1},
+                           {"speedSchema", 2},
+                           {"visualsSchema", 1},
+                           {"profiles", Json::array()},
+                           {"values",
+                            {{"host", "127.0.0.1"},
+                             {"port", 13302},
+                             {"hz", 60.0},
+                             {"valorantSkeletonHz", 60.0},
+                             {"valorantViewHz", 60.0},
+                             {"valorantShowSelf", true},
+                             {"valorantShowAllies", true},
+                             {"valorantShowEnemies", true},
+                             {"valorantShowUnknown", true},
+                             {"valorantShowCamera", true},
+                             {"valorantMetersPerUnit", 0.0},
+                             {"valorantWindowExecutable", "VALORANT-Win64-Shipping.exe"},
+                             {"dpi", 1600},
+                             {"renderAdapter", "auto"}}},
+                           {"espValues",
+                            {{"marker", "point"},
+                             {"aspect", "viewport"},
+                             {"fovAxis", "horizontal"},
+                             {"estimatedHeightMeters", 1.0},
+                             {"maximumDistanceMeters", 0.0},
+                             {"names", true},
+                             {"distance", true},
+                             {"bones", true},
+                             {"tracers", false},
+                             {"crosshair", true},
+                             {"aimRange", false},
+                             {"targetHighlight", false},
+                             {"teammates", false},
+                             {"opponents", false},
+                             {"bots", false},
+                             {"self", false}}}};
+        aim::addDefaults(result["values"]);
+        return result;
     }
     Json normalize(const Json &document) const override
     {
@@ -93,7 +96,9 @@ class Configuration final : public application::ports::GameConfiguration
     }
     void validateValue(std::string_view key, const Json &value) const override
     {
-        if (key == "valorantWindowExecutable")
+        if (aim::isSetting(key))
+            aim::validateSetting(key, value);
+        else if (key == "valorantWindowExecutable")
         {
             require(value.is_string(), "本机游戏进程名称必须为文本");
             const auto name = value.get<std::string>();

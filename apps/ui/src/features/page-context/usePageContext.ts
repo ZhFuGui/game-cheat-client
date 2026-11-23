@@ -2,7 +2,8 @@ import { useEffect, useMemo, useState } from "react";
 import { useLocation } from "react-router";
 import { useShallow } from "zustand/react/shallow";
 import { useRuntimeStore } from "~/runtime/state";
-import { availableVisualsPages } from "~/navigation/pageGroups";
+import { availableVisualsPages,availableAimPages } from "~/navigation/pageGroups";
+import {getGameUiModule} from "~/games/registry";
 import { selectContextFacts } from "./facts";
 import { buildContextMessages } from "./messages";
 import { contextPage, type ContextPage } from "./model";
@@ -11,8 +12,10 @@ import { CONTEXT_ROTATE_MS, contextCandidates, contextIndex, nextContextCursor, 
 export function usePageContext() {
   const location = useLocation();
   const capabilities=useRuntimeStore(s=>s.workspace?.games.find(game=>game.id===s.workspace?.active?.gameId)?.capabilities);
+  const game=useRuntimeStore(s=>s.workspace?.active?.gameId),module=getGameUiModule(game);
   const visuals=useMemo(()=>availableVisualsPages(!!capabilities?.includes("esp"),!!capabilities?.includes("radar")),[capabilities]);
-  const page = contextPage(location.pathname, location.search,visuals);
+  const aim=useMemo(()=>availableAimPages(!!module?.AimSettings,!!module?.Triggerbot,!!module?.Rage&&!!capabilities?.includes("rage")),[module,capabilities]);
+  const page = contextPage(location.pathname, location.search,visuals,aim);
   const facts = useRuntimeStore(useShallow(s => selectContextFacts(s, page)));
   const candidates = useMemo(() => contextCandidates(buildContextMessages(page, facts)), [page, facts]);
   const signature = `${facts.workspaceEpoch ?? "global"}:` + candidates.map(m => m.id).join("|");

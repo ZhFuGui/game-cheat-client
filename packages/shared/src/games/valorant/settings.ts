@@ -1,4 +1,5 @@
 import { z } from "zod";
+import {valorantAimSettingsSchema} from "./aim";
 
 export const valorantSettingsSchema = z.object({
   host: z.string().trim().min(1).max(255).refine(value => !value.includes("\0")),
@@ -15,5 +16,5 @@ export const valorantSettingsSchema = z.object({
   valorantWindowExecutable:z.string().min(5).max(240).regex(/^[^\\/:*?"<>|\x00-\x1f]+\.exe$/),
   dpi: z.number().int().min(100).max(32000),
   renderAdapter: z.string().min(1).max(255),
-}).strict();
+}).merge(valorantAimSettingsSchema).strict();
 export type ValorantSettings = z.infer<typeof valorantSettingsSchema>;

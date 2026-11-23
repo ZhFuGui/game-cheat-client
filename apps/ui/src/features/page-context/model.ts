@@ -36,14 +36,14 @@ const settingsPages: Record<string, ContextPage> = {
   calibration: "calibration", rendering: "rendering",
   "input-device": "input-device", data: "data",
 };
-export function contextPage(path: string, search: string,visuals:PageGroup=visualsPages): ContextPage {
+export function contextPage(path: string, search: string,visuals:PageGroup=visualsPages,aim:PageGroup=aimPages): ContextPage {
   const section = new URLSearchParams(search).get("section");
   switch (path) {
     case "/": return resolvePageGroup(readerPages,section).context as ContextPage;
     case "/dashboard": return "dashboard";
     case "/esp": return "esp";
     case "/visuals": return resolvePageGroup(visuals,section).context as ContextPage;
-    case "/aim": return resolvePageGroup(aimPages,section).context as ContextPage;
+    case "/aim": return resolvePageGroup(aim,section).context as ContextPage;
     case "/aimbot": return "aimbot";
     case "/triggerbot": return "triggerbot";
     case "/rage": return "rage";

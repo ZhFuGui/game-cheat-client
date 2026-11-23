@@ -4,8 +4,8 @@
 
 namespace mousebox::games::valorant
 {
-// Read-only Reader integration. Visual/control capabilities are added only
-// after their independently verified application adapters are available.
-inline constexpr std::array<std::string_view, 2> Capabilities{"radar", "esp"};
+// Manual camera-feedback aiming owns explicit coefficients and user-confirmed view scope.
+// It does not claim that this Reader revision provides native input or life state.
+inline constexpr std::array<std::string_view, 3> Capabilities{"radar", "esp", "aim"};
 inline constexpr GameDefinition Definition{"valorant", "VALORANT", "available", "", Capabilities, {}};
 } // namespace mousebox::games::valorant
