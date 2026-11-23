@@ -7,7 +7,7 @@ export const visualsPages = definePageGroup({
   tabsLabel: "Visuals 子页",
   defaultSection: "esp",
   sections: [
-    { id: "general", label: "常规", icon: "settings", placement: "start", context: "visuals-general" },
+    { id: "general", label: "常规", icon: "settings", placement: "start", context: "visuals-general",view:"general",panelClassName:"visuals-general-panel" },
     { id: "esp", label: "ESP", icon: "esp", view: "esp", context: "esp", panelClassName: "visuals-esp-panel" },
     { id: "radar", label: "Radar", icon: "radar", view: "radar", context: "radar", panelClassName: "visuals-radar-panel" },
   ],

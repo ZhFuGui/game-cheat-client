@@ -40,6 +40,7 @@ export interface GameUiModule {
   DataPanel: ComponentType;
   EspSettings?: ComponentType<GameEspSettingsProps>;
   Radar?: ComponentType;
+  VisualsSettings?: ComponentType;
   externalEsp?: boolean;
   settings: readonly GameSettingsPane[];
   extensions?: readonly GameExtensionUi[];

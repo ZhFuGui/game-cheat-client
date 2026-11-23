@@ -2,6 +2,8 @@
 #include "codec.hpp"
 #include "application/ports/data_source.hpp"
 #include "domain/reader_chain_metrics.hpp"
+#include "domain/source_sample.hpp"
+#include "domain/source_receipt.hpp"
 #include <functional>
 #include <memory>
 
@@ -17,6 +19,8 @@ struct Channel
     std::uint64_t connection = 0, receivedAtMs = 0;
     unsigned framesPerSecond = 0;
     domain::ReaderChainSnapshot chain;
+    domain::SourceSample sample;
+    std::optional<domain::SourceReceipt> receipt;
 };
 struct Observation
 {

@@ -1,10 +1,12 @@
 #include "frame.hpp"
+#include "games/valorant/presentation/identity.hpp"
 #include <stdexcept>
 
 namespace mousebox::games::valorant
 {
 using application::Json;
-Json readRadar(const sources::valorant_reader::Observation &observation, const Json &args)
+Json readRadar(const sources::valorant_reader::Observation &observation, const Json &args,
+               const VisualSettings &settings)
 {
     const auto revision = std::to_string(observation.revision);
     if (args.contains("after") && args.at("after") == revision)
@@ -19,17 +21,11 @@ Json readRadar(const sources::valorant_reader::Observation &observation, const J
     Json players = Json::array();
     for (const auto &[id, position] : data.positions)
     {
-        const char *relation = "unknown";
-        if (context.localState == 3 && context.localEntity == id)
-            relation = "self";
-        else if (position.bombTeam && context.referenceBombTeam && *position.bombTeam != 0xfe &&
-                 *context.referenceBombTeam != 0xfe)
-        {
-            if (position.relationship == 2)
-                relation = "ally";
-            else if (position.relationship == 3)
-                relation = "opponent";
-        }
+        const auto kind = relationship(id, context, &position);
+        if (!included(kind, settings))
+            continue;
+        constexpr const char *relations[]{"unknown", "self", "ally", "opponent"};
+        const auto relation = relations[kind];
         players.push_back(
             {{"id", std::to_string(id)},
              {"position",
@@ -39,8 +35,8 @@ Json readRadar(const sources::valorant_reader::Observation &observation, const J
     }
     Json camera = nullptr;
     const auto &view = observation.channels[2];
-    if (view.data && view.instance == positionChannel.instance && view.data->capture.epoch == data.capture.epoch &&
-        view.data->camera && view.data->camera->position)
+    if (settings.camera && view.data && view.instance == positionChannel.instance &&
+        view.data->capture.epoch == data.capture.epoch && view.data->camera && view.data->camera->position)
     {
         const auto &value = *view.data->camera->position;
         camera = Json::array({value.x, value.y, value.z});

@@ -19,10 +19,17 @@ class Configuration final : public application::ports::GameConfiguration
     {
         return "valorant";
     }
+    bool permitsAbsentValue(std::string_view key) const noexcept override
+    {
+        return key == "valorantShowSelf" || key == "valorantShowAllies" || key == "valorantShowEnemies" ||
+               key == "valorantShowUnknown" || key == "valorantShowCamera" || key == "valorantMetersPerUnit" ||
+               key == "valorantWindowExecutable";
+    }
     Json defaults() const override
     {
         return {{"schemaVersion", 1},
                 {"speedSchema", 2},
+                {"visualsSchema", 1},
                 {"profiles", Json::array()},
                 {"values",
                  {{"host", "127.0.0.1"},
@@ -30,6 +37,13 @@ class Configuration final : public application::ports::GameConfiguration
                   {"hz", 60.0},
                   {"valorantSkeletonHz", 60.0},
                   {"valorantViewHz", 60.0},
+                  {"valorantShowSelf", true},
+                  {"valorantShowAllies", true},
+                  {"valorantShowEnemies", true},
+                  {"valorantShowUnknown", true},
+                  {"valorantShowCamera", true},
+                  {"valorantMetersPerUnit", 0.0},
+                  {"valorantWindowExecutable", "VALORANT-Win64-Shipping.exe"},
                   {"dpi", 1600},
                   {"renderAdapter", "auto"}}},
                 {"espValues",
@@ -38,11 +52,11 @@ class Configuration final : public application::ports::GameConfiguration
                   {"fovAxis", "horizontal"},
                   {"estimatedHeightMeters", 1.0},
                   {"maximumDistanceMeters", 0.0},
-                  {"names", false},
-                  {"distance", false},
-                  {"bones", false},
+                  {"names", true},
+                  {"distance", true},
+                  {"bones", true},
                   {"tracers", false},
-                  {"crosshair", false},
+                  {"crosshair", true},
                   {"aimRange", false},
                   {"targetHighlight", false},
                   {"teammates", false},
@@ -64,7 +78,8 @@ class Configuration final : public application::ports::GameConfiguration
                 result["values"][i.key()] = i.value();
             }
         }
-        if (document.contains("espValues"))
+        // 2.8.54 had no editable ESP options. Replace its fixed disabled display once.
+        if (document.contains("espValues") && document.value("visualsSchema", 0) == 1)
         {
             require(document.at("espValues").is_object(), "VALORANT显示参数格式无效");
             for (auto i = document.at("espValues").begin(); i != document.at("espValues").end(); ++i)
@@ -78,7 +93,22 @@ class Configuration final : public application::ports::GameConfiguration
     }
     void validateValue(std::string_view key, const Json &value) const override
     {
-        if (key == "host" || key == "renderAdapter")
+        if (key == "valorantWindowExecutable")
+        {
+            require(value.is_string(), "本机游戏进程名称必须为文本");
+            const auto name = value.get<std::string>();
+            require(name.size() > 4 && name.size() <= 240 && name.find_first_of("\\/:*?\"<>|\r\n\t") == name.npos &&
+                        name.find('\0') == name.npos && name.substr(name.size() - 4) == ".exe",
+                    "请填写进程文件名，例如 VALORANT-Win64-Shipping.exe");
+        }
+        else if (key == "valorantShowSelf" || key == "valorantShowAllies" || key == "valorantShowEnemies" ||
+                 key == "valorantShowUnknown" || key == "valorantShowCamera")
+            require(value.is_boolean(), "显示筛选必须为开关");
+        else if (key == "valorantMetersPerUnit")
+            require(value.is_number() && std::isfinite(value.get<double>()) && value.get<double>() >= 0 &&
+                        value.get<double>() <= 1000,
+                    "世界单位比例必须在0到1000之间");
+        else if (key == "host" || key == "renderAdapter")
         {
             require(value.is_string(), "VALORANT地址或显卡标识必须为文本");
             const auto &text = value.get_ref<const std::string &>();
@@ -101,8 +131,36 @@ class Configuration final : public application::ports::GameConfiguration
     }
     void validateEspValue(std::string_view key, const Json &value) const override
     {
+        if (key == "names" || key == "distance" || key == "bones" || key == "tracers" || key == "crosshair")
+        {
+            require(value.is_boolean(), "ESP显示开关必须为布尔值");
+            return;
+        }
+        if (key == "marker")
+        {
+            require(value == "point" || value == "corners", "仅支持定位点和骨点范围角标");
+            return;
+        }
+        if (key == "aspect")
+        {
+            require(value == "viewport" || value == "16:9" || value == "16:10" || value == "21:9" || value == "4:3",
+                    "视口比例无效");
+            return;
+        }
+        if (key == "fovAxis")
+        {
+            require(value == "horizontal" || value == "vertical", "FOV轴向无效");
+            return;
+        }
+        if (key == "maximumDistanceMeters")
+        {
+            require(value.is_number() && std::isfinite(value.get<double>()) && value.get<double>() >= 0 &&
+                        value.get<double>() <= 1e9,
+                    "距离上限无效");
+            return;
+        }
         const auto values = defaults().at("espValues");
-        require(values.contains(key) && values.at(std::string(key)) == value, "VALORANT当前没有已开放的ESP显示参数");
+        require(values.contains(key) && values.at(std::string(key)) == value, "VALORANT未提供此显示功能");
     }
 };
 } // namespace

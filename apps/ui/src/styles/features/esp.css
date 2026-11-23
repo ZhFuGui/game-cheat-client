@@ -9,6 +9,8 @@
 .visuals-page > .visuals-esp-panel {
   padding: 0;
 }
+.visuals-page > .visuals-general-panel { padding:24px;overflow:auto; }
+.valorant-visual-settings,.valorant-display-mapping {max-width:850px;}
 .esp-page {
   padding: 20px 24px 15px;
   height: 100%;

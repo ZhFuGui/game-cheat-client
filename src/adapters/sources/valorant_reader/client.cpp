@@ -87,6 +87,8 @@ struct Client::Impl
     void clear(unsigned index)
     {
         state.channels[index].data.reset();
+        state.channels[index].sample = {};
+        state.channels[index].receipt.reset();
         constexpr const char *names[]{"VALORANT · 人物位置", "VALORANT · 人物骨骼", "VALORANT · 相机"};
         packets[index] = {"valorant-" + std::to_string(index + 1), names[index], {}, {}, "protobuf", {}};
         chains[index].reset();
@@ -275,6 +277,21 @@ struct Client::Impl
                         auto &channel = state.channels[index];
                         channel.data = accepted;
                         channel.receivedAtMs = lastEvent;
+                        channel.sample = {stream,
+                                          true,
+                                          hello->instance,
+                                          hello->domain,
+                                          0,
+                                          epoch,
+                                          accepted->capture.sequence,
+                                          envelope.mapping.value_or(0),
+                                          connection,
+                                          nanoseconds(accepted->capture.started, hello->frequency).value_or(0),
+                                          nanoseconds(accepted->capture.finished, hello->frequency).value_or(0),
+                                          envelope.mapping == selectedVersion && selectedVersion ? mapping
+                                                                                                 : std::nullopt};
+                        channel.receipt = domain::SourceReceipt{
+                            stream, hello->instance, 0, epoch, accepted->capture.sequence, connection, receivedMs};
                         channel.error.clear();
                         bucket(lastEvent).frames[index]++;
                         chains[index].observe(
