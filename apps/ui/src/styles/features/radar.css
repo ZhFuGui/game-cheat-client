@@ -48,6 +48,10 @@
   background-image: linear-gradient(#243644 1px, transparent 1px), linear-gradient(90deg, #243644 1px, transparent 1px);
   background-size: 32px 32px;
 }
+.radar-page > .radar-map {
+  flex: 1;
+  min-height: 268px;
+}
 .radar-canvas {
   position: absolute;
   inset: 0;
