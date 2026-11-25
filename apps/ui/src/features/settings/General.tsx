@@ -1,18 +1,27 @@
+import { useId } from "react";
 import { useTranslation } from "react-i18next";
 import { AppIcon } from "~/components/icons";
 import { ChoiceButtons } from "~/components/ui/choice-buttons";
 import { Switch } from "~/components/ui/switch";
 import { useRuntimeStore } from "~/runtime/state";
 import { useCommand } from "~/hooks/useCommand";
+import { ThemeSelect } from "./ThemeSelect";
 export function General() {
   const { t } = useTranslation(),
     colorMode = useRuntimeStore((s) => s.preferences.colorMode),
+    themePreset = useRuntimeStore((s) => s.preferences.themePreset),
     language = useRuntimeStore((s) => s.preferences.language),
     { run, pending } = useCommand();
   const dark = colorMode === "dark";
+  const themeId = useId();
   const themeLabel = t("深色模式");
   return (
     <div className="preferences">
+      <div className="preference-row">
+        <label htmlFor={themeId}>{t("主题")}</label>
+        <ThemeSelect id={themeId} value={themePreset} dark={dark} disabled={pending}
+          onChange={preset => void run("preferences.set", { themePreset: preset })}/>
+      </div>
       <div className="preference-row">
         <span>{t("外观")}</span>
         <Switch

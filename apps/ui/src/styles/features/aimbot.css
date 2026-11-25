@@ -2,7 +2,7 @@
   padding-block: 19px 28px;
 }
 .aim-section-stack {
-  --control-height: 34px;
+  --control-height: var(--compact-control-height);
   container: aim-settings / inline-size;
   display: flex;
   flex-direction: column;

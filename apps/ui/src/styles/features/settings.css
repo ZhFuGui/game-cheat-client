@@ -117,7 +117,25 @@
   border-bottom: 1px solid var(--border);
 }
 .preference-row:last-child { border: 0; }
-.preference-row > span { font-weight: 500; }
+.preference-row > :is(span, label) { font-weight: 500; }
+.theme-picker {
+  flex: 0 1 184px;
+  min-inline-size: min(100%, 156px);
+  margin-inline-start: auto;
+}
+.theme-picker .ui-select { justify-content: flex-start; gap: 8px; }
+.theme-picker .ui-select-chevron { margin-inline-start: auto; }
+.theme-swatches { display: flex; align-items: center; flex: none; gap: 3px; }
+.theme-swatches > i {
+  width: 10px;
+  height: 10px;
+  border: 1px solid color-mix(in srgb, var(--foreground) 17%, transparent);
+  border-radius: min(3px, var(--control-radius));
+}
+.theme-swatches > :nth-child(1) { background: var(--primary); }
+.theme-swatches > :nth-child(2) { background: var(--accent); }
+.theme-swatches > :nth-child(3) { background: var(--card); }
+.theme-swatches > :nth-child(4) { background: var(--background); }
 .preference-row .ui-choice-buttons {
   flex-shrink: 0;
   margin-left: auto;

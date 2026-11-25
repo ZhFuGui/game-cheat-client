@@ -1,0 +1,60 @@
+/* The same tokens are applied at the document root and inside preset swatches. */
+:where(:root, [data-theme-preset]) {
+  --background: #f4f6fa;
+  --chrome: #f9fafc;
+  --page-tab-chrome: #e9edf4;
+  --foreground: #1b2538;
+  --card: #ffffff;
+  --popover: #ffffff;
+  --primary: #4356cd;
+  --primary-foreground: #ffffff;
+  --secondary: #e9edf5;
+  --muted: #edf0f6;
+  --muted-foreground: #556176;
+  --accent: #e7ecff;
+  --accent-foreground: #3447b6;
+  --destructive: #b8263a;
+  --border: #dce2ed;
+  --input: #c9d2e1;
+  --success: #11734c;
+  --warning: #865707;
+  --panel-shadow: 0 1px 2px #23335a08;
+  --popover-shadow: 0 8px 28px #1b253826, 0 2px 5px #1b253812;
+  --dialog-backdrop: #08101f66;
+
+  --font-sans: "Mousebox UI", "Microsoft YaHei UI", sans-serif;
+  --font-mono: "Geist Mono Variable", monospace;
+  --letter-spacing: normal;
+  --radius: 10px;
+  --control-radius: 7px;
+  --control-height: 36px;
+  --compact-control-height: 34px;
+  --small-control-height: 30px;
+  --field-gap: 6px;
+  --section-padding: 20px;
+  --section-gap: 16px;
+}
+
+:where(:root, [data-theme-preset]).dark {
+  --background: #171717;
+  --chrome: #1d1d1d;
+  --page-tab-chrome: #242424;
+  --foreground: #eeeeee;
+  --card: #232323;
+  --popover: #2a2a2a;
+  --primary: #d0d0d0;
+  --primary-foreground: #1b1b1b;
+  --secondary: #303030;
+  --muted: #2c2c2c;
+  --muted-foreground: #b9b9b9;
+  --accent: #383838;
+  --accent-foreground: #eeeeee;
+  --destructive: #ff9aa7;
+  --border: #383838;
+  --input: #515151;
+  --success: #77dda8;
+  --warning: #f3c774;
+  --panel-shadow: none;
+  --popover-shadow: 0 10px 36px #0006, 0 2px 6px #0003;
+  --dialog-backdrop: #00000080;
+}

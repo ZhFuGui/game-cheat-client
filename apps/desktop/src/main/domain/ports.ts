@@ -1,4 +1,4 @@
-import type { Topic, WorkspaceContext } from '@mousebox/shared';
+import type { Topic, UiPreferences as RendererPreferences, WorkspaceContext } from '@mousebox/shared';
 export interface NativePort {
     request(command: string, payload?: unknown, timeout?: number): Promise<unknown>;
     activate(): Promise<void>;
@@ -10,17 +10,9 @@ export interface NativeLifecyclePort {
     revoke(): Promise<void>;
     stop(): Promise<void>;
 }
-export type UiPreferences = {
-    colorMode: 'light' | 'dark';
-    language: 'zh' | 'en';
+export type UiPreferences = RendererPreferences & {
     width: number;
     height: number;
-    sidebarWidth?: number;
-    sidebarCollapsed?: boolean;
-    pageTabOrder?: Record<string, string[]>;
-    espPlacement?: 'embedded'|'overlay';
-    espCapture?: 'include'|'exclude';
-    espRenderer?: 'default'|'software';
 };
 export interface UiPreferencePort {
     get(): UiPreferences;

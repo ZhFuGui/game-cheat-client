@@ -27,7 +27,7 @@ export class UiPreferenceStore {
     }
   }
   private validate(value:UiPreferences):UiPreferences {
-    preferencesSchema.parse({language:value.language,colorMode:value.colorMode,sidebarWidth:value.sidebarWidth,sidebarCollapsed:value.sidebarCollapsed,
+    preferencesSchema.parse({language:value.language,colorMode:value.colorMode,themePreset:value.themePreset,sidebarWidth:value.sidebarWidth,sidebarCollapsed:value.sidebarCollapsed,
       pageTabOrder:value.pageTabOrder,espPlacement:value.espPlacement,espCapture:value.espCapture,espRenderer:value.espRenderer})
     if(!['light','dark'].includes(value.colorMode)||!['zh','en'].includes(value.language))throw new Error('Invalid UI preferences')
     if(!Number.isFinite(value.width)||!Number.isFinite(value.height))throw new Error('Invalid window size')

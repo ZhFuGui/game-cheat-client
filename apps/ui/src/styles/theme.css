@@ -1,21 +1,7 @@
-/* Application surfaces and the drawing palette have separate roles. */
+@import "../theme/default.css";
+@import "../theme/warm-gray.css";
+
 :root {
-  --background: #f4f6fa;
-  --chrome: #f9fafc;
-  --page-tab-chrome: #e9edf4;
-  --foreground: #1b2538;
-  --card: #ffffff;
-  --popover: #ffffff;
-  --primary: #4356cd;
-  --primary-foreground: #ffffff;
-  --secondary: #e9edf5;
-  --muted: #edf0f6;
-  --muted-foreground: #556176;
-  --accent: #e7ecff;
-  --accent-foreground: #3447b6;
-  --destructive: #b8263a;
-  --border: #dce2ed;
-  --input: #c9d2e1;
   --ring: var(--primary);
   --sidebar: var(--chrome);
   --sidebar-foreground: var(--foreground);
@@ -23,20 +9,10 @@
   --sidebar-accent: var(--accent);
   --sidebar-accent-foreground: var(--accent-foreground);
   --statusbar: var(--chrome);
-  --success: #11734c;
-  --warning: #865707;
-  --radius: 10px;
-  --control-radius: 7px;
-  --control-height: 36px;
-  --small-control-height: 30px;
-  --field-gap: 6px;
   --page-gutter: clamp(16px, 2.7cqi, 34px);
   --page-inset: 24px;
-  --section-padding: 20px;
-  --section-gap: 16px;
-  --panel-shadow: 0 1px 2px #23335a08;
-  --popover-shadow: 0 8px 28px #1b253826, 0 2px 5px #1b253812;
-  --dialog-backdrop: #08101f66;
+
+  /* Native drawing uses its own mode-dependent palette. */
   --canvas: #ffffff;
   --canvas-grid: #f0f0f4;
   --canvas-guide: #d0d0d8;
@@ -44,28 +20,7 @@
   --entity: #4f6ef7;
   --selected: #c58613;
 }
-.dark {
-  --background: #171717;
-  --chrome: #1d1d1d;
-  --page-tab-chrome: #242424;
-  --foreground: #eeeeee;
-  --card: #232323;
-  --popover: #2a2a2a;
-  --primary: #d0d0d0;
-  --primary-foreground: #1b1b1b;
-  --secondary: #303030;
-  --muted: #2c2c2c;
-  --muted-foreground: #b9b9b9;
-  --accent: #383838;
-  --accent-foreground: #eeeeee;
-  --destructive: #ff9aa7;
-  --border: #383838;
-  --input: #515151;
-  --success: #77dda8;
-  --warning: #f3c774;
-  --panel-shadow: none;
-  --popover-shadow: 0 10px 36px #0006, 0 2px 6px #0003;
-  --dialog-backdrop: #00000080;
+:root.dark {
   --canvas: #101010;
   --canvas-grid: #202020;
   --canvas-guide: #454545;

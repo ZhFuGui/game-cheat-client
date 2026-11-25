@@ -16,8 +16,8 @@ export class DesktopSnapshots {
     async read(migration: NonNullable<Bootstrap['migration']>): Promise<Bootstrap> {
         const { native, preferences, version, session } = this.dependencies;
         const snapshot = await native.request('bootstrap');
-        const { language, colorMode, sidebarWidth,sidebarCollapsed,pageTabOrder,espPlacement,espCapture,espRenderer } = preferences.get();
-        return bootstrapSchema.parse({ ...snapshot as object, preferences: { language, colorMode, sidebarWidth,sidebarCollapsed,pageTabOrder,espPlacement,espCapture,espRenderer },
+        const { language, colorMode, themePreset, sidebarWidth,sidebarCollapsed,pageTabOrder,espPlacement,espCapture,espRenderer } = preferences.get();
+        return bootstrapSchema.parse({ ...snapshot as object, preferences: { language, colorMode, themePreset, sidebarWidth,sidebarCollapsed,pageTabOrder,espPlacement,espCapture,espRenderer },
             version, session, migration });
     }
 

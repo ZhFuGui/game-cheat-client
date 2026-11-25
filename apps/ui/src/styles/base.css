@@ -8,8 +8,6 @@
   --color-border: var(--border);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
-  --font-sans: "Mousebox UI", "Microsoft YaHei UI", sans-serif;
-  --font-mono: "Geist Mono Variable", monospace;
 }
 * {
   box-sizing: border-box;
@@ -25,6 +23,7 @@ html {
   font-family: var(--font-sans);
   font-size: 13px;
   line-height: 1.55;
+  letter-spacing: var(--letter-spacing);
   font-feature-settings:
     "liga" 1,
     "calt" 1;

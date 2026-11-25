@@ -7,6 +7,7 @@ export const preferencesSchema = z
     .object({
     language: z.enum(["zh", "en"]),
     colorMode: z.enum(["light", "dark"]),
+    themePreset: pageId.optional(),
     sidebarWidth: z.number().int().min(SIDEBAR_MIN_WIDTH).max(SIDEBAR_MAX_WIDTH).optional(),
     sidebarCollapsed: z.boolean().optional(),
     pageTabOrder: pageTabOrderSchema.optional(),

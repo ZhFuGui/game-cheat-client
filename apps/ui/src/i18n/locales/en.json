@@ -91,6 +91,8 @@
   "界面语言": "Language",
   "中文": "Chinese",
   "主题": "Theme",
+  "默认": "Default",
+  "暖灰": "Warm gray",
   "字体、圆角和颜色与提供的 tweakcn 主题保持一致。": "Fonts, corners and colors follow the supplied tweakcn theme.",
   "主题和语言只改变界面，不改变控制参数。": "Theme and language only affect appearance, not control settings.",
   "显卡与绘制": "Graphics & rendering",

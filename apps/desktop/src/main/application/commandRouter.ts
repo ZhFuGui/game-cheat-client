@@ -57,7 +57,7 @@ export function createCommandRouter(dependencies: CommandRouterDependencies): Co
             try{value=preferences.set(patch);}
             catch(error){if(outputChanged)await surfaces.configure?.(before);throw error;}
             if (payload.colorMode !== undefined) setColorMode(value.colorMode);
-            const parsed = preferencesSchema.parse({ language: value.language, colorMode: value.colorMode,
+            const parsed = preferencesSchema.parse({ language: value.language, colorMode: value.colorMode, themePreset: value.themePreset,
                 sidebarWidth: value.sidebarWidth,sidebarCollapsed:value.sidebarCollapsed,pageTabOrder:value.pageTabOrder,espPlacement:value.espPlacement,espCapture:value.espCapture,espRenderer:value.espRenderer });
             publish('preferences', parsed);
             return parsed;
