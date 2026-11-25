@@ -24,7 +24,6 @@ export const cs2UiModule: GameUiModule = {
     {id:"mapping",component:lazy(()=>import("./AimGeneralSettings").then(module=>({default:module.Cs2InputMapping})))},
     {id:"timing",component:lazy(()=>import("./AimGeneralSettings").then(module=>({default:module.Cs2TimingSettings})))},
   ],
-  Recoil: lazy(() => import("./Recoil").then(module => ({ default: module.Recoil }))),
   Triggerbot: lazy(() => import("./Triggerbot").then(module => ({ default: module.Triggerbot }))),
   Rage: lazy(() => import("./Rage").then(module => ({ default: module.Rage }))),
   SourcePanel: lazy(() => import("./ReaderConnection").then(module => ({ default: module.ReaderConnection }))),

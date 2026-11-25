@@ -74,7 +74,6 @@ function pageMessages(page: ContextPage, f: ContextFacts): ContextMessage[] {
       [message("triggerbot:state",f.triggerEnabled?"自动扳机已启用":"自动扳机已关闭",triggerDetail(f),f.triggerEnabled?"info":"quiet")];
     case "rage": return [message("rage:state",f.rageEnabled?"Rage已启用":"Rage已关闭",
       copy("{{reason}} · 目标 {{target}} · 预计伤害 {{damage}} · 已提交射击 {{count}}",{reason:f.rageReason??"",target:f.rageTarget??"—",damage:metric(f.rageDamage),count:f.rageClicks??0}),f.rageActive?"success":f.rageEnabled?"info":"quiet")];
-    case "recoil": return [message("recoil:state","No Recoil")];
     case "learning": return learningMessages(f);
     case "reports": return reportMessages(f);
     case "logs":

@@ -32,7 +32,6 @@ export interface GameUiModule {
   settingValidators: Readonly<Partial<Record<SettingKey, SettingValidator>>>;
   AimSettings?: ComponentType;
   aimGeneral?: readonly AimGeneralModule[];
-  Recoil?: ComponentType;
   Triggerbot?: ComponentType;
   Rage?: ComponentType;
   navigationHelp?:Readonly<Record<string,{title:string;paragraphs:readonly string[]}>>;

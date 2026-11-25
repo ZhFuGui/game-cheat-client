@@ -37,6 +37,7 @@ export function startupRoute(search: string): string {
   if (page === "esp") return visualsPages.route;
   if (page === "visuals") return pageHref(visualsPages, params.get("section") ?? "");
   if(page==="aim")return aimHref(params.get("section"));
+  if(page==="recoil")return aimHref("aimbot");
   if(page==="aimbot"||page==="triggerbot"||page==="rage")return legacyAimHref(`/${page}`,search);
   if(page==="overview"||page==="reader"||page==="dashboard")return readerHref(page==="dashboard"?"dashboard":params.get("section")??"",params.get("view"));
   if(page==='learning')return '/mouse-debug?section=learning';

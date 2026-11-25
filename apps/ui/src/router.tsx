@@ -3,6 +3,7 @@ import { AppLayout } from "./shell/AppLayout";
 import { WorkspaceRoute } from "./workspaces/WorkspaceRoute";
 import { startupRoute } from "./lib/startupRoute";
 import { LegacyAimRedirect } from "./navigation/LegacyAimRedirect";
+import { aimHref } from "./navigation/aimLocation";
 import { visualsPages } from "./navigation/pageGroups";
 export const router = createMemoryRouter([{
   path: "/", Component: AppLayout, children: [
@@ -27,10 +28,7 @@ export const router = createMemoryRouter([{
       const Page = (await import("./pages/GameSettings")).default;
       return { Component: () => <WorkspaceRoute><Page /></WorkspaceRoute> };
     }},
-    { path: "recoil", lazy: async () => {
-      const Page = (await import("./pages/Recoil")).default;
-      return { Component: () => <WorkspaceRoute capability="recoil"><Page /></WorkspaceRoute> };
-    }},
+    { path: "recoil", Component: () => <Navigate to={aimHref("aimbot")} replace /> },
     { path: "workspaces", Component: () => <Navigate to="/" replace /> },
     { path: "learning", Component: () => <Navigate to="/mouse-debug?section=learning" replace /> },
     { path: "mouse-debug", lazy: async () => ({ Component: (await import("./pages/MouseDebug")).default }) },

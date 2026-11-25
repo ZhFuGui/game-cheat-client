@@ -49,7 +49,3 @@ export const mousePages=definePageGroup({
     {id:"characteristics",label:"鼠标特征",icon:"mouseDevice",view:"characteristics",context:"reports"},
   ],
 });
-export const recoilPages=definePageGroup({
-  id:"recoil",route:"/recoil",label:"Recoil",tabsLabel:"Recoil子页",defaultSection:"no-recoil",context:"recoil",
-  sections:[{id:"no-recoil",label:"No Recoil",view:"guidance"}],
-});

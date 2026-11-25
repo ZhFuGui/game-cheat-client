@@ -11,7 +11,6 @@ const main = [
   { to: "/", label: "READER", icon: "connection" },
   { to: visualsPages.route, label: visualsPages.label, icon: "esp" },
   { to: "/aim", label: "Aim", icon: "aimbot" },
-  { to: "/recoil", label: "Recoil", icon: "recoil" },
   { to: "/game-settings", label: "游戏设置", icon: "tuning" },
 ] as const;
 const tools = [
@@ -30,7 +29,7 @@ export function Sidebar() {
       <span className="sidebar-version">{version ? `v${version}` : ""}</span>
     </header>
     <nav aria-label={t("主导航")}>
-      <div className="navigation-group">{main.filter(item => item.to !== visualsPages.route || capabilities.some(capability=>["esp","radar"].includes(capability))).filter(item => item.to !== "/aim" || capabilities.some(capability=>["aim","triggerbot","rage"].includes(capability))).filter(item => item.to !== "/recoil" || capabilities.includes("recoil")).map(({ to, label, icon }) => <div key={to} className="nav-entry"><NavLink to={to} end={to === "/"} title={t(label)} aria-label={t(label)} className={({ isActive }) => `nav-item ${help?.[to]?"has-help":""} ${isActive ? "active" : ""}`}><AppIcon name={icon} size={18} /><span>{t(label)}</span></NavLink>{help?.[to]&&<NavigationHelp page={label} content={help[to]}/>}</div>)}</div>
+      <div className="navigation-group">{main.filter(item => item.to !== visualsPages.route || capabilities.some(capability=>["esp","radar"].includes(capability))).filter(item => item.to !== "/aim" || capabilities.some(capability=>["aim","triggerbot","rage"].includes(capability))).map(({ to, label, icon }) => <div key={to} className="nav-entry"><NavLink to={to} end={to === "/"} title={t(label)} aria-label={t(label)} className={({ isActive }) => `nav-item ${help?.[to]?"has-help":""} ${isActive ? "active" : ""}`}><AppIcon name={icon} size={18} /><span>{t(label)}</span></NavLink>{help?.[to]&&<NavigationHelp page={label} content={help[to]}/>}</div>)}</div>
       <div className="navigation-bottom">{tools.map(({ to, label, icon }) => <NavLink key={to} to={to} title={t(label)} aria-label={t(label)} className={({ isActive }) => `nav-item ${isActive ? "active" : ""}`}><AppIcon name={icon} size={18} /><span>{t(label)}</span></NavLink>)}</div>
     </nav>
     <SidebarResizeHandle />

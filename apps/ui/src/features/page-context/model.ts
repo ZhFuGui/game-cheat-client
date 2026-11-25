@@ -1,7 +1,7 @@
 import {resolvePageGroup,type PageGroup} from "~/framework/pages/model";
-import {readerPages,mousePages,recoilPages,aimPages,visualsPages} from "~/navigation/pageGroups";
+import {readerPages,mousePages,aimPages,visualsPages} from "~/navigation/pageGroups";
 export type ContextPage =
-  | "reader" | "dashboard" | "visuals-general" | "esp" | "radar" | "aim-general" | "aimbot" | "triggerbot" | "rage" | "recoil" | "learning" | "reports" | "logs"
+  | "reader" | "dashboard" | "visuals-general" | "esp" | "radar" | "aim-general" | "aimbot" | "triggerbot" | "rage" | "learning" | "reports" | "logs"
   | "general" | "firmware" | "input" | "algorithm" | "movement"
   | "calibration" | "rendering" | "input-device" | "data" | "cs2-source" | "valorant-display" | "unknown";
 export type ContextTone = "error" | "warning" | "success" | "info" | "quiet";
@@ -46,9 +46,9 @@ export function contextPage(path: string, search: string,visuals:PageGroup=visua
     case "/visuals": return resolvePageGroup(visuals,section).context as ContextPage;
     case "/aim": return resolvePageGroup(aim,section).context as ContextPage;
     case "/aimbot": return "aimbot";
+    case "/recoil": return "aimbot";
     case "/triggerbot": return "triggerbot";
     case "/rage": return "rage";
-    case "/recoil": return resolvePageGroup(recoilPages,section).context as ContextPage;
     case "/learning": return "learning";
     case "/mouse-debug": return resolvePageGroup(mousePages,section).context as ContextPage;
     case "/logs": return "logs";
