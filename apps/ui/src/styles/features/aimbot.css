@@ -41,6 +41,9 @@
 .aim-section-stack .field:has(> .input-wrap) {
   --aim-value-width: min(48%, 130px);
 }
+.aim-section-stack .field:has(> .setting-slider-pair) {
+  --aim-value-width: min(58%, 220px);
+}
 .aim-section-stack .field:has(> .setting-random-range) {
   --aim-value-width: min(61%, 168px);
 }

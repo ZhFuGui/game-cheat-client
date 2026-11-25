@@ -28,7 +28,7 @@ function selectSettingValue(store: RuntimeStore, target: SettingTarget): unknown
 
 // Controls bind to settings ownership; each game supplies its own field rules.
 export function useSettingBinding(target: SettingTarget) {
-  const { run } = useCommand();
+  const { run, pending } = useCommand();
   const { t } = useTranslation();
   const value = useRuntimeStore(store => selectSettingValue(store, target));
   const gameId = useRuntimeStore(store => store.workspace?.active?.gameId);
@@ -44,5 +44,5 @@ export function useSettingBinding(target: SettingTarget) {
       ? run("esp.set", { key: target.setting, value: requested })
       : run("settings.set", { key: target.setting, value: requested });
   };
-  return { value, validator, save };
+  return { value, validator, save, pending };
 }

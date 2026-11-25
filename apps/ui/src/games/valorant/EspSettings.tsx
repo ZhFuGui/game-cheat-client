@@ -26,7 +26,7 @@ export function EspSettings({tab,setTab}:GameEspSettingsProps){
     </>:<>
       <div className="field-label"><strong>{t("相机重建投影")}</strong><HelpTooltip label="相机重建投影">{t("按 UE 相机坐标约定解释欧拉角及 FOV，原生画幅约束生效时保持对应比例。这是客户端重建，不是游戏最终投影矩阵；缩放或特殊视口需人工核对。")}</HelpTooltip></div>
       <SettingChoice esp setting="aspect" label="投影视口" options={["viewport","16:9","16:10","21:9","4:3"].map(value=>({label:value==="viewport"?"相机约束或当前区域":value,value}))}/>
-      <SettingChoice esp setting="fovAxis" label="FOV 解释" options={[{label:"水平 FOV",value:"horizontal"},{label:"垂直 FOV",value:"vertical"}]}/>
+      <SettingChoice esp setting="fovAxis" label="FOV 解释" presentation="buttons" options={[{label:"水平",value:"horizontal"},{label:"垂直",value:"vertical"}]}/>
       <Link to="/game-settings?section=valorant-display">{t("窗口与单位设置")}</Link>
     </>}</div>
     <div className="esp-panel-footer"><Button variant="outline" className="full-width" disabled={pending}

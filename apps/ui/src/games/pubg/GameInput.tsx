@@ -20,21 +20,25 @@ export function GameInput() {
           <SettingField
             setting="general"
             label="常规灵敏度"
+            slider={{ min: 0, max: 100 }}
             disabled={calibrating}
           />
           <SettingField
             setting="aim"
             label="瞄准灵敏度"
+            slider={{ min: 0, max: 100 }}
             disabled={calibrating}
           />
           <SettingField
             setting="ads"
             label="开镜灵敏度（当前镜倍）"
+            slider={{ min: 0, max: 100 }}
             disabled={calibrating}
           />
           <SettingField
             setting="vertical"
             label="垂直倍率"
+            slider={{ min: 0.1, max: 5, step: 0.01 }}
             disabled={calibrating}
           />
         </div>

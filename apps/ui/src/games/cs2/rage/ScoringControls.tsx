@@ -17,10 +17,10 @@ export function ScoringControls(){
         help={t('旧版保留15°单点朝向及相对最高伤害排序，忽略新增扣分和稳定规则；保存的新参数不丢失。')}/>
       <SettingToggle setting="cs2RageHealthNormalization" label="伤害归一化" disabled={legacy}
         help={t('分值=100×预计伤害÷(预计伤害+受击者当前血量)。保留未封顶原始伤害；关闭时使用相对最高伤害，便于对照。')}/>
-      <SettingField setting="cs2RageThreatWeight" label="威胁权重" suffix="%"
+      <SettingField setting="cs2RageThreatWeight" label="威胁权重" suffix="%" slider={{min:0,max:100}}
         help={t('综合分由威胁分与我方伤害分加权。新版威胁考虑对方视线与自身完整Hitbox、对方武器预计伤害、低弹量及换弹扣分。')}/>
       <div className="aim-value-row rage-derived"><span>{t('伤害权重')}</span><output aria-label={t('伤害权重')}>{100-weight}%</output></div>
-      <SettingField setting="cs2RageAimWeight" label="瞄准占比" suffix="%" disabled={legacy}/>
+      <SettingField setting="cs2RageAimWeight" label="瞄准占比" suffix="%" slider={{min:0,max:100}} disabled={legacy}/>
       <div className="aim-value-row rage-derived"><span>{t('敌伤占比')}</span><output aria-label={t('敌伤占比')}>{100-aim}%</output></div>
       <SettingField setting="cs2RageLowAmmoPenalty" label="低弹量扣分" suffix={t('分')} disabled={legacy}
         help={t('仅对有效弹匣弹量小于等于1扣分；大于1或未知均不扣，未知会标记降级。')}/>

@@ -118,9 +118,10 @@ export function EspSettings({
               esp
               setting="fovAxis"
               label="FOV 解释"
+              presentation="buttons"
               options={[
-                { label: "水平 FOV", value: "horizontal" },
-                { label: "垂直 FOV", value: "vertical" },
+                { label: "水平", value: "horizontal" },
+                { label: "垂直", value: "vertical" },
               ]}
              help={<> <p>{t("高度框以实体坐标为中心估算，不代表真实身高、姿态或胶囊体。")}</p><p>{t(
                 "宽高比与 FOV 方向为手动假设，Reader 未提供游戏视口或最终投影矩阵。",

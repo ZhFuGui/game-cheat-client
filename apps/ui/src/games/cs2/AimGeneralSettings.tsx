@@ -9,7 +9,7 @@ export function Cs2RuntimeSettings() {
     <div className="aim-fields">
       <SettingToggle setting="cs2CheckForeground" label="检测游戏窗口位于前台"
         help={<p>{t("适用于 Triggerbot 和 Rage。默认开启，仅在本机 CS2 位于前台时允许输出。远程游戏可关闭此检查；关闭后切换窗口不会因此暂停，其他数据、会话及设备条件仍须满足。")}</p>}/>
-      <SettingField setting="cs2HitboxInsetPercent" label="Hitbox 内缩比例" suffix="%"
+      <SettingField setting="cs2HitboxInsetPercent" label="Hitbox 内缩比例" suffix="%" slider={{min:0,max:90}}
         help={<p>{t("Aimbot 在内缩范围内取点。Triggerbot 和 Rage 检查射线是否进入该范围。0% 使用原尺寸，胶囊和球体缩小半径，盒体从中心沿各轴缩小。")}</p>}/>
     </div>
   </FeatureSection>;

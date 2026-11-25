@@ -1,18 +1,18 @@
 import { RadioGroup } from "@base-ui/react/radio-group";
 import { Radio } from "@base-ui/react/radio";
 
-export function ChoiceButtons<Value extends string>({
+export function ChoiceButtons<Value extends string | number>({
   label, value, options, onChange, disabled,
 }: {
   label: string;
   value: Value;
-  options: readonly { value: Value; label: string }[];
+  options: readonly { value: Value; label: string; disabled?: boolean }[];
   onChange: (value: Value) => void;
   disabled?: boolean;
 }) {
   return <RadioGroup className="ui-choice-buttons" aria-label={label} value={value}
     onValueChange={onChange} disabled={disabled}>
-    {options.map(option => <Radio.Root key={option.value} value={option.value}
+    {options.map(option => <Radio.Root key={option.value} value={option.value} disabled={option.disabled}
       className="ui-choice-button" render={<button type="button" />} nativeButton>
       {option.label}
     </Radio.Root>)}
