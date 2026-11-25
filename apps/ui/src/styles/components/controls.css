@@ -202,6 +202,26 @@
 }
 .setting-slider-pair > .input-wrap:has(.input-suffix) > .ui-input { padding-inline-end: 1px; }
 .setting-slider-pair .input-suffix { padding-inline: 3px 6px; }
+.setting-random-range {
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+}
+.setting-range-fields {
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr) 32px auto;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted-foreground);
+  font-size: 11px;
+}
+.setting-range-fields > .ui-input {
+  height: var(--small-control-height);
+  padding-inline: 3px;
+  text-align: center;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
 .ui-slider { min-width: 0; }
 .ui-slider-control {
   position: relative;

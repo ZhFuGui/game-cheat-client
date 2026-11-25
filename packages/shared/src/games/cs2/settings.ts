@@ -4,6 +4,8 @@ import {cs2CountCalibrationSchema} from "./controller";
 import {cs2ExtensionSettingsSchema} from "./extensions";
 import {mouseMovementAlgorithmSchema, mouseTrajectorySettingsSchema} from "../../models/mouseMovement";
 import {randomRangeSchema} from "../../models/randomRange";
+
+export const cs2TriggerHoldBounds = {min: 5, max: 40} as const;
 export const cs2SettingsSchema=applicationSettingsSchema.merge(z.object({
  host:z.string().trim().min(1).max(255),
  port:z.number().int().min(1).max(65535),
@@ -35,12 +37,12 @@ export const cs2SettingsSchema=applicationSettingsSchema.merge(z.object({
  cs2TriggerSnipers:z.boolean().default(true),
  cs2TriggerSniperInaccuracyLimit:z.number().finite().min(0).max(1).default(0.004),
  cs2TriggerOtherGuns:z.boolean().default(true),
- cs2TriggerHoldRangeMs:randomRangeSchema(5,40).default({min:15,max:25}),
+ cs2TriggerHoldRangeMs:randomRangeSchema(cs2TriggerHoldBounds.min,cs2TriggerHoldBounds.max).default({min:15,max:25}),
  cs2TriggerTimeOffsetMs:z.number().int().min(-100).max(100).default(0),
  cs2TriggerCoverCheck:z.boolean().default(false),
  cs2TriggerReactionEnabled:z.boolean().default(false),
  cs2TriggerReactionMs:z.number().int().min(0).max(5000).default(0),
- cs2TriggerIntervalRangeMs:randomRangeSchema(50,1000).default({min:90,max:110}),
+ cs2TriggerIntervalMs:z.number().int().min(50).max(1000).default(100),
  cs2TriggerMaxAgeMs:z.number().int().min(20).max(500).default(150),
  cs2AimPart:z.number().int().min(0).max(4),
  cs2AimPartPistol:z.number().int().min(-1).max(4).default(0),

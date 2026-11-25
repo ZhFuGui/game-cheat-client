@@ -1,4 +1,5 @@
 import {useTranslation} from "react-i18next";
+import {cs2TriggerHoldBounds} from "@mousebox/shared";
 import {Disclosure} from "~/components/shared/Disclosure";
 import {FeatureSection} from "~/components/shared/FeatureSection";
 import {SettingToggle, SettingField} from "~/components/shared/SettingField";
@@ -19,10 +20,10 @@ export function Triggerbot() {
               help={t("启用前先关闭 Aimbot 和 Rage。启用后持续检测，不需要按住侧键；不会移动准星。前台检查遵循 Aim 常规设置。")}/>
         }>
           <div className="aim-fields">
-            <SettingRangeField setting="cs2TriggerIntervalRangeMs" label="连续点击最小间隔" suffix="ms"
-              help={t("填写 50–1000 ms 的整数区间。每次成功提交点击后，按此处选择的分布抽取下一次的最小间隔。")}/>
-            <SettingRangeField setting="cs2TriggerHoldRangeMs" label="左键按下时长" suffix="ms"
-              help={t("填写 5–40 ms 的整数区间。每次点击按此处选择的分布抽取时长，同一次重试沿用已抽取的值，到时由固件抬起。")}/>
+            <SettingField setting="cs2TriggerIntervalMs" label="连续点击最小间隔" suffix="ms"
+              help={t("填写 50–1000 ms 的整数。两次点击之间至少间隔所设时长。")}/>
+            <SettingRangeField setting="cs2TriggerHoldRangeMs" label="左键按下时长" suffix="ms" slider={cs2TriggerHoldBounds}
+              help={t("拖动两端或输入 5–40 ms 的整数。每次点击按所选分布抽取时长。")}/>
             <SettingField setting="cs2TriggerMaxAgeMs" label="扳机采样年龄上限" suffix="ms"/>
           </div>
         </Disclosure>

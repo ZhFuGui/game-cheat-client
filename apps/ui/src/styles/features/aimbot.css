@@ -45,7 +45,7 @@
   --aim-value-width: min(58%, 220px);
 }
 .aim-section-stack .field:has(> .setting-random-range) {
-  --aim-value-width: min(61%, 168px);
+  --aim-value-width: min(62%, 196px);
 }
 .aim-section-stack .field-error {
   grid-column: 1 / -1;
@@ -243,20 +243,3 @@
   width: min(100%, 350px);
 }
 .trigger-leaf { min-width: 0; padding-inline-start: 28px; }
-.setting-random-range {
-  display: grid;
-  gap: 5px;
-  min-width: 0;
-}
-.setting-range-fields {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto;
-  gap: 5px;
-  align-items: center;
-  color: var(--muted-foreground);
-  font-size: 11px;
-}
-.setting-range-fields input {
-  padding-inline: 5px;
-  text-align: center;
-}

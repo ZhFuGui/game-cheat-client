@@ -170,7 +170,7 @@ class Module final : public application::ports::GameModule, public application::
         {
             auto previous = configuredValues_;
             for (const auto key : {"cs2TriggerTimeOffsetMs", "cs2TriggerSniperInaccuracyLimit", "cs2TriggerCoverCheck",
-                                   "cs2TriggerReactionEnabled", "cs2TriggerReactionMs", "cs2TriggerIntervalRangeMs",
+                                   "cs2TriggerReactionEnabled", "cs2TriggerReactionMs", "cs2TriggerIntervalMs",
                                    "cs2TriggerHoldRangeMs"})
                 if (values.contains(key))
                     previous[key] = values.at(key);

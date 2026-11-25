@@ -123,7 +123,7 @@ class Configuration final : public application::ports::GameConfiguration
                           {"cs2TriggerCoverCheck", false},
                           {"cs2TriggerReactionEnabled", false},
                           {"cs2TriggerReactionMs", 0},
-                          {"cs2TriggerIntervalRangeMs", application::randomRangeJson(trigger::DefaultInterval)},
+                          {"cs2TriggerIntervalMs", trigger::DefaultIntervalMs},
                           {"cs2TriggerMaxAgeMs", 150},
                           {"cs2RageEnabled", false},
                           {"cs2RageEnemies", true},
@@ -167,7 +167,7 @@ class Configuration final : public application::ports::GameConfiguration
                 if (std::string_view(name) == "values" && retiredRecoilSetting(it.key()))
                     continue;
                 if (std::string_view(name) == "values" &&
-                    (it.key() == "cs2RageMaxAgeMs" || it.key() == "cs2TriggerIntervalMs" ||
+                    (it.key() == "cs2RageMaxAgeMs" || it.key() == "cs2TriggerIntervalRangeMs" ||
                      it.key() == "cs2TriggerHoldMs" || it.key() == "aimVersion" || legacyInsetSetting(it.key())))
                 {
                     validateStoredValue(it.key(), it.value());
@@ -198,21 +198,17 @@ class Configuration final : public application::ports::GameConfiguration
             out["values"]["mouseMovementAlgorithm"] =
                 control::movement::algorithmId(historicalMovementAlgorithm(legacy.version));
         }
-        const auto migrateTiming = [&](const char *legacy, const char *key, unsigned oldDefault) {
-            if (oldValues.contains(key) || !oldValues.contains(legacy))
-                return;
-            const auto value = oldValues.at(legacy).get<unsigned>();
-            if (value != oldDefault)
-                out["values"][key] = application::randomRangeJson({value, value});
-        };
-        migrateTiming("cs2TriggerIntervalMs", "cs2TriggerIntervalRangeMs", 100);
-        migrateTiming("cs2TriggerHoldMs", "cs2TriggerHoldRangeMs", 20);
-        for (const auto key : {"cs2TriggerIntervalRangeMs", "cs2TriggerHoldRangeMs"})
+        if (!oldValues.contains("cs2TriggerIntervalMs") && oldValues.contains("cs2TriggerIntervalRangeMs"))
+            out["values"]["cs2TriggerIntervalMs"] = oldValues.at("cs2TriggerIntervalRangeMs").at("min");
+        auto &hold = out["values"]["cs2TriggerHoldRangeMs"];
+        if (!oldValues.contains("cs2TriggerHoldRangeMs") && oldValues.contains("cs2TriggerHoldMs"))
         {
-            auto &range = out["values"][key];
-            if (!range.contains("distribution"))
-                range["distribution"] = "normal";
+            const auto duration = oldValues.at("cs2TriggerHoldMs").get<unsigned>();
+            if (duration != 20)
+                hold = application::randomRangeJson({duration, duration});
         }
+        if (!hold.contains("distribution"))
+            hold["distribution"] = "normal";
         if (!oldValues.contains("cs2InputMapping") && !out["values"]["cs2Calibration"].is_null())
             out["values"]["cs2InputMapping"] = "measured";
         if (out["values"]["cs2RageEnabled"] == true)
@@ -249,7 +245,7 @@ class Configuration final : public application::ports::GameConfiguration
                key == "cs2RageIntervalMs" || key == "cs2TriggerSnipers" || key == "cs2TriggerOtherGuns" ||
                key == "cs2TriggerHoldRangeMs" || key == "cs2TriggerCoverCheck" ||
                key == "cs2TriggerReactionEnabled" || key == "cs2TriggerReactionMs" || key == "cs2TriggerEnabled" ||
-               key == "cs2TriggerIntervalRangeMs" || key == "cs2TriggerMaxAgeMs" || extensions::permitsSetting(key) ||
+               key == "cs2TriggerIntervalMs" || key == "cs2TriggerMaxAgeMs" || extensions::permitsSetting(key) ||
                key == "cs2HitboxDisplay" || key == "cs2ShowHealth" || key == "cs2AimPart" ||
                key == "cs2TargetPriority" || key == "cs2AimCone" || key == "cs2AimDistanceUnits" ||
                key == "cs2AimMaxAgeMs" || key == "cs2ResponseMs" || key == "cs2Prediction" ||
@@ -265,8 +261,8 @@ class Configuration final : public application::ports::GameConfiguration
             number(value, 20, 500, true);
         else if (legacyInsetSetting(key))
             number(value, 0, 90);
-        else if (key == "cs2TriggerIntervalMs")
-            number(value, trigger::IntervalBounds.min, trigger::IntervalBounds.max, true);
+        else if (key == "cs2TriggerIntervalRangeMs")
+            application::readRandomRange(value, trigger::IntervalBounds.min, trigger::IntervalBounds.max);
         else if (key == "cs2TriggerHoldMs")
             number(value, trigger::HoldBounds.min, trigger::HoldBounds.max, true);
         else if (key == "aimVersion")
@@ -335,8 +331,8 @@ class Configuration final : public application::ports::GameConfiguration
             require(v.is_string(), "CS2 Hitbox 瞄点分布须为稳定 ID");
             parseAimPointDistribution(v.get_ref<const std::string &>());
         }
-        else if (key == "cs2TriggerIntervalRangeMs")
-            application::readRandomRange(v, trigger::IntervalBounds.min, trigger::IntervalBounds.max);
+        else if (key == "cs2TriggerIntervalMs")
+            number(v, trigger::IntervalBounds.min, trigger::IntervalBounds.max, true);
         else if (key == "cs2TriggerHoldRangeMs")
             application::readRandomRange(v, trigger::HoldBounds.min, trigger::HoldBounds.max);
         else if (key == "cs2RageIntervalMs")

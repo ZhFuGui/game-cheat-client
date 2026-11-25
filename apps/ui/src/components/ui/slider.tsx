@@ -2,21 +2,25 @@ import { Slider as Primitive } from "@base-ui/react/slider";
 
 export type SliderRange = { min: number; max: number; step?: number };
 
-type SliderProps = SliderRange &
-  Pick<Primitive.Root.Props<number>, "value" | "disabled" | "onValueChange" | "onValueCommitted"> & {
-    label: string;
+type SliderValue = number | readonly [number, number];
+
+type SliderProps<Value extends SliderValue> = SliderRange &
+  Pick<Primitive.Root.Props<Value>, "disabled" | "onValueChange" | "onValueCommitted"> & {
+    value: Value;
+    labels: Value extends number ? readonly [string] : readonly [string, string];
     unit?: string;
     onCancel: () => void;
   };
 
-export function Slider({ label, unit, onCancel, step = 1, ...props }: SliderProps) {
+export function Slider<Value extends SliderValue>({ labels, unit, onCancel, step = 1, ...props }: SliderProps<Value>) {
   return (
-    <Primitive.Root<number>
+    <Primitive.Root<Value>
       {...props}
       className="ui-slider"
       step={step}
       largeStep={step * 10}
       thumbAlignment="edge"
+      thumbCollisionBehavior="none"
       onPointerCancel={onCancel}
       onTouchCancel={onCancel}
     >
@@ -24,11 +28,13 @@ export function Slider({ label, unit, onCancel, step = 1, ...props }: SliderProp
         <Primitive.Track className="ui-slider-track">
           <Primitive.Indicator className="ui-slider-fill" />
         </Primitive.Track>
-        <Primitive.Thumb
+        {labels.map((name, index) => <Primitive.Thumb
+          key={index}
+          index={index}
           className="ui-slider-thumb"
-          getAriaLabel={() => label}
+          getAriaLabel={() => name}
           getAriaValueText={unit ? (formatted) => `${formatted} ${unit}` : undefined}
-        />
+        />)}
       </Primitive.Control>
     </Primitive.Root>
   );

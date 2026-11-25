@@ -75,6 +75,6 @@
   "其他枪": "Other firearms",
   "当前枪械类型未启用自动扳机": "Triggerbot is disabled for this weapon type",
   "狙包括 AWP、SSG 08、G3SG1、SCAR-20；其他枪为其余已识别枪械。切枪后自动匹配，两类独立保存；刀、投掷物和未知物品不触发。": "Sniper rifles include AWP, SSG 08, G3SG1 and SCAR-20. Other firearms cover the remaining reviewed guns. The current weapon is matched automatically; each switch is saved independently. Knives, grenades and unknown items do not trigger.",
-  "填写 50–1000 ms 的整数区间。每次成功提交点击后，按此处选择的分布抽取下一次的最小间隔。": "Enter integer bounds within 50–1000 ms. After each accepted click, the selected distribution samples the next minimum interval.",
-  "填写 5–40 ms 的整数区间。每次点击按此处选择的分布抽取时长，同一次重试沿用已抽取的值，到时由固件抬起。": "Enter integer bounds within 5–40 ms. The selected distribution samples each press duration. A retry keeps that duration, and the firmware releases the button when it ends."
+  "填写 50–1000 ms 的整数。两次点击之间至少间隔所设时长。": "Enter a whole number from 50 to 1000 ms. This is the minimum time between clicks.",
+  "拖动两端或输入 5–40 ms 的整数。每次点击按所选分布抽取时长。": "Drag either handle or enter a whole number from 5 to 40 ms. Each hold duration is sampled from the selected distribution."
 }

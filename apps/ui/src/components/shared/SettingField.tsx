@@ -99,7 +99,7 @@ export function SettingField(props: SettingTarget & {
         <Slider
           {...range}
           value={typeof sliderCandidate === "number" ? Math.min(range.max, Math.max(range.min, sliderCandidate)) : range.min}
-          label={t("调节 {{field}}", { field: fieldLabel })}
+          labels={[t("调节 {{field}}", { field: fieldLabel })]}
           unit={suffix}
           disabled={disabled || typeof value !== "number" || !validator}
           onValueChange={(next, details) => {

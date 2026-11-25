@@ -8,13 +8,6 @@ namespace mousebox::games::cs2::trigger
 {
 namespace
 {
-random::IntegerRange timingRange(const application::Json &values, const char *setting,
-                                random::IntegerRange fallback, random::IntegerRange bounds)
-{
-    if (const auto range = values.find(setting); range != values.end())
-        return application::readRandomRange(*range, bounds.min, bounds.max);
-    return fallback;
-}
 TargetKey targetKey(const Detection &detection)
 {
     return {detection.controller, detection.target};
@@ -38,7 +31,9 @@ void Controller::configure(const application::Json &v)
     const auto ageLimit = v.value("cs2TriggerMaxAgeMs", 150u);
     const auto inset = readHitboxInsetPercent(v) / 100;
     const auto responseMs = v.value("cs2ResponseMs", 20.);
-    const auto hold = timingRange(v, "cs2TriggerHoldRangeMs", DefaultHold, HoldBounds);
+    const auto storedHold = v.find("cs2TriggerHoldRangeMs");
+    const auto hold = storedHold == v.end() ? DefaultHold :
+                                             application::readRandomRange(*storedHold, HoldBounds.min, HoldBounds.max);
     const bool coverChanged = coverCheck_ != cover || enabled_ != enabled;
     const bool exposureChanged = coverChanged || reactionEnabled_ != reaction || targets_ != targets ||
                                  foregroundPolicy_ != foregroundPolicy || ageLimit_ != ageLimit;
@@ -58,7 +53,7 @@ void Controller::configure(const application::Json &v)
     }
     if (hold_ != hold || enabled_ != enabled)
         nextHoldMs_.reset();
-    interval_ = timingRange(v, "cs2TriggerIntervalRangeMs", DefaultInterval, IntervalBounds);
+    minimumIntervalMs_ = v.value("cs2TriggerIntervalMs", DefaultIntervalMs);
     hold_ = hold;
     enabled_ = enabled;
     ageLimit_ = ageLimit;
@@ -287,7 +282,7 @@ void Controller::accepted(bool value)
     {
         lastClick_ = proposal_->atMs;
         firedFrame_ = proposal_->frame;
-        nextIntervalMs_ = interval_.sample(random_);
+        nextIntervalMs_ = minimumIntervalMs_;
         nextHoldMs_.reset();
         ++clicks_;
         block_ = "clicked";

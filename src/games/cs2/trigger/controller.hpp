@@ -18,7 +18,8 @@ class Controller
     mutable std::mutex mutex_;
     bool enabled_ = false, supported_ = false;
     unsigned ageLimit_ = 150;
-    random::IntegerRange interval_ = DefaultInterval, hold_ = DefaultHold;
+    unsigned minimumIntervalMs_ = DefaultIntervalMs;
+    random::IntegerRange hold_ = DefaultHold;
     std::mt19937 random_{std::random_device{}()};
     unsigned nextIntervalMs_ = 0;
     std::optional<unsigned> nextHoldMs_;
