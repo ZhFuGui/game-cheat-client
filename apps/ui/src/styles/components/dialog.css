@@ -2,7 +2,7 @@
   position: fixed;
   inset: 0;
   z-index: 100;
-  background: #08101f66;
+  background: var(--dialog-backdrop);
 }
 .dialog-popup {
   position: fixed;

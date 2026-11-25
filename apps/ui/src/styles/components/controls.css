@@ -294,6 +294,7 @@
   transition: transform 120ms;
 }
 .ui-switch-thumb[data-checked] {
+  background: var(--primary-foreground);
   transform: translateX(16px);
 }
 .toggle-row {

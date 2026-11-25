@@ -46,6 +46,7 @@
   min-height: 0;
 }
 .radar-map {
+  --radar-grid-color: #243644;
   grid-area: map;
   position: relative;
   min-width: 0;
@@ -53,7 +54,7 @@
   border: 1px solid #273a4a;
   border-radius: 10px;
   background-color: #131f29;
-  background-image: linear-gradient(#243644 1px, transparent 1px), linear-gradient(90deg, #243644 1px, transparent 1px);
+  background-image: linear-gradient(var(--radar-grid-color) 1px, transparent 1px), linear-gradient(90deg, var(--radar-grid-color) 1px, transparent 1px);
   background-size: 32px 32px;
 }
 .radar-page > .radar-map {
@@ -141,6 +142,20 @@
 .valorant-radar-layout { grid-template-areas: "leading map trailing"; }
 .valorant-roster-leading { grid-area: leading; --team-color: #76c3ff; }
 .valorant-roster-trailing { grid-area: trailing; --team-color: #ccd4df; }
+.dark .radar-map {
+  --radar-grid-color: var(--canvas-grid);
+  border-color: var(--border);
+  background-color: var(--canvas);
+}
+.dark .radar-canvas:focus-visible { outline-color: var(--ring); }
+.dark .radar-map-status { color: var(--foreground); }
+.dark .radar-map-status :is(.radar-waiting-icon, a) {
+  border-color: var(--input);
+  background: var(--card);
+  color: var(--foreground);
+}
+.dark .radar-map-status a:is(:hover, :focus-visible) { background: var(--accent); }
+.dark .radar-roster-header { background: var(--chrome); }
 @container radar (width < 700px) {
   .radar-layout {
     grid-template: minmax(268px, 1fr) minmax(112px, 0.48fr) / repeat(2, minmax(0, 1fr));
