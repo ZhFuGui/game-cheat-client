@@ -1,5 +1,5 @@
 .visuals-page > .visuals-radar-panel {
-  padding: 18px 24px 20px;
+  padding: 15px var(--page-gutter) 18px;
   overflow: auto;
 }
 .radar-page {
@@ -9,7 +9,7 @@
   min-height: 460px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
   container: radar / inline-size;
 }
 .radar-toolbar, .radar-map-name, .radar-controls, .radar-control-group {
@@ -17,11 +17,19 @@
   align-items: center;
   gap: 8px;
 }
-.radar-toolbar { justify-content: space-between; flex-wrap: wrap; }
+.radar-toolbar { justify-content: space-between; flex-wrap: wrap; min-height: var(--small-control-height); }
 .radar-map-name { font-size: 14px; }
 .radar-map-name svg { color: var(--muted-foreground); }
 .radar-controls { flex-wrap: wrap; }
 .radar-control-group { gap: 4px; }
+.radar-zoom {
+  gap: 0;
+  border: 1px solid var(--input);
+  border-radius: var(--control-radius);
+  background: var(--card);
+}
+.radar-zoom > .ui-button { border: 0; background: transparent; }
+.radar-zoom > .ui-button:hover { background: var(--muted); }
 .radar-zoom > span {
   min-width: 4ch;
   text-align: center;
@@ -69,21 +77,31 @@
   display: grid;
   align-content: center;
   justify-items: center;
-  gap: 9px;
+  gap: 10px;
   padding: 16px;
   text-align: center;
   color: #d3e1ea;
-  font-size: 13px;
+  font-size: 14px;
 }
-.radar-map-status a { color: #a9d7ff; font-size: 12px; }
-.radar-map-status a:hover { text-decoration: underline; }
+.radar-waiting-icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius);
+  border: 1px solid #3a5265;
+  background: #1c2c3a;
+  color: #a9d7ff;
+}
+.radar-map-status a { padding: 5px 12px; border: 1px solid #3a5265; border-radius: var(--control-radius); background: #1c2c3a; color: #c5e5ff; font-size: 12px; }
+.radar-map-status a:hover, .radar-map-status a:focus-visible { background: #2a4356; }
 .radar-roster {
   display: flex;
   flex-direction: column;
   min-width: 0;
   overflow: hidden;
   border: 1px solid var(--border);
-  border-radius: 10px;
+  border-radius: var(--radius);
   background: var(--card);
 }
 .radar-roster-ct { grid-area: ct; --team-color: var(--radar-ct); }
@@ -96,7 +114,7 @@
 }
 .radar-roster-header {
   border-bottom: 1px solid var(--border);
-  background: color-mix(in srgb, var(--team-color) 14%, var(--card));
+  background: color-mix(in srgb, var(--team-color) 12%, var(--card));
   padding: 10px 12px;
 }
 .radar-roster-header strong { display: flex; align-items: center; gap: 7px; font-size: 13px; }
@@ -106,7 +124,7 @@
   font-size: 11px;
   font-variant-numeric: tabular-nums;
 }
-.radar-roster ul { flex: 1; min-height: 0; overflow: auto; padding-inline: 10px; }
+.radar-roster ul { flex: 1; min-height: 0; overflow: auto; padding-inline: 10px; scrollbar-gutter: stable; }
 .radar-roster li { display: grid; gap: 5px; padding: 9px 2px; border-bottom: 1px solid var(--border); }
 .radar-roster li:last-child { border-bottom: 0; }
 .radar-roster li[data-alive="false"] { opacity: 0.68; }

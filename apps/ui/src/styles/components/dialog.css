@@ -2,7 +2,7 @@
   position: fixed;
   inset: 0;
   z-index: 100;
-  background: #00000055;
+  background: #08101f66;
 }
 .dialog-popup {
   position: fixed;
@@ -11,26 +11,29 @@
   top: 50%;
   transform: translate(-50%, -50%);
   width: min(480px, 90vw);
+  max-height: calc(100dvh - 44px);
+  overflow: auto;
   background: var(--card);
   color: var(--foreground);
-  padding: 25px;
-  border-radius: 10px;
+  padding: 22px;
+  border-radius: var(--radius);
   border: 1px solid var(--border);
-  box-shadow: 0 15px 80px #00000026;
+  box-shadow: var(--popover-shadow);
 }
 .dialog-title {
   font-size: 17px;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 .dialog-popup p {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--muted-foreground);
 }
 .dialog-actions {
   display: flex;
   justify-content: flex-end;
   gap: 9px;
-  margin-top: 24px;
+  margin-top: 20px;
+  flex-wrap: wrap;
 }
 .delete-path {
   display: block;

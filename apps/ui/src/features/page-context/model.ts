@@ -3,7 +3,7 @@ import {readerPages,mousePages,recoilPages,aimPages,visualsPages} from "~/naviga
 export type ContextPage =
   | "reader" | "dashboard" | "visuals-general" | "esp" | "radar" | "aim-general" | "aimbot" | "triggerbot" | "rage" | "recoil" | "learning" | "reports" | "logs"
   | "general" | "firmware" | "input" | "algorithm" | "movement"
-  | "calibration" | "rendering" | "input-device" | "data" | "unknown";
+  | "calibration" | "rendering" | "input-device" | "data" | "cs2-source" | "valorant-display" | "unknown";
 export type ContextTone = "error" | "warning" | "success" | "info" | "quiet";
 export interface ContextCopy {
   key: string;
@@ -35,8 +35,9 @@ const settingsPages: Record<string, ContextPage> = {
   "aimbot-algorithm": "algorithm", "aimbot-mouse": "movement",
   calibration: "calibration", rendering: "rendering",
   "input-device": "input-device", data: "data",
+  "cs2-source": "cs2-source", "valorant-display": "valorant-display",
 };
-export function contextPage(path: string, search: string,visuals:PageGroup=visualsPages,aim:PageGroup=aimPages): ContextPage {
+export function contextPage(path: string, search: string,visuals:PageGroup=visualsPages,aim:PageGroup=aimPages,gameSettingsSection?:string): ContextPage {
   const section = new URLSearchParams(search).get("section");
   switch (path) {
     case "/": return resolvePageGroup(readerPages,section).context as ContextPage;
@@ -52,7 +53,7 @@ export function contextPage(path: string, search: string,visuals:PageGroup=visua
     case "/mouse-debug": return resolvePageGroup(mousePages,section).context as ContextPage;
     case "/logs": return "logs";
     case "/settings": return settingsPages[section ?? "general"] ?? "general";
-    case "/game-settings": return settingsPages[section ?? "input"] ?? "input";
+    case "/game-settings": return settingsPages[gameSettingsSection ?? section ?? "input"] ?? "input";
     default: return "unknown";
   }
 }

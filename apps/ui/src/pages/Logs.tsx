@@ -1,14 +1,16 @@
 import { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Input } from "~/components/ui/input";
+import { SearchInput } from "~/components/ui/input";
 import { Button } from "~/components/ui/button";
+import { EmptyState } from "~/components/shared/Content";
+import { AppIcon } from "~/components/icons";
 import { LogList } from "~/features/logs/LogList";
 import { useCommand } from "~/hooks/useCommand";
 import { useRuntimeStore } from "~/runtime/state";
 import { Select } from "~/components/ui/select";
 export default function Logs() {
   const { t } = useTranslation(),
-    { run } = useCommand(),
+    { run, pending } = useCommand(),
     entries = useRuntimeStore((s) => s.logs),
     catalog = useRuntimeStore(s => s.workspace),
     [query, setQuery] = useState(""),
@@ -38,7 +40,7 @@ export default function Logs() {
     <div className="page logs-page">
       <div className="logs-toolbar">
         <Select label={t("日志范围")} value={scope} onChange={value => setScope(String(value))} options={[{ value: "all", label: t("全部游戏") }, { value: "global", label: t("全局") }, ...(catalog?.workspaces.map(w => ({ value: w.id, label: w.name })) ?? [])]} />
-        <Input
+        <SearchInput
           aria-label={t("搜索日志")}
           placeholder={t("搜索日志")}
           value={query}
@@ -48,23 +50,23 @@ export default function Logs() {
           {filtered.length} / {entries.length}
         </small>
         <div className="actions">
-          <Button variant="outline" onClick={() =>
+          <Button variant="ghost" disabled={!entries.length || pending} onClick={() =>
             void run("logs.clear", {}).then(v => {
               if (v) useRuntimeStore.setState({ logs: [], logCursor: "" });
             })}>{t("清空日志")}</Button>
-          <Button variant="outline" onClick={() => void exportLogs()}>{t("导出日志")}</Button>
+          <Button variant="outline" disabled={pending} onClick={() => void exportLogs()}>
+            <AppIcon name="download" size={15} />{t("导出日志")}
+          </Button>
         </div>
       </div>
       {filtered.length ? (
         <LogList entries={filtered} />
       ) : (
-        <div className="logs-empty">
-          {t(
+        <EmptyState className="logs-empty" icon={entries.length ? "search" : "logs"} message={t(
             entries.length
               ? "没有匹配的日志"
               : "暂无日志。连接 Reader 或盒子后会在这里记录状态。",
-          )}
-        </div>
+          )} />
       )}
     </div>
   );

@@ -1,8 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { AppIcon } from "~/components/icons";
-import { Section, Hint } from "~/components/shared/Content";
-import { Input } from "~/components/ui/input";
+import { EmptyState, Section, Hint } from "~/components/shared/Content";
+import { SearchInput } from "~/components/ui/input";
 import { Button } from "~/components/ui/button";
 import { Select } from "~/components/ui/select";
 import { applyAlgorithmDisplay } from "~/runtime/connection";
@@ -93,15 +92,12 @@ export function AlgorithmPanel({scope,allowBallisticsReload=true}:{scope:Algorit
       </Section>
       {scope==='mouse'&&<SpeedPresets/>}
       <div className="algorithm-toolbar">
-        <div className="search-input">
-          <AppIcon name="search" size={15} />
-          <Input
-            aria-label={t("搜索计算项、来源或原理")}
-            placeholder={t("搜索计算项、来源或原理")}
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-          />
-        </div>
+        <SearchInput
+          aria-label={t("搜索计算项、来源或原理")}
+          placeholder={t("搜索计算项、来源或原理")}
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+        />
         <Select
           label={t("计算阶段")}
           value={phase}
@@ -150,7 +146,7 @@ export function AlgorithmPanel({scope,allowBallisticsReload=true}:{scope:Algorit
         </section>
       ))}
       {!shown.length && (
-        <p className="empty-state">{t("没有匹配的计算项。")}</p>
+        <EmptyState icon="search" message={t("没有匹配的计算项。")} />
       )}
     </div>
   );

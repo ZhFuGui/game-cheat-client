@@ -14,6 +14,7 @@ import { useCommand } from "~/hooks/useCommand";
 import {PageSessionProvider} from "~/framework/pages/PageSession";
 import {PageTabPreferences} from "~/features/navigation/PageTabPreferences";
 import {ApplicationMark} from "~/components/branding/ApplicationMark";
+import { AppIcon } from "~/components/icons";
 export function AppLayout() {
   useTheme();
   const { t } = useTranslation(),
@@ -21,6 +22,7 @@ export function AppLayout() {
     error = useRuntimeStore((s) => s.error),
     migration = useRuntimeStore((s) => s.migration),
     context = useRuntimeStore((s) => s.workspace?.active),
+    colorMode = useRuntimeStore((s) => s.preferences.colorMode),
     { run } = useCommand();
   useEffect(() => {
     let dispose: (() => void) | undefined;
@@ -41,6 +43,7 @@ export function AppLayout() {
       <main className="workspace" aria-label={t("内容")}>
         {error && (
           <div className="connection-error" role="alert">
+            <AppIcon name="help" size={16} />
             <span>{error}</span>
             <Button
               variant="ghost"
@@ -67,7 +70,7 @@ export function AppLayout() {
         )}
       </main>
       <StatusBar />
-      <Toaster richColors position="bottom-right" />
+      <Toaster richColors theme={colorMode} position="bottom-right" offset={{ bottom: 45, right: 16 }} />
       <Dialog
         open={!!migration?.required}
         onOpenChange={() => {}}

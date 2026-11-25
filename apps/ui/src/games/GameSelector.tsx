@@ -15,6 +15,7 @@ export function GameSelector() {
   }) ?? [];
   return <div className="game-selector no-drag">
     <Select label={t("当前游戏")} value={revoked ? "" : catalog?.active?.workspaceId ?? ""} placeholder={t("请选择游戏")}
+      displayLabel={!revoked && catalog?.active?.gameId === "cs2" ? "CS2" : undefined}
       leadingIcon={<AppIcon name="game" size={20} />} title={`${t("当前游戏")} · ${options.find(option => option.value === catalog?.active?.workspaceId)?.label ?? t("请选择游戏")}`}
       variant="menu" disabled={pending || refreshing || !options.length} options={options}
       onChange={id => { if (revoked || id !== catalog?.active?.workspaceId) void run("workspace.switch", { id: String(id) }); }} />

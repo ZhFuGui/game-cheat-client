@@ -17,6 +17,7 @@ export function Select({
   variant = "field",
   leadingIcon,
   title,
+  displayLabel,
 }: {
   id?: string;
   value: string | number;
@@ -28,6 +29,7 @@ export function Select({
   variant?: "field" | "menu";
   leadingIcon?: ReactNode;
   title?: string;
+  displayLabel?: string;
 }) {
   const owner = useId();
   useEffect(
@@ -49,7 +51,7 @@ export function Select({
     >
       <Primitive.Trigger id={id} className={`ui-select${variant === "menu" ? " ui-select-menu" : ""}`} aria-label={label} title={title}>
         {leadingIcon && <span className="ui-select-leading" aria-hidden="true">{leadingIcon}</span>}
-        <Primitive.Value className="ui-select-value" placeholder={placeholder} />
+        <Primitive.Value className="ui-select-value" placeholder={placeholder}>{displayLabel}</Primitive.Value>
         <Primitive.Icon className="ui-select-chevron">
           <AppIcon name="chevronDown" size={14} />
         </Primitive.Icon>

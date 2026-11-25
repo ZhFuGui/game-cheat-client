@@ -1,19 +1,42 @@
-.empty-state {
-  padding: 40px 0;
+.empty-state, .feedback-state {
+  padding: 32px 16px;
   text-align: center;
   color: var(--muted-foreground);
 }
+.feedback-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.feedback-state > p { max-width: 34rem; }
+.feedback-state-icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 39px;
+  height: 39px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--muted);
+  color: var(--accent-foreground);
+}
+.feedback-state > a { color: var(--accent-foreground); text-underline-offset: 3px; text-decoration: underline; }
 .connection-error {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 10px;
   background: color-mix(in srgb, var(--destructive) 7%, var(--card));
   border-bottom: 1px solid
     color-mix(in srgb, var(--destructive) 15%, var(--border));
-  padding: 8px 20px;
-  font-size: 11px;
+  padding: 8px var(--page-gutter);
+  font-size: 12px;
   color: var(--destructive);
 }
+.connection-error > span { min-width: 0; max-height: 4.65em; overflow: auto; overflow-wrap: anywhere; }
 .connection-error > .ui-button {
   margin-left: auto;
 }
@@ -23,15 +46,17 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 17px;
+  gap: 12px;
+  padding: 24px;
+  text-align: center;
 }
 .startup-state p {
   color: var(--muted-foreground);
-  font-size: 12px;
+  font-size: 13px;
 }
 .startup-mark {
-  width: 42px;
-  height: 42px;
+  width: 52px;
+  height: 52px;
   display: block;
   object-fit: contain;
 }

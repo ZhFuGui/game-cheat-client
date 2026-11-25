@@ -1,4 +1,4 @@
-import type { GameId, SettingKey } from "@mousebox/shared";
+import type { GameCapability, GameId, SettingKey } from "@mousebox/shared";
 import { pubgUiModule } from "./pubg";
 import { cs2UiModule } from "./cs2";
 import { valorantUiModule } from "./valorant";
@@ -17,5 +17,10 @@ export function getGameUiModule(id: GameId | undefined): GameUiModule | undefine
 
 export function getGameSettingValidator(id: GameId | undefined, key: SettingKey) {
   return getGameUiModule(id)?.settingValidators[key];
+}
+
+export function resolveGameSettings(game: GameId | undefined, capabilities: readonly GameCapability[] | undefined, section: string | null) {
+  const panes = getGameUiModule(game)?.settings.filter(pane => !pane.capability || capabilities?.includes(pane.capability)) ?? [];
+  return { panes, selected: panes.find(pane => pane.id === section) ?? panes[0] };
 }
 

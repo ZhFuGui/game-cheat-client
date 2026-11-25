@@ -5,15 +5,16 @@
   flex-wrap: wrap;
 }
 .section {
-  padding: 21px 23px;
+  padding: var(--section-padding);
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  margin-bottom: 22px;
+  margin-bottom: var(--section-gap);
+  box-shadow: var(--panel-shadow);
   min-width: 0;
 }
 .section-heading {
-  margin-bottom: 20px;
+  margin-bottom: 14px;
 }
 .disclosure { min-width: 0; }
 .disclosure-heading { display: flex; align-items: center; gap: 6px; }
@@ -34,12 +35,7 @@
 .disclosure-title { flex: 1; min-width: 0; }
 .disclosure-content[hidden] { display: none; }
 .feature-section > .disclosure-heading h2 { font-size: 18px; line-height: 1.4; }
-.feature-section > .disclosure-content { padding: 20px 0 0 28px; }
-.section-heading p {
-  margin-top: 5px;
-  font-size: 12px;
-  color: var(--muted-foreground);
-}
+.feature-section > .disclosure-content { padding: 14px 0 0 28px; }
 .hint {
   font-size: 12px;
   color: var(--muted-foreground);

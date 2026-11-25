@@ -34,6 +34,8 @@ function pageMessages(page: ContextPage, f: ContextFacts): ContextMessage[] {
   switch (page) {
     case "input-device": return f.testArmed ? [activity("calibration:test", "F8 桌面位移测试已开启", copy("短按 F8 测试，松开停止。"))] : [message("settings:device-input", "本机输入设备与原始鼠标调试")];
     case "data": return [message("settings:data", "全局设置与游戏数据分开保存")];
+    case "cs2-source": return [message("game-settings:source", "CS2 数据")];
+    case "valorant-display": return [message("game-settings:display", "窗口与单位")];
     case "reader":
       return [
         message("reader:summary", f.readerConnected ? "Reader 数据链路已连接" : f.readerRunning ? "正在连接 Reader" : "等待连接 Reader",

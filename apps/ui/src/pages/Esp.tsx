@@ -27,12 +27,14 @@ export default function Esp() {
     <div className="esp-page">
       <div className="esp-toolbar">
         <div className="esp-toolbar-actions">
-        <Button variant="outline" size="sm" onClick={togglePanel}>
-          <AppIcon name={panel ? "hidePanel" : "showPanel"} size={15} />
-          {t("设置")}
-          <kbd>Insert</kbd>
-        </Button>
-        {outputEnabled&&<Button variant="outline" size="sm" data-esp-output-toggle aria-expanded={outputOpen} onClick={()=>setOutputOpen(v=>!v)}>{t("绘制方式")}</Button>}
+          <Button variant="outline" size="sm" aria-pressed={panel} onClick={togglePanel}>
+            <AppIcon name={panel ? "hidePanel" : "showPanel"} size={15} />
+            {t("设置")}
+            <kbd>Insert</kbd>
+          </Button>
+          {outputEnabled&&<Button variant="outline" size="sm" data-esp-output-toggle aria-expanded={outputOpen} onClick={()=>setOutputOpen(v=>!v)}>
+            <AppIcon name="rendering" size={15} />{t("绘制方式")}
+          </Button>}
         </div>
         <EspStatus />
       </div>
@@ -49,7 +51,7 @@ export default function Esp() {
       <div className="esp-footer">
         <code>{sequences || "—"}</code>
         <span>{fov || "—"}</span>
-        <Link to="/">{t("Reader 连接")}</Link>
+        <Link to="/"><AppIcon name="connection" size={14} />{t("Reader 连接")}</Link>
       </div>
     </div>
   );

@@ -1,4 +1,6 @@
 {
+  "后坐补偿在 Aimbot 页设置。": "Adjust recoil compensation on the Aimbot tab.",
+  "打开 Aimbot": "Open Aimbot",
   "启用 Aimbot": "Enable Aimbot",
   "Aimbot已关闭": "Aimbot is disabled",
   "启用前先关闭其他已开启的 Aim 功能。启用后仍需按住所设侧键进行瞄准；关闭时停止跟随并清除本次锁定。": "Disables other active Aim features before enabling Aimbot. Hold the configured side button to aim. Disabling stops tracking and clears the current target lock.",

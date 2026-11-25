@@ -1,6 +1,6 @@
 import {useTranslation} from "react-i18next";
 import type {ReaderStageAverage} from "@mousebox/shared";
-import {Section,Hint} from "~/components/shared/Content";
+import {EmptyState,Section} from "~/components/shared/Content";
 import {useRuntimeStore} from "~/runtime/state";
 
 const reasons={"waiting-data":"等待此订阅的新帧","missing-timing":"当前帧缺少必要时间戳",
@@ -32,6 +32,6 @@ export function ReaderChain(){
         <th scope="row">{channel.name}<small>TCP · #{channel.connection}</small></th>
         <Stage value={channel.chain?.read}/><Stage value={channel.chain?.prepare}/><Stage transport value={channel.chain?.transport}/>
       </tr>)}</tbody>
-    </table></div>:<Hint>{t("暂无订阅，连接 Reader 后显示各订阅链路。")}</Hint>}
+    </table></div>:<EmptyState className="reader-chain-empty" icon="connection" message={t("暂无订阅，连接 Reader 后显示各订阅链路。")} />}
   </Section>;
 }

@@ -9,10 +9,10 @@
 .visuals-page > .visuals-esp-panel {
   padding: 0;
 }
-.visuals-page > .visuals-general-panel { padding:24px;overflow:auto; }
+.visuals-page > .visuals-general-panel { overflow:auto; }
 .valorant-visual-settings,.valorant-display-mapping {max-width:850px;}
 .esp-page {
-  padding: 20px 24px 15px;
+  padding: 15px var(--page-gutter) 12px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -21,8 +21,9 @@
 .esp-toolbar {
   display: flex;
   align-items: center;
-  gap: 14px;
-  margin-bottom: 13px;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  margin-bottom: 10px;
 }
 .esp-status {
   margin-left: auto;
@@ -30,42 +31,46 @@
   align-items: center;
   justify-content: flex-end;
   flex-wrap: wrap;
-  gap: 4px 18px;
-  font-size: 11px;
+  gap: 4px 14px;
+  font-size: 12px;
   color: var(--muted-foreground);
 }
+.esp-status [data-esp-timing] { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.esp-status strong { font-weight: 600; color: var(--foreground); }
+.esp-toolbar kbd { padding: 0 4px; border: 1px solid var(--border); border-radius: 4px; background: var(--chrome); font-size: 10px; }
 .esp-body {
   display: flex;
   flex: 1;
-  gap: 15px;
+  gap: 12px;
   min-height: 0;
 }
 .esp-settings {
   display: flex;
   flex-direction: column;
-  width: 275px;
+  width: clamp(218px, 29cqi, 272px);
   flex-shrink: 0;
   background: var(--card);
   border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 17px 16px 0;
+  border-radius: var(--radius);
+  padding: 13px 13px 0;
+  box-shadow: var(--panel-shadow);
 }
 .esp-panel-heading {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 16px;
+  margin-bottom: 11px;
 }
 .esp-panel-heading h2 {
-  font-size: 12px;
+  font-size: 14px;
 }
 .esp-panel-heading small {
-  font-size: 10px;
+  font-size: 11px;
   color: var(--muted-foreground);
 }
 .esp-settings .tabs {
   display: flex;
-  margin-bottom: 18px;
+  margin-bottom: 12px;
 }
 .esp-settings .tabs button {
   flex: 1;
@@ -74,43 +79,49 @@
   overflow: auto;
   flex: 1;
   padding-right: 2px;
+  scrollbar-gutter: stable;
 }
 .esp-settings-scroll > .field {
-  margin-bottom: 18px;
+  margin-bottom: 12px;
 }
 .esp-settings-scroll h3 {
   color: var(--muted-foreground);
-  font-size: 10px;
-  font-weight: 400;
-  margin: 14px 0 7px;
+  font-size: 12px;
+  font-weight: 600;
+  margin: 12px 0 6px;
 }
 .esp-settings-scroll > .hint {
   margin: 16px 0;
 }
 .esp-panel-footer {
-  padding: 14px 0;
+  padding: 10px 0;
   border-top: 1px solid var(--border);
-  margin-top: 10px;
+  margin-top: 8px;
 }
 .native-surface {
   flex: 1;
   min-width: 100px;
   min-height: 150px;
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: var(--radius);
   background: var(--canvas);
   overflow: hidden;
 }
 .esp-footer {
   display: flex;
   align-items: center;
-  gap: 15px;
-  margin-top: 12px;
+  gap: 5px 12px;
+  flex-wrap: wrap;
+  margin-top: 9px;
   font-size: 11px;
   color: var(--muted-foreground);
 }
 .esp-footer a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
   margin-left: auto;
+  color: var(--accent-foreground);
 }
 .esp-footer a:hover {
   text-decoration: underline;

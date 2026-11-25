@@ -1,11 +1,11 @@
 import {useEffect,useMemo,useRef,useState} from "react";
 import {useTranslation} from "react-i18next";
-import {Link} from "react-router";
 import type {ValorantRadarFrame,ValorantRadarPlayer} from "@mousebox/shared";
 import {AppIcon} from "~/components/icons";
 import {Button} from "~/components/ui/button";
 import {HelpTooltip} from "~/components/shared/HelpTooltip";
 import {MapCanvas,type MapMarker} from "~/features/radar/MapCanvas";
+import {RadarWaiting} from "~/features/radar/RadarWaiting";
 import {findMap,imageUrl} from "./maps";
 import {positionBounds,projectPoint} from "./projection";
 import {useRadarFrame} from "./useRadarFrame";
@@ -18,7 +18,7 @@ function Roster({players,title,side}:{players:readonly ValorantRadarPlayer[];tit
   return <section className={`radar-roster valorant-roster-${side}`} aria-label={t(title)}>
     <div className="radar-roster-header"><strong>{t(title)}</strong><span>{players.length}</span></div>
     <ul>{players.map(player=><li key={player.id}>
-      <div className="radar-player-title"><strong>#{player.id}</strong><span style={{color:colors[player.relation]}}>{t(labels[player.relation])}</span></div>
+      <div className="radar-player-title"><strong>#{player.id}</strong><span style={{color:"color-mix(in srgb, "+colors[player.relation]+" 35%, var(--foreground))"}}>{t(labels[player.relation])}</span></div>
       <div className="radar-player-stats"><span>{t("队伍")}: {player.team?.key??"—"}</span><span>{player.position?t("位置已知"):t("位置缺失")}</span></div>
     </li>)}</ul>
   </section>;
@@ -81,11 +81,9 @@ function RadarView({frame}:{frame:ValorantRadarFrame}){
 }
 
 export default function RadarPage(){
-  const {t}=useTranslation();
   const {frame,failed}=useRadarFrame();
-  if(!frame)return <div className="radar-page"><div className="radar-map"><div className="radar-map-status" role="status">
-    <AppIcon name="radar" size={28}/><span>{t(failed?"暂时无法读取 Radar 数据":"等待 VALORANT Reader 数据")}</span>
-    <Link to="/">{t("Reader 连接")}</Link>
-  </div></div></div>;
+  if(!frame)return <div className="radar-page"><div className="radar-map">
+    <RadarWaiting connection message={failed?"暂时无法读取 Radar 数据":"等待 VALORANT Reader 数据"}/>
+  </div></div>;
   return <RadarView key={`${frame.scope}:${frame.map?.packagePath??""}`} frame={frame}/>;
 }

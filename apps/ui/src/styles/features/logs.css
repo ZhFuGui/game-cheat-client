@@ -7,57 +7,69 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 17px;
+  gap: 9px;
+  margin-bottom: 12px;
 }
-.logs-toolbar > input {
-  flex: 1;
-  min-width: 160px;
-}
+.logs-toolbar > .search-input { min-width: min(160px, 100%); }
 .logs-toolbar > .ui-select {
-  width: 135px;
+  width: clamp(118px, 18cqi, 175px);
 }
 .logs-toolbar > small {
-  min-width: 70px;
-  text-align: right;
+  min-width: 6ch;
+  margin-inline-end: 3px;
+  text-align: center;
   color: var(--muted-foreground);
-  font-size: 10px;
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
 }
 .log-list {
   flex: 1;
   min-height: 200px;
   border: 1px solid var(--border);
-  border-radius: 7px;
+  border-radius: var(--radius);
   background: var(--card);
   overflow: auto;
 }
+.log-spacer { position: relative; }
+.log-window { position: absolute; inset-inline: 0; }
 .log-row {
   display: flex;
   align-items: center;
-  gap: 14px;
-  padding: 0 15px;
-  border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
-  font-family: var(--font-mono);
-  font-size: 11px;
+  gap: 10px;
+  padding: 0 12px;
+  border-bottom: 1px solid var(--border);
+  font-size: 12px;
 }
+.log-row:hover { background: var(--chrome); }
 .log-row time {
-  width: 154px;
+  width: 21ch;
   white-space: nowrap;
   overflow: hidden;
+  text-overflow: ellipsis;
   flex-shrink: 0;
   color: var(--muted-foreground);
   font-size: 10px;
 }
+.log-workspace { flex: none; color: var(--muted-foreground); font-size: 11px; }
 .log-level {
-  width: 52px;
+  width: 58px;
+  padding: 2px 4px;
+  border-radius: 4px;
+  background: var(--muted);
   color: var(--muted-foreground);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  text-transform: uppercase;
+  text-align: center;
   flex-shrink: 0;
 }
 .log-error .log-level {
   color: var(--destructive);
+  background: color-mix(in srgb, var(--destructive) 12%, var(--card));
 }
 .log-warning .log-level {
   color: var(--warning);
+  background: color-mix(in srgb, var(--warning) 12%, var(--card));
 }
 .log-message {
   overflow: hidden;
@@ -66,10 +78,7 @@
 }
 .logs-empty {
   flex: 1;
-  display: grid;
-  place-items: center;
   border: 1px solid var(--border);
-  border-radius: 7px;
-  color: var(--muted-foreground);
-  font-size: 12px;
+  border-radius: var(--radius);
+  background: var(--card);
 }

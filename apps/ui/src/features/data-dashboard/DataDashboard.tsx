@@ -1,6 +1,7 @@
 import {lazy,Suspense,useEffect} from "react";
 import {useSearchParams} from "react-router";
 import {useTranslation} from "react-i18next";
+import {AppIcon} from "~/components/icons";
 import {usePageSession} from "~/framework/pages/PageSession";
 import {pageQueryMemoryKey} from "~/framework/pages/model";
 import {readerPages} from "~/navigation/pageGroups";
@@ -21,7 +22,9 @@ export default function DataDashboard(){
   return <>
     <div className="tabs" role="group" aria-label={t("看板内容")}>
       {(["summary","source"] as const).map(view=><button key={view} type="button" className={mode===view?"active":""}
-        data-dashboard-view={view} aria-pressed={mode===view} onClick={()=>select(view)}>{t(view==="summary"?"摘要":"源数据")}</button>)}
+        data-dashboard-view={view} aria-pressed={mode===view} onClick={()=>select(view)}>
+        <AppIcon name={view==="summary"?"summary":"source"} size={14}/>{t(view==="summary"?"摘要":"源数据")}
+      </button>)}
     </div>
     <Suspense fallback={null}>{mode==="source"?<Source/>:<Summary/>}</Suspense>
   </>;

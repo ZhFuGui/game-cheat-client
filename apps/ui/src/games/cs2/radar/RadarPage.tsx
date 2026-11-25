@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { Link } from "react-router";
 import { useTranslation } from "react-i18next";
 import type { Cs2RadarFrame, Cs2RadarPlayer } from "@mousebox/shared";
 import { AppIcon } from "~/components/icons";
 import { Button } from "~/components/ui/button";
 import { HelpTooltip } from "~/components/shared/HelpTooltip";
+import { RadarWaiting } from "~/features/radar/RadarWaiting";
 import { RadarCanvas } from "./RadarCanvas";
 import { RadarRoster } from "./RadarRoster";
 import { floorAtHeight, getRadarMap, type RadarFloor, type RadarMap } from "./maps";
@@ -41,8 +41,9 @@ function RadarView({ frame, map, failed }: { frame: Cs2RadarFrame | null; map?: 
   }, []);
   const reset = () => { setZoom(1); setCenter(mapCenter); setFollowing(false); };
   const title = map?.title ?? frame?.map?.name ?? t("雷达地图");
-  const waiting = failed ? "暂时无法读取 Radar 数据" : !frame ? "等待 CS2 Reader 数据" :
-    frame.map?.available ? "当前地图缺少雷达校准" : "等待当前地图";
+  if (!frame) return <div className="radar-page"><div className="radar-map">
+    <RadarWaiting connection message={failed ? "暂时无法读取 Radar 数据" : "等待 CS2 Reader 数据"} />
+  </div></div>;
   return <div className="radar-page">
     <div className="radar-toolbar">
       <div className="radar-map-name"><AppIcon name="radar" size={16} /><strong>{title}</strong></div>
@@ -73,11 +74,7 @@ function RadarView({ frame, map, failed }: { frame: Cs2RadarFrame | null; map?: 
       <div className="radar-map" data-map={map?.id} data-map-layer={map ? floor : undefined}>
         {map ? <RadarCanvas map={map} floor={floor} zoom={zoom} center={center}
           following={following ? local : undefined} names={names} markers={markers} onPan={pan} onZoom={changeZoom} /> :
-          <div className="radar-map-status" role="status">
-            <AppIcon name="radar" size={28} />
-            <span>{t(waiting)}</span>
-            {!frame && !failed && <Link to="/">{t("Reader 连接")}</Link>}
-          </div>}
+          <RadarWaiting message={frame.map?.available ? "当前地图缺少雷达校准" : "等待当前地图"} />}
       </div>
       <RadarRoster team={3} players={players} />
       <RadarRoster team={2} players={players} />

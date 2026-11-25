@@ -51,5 +51,5 @@ export const mousePages=definePageGroup({
 });
 export const recoilPages=definePageGroup({
   id:"recoil",route:"/recoil",label:"Recoil",tabsLabel:"Recoil子页",defaultSection:"no-recoil",context:"recoil",
-  sections:[{id:"no-recoil",label:"No Recoil"}],
+  sections:[{id:"no-recoil",label:"No Recoil",view:"guidance"}],
 });

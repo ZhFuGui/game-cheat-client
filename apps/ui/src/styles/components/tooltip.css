@@ -1,11 +1,11 @@
 .ui-tooltip-positioner { z-index: 1100; }
-.ui-tooltip { width: min(420px, calc(100vw - 32px)); padding: 16px 18px; border: 1px solid var(--border); border-radius: 10px; background: var(--popover); color: var(--foreground); box-shadow: 0 8px 28px #0002; font-size: 12px; line-height: 1.8; }
+.ui-tooltip { width: min(380px, calc(100vw - 32px)); padding: 13px 15px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--popover); color: var(--foreground); box-shadow: var(--popover-shadow); font-size: 13px; line-height: 1.65; }
 .ui-tooltip strong { display: block; font-size: 13px; margin-bottom: 10px; }
 .ui-tooltip p + p { margin-top: 10px; }
 .ui-tooltip { max-height: min(520px, calc(100vh - 32px)); overflow-y: auto; }
-.field-label { display: flex; align-items: center; gap: 7px; min-width: 0; }
+.field-label { display: flex; align-items: center; gap: 5px; min-width: 0; overflow-wrap: anywhere; }
 .field-label > label { margin: 0; }
-.field > .field-label { font-size: 12px; font-weight: 500; }
+.field > .field-label { font-size: 13px; font-weight: 500; }
 .help-trigger { display: inline-grid; place-items: center; flex: 0 0 auto; width: 22px; height: 22px; padding: 0; border: 0; border-radius: 4px; background: transparent; color: var(--muted-foreground); cursor: help; }
 .help-trigger:hover { color: var(--foreground); background: color-mix(in srgb, var(--foreground) 7%, transparent); }
 .help-trigger:focus-visible { outline: 2px solid var(--ring); outline-offset: 1px; }

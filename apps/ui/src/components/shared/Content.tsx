@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { useTranslation } from "react-i18next";
 import {HelpTooltip} from "./HelpTooltip";
+import { AppIcon, type AppIconName } from "~/components/icons";
 export function Section({
   title,
   description,
@@ -28,6 +29,20 @@ export function Section({
 }
 export function Hint({ children }: { children: ReactNode }) {
   return <p className="hint">{children}</p>;
+}
+export function EmptyState({ icon, message, action, className = "" }: {
+  icon: AppIconName;
+  message: string;
+  action?: ReactNode;
+  className?: string;
+}) {
+  return (
+    <div className={`feedback-state ${className}`}>
+      <span className="feedback-state-icon"><AppIcon name={icon} size={21} /></span>
+      <p>{message}</p>
+      {action}
+    </div>
+  );
 }
 export function StateText({ field }: { field: string }) {
   return <span>{field || "—"}</span>;

@@ -14,32 +14,32 @@
   align-items: flex-end;
   gap: 3px;
   height: var(--page-tabs-height, 35.5px);
-  padding: 0 16px;
+  padding: 0 var(--page-gutter);
   overflow-x: auto;
   scrollbar-width: none;
 }
 .page-tabs-track::-webkit-scrollbar { display: none; }
 .page-tab-item {
   position: relative;
-  flex: 0 1 208px;
-  min-width: 142px;
+  flex: 0 1 180px;
+  min-width: 127px;
 }
 .page-tab {
   position: relative;
   display: flex;
   align-items: center;
-  gap: 9px;
+  gap: 8px;
   width: 100%;
   min-width: 0;
   height: var(--page-tab-height, 31.45px);
   margin: 0;
-  padding: 0 15px;
+  padding: 0 13px;
   border: 1px solid transparent;
   border-bottom: 0;
   border-radius: 9px 9px 0 0;
-  background: var(--page-tab-inactive-background);
+  background: transparent;
   color: var(--muted-foreground);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 500;
   text-align: left;
   white-space: nowrap;
@@ -57,7 +57,7 @@
 }
 .page-tab[data-before-active]::after { display: none; }
 .page-tab:not([aria-selected="true"]):hover {
-  background: color-mix(in srgb, var(--foreground) 5%, var(--page-tab-inactive-background));
+  background: color-mix(in srgb, var(--foreground) 6%, transparent);
   color: var(--foreground);
 }
 .page-tab[aria-selected="true"] {
@@ -65,6 +65,7 @@
   border-color: var(--border);
   background: var(--page-tab-surface);
   color: var(--foreground);
+  font-weight: 600;
 }
 .page-tab[aria-selected="true"]::before,
 .page-tab[aria-selected="true"]::after {
@@ -104,7 +105,8 @@
 .page-tab-icon { display: flex; align-items: center; flex-shrink: 0; opacity: .8; }
 .page-tab[aria-selected="true"] .page-tab-icon { color: var(--primary); opacity: 1; }
 .page-tab-label { overflow: hidden; text-overflow: ellipsis; }
-.page-tab-item[data-has-accessory] .page-tab { padding-right: 42px; }
+.page-tab-item[data-has-accessory] { min-width: 153px; }
+.page-tab-item[data-has-accessory] .page-tab { padding-inline-end: 38px; }
 .page-tab-accessory { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); z-index: 2; display: flex; }
 .page-tab-accessory .nav-help-trigger { position: static; transform: none; }
 .aim-page .browser-page-content > .page { padding: 0; }
@@ -112,14 +114,12 @@
 .browser-page > .page-tabs { position: sticky; top: 0; z-index: 4; }
 .browser-page-content {
   min-width: 0;
-  padding: 28px clamp(24px, 3vw, 40px) 40px;
+  padding: var(--page-inset) var(--page-gutter) 32px;
   background: var(--background);
 }
 .page-scaffold {
-  /* Scale the visible gap (row minus tab), not just the old track padding. */
-  --page-tab-height: calc(37px * .85);
-  --page-tab-headroom: calc(9px * .45);
-  --page-tabs-height: calc(var(--page-tab-height) + var(--page-tab-headroom));
+  --page-tab-height: 34px;
+  --page-tabs-height: 39px;
   isolation: isolate;
 }
 .page-scaffold .page-tabs {

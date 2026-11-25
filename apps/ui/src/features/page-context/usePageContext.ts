@@ -3,7 +3,7 @@ import { useLocation } from "react-router";
 import { useShallow } from "zustand/react/shallow";
 import { useRuntimeStore } from "~/runtime/state";
 import { availableVisualsPages,availableAimPages } from "~/navigation/pageGroups";
-import {getGameUiModule} from "~/games/registry";
+import {getGameUiModule, resolveGameSettings} from "~/games/registry";
 import { selectContextFacts } from "./facts";
 import { buildContextMessages } from "./messages";
 import { contextPage, type ContextPage } from "./model";
@@ -15,7 +15,10 @@ export function usePageContext() {
   const game=useRuntimeStore(s=>s.workspace?.active?.gameId),module=getGameUiModule(game);
   const visuals=useMemo(()=>availableVisualsPages(!!capabilities?.includes("esp"),!!capabilities?.includes("radar")),[capabilities]);
   const aim=useMemo(()=>availableAimPages(!!module?.AimSettings,!!module?.Triggerbot,!!module?.Rage&&!!capabilities?.includes("rage")),[module,capabilities]);
-  const page = contextPage(location.pathname, location.search,visuals,aim);
+  const gameSettingsSection = location.pathname === "/game-settings"
+    ? resolveGameSettings(game, capabilities, new URLSearchParams(location.search).get("section")).selected?.id
+    : undefined;
+  const page = contextPage(location.pathname, location.search,visuals,aim,gameSettingsSection);
   const facts = useRuntimeStore(useShallow(s => selectContextFacts(s, page)));
   const candidates = useMemo(() => contextCandidates(buildContextMessages(page, facts)), [page, facts]);
   const signature = `${facts.workspaceEpoch ?? "global"}:` + candidates.map(m => m.id).join("|");

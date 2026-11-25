@@ -20,7 +20,7 @@ export default function Settings() {
   const pane = panes.find(p => p.id === requested) ?? panes[0], Pane = pane.component;
   if (requested && legacyGameSections.has(requested)) return <Navigate to={`/game-settings?section=${requested}`} replace />;
   return <div className="settings-page">
-    <aside className="settings-navigation"><span>{t("设置")}</span><nav aria-label={t("设置分类")}>{panes.map(({ id, title, icon }) => <button key={id} data-section={id} className={id === pane.id ? "active" : ""} aria-current={id === pane.id ? "page" : undefined} onClick={() => setParams({ section: id })}><AppIcon name={icon} size={16} />{t(title)}</button>)}</nav></aside>
+    <aside className="settings-navigation"><nav aria-label={t("设置分类")}>{panes.map(({ id, title, icon }) => <button key={id} data-section={id} className={id === pane.id ? "active" : ""} aria-current={id === pane.id ? "page" : undefined} onClick={() => setParams({ section: id })}><AppIcon name={icon} size={16} />{t(title)}</button>)}</nav></aside>
     <div className="settings-content" aria-label={t(pane.title)}><Pane /></div>
   </div>;
 }

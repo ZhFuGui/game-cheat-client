@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { Section } from "~/components/shared/Content";
+import { AppIcon } from "~/components/icons";
 import { SettingField } from "~/components/shared/SettingField";
 import { Button } from "~/components/ui/button";
 import { useRuntimeStore } from "~/runtime/state";
@@ -12,13 +13,15 @@ export function ReaderConnection() {
   const running = useRuntimeStore(state => state.state.readerRunning);
   const streams = useRuntimeStore(state => state.state.valorant?.streams);
   return <Section>
-    <div className="connection-fields">
+    <div className="connection-fields reader-endpoint-fields">
       <SettingField setting="host" label="Reader 地址" numeric={false} disabled={running}/>
       <SettingField setting="port" label="端口" disabled={running}/>
-      <Button disabled={pending || !values} onClick={() => values && void run(running ? "reader.disconnect" : "reader.connect",
-        running ? {} : {host: values.host, port: values.port, hz: values.hz})}>{t(running ? "断开 Reader" : "连接 Reader")}</Button>
+      <Button variant={running ? "outline" : "default"} disabled={pending || !values} onClick={() => values && void run(running ? "reader.disconnect" : "reader.connect",
+        running ? {} : {host: values.host, port: values.port, hz: values.hz})}>
+        <AppIcon name="connection" size={15}/>{t(running ? "断开 Reader" : "连接 Reader")}
+      </Button>
     </div>
-    <div className="settings-grid">
+    <div className="reader-frequency-fields">
       <SettingField setting="hz" label="位置订阅频率" suffix="Hz" help={t("三个类别独立订阅与调频，支持 1–300 Hz 和小数。请求频率是目标，不保证实际达成。")}/>
       <SettingField setting="valorantSkeletonHz" label="骨骼订阅频率" suffix="Hz"/>
       <SettingField setting="valorantViewHz" label="相机订阅频率" suffix="Hz"/>

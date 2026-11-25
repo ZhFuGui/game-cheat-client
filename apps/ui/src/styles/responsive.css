@@ -2,37 +2,6 @@
   .sidebar-header {
     padding: 0 10px;
   }
-  .settings-page {
-    grid-template-columns: 174px minmax(0, 1fr);
-  }
-  .settings-content {
-    padding: 28px 23px;
-  }
-  .connection-fields {
-    grid-template-columns: minmax(100px, 1fr) 85px 90px auto;
-  }
-  .esp-settings {
-    width: 245px;
-  }
-  .page {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-  .algorithm-toolbar {
-    flex-wrap: wrap;
-  }
-  .algorithm-toolbar > .search-input {
-    min-width: 250px;
-  }
-  .details-grid {
-    grid-template-columns: 1fr;
-  }
-  .learning-controls {
-    flex-wrap: wrap;
-  }
-  .model-activate {
-    margin-left: 0;
-  }
 }
 @media (prefers-reduced-motion: reduce) {
   * {
@@ -41,5 +10,3 @@
     scroll-behavior: auto !important;
   }
 }
-
-/* Showing/removing report results must not resize the active capture rectangle. */

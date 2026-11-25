@@ -1,9 +1,33 @@
-.reader-chain-scroll { overflow-x: auto; }
-.reader-chain table { width: 100%; border-collapse: collapse; font-size: .875rem; }
-.reader-chain th,.reader-chain td { padding: 1rem .75rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--border); }
-.reader-chain th { font-weight: 500; }
-.reader-chain th small,.reader-stage-detail { display: block; margin-top: .4rem; color: var(--muted-foreground); font-size: .75rem; font-weight: 400; line-height: 1.6; }
-.reader-chain th small { white-space: nowrap; }
-.reader-stage-value { font-variant-numeric: tabular-nums; font-size: 1.1rem; }
-.reader-stage-value small { font-size: .75rem; color: var(--muted-foreground); }
-.reader-chain .hint { margin-top: 1rem; }
+.reader-chain-scroll {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--control-radius);
+}
+.reader-chain table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.reader-chain :is(th, td) {
+  padding: 11px 13px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--border);
+}
+.reader-chain thead { background: var(--chrome); }
+.reader-chain th { font-weight: 600; }
+.reader-chain tbody tr:last-child > * { border-bottom: 0; }
+.reader-chain th small, .reader-stage-detail {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted-foreground);
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.55;
+}
+.reader-stage-value { font-variant-numeric: tabular-nums; font-size: 15px; white-space: nowrap; }
+.reader-stage-value small { font-size: 11px; color: var(--muted-foreground); }
+.reader-chain .reader-chain-empty {
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 14px;
+  border-radius: var(--control-radius);
+  background: var(--chrome);
+  text-align: start;
+}

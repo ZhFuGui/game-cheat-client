@@ -10,6 +10,5 @@
 :root[data-sidebar-collapsed="true"] .game-selector .ui-select-leading { display:flex; align-items:center; justify-content:center; }
 .workspace-empty { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:15px; padding:40px; color:var(--muted-foreground); text-align:center; }
 .workspace-empty h1 { color:var(--foreground); font-size:20px; }
-.log-workspace { color:var(--muted-foreground); margin-right:10px; font-size:10px; }
 @media(max-height:720px) { .sidebar .navigation-group { gap:2px; } .sidebar .nav-item { height:38px; } }
 

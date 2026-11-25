@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { Section } from "~/components/shared/Content";
+import { AppIcon } from "~/components/icons";
 import { SettingField } from "~/components/shared/SettingField";
 import { Button } from "~/components/ui/button";
 import { useCommand } from "~/hooks/useCommand";
@@ -18,12 +19,11 @@ export function ReaderConnection() {
           onCommitted={async hz => {
             if (running && values) await run("reader.connect", { host: values.host, port: values.port, hz: Number(hz) });
           }}  help={<> <p>{t("连接期间修改频率会自动重新订阅 Living 与 Local，短暂等待新数据；无需手动断开。")}</p> </>}/>
-        <Button disabled={pending || !values} onClick={() => values && void run(
+        <Button variant={running ? "outline" : "default"} disabled={pending || !values} onClick={() => values && void run(
           running ? "reader.disconnect" : "reader.connect",
           running ? {} : { host: values.host, port: values.port, hz: values.hz },
-        )}>{t(running ? "断开 Reader" : "连接 Reader")}</Button>
+        )}><AppIcon name="connection" size={15} />{t(running ? "断开 Reader" : "连接 Reader")}</Button>
       </div>
-      
     </Section>
   );
 }

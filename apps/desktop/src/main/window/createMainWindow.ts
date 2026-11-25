@@ -15,7 +15,7 @@ export function createMainWindow(store: UiPreferenceStore, options: MainWindowOp
     const prefs = store.get();
     nativeTheme.themeSource = prefs.colorMode;
     const window = new BrowserWindow({ width: prefs.width, height: prefs.height, minWidth: 960, minHeight: 640,
-        frame: false, show: false, title: app.getName(), icon: app.isPackaged ? join(process.resourcesPath, 'icon.ico') : join(app.getAppPath(), 'resources', 'icon.ico'), backgroundColor: nativeTheme.shouldUseDarkColors ? '#17171b' : '#f7f8fb',
+        frame: false, show: false, title: app.getName(), icon: app.isPackaged ? join(process.resourcesPath, 'icon.ico') : join(app.getAppPath(), 'resources', 'icon.ico'), backgroundColor: nativeTheme.shouldUseDarkColors ? '#141922' : '#f4f6fa',
         webPreferences: { preload, contextIsolation: true, nodeIntegration: false, sandbox: true, spellcheck: false, webSecurity: true, backgroundThrottling: false } });
     window.webContents.setWindowOpenHandler(({ url }) => { if (url.startsWith('https://'))
         void shell.openExternal(url); return { action: 'deny' }; });

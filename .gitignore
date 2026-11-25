@@ -69,6 +69,7 @@ scratch/
 captures/
 evidence/
 logs/
+!/apps/ui/src/features/logs/
 log-files/
 logs-*/
 backups/

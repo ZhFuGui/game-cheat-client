@@ -20,7 +20,7 @@ export function useTheme() {
           canvas: get("--canvas"),
           grid: get("--canvas-grid"),
           guide: get("--canvas-guide"),
-          text: get("--muted-foreground"),
+          text: get("--canvas-text"),
           entity: get("--entity"),
           selected: get("--selected"),
           language,

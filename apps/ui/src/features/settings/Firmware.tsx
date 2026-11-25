@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Section, Hint } from "~/components/shared/Content";
+import { Section } from "~/components/shared/Content";
 import { Select } from "~/components/ui/select";
 import { Button } from "~/components/ui/button";
 import { useRuntimeStore } from "~/runtime/state";
@@ -24,11 +24,11 @@ export function Firmware() {
             <Select
               label={t("串口")}
               value={selected}
+              placeholder={t("没有可用串口")}
               disabled={ready || !ports.length}
               onChange={(v) => setPort(String(v))}
               options={ports.map((p) => ({ value: p.port, label: p.label }))}
             />
-            {!ports.length && <Hint>{t("没有可用串口")}</Hint>}
           </div>
           <div className="actions">
             <Button variant="outline" disabled={detecting}
@@ -36,6 +36,7 @@ export function Firmware() {
               {t(detecting ? "正在检测串口" : "检测串口")}
             </Button>
             <Button
+              variant={ready ? "outline" : "default"}
               disabled={pending || (!ready && !selected)}
               onClick={() =>
                 void run(

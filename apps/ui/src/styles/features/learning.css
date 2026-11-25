@@ -1,19 +1,20 @@
 .learning-controls {
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-end;
-  gap: 10px;
-  margin-bottom: 18px;
+  gap: 8px;
+  margin-bottom: 12px;
 }
 .dpi-field {
-  width: 145px;
-  margin-right: 3px;
+  width: 135px;
+  margin-inline-end: 4px;
 }
 .speed-canvas {
   height: 280px;
   position: relative;
   overflow: hidden;
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: var(--radius);
   background: var(--canvas);
 }
 .speed-canvas svg {
@@ -45,7 +46,7 @@
   pointer-events: none;
 }
 .capture-summary {
-  padding: 16px 0;
+  padding: 12px 0;
 }
 .capture-summary p {
   font-size: 12px;
@@ -63,7 +64,7 @@
 }
 .fit-feedback {
   font-size: 12px;
-  margin: 15px 0 28px;
+  margin: 12px 0 16px;
   color: var(--muted-foreground);
 }
 .model-description {
@@ -72,12 +73,15 @@
   font-size: 12px;
 }
 .model-actions {
-  margin: 20px 0;
+  margin: 12px 0;
 }
 .model-activate {
   margin-left: auto;
 }
 .learning-page > .section > .hint {
-  font-size: 11px;
+  font-size: 12px;
   margin-top: 8px;
+}
+@container workspace (width < 820px) {
+  .model-activate { margin-left: 0; }
 }
