@@ -6,7 +6,7 @@
   container: aim-settings / inline-size;
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 22px;
   width: 100%;
   max-width: 750px;
   min-width: 0;
@@ -15,7 +15,7 @@
 .aim-section-stack > :is(.feature-section, .aim-general-module) + :is(.feature-section, .aim-general-module)::before {
   content: "";
   position: absolute;
-  inset: -12px 0 auto 28px;
+  inset: -11px 0 auto 28px;
   border-top: 1px solid var(--border);
 }
 .aim-section-stack .feature-section > .disclosure-content {

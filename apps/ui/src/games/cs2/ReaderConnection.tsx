@@ -10,9 +10,9 @@ export function ReaderConnection(){
  const values=useRuntimeStore(s=>s.values),running=useRuntimeStore(s=>s.state.readerRunning);
  const state=useRuntimeStore(s=>s.state);
  return <Section><div className="connection-fields">
-  <SettingField setting="host" label="Reader 地址" numeric={false} disabled={running}/>
+  <SettingField setting="host" label="地址" numeric={false} disabled={running}/>
   <SettingField setting="port" label="端口" disabled={running}/>
-  <SettingField setting="hz" label="订阅频率" suffix="Hz" disabled={pending} help={<> <p>{t("CS2 Reader 支持本机或远程 IPv4 地址，使用只读完整快照。支持连接期间修改订阅频率（1–300 Hz），失焦或 Enter 保存。")}</p> </>}/>
+  <SettingField setting="hz" label="频率" suffix="Hz" disabled={pending} help={t("范围 1–300 Hz。连接时可修改，按 Enter 或离开输入框保存。")}/>
   <Button variant={running?"outline":"default"} disabled={pending||!values} onClick={()=>values&&void run(running?"reader.disconnect":"reader.connect",running?{}:{host:values.host,port:values.port,hz:values.hz})}>
     <AppIcon name="connection" size={15}/>{t(running?"断开 Reader":"连接 Reader")}
   </Button>

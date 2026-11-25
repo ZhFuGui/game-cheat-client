@@ -33,7 +33,7 @@ export default function Esp() {
             <kbd>Insert</kbd>
           </Button>
           {outputEnabled&&<Button variant="outline" size="sm" data-esp-output-toggle aria-expanded={outputOpen} onClick={()=>setOutputOpen(v=>!v)}>
-            <AppIcon name="rendering" size={15} />{t("绘制方式")}
+            <AppIcon name="rendering" size={15} />{t("输出")}
           </Button>}
         </div>
         <EspStatus />
@@ -49,8 +49,8 @@ export default function Esp() {
         >{placement==="overlay"&&<EspOverlayPlaceholder/>}</div>
       </div>
       <div className="esp-footer">
-        <code>{sequences || "—"}</code>
-        <span>{fov || "—"}</span>
+        {sequences && <code>{sequences}</code>}
+        {fov && <span>{fov}</span>}
         <Link to="/"><AppIcon name="connection" size={14} />{t("Reader 连接")}</Link>
       </div>
     </div>

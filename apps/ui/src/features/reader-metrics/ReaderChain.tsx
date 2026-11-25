@@ -1,6 +1,6 @@
 import {useTranslation} from "react-i18next";
 import type {ReaderStageAverage} from "@mousebox/shared";
-import {EmptyState,Section} from "~/components/shared/Content";
+import {Hint,Section} from "~/components/shared/Content";
 import {useRuntimeStore} from "~/runtime/state";
 
 const reasons={"waiting-data":"等待此订阅的新帧","missing-timing":"当前帧缺少必要时间戳",
@@ -21,8 +21,8 @@ export function ReaderChain(){
   const connected=useRuntimeStore(s=>s.connected);
   const channels=useRuntimeStore(s=>s.state.readerMetrics?.channels);
   const current=connected?channels:undefined;
-  return <Section title="订阅链路耗时" description="近2秒平均 · 每个订阅独立统计" className="reader-chain" help={<> <p>{t("按完整收到的新数据帧统计；心跳、重复帧不计入。发送准备包含整理、排队与封装，接收终点在解码之前。")}</p><p>{t("前两段使用 Reader 同一时钟；发送至接收通过现有时钟校准估算，缺少时间戳或有效校准时显示 —。")}</p> </>}>
-    {current?.length?<div className="reader-chain-scroll"><table aria-label={t("订阅链路耗时")}>
+  return <Section title="订阅耗时" description="近 2 秒平均，按订阅统计。" className="reader-chain" help={<> <p>{t("按完整收到的新数据帧统计；心跳、重复帧不计入。发送准备包含整理、排队与封装，接收终点在解码之前。")}</p><p>{t("前两段使用 Reader 同一时钟；发送至接收通过现有时钟校准估算，缺少时间戳或有效校准时显示 —。")}</p> </>}>
+    {current?.length?<div className="reader-chain-scroll"><table aria-label={t("订阅耗时")}>
       <thead><tr><th scope="col">{t("订阅")}</th>
         <th scope="col">{t("读取耗时")}<small>{t("开始读取 → 读完")}</small></th>
         <th scope="col">{t("发送准备")}<small>{t("读完 → 准备发送")}</small></th>
@@ -32,6 +32,6 @@ export function ReaderChain(){
         <th scope="row">{channel.name}<small>TCP · #{channel.connection}</small></th>
         <Stage value={channel.chain?.read}/><Stage value={channel.chain?.prepare}/><Stage transport value={channel.chain?.transport}/>
       </tr>)}</tbody>
-    </table></div>:<EmptyState className="reader-chain-empty" icon="connection" message={t("暂无订阅，连接 Reader 后显示各订阅链路。")} />}
+    </table></div>:<Hint>{t("暂无订阅")}</Hint>}
   </Section>;
 }

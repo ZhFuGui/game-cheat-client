@@ -33,19 +33,20 @@ function reportMessages(f: ContextFacts): ContextMessage[] {
 function pageMessages(page: ContextPage, f: ContextFacts): ContextMessage[] {
   switch (page) {
     case "input-device": return f.testArmed ? [activity("calibration:test", "F8 桌面位移测试已开启", copy("短按 F8 测试，松开停止。"))] : [message("settings:device-input", "本机输入设备与原始鼠标调试")];
-    case "data": return [message("settings:data", "全局设置与游戏数据分开保存")];
+    case "data":
+    case "general": return [];
     case "cs2-source": return [message("game-settings:source", "CS2 数据")];
     case "valorant-display": return [message("game-settings:display", "窗口与单位")];
     case "reader":
       return [
-        message("reader:summary", f.readerConnected ? "Reader 数据链路已连接" : f.readerRunning ? "正在连接 Reader" : "等待连接 Reader",
-          f.readerMessage ? copy(f.readerMessage) : undefined, f.readerConnected ? "success" : "info"),
-        message("reader:source", "当前 Reader 订阅",
+        message("reader:summary", f.readerConnected ? "Reader 已连接" : f.readerRunning ? "正在连接 Reader" : "Reader 未连接",
+          f.readerRunning && !f.readerConnected && f.readerMessage ? copy(f.readerMessage) : undefined, f.readerConnected ? "success" : "info"),
+        message("reader:source", "订阅",
           copy("{{host}}:{{port}} · {{hz}} Hz", { host: f.host ?? "—", port: f.port ?? "—", hz: f.hz ?? "—" })),
       ];
     case "dashboard":
-      return [message("dashboard:data", f.readerConnected ? "当前游戏数据" : "等待当前游戏数据",
-        copy("本批 {{characters}} 人", { characters: metric(f.characters, 0) }), f.readerConnected ? "success" : "info")];
+      return [message("dashboard:data", f.readerConnected ? "当前游戏数据" : "等待数据",
+        f.readerConnected && f.characters != null && f.characters !== "" ? copy("{{characters}} 人", { characters: metric(f.characters, 0) }) : undefined, f.readerConnected ? "success" : "info")];
     case "visuals-general": return [message("visuals:general", "Visuals 常规")];
     case "radar": return [message("visuals:radar", "Radar")];
     case "esp":
@@ -79,11 +80,6 @@ function pageMessages(page: ContextPage, f: ContextFacts): ContextMessage[] {
     case "logs":
       return [message("logs:summary", "本次运行日志", copy("{{total}} 条记录 · {{warnings}} 条警告 · {{errors}} 条错误", {
         total: f.logCount ?? 0, warnings: f.logWarnings ?? 0, errors: f.logErrors ?? 0,
-      }))];
-    case "general":
-      return [message("settings:general", "界面偏好自动保存", copy("{{theme}} · {{language}}", {
-        theme: f.colorMode === "dark" ? "深色" : f.colorMode === "light" ? "浅色" : "—",
-        language: f.language === "en" ? "English" : "简体中文",
       }))];
     case "firmware":
       return [message("settings:firmware", f.boxReady ? "鼠标盒子已连接" : f.boxPhase === "connecting" ? "正在连接鼠标盒子" : "等待鼠标盒子接入",

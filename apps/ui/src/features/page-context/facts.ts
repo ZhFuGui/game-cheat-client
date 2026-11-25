@@ -64,8 +64,6 @@ export interface ContextFacts {
   logCount?: number;
   logWarnings?: number;
   logErrors?: number;
-  language?: string;
-  colorMode?: string;
   workspaceEpoch?: string;
   workspaceSwitching?: boolean;
   recoilOnly?:boolean;
@@ -169,7 +167,6 @@ export function selectContextFacts(s: RuntimeStore, page: ContextPage): ContextF
     f.reportReason = r?.reason; f.reportError = r?.error;
   }
   if (page === "logs") Object.assign(f, logSummary(s.logs));
-  if (page === "general") { f.language = s.preferences.language; f.colorMode = s.preferences.colorMode; }
   if (page === "input" || page === "movement") {
     f.dpi = s.values?.dpi; f.mapping = s.values?.mapping; f.fov = state.fov;
     f.speedLimit = s.speedPresets.find(p => p.value === s.values?.speed)?.maximumCountsPerSecond;

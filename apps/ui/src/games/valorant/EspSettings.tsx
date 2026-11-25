@@ -11,8 +11,7 @@ export function EspSettings({tab,setTab}:GameEspSettingsProps){
   const {t}=useTranslation(),{run,pending}=useCommand();
   const scale=useRuntimeStore(s=>s.values?.valorantMetersPerUnit??0);
   return <aside className="esp-settings" aria-label={t("ESP 配置")}>
-    <div className="esp-panel-heading"><h2>VALORANT ESP</h2><small>{t("自动保存")}</small></div>
-    <div className="tabs">{["display","projection"].map(value=><button key={value} className={tab===value?"active":""}
+    <div className="tabs" role="group" aria-label={t("视图")}>{["display","projection"].map(value=><button key={value} className={tab===value?"active":""} aria-pressed={tab===value}
       onClick={()=>setTab(value)}>{t(value==="display"?"显示":"投影")}</button>)}</div>
     <div className="esp-settings-scroll">{tab==="display"?<>
       <SettingChoice esp setting="marker" label="标记样式" options={[{label:"定位点",value:"point"},{label:"骨点范围角标",value:"corners"}]}/>

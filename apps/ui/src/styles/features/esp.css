@@ -55,19 +55,6 @@
   padding: 13px 13px 0;
   box-shadow: var(--panel-shadow);
 }
-.esp-panel-heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 11px;
-}
-.esp-panel-heading h2 {
-  font-size: 14px;
-}
-.esp-panel-heading small {
-  font-size: 11px;
-  color: var(--muted-foreground);
-}
 .esp-settings .tabs {
   display: flex;
   margin-bottom: 12px;

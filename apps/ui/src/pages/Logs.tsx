@@ -53,9 +53,9 @@ export default function Logs() {
           <Button variant="ghost" disabled={!entries.length || pending} onClick={() =>
             void run("logs.clear", {}).then(v => {
               if (v) useRuntimeStore.setState({ logs: [], logCursor: "" });
-            })}>{t("清空日志")}</Button>
-          <Button variant="outline" disabled={pending} onClick={() => void exportLogs()}>
-            <AppIcon name="download" size={15} />{t("导出日志")}
+            })} aria-label={t("清空日志")}>{t("清空")}</Button>
+          <Button variant="outline" disabled={pending} onClick={() => void exportLogs()} aria-label={t("导出日志")}>
+            <AppIcon name="download" size={15} />{t("导出")}
           </Button>
         </div>
       </div>
@@ -65,7 +65,7 @@ export default function Logs() {
         <EmptyState className="logs-empty" icon={entries.length ? "search" : "logs"} message={t(
             entries.length
               ? "没有匹配的日志"
-              : "暂无日志。连接 Reader 或盒子后会在这里记录状态。",
+              : "暂无日志",
           )} />
       )}
     </div>

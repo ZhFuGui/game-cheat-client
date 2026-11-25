@@ -15,8 +15,8 @@ const main = [
   { to: "/game-settings", label: "游戏设置", icon: "tuning" },
 ] as const;
 const tools = [
-  { to: "/mouse-debug", label: "鼠标移动调试", icon: "mouseDevice" },
-  { to: "/logs", label: "运行日志", icon: "logs" },
+  { to: "/mouse-debug", label: "鼠标调试", icon: "mouseDevice" },
+  { to: "/logs", label: "日志", icon: "logs" },
   { to: "/settings", label: "设置", icon: "settings" },
 ] as const;
 export function Sidebar() {

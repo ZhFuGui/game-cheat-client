@@ -10,6 +10,6 @@ export default function VisualsGeneral(){
   const game=useRuntimeStore(s=>s.workspace?.active?.gameId);
   const Settings=getGameUiModule(game)?.VisualsSettings;
   if (Settings) return <Suspense fallback={null}><Settings/></Suspense>;
-  return <EmptyState className="visuals-general-empty" icon="tuning" message={t("当前游戏的显示选项在 ESP 页设置。")}
+  return <EmptyState className="visuals-general-empty" icon="tuning" message={t("显示选项位于 ESP")}
     action={<Link to="/visuals?section=esp">{t("打开 ESP")}</Link>} />;
 }

@@ -1,4 +1,15 @@
 .reader-connection-panel { max-inline-size: 1120px; }
+.reader-connection-panel > .section {
+  padding: 0 0 var(--section-padding);
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.reader-connection-panel > .section + .section {
+  padding-top: var(--section-padding);
+  border-top: 1px solid var(--border);
+}
 .connection-fields {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(84px, .24fr) minmax(116px, .35fr) max-content;

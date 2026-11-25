@@ -13,9 +13,9 @@ export function ReaderConnection() {
   return (
     <Section>
       <div className="connection-fields">
-        <SettingField label="Reader 地址" setting="host" numeric={false} disabled={running} />
+        <SettingField label="地址" setting="host" numeric={false} disabled={running} />
         <SettingField label="端口" setting="port" disabled={running} />
-        <SettingField label="订阅频率" setting="hz" suffix="Hz" disabled={pending}
+        <SettingField label="频率" setting="hz" suffix="Hz" disabled={pending}
           onCommitted={async hz => {
             if (running && values) await run("reader.connect", { host: values.host, port: values.port, hz: Number(hz) });
           }}  help={<> <p>{t("连接期间修改频率会自动重新订阅 Living 与 Local，短暂等待新数据；无需手动断开。")}</p> </>}/>

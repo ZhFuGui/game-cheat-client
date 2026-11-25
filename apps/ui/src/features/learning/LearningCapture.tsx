@@ -48,7 +48,7 @@ export function LearningCapture({ session }: { session: LearningSession }) {
       </div>
       <SpeedCanvas />
       <div className="capture-summary">
-        <p>{learning?.status || "—"}</p>
+        {learning?.status && <p>{learning.status}</p>}
         <span>
           {t("独立场次")} <strong>{learning?.sessions ?? "—"}</strong> ·{" "}
           {t("已保存段")} <strong>{learning?.trials ?? "—"}</strong> ·{" "}
@@ -84,9 +84,7 @@ export function LearningCapture({ session }: { session: LearningSession }) {
           {t(learning?.training ? "正在拟合…" : "拟合速度与验证")}
         </Button>
       </div>
-      <p className="fit-feedback" role="status">
-        {learning?.feedback || "—"}
-      </p>
+      {learning?.feedback && <p className="fit-feedback" role="status">{learning.feedback}</p>}
     </>
   );
 }

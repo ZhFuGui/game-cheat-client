@@ -19,7 +19,7 @@ export function AimSettings(){
     finally{setBusy(false);}
   };
   return <>
-    <FeatureSection title="VALORANT 跟随设置" help={t("按住侧键后保持同一目标，短暂缺帧或部位缺失时暂停并等待恢复。使用头、颈、胸或骨盆的当前骨点，不生成 Hitbox 或掩体判断。") }>
+    <FeatureSection title="跟随设置" help={t("按住侧键后保持同一目标，短暂缺帧或部位缺失时暂停并等待恢复。使用头、颈、胸或骨盆的当前骨点，不生成 Hitbox 或掩体判断。") }>
       <div className="aim-fields">
         <SettingChoice setting="valorantAimPart" label="瞄准部位" options={["头部","颈部","胸部","骨盆"].map((label,value)=>({label,value}))}/>
         <SettingChoice setting="valorantTargetPriority" label="目标优先级" options={[{label:"人物距离优先",value:0},{label:"准星距离优先",value:1}]}/>

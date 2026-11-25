@@ -47,10 +47,12 @@ export function AppLayout() {
             <span>{error}</span>
             <Button
               variant="ghost"
-              size="sm"
+              size="icon"
+              aria-label={t("关闭提示")}
+              title={t("关闭提示")}
               onClick={() => useRuntimeStore.getState().setError(null)}
             >
-              {t("关闭提示")}
+              <AppIcon name="close" size={16} />
             </Button>
           </div>
         )}

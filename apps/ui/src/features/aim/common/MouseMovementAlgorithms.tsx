@@ -25,9 +25,7 @@ export function MouseMovementAlgorithms({choices, defaultSelection, children}: {
     setSaving(true);
     try { await save(String(requested)); } finally { setSaving(false); }
   };
-  return <FeatureSection title="鼠标移动算法" className="mouse-movement-algorithms" help={<>
-    <p>{t("移动轨迹描述几何路径，速度变化控制决定每步的推进节奏。")}</p>
-  </>}>
+  return <FeatureSection title="鼠标移动算法" className="mouse-movement-algorithms">
     <div className="aim-fields">
       <MouseTrajectoryChoice disabled={!ready || saving || calibrating}/>
       <div className="field">

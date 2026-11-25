@@ -20,19 +20,17 @@ export function EspSettings({
   const units = useRuntimeStore((state) => state.state.espUnits);
   return (
     <aside className="esp-settings" aria-label={t("ESP 配置")}>
-      <div className="esp-panel-heading">
-        <h2>{t("ESP 配置")}</h2>
-        <small>{t("自动保存")}</small>
-      </div>
-      <div className="tabs">
+      <div className="tabs" role="group" aria-label={t("视图")}>
         <button
           className={tab === "display" ? "active" : ""}
+          aria-pressed={tab === "display"}
           onClick={() => setTab("display")}
         >
           {t("显示")}
         </button>
         <button
           className={tab === "projection" ? "active" : ""}
+          aria-pressed={tab === "projection"}
           onClick={() => setTab("projection")}
         >
           {t("投影")}

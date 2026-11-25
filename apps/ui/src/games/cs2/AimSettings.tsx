@@ -9,7 +9,7 @@ import { Cs2MouseMovementAlgorithms } from "./MouseMovementAlgorithms";
 export function AimSettings() {
   const { t } = useTranslation();
   const calibrating = useRuntimeStore(s => s.state.cs2Controller?.calibrating ?? false);
-  return <><FeatureSection title="CS2 跟随设置" help={<p>{t("参数自动保存。按住后保持同一个人；短暂缺帧暂停，恢复继续；明确死亡后松开再按才能选人。")}</p>}><div className="aim-fields">
+  return <><FeatureSection title="跟随设置" help={<p>{t("参数自动保存。按住后保持同一个人；短暂缺帧暂停，恢复继续；明确死亡后松开再按才能选人。")}</p>}><div className="aim-fields">
     <SettingChoice setting="cs2AimPart" label="默认瞄准部位" disabled={calibrating}
       options={["头部", "颈部", "胸部", "腹部", "骨盆"].map((label, value) => ({label, value}))}  help={<> <p>{t("在所选部位的 Hitbox 内取点，跟随需要该命中体的当前姿态。")}</p> </>}/>
     <SettingToggle setting="cs2AimCoverCheck" label="掩体判断" disabled={calibrating}

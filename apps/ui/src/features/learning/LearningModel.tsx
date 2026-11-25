@@ -14,7 +14,7 @@ export function LearningModel({ session }: { session: LearningSession }) {
           "学习模型仅限制主动接近的速度、加速和制动；锁定后的快速纠偏不使用学习上限。",
         )}</p><p>{t("载入或拟合模型不会自动启用。")}</p> </>}>
       <p className="model-description">
-        {learning?.model || t("尚无速度模型。载入或拟合后可手动启用。")}
+        {learning?.model || t("暂无模型")}
       </p>
       <div className="actions model-actions">
         <Button

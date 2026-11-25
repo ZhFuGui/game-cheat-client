@@ -87,15 +87,10 @@
 .radar-waiting-icon {
   display: grid;
   place-items: center;
-  width: 48px;
-  height: 48px;
-  border-radius: var(--radius);
-  border: 1px solid #3a5265;
-  background: #1c2c3a;
-  color: #a9d7ff;
+  color: inherit;
 }
-.radar-map-status a { padding: 5px 12px; border: 1px solid #3a5265; border-radius: var(--control-radius); background: #1c2c3a; color: #c5e5ff; font-size: 12px; }
-.radar-map-status a:hover, .radar-map-status a:focus-visible { background: #2a4356; }
+.radar-map-status a { font-size: 12px; text-decoration: underline; text-underline-offset: 3px; }
+.radar-map-status a:is(:hover, :focus-visible) { color: var(--primary-foreground); }
 .radar-roster {
   display: flex;
   flex-direction: column;
@@ -149,12 +144,7 @@
 }
 .dark .radar-canvas:focus-visible { outline-color: var(--ring); }
 .dark .radar-map-status { color: var(--foreground); }
-.dark .radar-map-status :is(.radar-waiting-icon, a) {
-  border-color: var(--input);
-  background: var(--card);
-  color: var(--foreground);
-}
-.dark .radar-map-status a:is(:hover, :focus-visible) { background: var(--accent); }
+.dark .radar-map-status a:is(:hover, :focus-visible) { color: var(--foreground); }
 .dark .radar-roster-header { background: var(--chrome); }
 @container radar (width < 700px) {
   .radar-layout {

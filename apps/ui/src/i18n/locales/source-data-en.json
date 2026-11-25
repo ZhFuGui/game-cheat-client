@@ -13,6 +13,8 @@
   "复制 JSON":"Copy JSON",
   "已复制":"Copied",
   "取样标识":"Sample",
+  "取样":"Sample",
+  "已暂停":"Paused",
   "仅展示最新取样，每120毫秒刷新":"Latest sample only, refreshed every 120 ms",
   "已暂停，保留当前取样":"Paused, keeping the displayed sample",
   "CS2 完整快照":"CS2 full snapshot",

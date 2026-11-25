@@ -17,12 +17,7 @@
   display: grid;
   place-items: center;
   flex: none;
-  width: 39px;
-  height: 39px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: var(--muted);
-  color: var(--accent-foreground);
+  color: var(--muted-foreground);
 }
 .feedback-state > a { color: var(--accent-foreground); text-underline-offset: 3px; text-decoration: underline; }
 .connection-error {

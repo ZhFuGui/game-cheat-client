@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Section, Hint } from "~/components/shared/Content";
 import { SettingChoice } from "~/components/shared/SettingField";
@@ -6,61 +6,37 @@ import { Button } from "~/components/ui/button";
 import { useRuntimeStore } from "~/runtime/state";
 import { useCommand } from "~/hooks/useCommand";
 export function Rendering() {
-  const { t } = useTranslation(),
-    { run } = useCommand(),
-    adapters = useRuntimeStore((s) => s.graphicsAdapters),
-    state = useRuntimeStore((s) => s.state);
-  useEffect(() => {
-    void run("graphics.refresh", {}).then((v) => {
-      if (v) useRuntimeStore.setState({ graphicsAdapters: v });
-    });
+  const { t } = useTranslation();
+  const { run, pending } = useCommand();
+  const adapters = useRuntimeStore(s => s.graphicsAdapters);
+  const state = useRuntimeStore(s => s.state);
+  const refresh = useCallback(async () => {
+    const graphicsAdapters = await run("graphics.refresh", {});
+    if (graphicsAdapters) useRuntimeStore.setState({ graphicsAdapters });
   }, [run]);
-  return (
-    <>
-      <Section title="ESP绘制显卡" help={<> <p>{t("按数据到达更新，不设软件 FPS 上限。")}</p> </>}>
-        <div className="form-stack">
-          <SettingChoice
-            setting="renderAdapter"
-            label="选择显卡"
-            options={adapters}
-           help={<> <p>{t(
-              "自动模式按系统高性能偏好优先尝试独显；手动选择会在绘制线程重建设备。",
-            )}</p> </>}/>
-          <p>{state.renderer || "—"}</p>
-          <Hint>
-            {state.adapterReady
-              ? `${t("实际绘制设备")}：${state.adapter || "—"}`
-              : t("打开ESP时创建所选绘制设备。")}
-          </Hint>
-          {state.adapterNotice && <p>{state.adapterNotice}</p>}
-          {state.graphicsError && (
-            <p className="field-error">{state.graphicsError}</p>
-          )}
-          <div>
-            <Button
-              variant="outline"
-              onClick={() =>
-                void run("graphics.refresh", {}).then((v) => {
-                  if (v) useRuntimeStore.setState({ graphicsAdapters: v });
-                })
-              }
-            >
-              {t("重新检测显卡")}
-            </Button>
-          </div>
-        </div>
-      </Section>
-      <div className="adapter-list">
-        <h2>{t("已检测到的显卡")}</h2>
-        {adapters
-          .filter((a) => !a.automatic)
-          .map((a) => (
-            <div key={a.value}>
-              <strong>{a.label}</strong>
-              <Hint>{a.detail}</Hint>
-            </div>
-          ))}
-      </div>
-    </>
-  );
+  useEffect(() => { void refresh(); }, [refresh]);
+  const devices = adapters.filter(adapter => !adapter.automatic);
+  return <Section>
+    <div className="settings-action-row">
+      <SettingChoice setting="renderAdapter" label="显卡" options={adapters} help={<>
+        <p>{t("自动模式按系统高性能偏好优先尝试独显；手动选择会在绘制线程重建设备。")}</p>
+        <p>{t("打开ESP时创建所选绘制设备。")}</p>
+        <p>{t("按数据到达更新，不设软件 FPS 上限。")}</p>
+      </>}/>
+      <Button variant="outline" disabled={pending} onClick={() => void refresh()}>{t("重新检测")}</Button>
+    </div>
+    {(state.renderer || (state.adapterReady && state.adapter)) && <dl className="settings-facts">
+      {state.renderer && <div><dt>{t("绘制引擎")}</dt><dd>{state.renderer}</dd></div>}
+      {state.adapterReady && state.adapter && <div><dt>{t("实际设备")}</dt><dd>{state.adapter}</dd></div>}
+    </dl>}
+    {state.adapterNotice && <Hint>{state.adapterNotice}</Hint>}
+    {state.graphicsError && <p className="field-error">{state.graphicsError}</p>}
+    {devices.length > 0 && <details className="adapter-list">
+      <summary>{t("设备详情")}</summary>
+      {devices.map(device => <div key={device.value}>
+        <strong>{device.label}</strong>
+        {device.detail && <Hint>{device.detail}</Hint>}
+      </div>)}
+    </details>}
+  </Section>;
 }

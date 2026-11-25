@@ -88,6 +88,9 @@
 }
 .ui-choice-button {
   flex: 1 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   min-width: 68px;
   height: var(--small-control-height);
   padding: 0 14px;
@@ -100,11 +103,12 @@
   white-space: nowrap;
   transition: background-color 120ms, color 120ms;
 }
+.ui-choice-button[data-icon-only] { min-width: 36px; padding: 0; }
 .ui-choice-button:hover { color: var(--foreground); }
 .ui-choice-button[data-checked] {
   background: var(--card);
-  color: var(--foreground);
-  box-shadow: 0 1px 2px #0002;
+  color: var(--accent-foreground);
+  box-shadow: 0 0 0 1px var(--input);
 }
 .ui-choice-button:focus-visible { outline: 2px solid var(--ring); outline-offset: 1px; }
 .ui-choice-button[data-disabled] { opacity: .5; cursor: default; }

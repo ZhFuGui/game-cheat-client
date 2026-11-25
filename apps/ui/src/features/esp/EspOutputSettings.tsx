@@ -29,7 +29,6 @@ export function EspOverlayPlaceholder(){
   return <div className="esp-overlay-placeholder" role="status">
     <strong>{t("绘制到游戏窗口")}</strong>
     <span data-overlay-phase={status?.state??"waiting"}>{t(status?.message||"等待本机游戏窗口处于前台")}</span>
-    <p>{t("这里只保留设置。切换到所选游戏后，ESP 会对齐游戏画面显示；最小化本软件可继续显示叠加层。")}</p>
     {status?.capture==="exclude"&&status.captureApplied&&<small>{t("已向系统申请排除叠加层捕获")}</small>}
   </div>;
 }

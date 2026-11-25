@@ -44,11 +44,38 @@
   padding: var(--page-inset) var(--page-gutter) 30px;
   scrollbar-gutter: stable;
 }
-.settings-content > :is(.section, .adapter-list, .settings-stack) {
+.settings-content > :is(.section, .settings-stack) {
   max-width: 780px;
 }
 .settings-content :is(.section, .form-stack) > .field { max-inline-size: 34rem; }
+.global-settings-content > :is(.section, .preferences) {
+  max-inline-size: 36rem;
+}
+.settings-content > .section,
+.settings-content > .settings-stack > .section {
+  padding: 0 0 var(--section-padding);
+  border: 0;
+  border-radius: 0;
+  border-bottom: 1px solid var(--border);
+  background: transparent;
+  box-shadow: none;
+}
+.settings-content > .section:last-child,
+.settings-content > .settings-stack > .section:last-child { border-bottom: 0; }
 .settings-content .actions > a { color: var(--accent-foreground); text-decoration: underline; text-underline-offset: 3px; }
+.settings-action-row { display: flex; align-items: end; flex-wrap: wrap; gap: 10px; }
+.settings-action-row > .field { flex: 1 1 170px; min-width: 0; }
+.settings-action-row > .actions > a { display: inline-flex; align-items: center; min-height: var(--control-height); padding-inline: 6px; }
+.settings-facts { margin: 14px 0; }
+.settings-facts > div {
+  display: grid;
+  grid-template-columns: minmax(90px, .65fr) minmax(0, 2fr);
+  gap: 10px;
+  padding-block: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.settings-facts dt { color: var(--muted-foreground); }
+.settings-facts dd { margin: 0; overflow-wrap: anywhere; }
 .advanced-settings {
   max-width: 780px;
   margin-bottom: 24px;
@@ -85,31 +112,18 @@
   justify-content: space-between;
   align-items: center;
   gap: 12px 22px;
-  padding: 14px 0;
+  min-height: 58px;
+  padding: 10px 0;
   border-bottom: 1px solid var(--border);
 }
-.preference-row:first-child {
-  padding-top: 0;
-}
-.preference-row:last-child {
-  padding-bottom: 0;
-  border: 0;
-}
-.preference-row .field-label {
-  font-size: 13px;
-  font-weight: 500;
-}
-.preference-row .hint {
-  margin-top: 5px;
-  font-size: 11px;
-}
+.preference-row:last-child { border: 0; }
+.preference-row > span { font-weight: 500; }
 .preference-row .ui-choice-buttons {
   flex-shrink: 0;
   margin-left: auto;
 }
-.adapter-list h2 {
-  margin: 28px 0 10px;
-}
+.adapter-list { margin-block-start: 16px; }
+.adapter-list summary { cursor: pointer; color: var(--muted-foreground); }
 .adapter-list > div {
   padding: 13px 0;
   border-bottom: 1px solid var(--border);
@@ -117,9 +131,6 @@
 .adapter-list strong {
   font-size: 12px;
   font-weight: 500;
-}
-.adapter-list + .hint {
-  margin-top: 14px;
 }
 @container workspace (width < 820px) {
   .settings-page:not([data-single-pane]) { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr); }

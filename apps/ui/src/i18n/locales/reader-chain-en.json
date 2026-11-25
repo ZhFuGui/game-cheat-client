@@ -1,5 +1,8 @@
 {
   "订阅链路耗时":"Subscription timing",
+  "订阅耗时":"Subscription timing",
+  "近 2 秒平均，按订阅统计。":"Average over the last 2 seconds, per subscription.",
+  "暂无订阅":"No subscriptions",
   "近2秒平均 · 每个订阅独立统计":"Trailing 2-second average · separate for each subscription",
   "订阅":"Subscription",
   "读取耗时":"Reading",

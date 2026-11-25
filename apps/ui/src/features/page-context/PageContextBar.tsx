@@ -11,7 +11,8 @@ export function PageContextBar() {
       key, typeof v === "string" ? t(v) : v,
     ])));
   const text = translate(active.text);
-  const detail = active.detail ? translate(active.detail) : "";
+  const translatedDetail = active.detail ? translate(active.detail) : "";
+  const detail = translatedDetail === text ? "" : translatedDetail;
   return (
     <div className="page-context-bar" aria-label={t("页面上下文栏")}
       data-context-page={page} data-context-id={active.id} data-tone={active.tone}

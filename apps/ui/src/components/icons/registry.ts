@@ -1,7 +1,7 @@
 import {
   ArrowDown, ArrowUp, Braces, ChartNoAxesCombined, Check, ChevronDown, ChevronRight,
-  Cpu, Crosshair, Database, Eye, Gamepad2, Info, Minus, Monitor, MoveVertical,
-  PanelLeftClose, PanelLeftOpen, Radar, Search, Settings, SlidersHorizontal, Square, X,
+  Cpu, Crosshair, Database, Eye, Gamepad2, Info, Minus, Monitor, Moon, MoveVertical,
+  PanelLeftClose, PanelLeftOpen, Radar, Search, Settings, SlidersHorizontal, Square, Sun, X,
 } from "lucide-react";
 import Link2Regular from "@mingcute/react/core-regular/link-2";
 import Document2Regular from "@mingcute/react/core-regular/document-2";
@@ -32,6 +32,8 @@ export const iconDefinitions = {
   source: { glyph: Braces, provider: "lucide" },
   search: { glyph: Search, provider: "lucide" },
   help: { glyph: Info, provider: "lucide" },
+  lightTheme: { glyph: Sun, provider: "lucide" },
+  darkTheme: { glyph: Moon, provider: "lucide" },
   chevronDown: { glyph: ChevronDown, provider: "lucide" },
   chevronRight: { glyph: ChevronRight, provider: "lucide" },
   check: { glyph: Check, provider: "lucide" },

@@ -1,7 +1,5 @@
 .reader-chain-scroll {
   overflow-x: auto;
-  border: 1px solid var(--border);
-  border-radius: var(--control-radius);
 }
 .reader-chain table { width: 100%; border-collapse: collapse; font-size: 12px; }
 .reader-chain :is(th, td) {
@@ -23,11 +21,3 @@
 }
 .reader-stage-value { font-variant-numeric: tabular-nums; font-size: 15px; white-space: nowrap; }
 .reader-stage-value small { font-size: 11px; color: var(--muted-foreground); }
-.reader-chain .reader-chain-empty {
-  flex-direction: row;
-  justify-content: flex-start;
-  padding: 14px;
-  border-radius: var(--control-radius);
-  background: var(--chrome);
-  text-align: start;
-}
