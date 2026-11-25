@@ -1,5 +1,7 @@
 import { useTranslation } from "react-i18next";
+import { AppIcon } from "~/components/icons";
 import { ChoiceButtons } from "~/components/ui/choice-buttons";
+import { Switch } from "~/components/ui/switch";
 import { useRuntimeStore } from "~/runtime/state";
 import { useCommand } from "~/hooks/useCommand";
 export function General() {
@@ -7,19 +9,20 @@ export function General() {
     colorMode = useRuntimeStore((s) => s.preferences.colorMode),
     language = useRuntimeStore((s) => s.preferences.language),
     { run, pending } = useCommand();
+  const dark = colorMode === "dark";
+  const themeLabel = t("深色模式");
   return (
     <div className="preferences">
       <div className="preference-row">
         <span>{t("外观")}</span>
-        <ChoiceButtons
-          label={t("外观")}
-          value={colorMode}
+        <Switch
+          className="theme-switch"
+          aria-label={themeLabel}
+          title={themeLabel}
+          checked={dark}
           disabled={pending}
-          onChange={(colorMode) => void run("preferences.set", { colorMode })}
-          options={[
-            { label: t("浅色"), value: "light", icon: "lightTheme" },
-            { label: t("深色"), value: "dark", icon: "darkTheme" },
-          ]}
+          onCheckedChange={(checked) => void run("preferences.set", { colorMode: checked ? "dark" : "light" })}
+          thumbContent={<AppIcon name={dark ? "darkTheme" : "lightTheme"} size={13} />}
         />
       </div>
       <div className="preference-row">

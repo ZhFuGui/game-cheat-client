@@ -122,6 +122,31 @@
   flex-shrink: 0;
   margin-left: auto;
 }
+.theme-switch.ui-switch {
+  width: 44px;
+  height: 24px;
+  border-color: #d8d8d8;
+  background: #e4e4e4;
+}
+.theme-switch.ui-switch[data-checked] {
+  border-color: #585858;
+  background: #444;
+}
+.theme-switch .ui-switch-thumb {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  color: #212121;
+  box-shadow: 0 1px 2px #0003;
+  transition: transform 170ms ease-out, background-color 120ms;
+}
+.theme-switch .ui-switch-thumb[data-checked] {
+  transform: translateX(20px);
+  background: #dedede;
+}
 .adapter-list { margin-block-start: 16px; }
 .adapter-list summary { cursor: pointer; color: var(--muted-foreground); }
 .adapter-list > div {

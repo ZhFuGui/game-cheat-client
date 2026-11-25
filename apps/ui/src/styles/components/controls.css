@@ -103,7 +103,6 @@
   white-space: nowrap;
   transition: background-color 120ms, color 120ms;
 }
-.ui-choice-button[data-icon-only] { min-width: 36px; padding: 0; }
 .ui-choice-button:hover { color: var(--foreground); }
 .ui-choice-button[data-checked] {
   background: var(--card);
