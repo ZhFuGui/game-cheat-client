@@ -1,0 +1,50 @@
+/* Twitter preset adapted to the desktop tokens.
+   https://github.com/jnsahaj/tweakcn/blob/main/utils/theme-presets.ts */
+[data-theme-preset="twitter"] {
+  --background: #ffffff;
+  --chrome: #f7f8f8;
+  --page-tab-chrome: #f7f8f8;
+  --foreground: #0f1419;
+  --card: #f7f8f8;
+  --popover: #ffffff;
+  --primary: #1e9df1;
+  --primary-foreground: #0f1419;
+  --secondary: #f7f8f8;
+  --muted: #e5e5e6;
+  --muted-foreground: #536471;
+  --accent: #e3ecf6;
+  --accent-foreground: #075f9c;
+  --destructive: #cc1825;
+  --border: #e1eaef;
+  --input: #cedde5;
+  --ring: #1da1f2;
+  --sidebar-border: #e1e8ed;
+  --panel-shadow: none;
+  --popover-shadow: none;
+  --dialog-backdrop: #0f141959;
+  --font-sans: "Open Sans Variable", "Mousebox UI", "Microsoft YaHei UI", sans-serif;
+  --font-mono: Menlo, "Geist Mono Variable", monospace;
+  --radius: 1.3rem;
+  --control-radius: calc(var(--radius) - 2px);
+}
+
+[data-theme-preset="twitter"].dark {
+  --background: #000000;
+  --chrome: #17181c;
+  --page-tab-chrome: #17181c;
+  --foreground: #e7e9ea;
+  --card: #17181c;
+  --popover: #000000;
+  --primary: #1c9cf0;
+  --secondary: #17181c;
+  --muted: #181818;
+  --muted-foreground: #8a9096;
+  --accent: #061622;
+  --accent-foreground: #1c9cf0;
+  --destructive: #ff6270;
+  --border: #242628;
+  --input: #22303c;
+  --sidebar-foreground: #d9d9d9;
+  --sidebar-border: #38444d;
+  --dialog-backdrop: #00000099;
+}

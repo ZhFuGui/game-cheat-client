@@ -1,7 +1,7 @@
 @import "../theme/default.css";
-@import "../theme/warm-gray.css";
+@import "../theme/twitter.css";
 
-:root {
+:where(:root) {
   --ring: var(--primary);
   --sidebar: var(--chrome);
   --sidebar-foreground: var(--foreground);

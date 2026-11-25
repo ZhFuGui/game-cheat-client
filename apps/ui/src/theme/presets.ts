@@ -1,6 +1,6 @@
 export const themePresets = [
   { id: "default", label: "默认" },
-  { id: "warm-gray", label: "暖灰" },
+  { id: "twitter", label: "Twitter" },
 ] as const;
 
 export function getThemePreset(id: string | undefined) {
