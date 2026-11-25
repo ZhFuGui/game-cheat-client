@@ -191,29 +191,19 @@ select {
 .connection-indicator[data-phase="error"] { --indicator-color: #ef4444; }
 .connection-indicator[data-phase="degraded"] { --indicator-color: #f59e0b; }
 .connection-indicator[data-phase="connecting"] { --indicator-color: #3b82f6; }
-.reader-metrics,
-.reader-delays,
 .reader-traffic,
 .reader-rate {
   display: flex;
   align-items: center;
 }
-.reader-metrics {
-  flex: 1;
-  min-width: 0;
-  gap: 18px;
-  overflow-x: auto;
-  scrollbar-width: none;
+.reader-traffic {
+  gap: 9px;
+  margin-inline-start: auto;
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
-.reader-delays { gap: 18px; margin-left: auto; }
-.reader-traffic { gap: 9px; border-inline-start: 1px solid var(--border); padding-inline-start: 12px; }
 .reader-rate { gap: 4px; }
 .reader-rate > span { min-width: 3ch; color: var(--foreground); text-align: right; }
-.reader-channel-delay { cursor: help; }
-.reader-channel-delay > span { color: var(--foreground); }
-.reader-channel-delay .reader-receive-rate { color: var(--muted-foreground); margin-left: 6px; }
 .status-dot {
   height: 7px;
   width: 7px;

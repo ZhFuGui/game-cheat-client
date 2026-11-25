@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { useRuntimeStore } from "~/runtime/state";
-import { ReaderMetrics } from "~/features/reader-metrics/ReaderMetrics";
+import { ReaderTraffic } from "~/features/reader-metrics/ReaderTraffic";
 export function StatusBar() {
   const { t } = useTranslation();
   const connected = useRuntimeStore((s) => s.connected);
@@ -31,7 +31,7 @@ export function StatusBar() {
           />
         );
       })}
-      <ReaderMetrics />
+      <ReaderTraffic />
     </footer>
   );
 }
