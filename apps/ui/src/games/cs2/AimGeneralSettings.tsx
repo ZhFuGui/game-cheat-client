@@ -41,8 +41,8 @@ export function Cs2TimingSettings() {
   const {t}=useTranslation(),calibrating=useRuntimeStore(s=>s.state.cs2Controller?.calibrating??false);
   return <FeatureSection title="时序与预测" help={<p>{t("Aimbot与Rage共用控制采样年龄、执行延迟及速度预测设置。")}</p>}>
     <div className="aim-fields">
-      <SettingField setting="cs2AimMaxAgeMs" label="控制采样年龄上限" suffix="ms" disabled={calibrating}/>
-      <SettingField setting="cs2ResponseMs" label="预计执行延迟" suffix="ms" disabled={calibrating}
+      <SettingField setting="cs2AimMaxAgeMs" label="控制采样年龄上限" suffix="ms" slider={{min:20,max:500}} disabled={calibrating}/>
+      <SettingField setting="cs2ResponseMs" label="预计执行延迟" suffix="ms" slider={{min:0,max:150}} disabled={calibrating}
         help={<p>{t("预计执行延迟表示输出指令发出到输入生效的估计耗时，默认 20 ms，可修改。预测时长还计入本批采样年龄。Triggerbot 使用同一执行延迟，并可在自己的判断条件中另设自修正时间差。")}</p>}/>
       <SettingToggle setting="cs2Prediction" label="按速度补偿执行延迟" disabled={calibrating}/>
     </div>

@@ -11,7 +11,7 @@ export default function DisplayMapping(){
       <SettingField setting="valorantWindowExecutable" numeric={false} label="游戏进程文件名"/>
     </Section>
     <Section title="世界单位" help={t("0 表示米制比例未知，距离按 Reader 原生单位 u 显示。只有明确填入米/原生单位比例后才换算为 m 并允许米制距离筛选。") }>
-      <SettingField setting="valorantMetersPerUnit" label="每原生单位对应米数"/>
+      <SettingField setting="valorantMetersPerUnit" label="每原生单位对应米数" slider={{min:0,max:0.1,step:0.0001}}/>
     </Section>
     <Section title="当前相机" help={t("ESP 使用当前相机位置、欧拉角和原生镜头参数重建投影，不是 Reader 提供的最终屏幕矩阵。可在 ESP 投影页调整视口比例和 FOV 轴向。未知投影和缺失相机不会沿用旧画面。") }>
       <dl className="details-grid">

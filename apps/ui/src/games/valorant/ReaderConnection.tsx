@@ -22,9 +22,9 @@ export function ReaderConnection() {
       </Button>
     </div>
     <div className="reader-frequency-fields">
-      <SettingField setting="hz" label="位置频率" suffix="Hz" help={t("三个类别独立订阅与调频，支持 1–300 Hz 和小数。请求频率是目标，不保证实际达成。")}/>
-      <SettingField setting="valorantSkeletonHz" label="骨骼频率" suffix="Hz"/>
-      <SettingField setting="valorantViewHz" label="相机频率" suffix="Hz"/>
+      <SettingField setting="hz" label="位置频率" suffix="Hz" slider={{min:1,max:300}} help={t("三个类别独立订阅与调频，支持 1–300 Hz 和小数。请求频率是目标，不保证实际达成。")}/>
+      <SettingField setting="valorantSkeletonHz" label="骨骼频率" suffix="Hz" slider={{min:1,max:300}}/>
+      <SettingField setting="valorantViewHz" label="相机频率" suffix="Hz" slider={{min:1,max:300}}/>
     </div>
     {streams?.filter(stream => stream.pending).length ? <p className="hint" role="status">{t("正在应用订阅频率…")}</p> : null}
     {streams?.filter(stream => stream.subscriptionError).map(stream => <p className="field-error" role="status" key={stream.stream}>

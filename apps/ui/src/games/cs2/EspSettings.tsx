@@ -42,7 +42,7 @@ export function EspSettings({ tab, setTab }: GameEspSettingsProps) {
         <SettingToggle esp setting="opponents" label="其他玩家" />
         <SettingToggle esp setting="self" label="自己" />
         <ExtensionSlot name="esp-settings" />
-        <SettingField esp setting="maximumDistanceMeters" label="显示距离上限" suffix="m" disabled={scale <= 0} help={t("米制比例在游戏设置中指定。未设置时不根据未知单位显示距离。")}/>
+        <SettingField esp setting="maximumDistanceMeters" label="显示距离上限" suffix="m" slider={{min:0,max:1000,step:5}} disabled={scale <= 0} help={t("米制比例在游戏设置中指定。未设置时不根据未知单位显示距离。")}/>
       </> : <>
         <SettingChoice esp setting="aspect" label="原始游戏视口比例" options={["16:9", "16:10", "21:9", "4:3", "viewport"].map(value => ({ label: value === "viewport" ? "填满区域" : value, value }))}  help={<> <p>{t("直接使用 Reader 世界到裁剪矩阵；视口比例需与游戏画面一致，不另外解释 FOV。")}</p><p>{t("米制比例在游戏设置中指定。未设置时不根据未知单位显示距离。")}</p> </>}/>
       </>}

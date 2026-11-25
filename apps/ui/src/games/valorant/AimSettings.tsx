@@ -24,8 +24,8 @@ export function AimSettings(){
         <SettingChoice setting="valorantAimPart" label="瞄准部位" options={["头部","颈部","胸部","骨盆"].map((label,value)=>({label,value}))}/>
         <SettingChoice setting="valorantTargetPriority" label="目标优先级" options={[{label:"人物距离优先",value:0},{label:"准星距离优先",value:1}]}/>
         <SettingChoice setting="trigger" label="触发侧键" options={[{label:"后退侧键",value:8},{label:"前进侧键",value:16}]}/>
-        <SettingField setting="valorantAimCone" label="最大瞄准角差" suffix="°"/>
-        <SettingField setting="valorantAimDistanceUnits" label="最大目标距离（原生单位）"
+        <SettingField setting="valorantAimCone" label="最大瞄准角差" suffix="°" slider={{min:0.1,max:89,step:0.1}}/>
+        <SettingField setting="valorantAimDistanceUnits" label="最大目标距离（原生单位）" slider={{min:0,max:30000,step:100}}
           help={t("0 表示不限距离，按相机到目标骨点的原生世界单位计算。")}/>
       </div>
     </FeatureSection>

@@ -20,8 +20,8 @@ export function Rage() {
         </div>
       </div>
       <div className="rage-parameters aim-fields">
-        <SettingField setting="cs2RageIntervalMs" label="连续点击最小间隔" suffix="ms"/>
-        <SettingField setting="cs2RageHoldMs" label="左键按下时长" suffix="ms"
+        <SettingField setting="cs2RageIntervalMs" label="连续点击最小间隔" suffix="ms" slider={{min:50,max:1000}}/>
+        <SettingField setting="cs2RageHoldMs" label="左键按下时长" suffix="ms" slider={{min:5,max:40}}
           help={t("当前固件支持5–40ms，按下后自动抬起。")}/>
       </div>
     </FeatureSection>

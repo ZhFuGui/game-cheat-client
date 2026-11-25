@@ -202,6 +202,10 @@
 }
 .setting-slider-pair > .input-wrap:has(.input-suffix) > .ui-input { padding-inline-end: 1px; }
 .setting-slider-pair .input-suffix { padding-inline: 3px 6px; }
+.setting-slider-pair > output {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
 .setting-random-range {
   display: grid;
   gap: 5px;

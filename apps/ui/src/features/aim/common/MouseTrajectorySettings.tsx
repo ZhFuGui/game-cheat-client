@@ -30,13 +30,13 @@ export function MouseBezierSettings({disabled}: {disabled: boolean}) {
       <circle cx={secondX} cy={secondY} r="1.4" className="bezier-control"/>
     </svg>
     <div className="aim-fields">
-      <SettingField setting="mouseBezierControl1X" label="控制点 1 · 沿程" suffix="%" disabled={disabled}
+      <SettingField setting="mouseBezierControl1X" label="控制点 1 · 沿程" suffix="%" slider={{min:0,max:100}} disabled={disabled}
         help={t("0–100%。沿起点到终点方向的位置，按两点距离计算。控制点只塑造曲线，不要求经过此点。")}/>
-      <SettingField setting="mouseBezierControl1Y" label="控制点 1 · 偏移" suffix="%" disabled={disabled}
+      <SettingField setting="mouseBezierControl1Y" label="控制点 1 · 偏移" suffix="%" slider={{min:-100,max:100}} disabled={disabled}
         help={t("-100–100%。垂直于起点到终点方向的偏移；正负值决定弯曲方向。两个偏移同号形成弧线，异号可形成 S 形，均为 0 时沿直线。")}/>
-      <SettingField setting="mouseBezierControl2X" label="控制点 2 · 沿程" suffix="%" disabled={disabled}
+      <SettingField setting="mouseBezierControl2X" label="控制点 2 · 沿程" suffix="%" slider={{min:0,max:100}} disabled={disabled}
         help={t("0–100%。沿起点到终点方向的位置，按两点距离计算。控制点只塑造曲线，不要求经过此点。")}/>
-      <SettingField setting="mouseBezierControl2Y" label="控制点 2 · 偏移" suffix="%" disabled={disabled}
+      <SettingField setting="mouseBezierControl2Y" label="控制点 2 · 偏移" suffix="%" slider={{min:-100,max:100}} disabled={disabled}
         help={t("-100–100%。垂直于起点到终点方向的偏移；正负值决定弯曲方向。两个偏移同号形成弧线，异号可形成 S 形，均为 0 时沿直线。")}/>
     </div>
   </div>;

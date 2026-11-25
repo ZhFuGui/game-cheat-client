@@ -32,6 +32,7 @@ export function FollowSettings() {
           setting="distance"
           label="自瞄距离上限"
           suffix="m"
+          slider={{min:1,max:5000}}
           disabled={calibrating}
         />
         <SettingChoice

@@ -85,6 +85,7 @@ export function EspSettings({
               setting="maximumDistanceMeters"
               label="显示距离上限"
               suffix="m"
+              slider={{min:0,max:1000,step:5}}
              help={<> <p>{t("0 表示不限；启用限制时，隐藏无法确认距离的人物。")}</p><p>{t(
                 marker === "estimated"
                   ? "高度估算框，不是 Reader 人体边界"
@@ -132,6 +133,7 @@ export function EspSettings({
                 setting="estimatedHeightMeters"
                 label="估算高度"
                 suffix="m"
+                slider={{min:0.1,max:4,step:0.01}}
               />
             )}
             <Hint>{units || "—"}</Hint>

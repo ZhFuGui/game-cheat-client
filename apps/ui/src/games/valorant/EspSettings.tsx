@@ -20,7 +20,7 @@ export function EspSettings({tab,setTab}:GameEspSettingsProps){
       <SettingToggle esp setting="distance" label="距离" help={t("距离从当前相机到人物根坐标计算；缺根坐标时使用当前有效骨点。未设置米制比例时以原生单位 u 显示。")}/>
       <SettingToggle esp setting="tracers" label="射线"/>
       <SettingToggle esp setting="crosshair" label="中心准星"/>
-      <SettingField esp setting="maximumDistanceMeters" label="显示距离上限" suffix="m" disabled={scale<=0}
+      <SettingField esp setting="maximumDistanceMeters" label="显示距离上限" suffix="m" slider={{min:0,max:1000,step:5}} disabled={scale<=0}
         help={t("0 表示不限。米制比例在游戏设置中明确设置后可用。")}/>
       <Link to="/visuals?section=general">{t("人物筛选")}</Link>
     </>:<>

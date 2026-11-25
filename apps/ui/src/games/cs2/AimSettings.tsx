@@ -20,8 +20,8 @@ export function AimSettings() {
       options={[{label:"人物距离优先",value:0},{label:"准星距离优先",value:1}]} />
     <SettingChoice setting="trigger" label="触发侧键" disabled={calibrating}
       options={[{label:"后退侧键",value:8},{label:"前进侧键",value:16}]} />
-    <SettingField setting="cs2AimCone" label="最大瞄准角差" suffix="°" disabled={calibrating} />
-    <SettingField setting="cs2AimDistanceUnits" label="最大目标距离（原生单位）" disabled={calibrating}
+    <SettingField setting="cs2AimCone" label="最大瞄准角差" suffix="°" slider={{min:0.1,max:90,step:0.1}} disabled={calibrating} />
+    <SettingField setting="cs2AimDistanceUnits" label="最大目标距离（原生单位）" slider={{min:0,max:10000,step:25}} disabled={calibrating}
       help={<p>{t("0 表示不限距离，使用 Source 2 原生单位。初选限当前视野，目标队伍由 Aim 常规的包含对象设置决定。")}</p>}/>
   </div></FeatureSection>
   <Cs2MouseMovementAlgorithms />

@@ -54,6 +54,7 @@
   "骨盆": "Pelvis",
   "自瞄距离上限": "Maximum aim distance",
   "跟随速度": "Tracking speed",
+  "选择现有速度档位，百分比表示占当前设备速度上限的比例。": "Select a speed preset as a percentage of the current device limit.",
   "最慢": "Slowest",
   "较慢": "Slow",
   "正常": "Normal",

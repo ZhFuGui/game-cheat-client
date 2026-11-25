@@ -22,13 +22,13 @@ export function ScoringControls(){
       <div className="aim-value-row rage-derived"><span>{t('伤害权重')}</span><output aria-label={t('伤害权重')}>{100-weight}%</output></div>
       <SettingField setting="cs2RageAimWeight" label="瞄准占比" suffix="%" slider={{min:0,max:100}} disabled={legacy}/>
       <div className="aim-value-row rage-derived"><span>{t('敌伤占比')}</span><output aria-label={t('敌伤占比')}>{100-aim}%</output></div>
-      <SettingField setting="cs2RageLowAmmoPenalty" label="低弹量扣分" suffix={t('分')} disabled={legacy}
+      <SettingField setting="cs2RageLowAmmoPenalty" label="低弹量扣分" suffix={t('分')} slider={{min:0,max:100}} disabled={legacy}
         help={t('仅对有效弹匣弹量小于等于1扣分；大于1或未知均不扣，未知会标记降级。')}/>
-      <SettingField setting="cs2RageReloadPenalty" label="换弹扣分" suffix={t('分')} disabled={legacy}
+      <SettingField setting="cs2RageReloadPenalty" label="换弹扣分" suffix={t('分')} slider={{min:0,max:100}} disabled={legacy}
         help={t('确认正在换弹时扣分，可与低弹量扣分叠加；威胁分最低为0。')}/>
       <SettingToggle setting="cs2RageStableTarget" label="稳定目标选择" disabled={legacy}
         help={t('当前目标仍有效且新目标领先不超过切换分差时保持当前目标；死亡、失效或明显更高分立即重评。同人仍使用伤害最高骨点。')}/>
-      <SettingField setting="cs2RageSwitchMargin" label="目标切换分差" suffix={t('分')} disabled={legacy||!stable}
+      <SettingField setting="cs2RageSwitchMargin" label="目标切换分差" suffix={t('分')} slider={{min:0,max:100,step:0.1}} disabled={legacy||!stable}
         help={t('默认1分，使用0–100分制；新目标领先超过此值立即切换。')}/>
       <ScoringFormulas/>
     </div>
