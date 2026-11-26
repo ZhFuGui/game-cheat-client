@@ -8,7 +8,7 @@
 
 全新检出后先运行 `pnpm install --frozen-lockfile`。原生构建及打包需要按[固定资源契约](../third_party/traceline/README.md)准备 DLL 和地图缓存。本地解决方案、测试和夹具随开发目录保留。
 
-本机旧目录迁移可使用 [PowerShell 脚本](../tools/rename-game-cheat-client.ps1)。把脚本放在旧目录之外，退出 Codex 和旧目录中的桌面程序后运行。
+本地验证使用开发目录中的测试、夹具和验证脚本。源码检出可直接构建。准备好原生资源后，`pnpm dist:dir` 可在缺少本地套件时生成预览包。`pnpm build:plan`、`pnpm check`、`pnpm check:all` 和 `pnpm dist:win` 使用本地验证文件。
 
 | 命令 | 行为 |
 |---|---|
@@ -19,7 +19,7 @@
 | `pnpm check` / `pnpm test:changed` | 按上次成功验证后的内容变化选择检查；首次完整验证 |
 | `pnpm check:all` | 完整覆盖；相同输入、程序与测试的成功结果可以复用 |
 | `pnpm build:plan` | 查看下次源代码验证的范围 |
-| `pnpm dist:dir` | 开发预览解压目录，不压安装器或ZIP |
+| `pnpm dist:dir` | 开发预览解压目录。存在本地验证套件时先执行增量检查 |
 | `pnpm dist:win` | 正式验收、Windows安装包和ZIP |
 
 高频界面调试继续使用`pnpm dev`的热更新。无需为了每次文字、样式或局部逻辑变化制作安装包。
@@ -30,7 +30,7 @@
 
 ## 本机生成产物清理
 
-`powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/clean-project-space.ps1` 先预览；加 `-Apply` 执行。默认保留现用程序及目录连接的真实目标、最新一版打包目录、最近完整回退及其后的增量备份、最新安装器/ZIP。`-KeepPackages`、`-KeepRollbacks` 可增加保留数量，最少各一份。
+在有本地维护脚本的开发目录中，`powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/clean-project-space.ps1` 先预览；加 `-Apply` 执行。默认保留现用程序及目录连接的真实目标、最新一版打包目录、最近完整回退及其后的增量备份、最新安装器/ZIP。`-KeepPackages`、`-KeepRollbacks` 可增加保留数量，最少各一份。
 
 脚本仅从旧程序包、测试程序和较早换版副本中选择生成的二进制/缓存文件；不移除整个项目目录，也不清理源码、Git 历史、用户配置、依赖、地图原件、当前构建缓存和诊断报告。不遍历文件系统连接；执行前再次检查完整路径、受保护目录和父目录连接。占用或访问失败的文件跳过并记录，不结束进程。计划清单、保护目录及执行结果保存在 `out/disk-cleanup/<时间>`。预览大小是文件逻辑大小，实际释放空间可能因硬链接与压缩而不同。
 

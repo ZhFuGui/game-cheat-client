@@ -1,1 +1,1 @@
-{ "extends": "../../tsconfig.base.json", "compilerOptions": {"types":["node","electron-vite/node"]}, "include":["src/**/*.ts","electron.vite.config.ts"] }
+{ "extends": "../../tsconfig.base.json", "compilerOptions": {"types":["node","electron-vite/node","vite/client"]}, "include":["src/**/*.ts","electron.vite.config.ts"] }

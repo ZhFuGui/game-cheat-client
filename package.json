@@ -13,7 +13,7 @@
     "build:native": "powershell -NoProfile -File tools/build.ps1 -Configuration Release",
     "build": "node tools/workflow.mjs build",
     "typecheck": "pnpm -r typecheck",
-    "lint": "eslint apps/desktop/src tests/desktop && pnpm --filter @mousebox/ui lint",
+    "lint": "eslint --no-error-on-unmatched-pattern apps/desktop/src tests/desktop && pnpm --filter @mousebox/ui lint",
     "test": "node --test tests/architecture/*.test.mjs && node tools/check-architecture.mjs && vitest run",
     "dist:win": "node tools/workflow.mjs package",
     "workflow": "node tools/workflow.mjs",

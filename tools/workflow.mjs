@@ -4,7 +4,6 @@ import { fileURLToPath } from 'node:url'
 import path from 'node:path'
 import { parseArgs } from 'node:util'
 import { Cache, changedFiles, digest, files, snapshot } from './workflow/cache.mjs'
-import { selectChecks } from './workflow/selection.mjs'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const { values, positionals } = parseArgs({ allowPositionals: true, options: {
@@ -27,6 +26,12 @@ const sourceRoots = [...globalInputs, ...shared, ...nativeInputs, 'apps/ui/src',
   'apps/ui/package.json', 'apps/desktop/package.json', 'apps/ui/tsconfig.json', 'apps/desktop/tsconfig.json', 'data/games/pubg/weapons/2026-10-15/profiles.json', 'data/games/cs2/hitboxes']
 const cacheInput = entries => snapshot(root, [...globalInputs, ...entries])
 const sourceAssetStats = () => snapshot(root, ['data/games/cs2/cover'], { metadata: true })
+const localCheckEntries = ['tools/check-architecture.mjs', 'tools/workflow/selection.mjs']
+const hasLocalChecks = async () => (await files(root, localCheckEntries)).length === localCheckEntries.length
+async function loadCheckSelection() {
+  if (!(await hasLocalChecks())) throw new Error('Restore the local verification tools and test suites before running checks or building a release')
+  return (await import('./workflow/selection.mjs')).selectChecks
+}
 const built = new Map()
 function run(executable, args, environment = {}) {
   return new Promise((resolve, reject) => {
@@ -86,6 +91,7 @@ async function toolTests() {
   }, { force: values.force })
 }
 async function checks(changedOnly) {
+  const selectChecks = await loadCheckSelection()
   const current = await snapshot(root, sourceRoots)
   const assets = await sourceAssetStats()
   const changes = changedFiles(cache.data.checked ?? {}, current)
@@ -143,7 +149,8 @@ async function build() {
 }
 async function pack() {
   if (values.configuration !== 'Release' || values.scope !== 'all') throw new Error('Packaging requires Release and scope=all')
-  await checks(Boolean(values.dir))
+  if (values.dir && !(await hasLocalChecks())) console.log('Preview: local test suites are unavailable. Running build and package input checks.')
+  else await checks(Boolean(values.dir))
   await build()
   const version = JSON.parse(await readFile(path.join(root, 'apps/desktop/package.json'), 'utf8')).version
   const output = `out/packages/${version}/${values.dir ? 'preview' : 'release'}`
@@ -172,6 +179,7 @@ try {
   else if (command === 'check') await checks(Boolean(values.changed))
   else if (command === 'package') await pack()
   else {
+    const selectChecks = await loadCheckSelection()
     const current = await snapshot(root, sourceRoots)
     console.log(JSON.stringify(selectChecks(changedFiles(cache.data.checked ?? {}, current), !cache.data.checked), null, 2))
   }
