@@ -1,5 +1,5 @@
 appId: cn.fugui.mousebox
-productName: game-cheat-client
+productName: Runtime Client
 directories:
   output: ../../out/desktop-release
 files:
@@ -21,6 +21,7 @@ extraResources:
   - from: resources/icon.ico
     to: icon.ico
 win:
+  executableName: RuntimeClient
   icon: resources/icon.ico
   target:
     - target: nsis
